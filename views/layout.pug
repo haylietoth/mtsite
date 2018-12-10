@@ -1,0 +1,50 @@
+doctype html(lang='en')
+
+head
+  title Madeleine Toth → Graphic Designer
+  meta(http-equiv="Pragma", content="no-cache")
+  meta(http-equiv="Expires", content="-1")
+  meta(name="robots", content="noindex")
+  meta(name="googebot", content="noindex")
+  meta(id="project_list_data" data-offset="0")
+  //base(href="//madeleinetoth.com")
+  link(id="favicon", rel="shortcut icon", href="https://favicon.cargocollective.com/603602-1530726908.ico")
+  link(rel="stylesheet", href="/stylesheets/reset.css")
+  link(rel='stylesheet', href='/stylesheets/common.css')
+  link(rel="stylesheet", href="/stylesheets/style.css")
+  link(href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic', rel='stylesheet', type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', rel='stylesheet', type='text/css')
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  script(src='/scripts/custom.js')
+  
+  // Required for Previews and Experiments
+  script(src="//code.jquery.com/jquery-2.1.1.min.js")
+  script
+    = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+  script(src="//static.cdn.prismic.io/prismic.min.js")
+
+body
+  block body
+    
+   include ./partials/footer.pug
+  
+  script(type='text/javascript').
+   var footer = $('#site-footer');
+   var bottom = $(window).height() -
+   $('.scrollLink').click( function() {
+    $('html, body').animate({
+    scrollTop: $('#site-footer').offset().top - 78
+    }, 1000)-1;
+   });
+  
+  script(type='text/javascript').
+   var footer = $('#site-footer').offset().top - 78;
+   $(window).scroll(function() {
+    if ($(this).scrollTop() >= footer) {
+     $('.whitebar').addClass("scroll");
+    }
+    else {
+     $('.whitebar').removeClass("scroll");
+    }
+   });
