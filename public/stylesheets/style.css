@@ -332,6 +332,36 @@ body.phone .thumbnail {
 	color: #777;
 }
 
+.thumbnail a.toggleSize {
+	color: #fff;
+	cursor: pointer;
+	display: none;
+	opacity: 0.5;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	z-index: 9;
+	width: 15px;
+	height: 15px;
+	background: url(http://assets.cdn.cargocollective.com/480885/824180538728832480170037143682420736/toggle_plus.png?d5c26497cc);
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+    visibility: hidden;
+}
+
+
+.thumbnail:hover .toggleSize {
+	display: block;
+}
+
+.thumbnail:hover .toggleSize:hover {
+	opacity: 0;
+}
+
+.thumbnail:hover .toggleSize:active {
+	opacity: 0;
+}
+
 .project_content div.elementresizer {
 	height: 100% !important;
 }
