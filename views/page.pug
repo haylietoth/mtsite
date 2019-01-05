@@ -7,16 +7,12 @@ block prepend body
 
   // Content Section
   div.container
-
+   div.project(style="display: block;")
     //- Display the slices
     for slice in pageContent.data.page_content
       case slice.slice_type
-        when 'text_section'
-          include ./partials/text-section.pug
-        when 'project_title'
-          include ./partials/project-title.pug
-        when 'project_subtitle'
-          include ./partials/project-subtitle.pug
         when 'full_width_image'
           include ./partials/full-width-image.pug
+        when 'text_section'
+          include ./partials/text-section.pug
 

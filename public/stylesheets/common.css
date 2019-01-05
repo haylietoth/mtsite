@@ -36,11 +36,10 @@ a {
 p a {
   text-decoration: underline;
 }
-h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'NeuzeitSLTStd-Book' , sans-serif;
 }
 h1 {
-  font-family: ‘Lora’, Serif; 
   font-size: 42px; 
   font-weight: normal; 
   color: #484D52; 
@@ -50,11 +49,12 @@ h1 {
 }
 h2, h2 a {
   margin-bottom: 1rem;
-  color: #484d52;
+  color: rgb(128, 128, 128);
   font-size: 32px;
-  font-weight: 700;
+  font-weight: normal;
   letter-spacing : 0.85;
   line-height: 42px;
+ 
 }
 h3, h3 a {
   margin-bottom: 1rem;

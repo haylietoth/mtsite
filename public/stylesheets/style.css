@@ -1,4 +1,13 @@
 /* General */
+html {
+    cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
+}
+
+body a:hover {
+   cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/hover.png), auto;
+    
+}
+
 .container, header, footer {
   max-width: 980px;
   margin: auto;
@@ -13,14 +22,40 @@
 	line-height: 1.6;
     min-height: 100vh;
     opacity: 1;
-    position: sticky;
     z-index: -1;
     width: 100%;
     top: 0;
 }
+
+.project {
+	min-height: 100%;
+	padding-left:60px;
+	padding-right: 60px;
+    background-color: white;
+	background-size: contain;
+    position: relative;
+    z-index: 50;
+    
+}
+
 .content-section {
   margin-bottom: 3.75rem;
+  padding-top: 100px;
 }
+
+.text-content{
+  text-align: left;
+}
+
+.text-content h1 {
+    
+}
+
+.text-content h2 {
+    
+}
+
+
 .wio-link {
   background-color: #31a8fd !important;
   color: white;
@@ -179,10 +214,14 @@ body[data-view="index"] .thumbnails {
 .thumbnail {
 	text-align: left;
 	margin-bottom: 40px;
-	position: relative;
+	position: ;
 	font-size: 16px;
     max-width: 1200px;
 }
+
+/*.thumb_image {
+    background-image: url(http://payload557.cargocollective.com/1/18/603602/13453946/Thumbnails7.jpg);
+}*/
 
 .thumbnail:hover .thumb_image img {
 opacity: 0;
@@ -398,34 +437,6 @@ body.phone .thumbnail {
 .text-section-2col p:last-child {
   margin-bottom: 0;
 }
-.quote blockquote {
-  display: block;
-  font-family: 'Lora', Serif; 
-  font-size: 36px;
-  font-style: italic;
-  font-weight: normal; 
-  color: #484D52; 
-  letter-spacing : 1.14;
-  line-height: 1.5em;
-  quotes: "\201C""\201D""\2018""\2019";
-  text-align: center;
-}
-.quote blockquote:before,
-.quote blockquote:after {
-  color: #e9e9e9;
-  content: open-quote;
-  font-family: 'Lora', Serif;
-  font-size: 2.5em;
-  font-weight: 900;
-  line-height: 0.1em;
-  margin-left: 10px;
-  margin-right: 10px;
-  vertical-align: -0.3em;
-}
-.quote blockquote:after {
-  content: close-quote;
-}
-
 
 /* Media Queries */
 @media screen and (min-width: 1138px) { 
@@ -487,20 +498,5 @@ body.phone .thumbnail {
     -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
     -moz-column-gap: 40px; /* Firefox */
     column-gap: 40px;
-  }
-  .quote {
-    font-size: 20px;
-  }
-  .gallery-item {
-    -webkit-box-flex: 100%;
-    -moz-box-flex:  100%;
-    -webkit-flex:  100%;
-    -ms-flex:  100%;
-    flex: 100%;
-  }
-  .highlight-left,
-  .highlight-right {
-    width: 100%;
-    float: none;
   }
 }
