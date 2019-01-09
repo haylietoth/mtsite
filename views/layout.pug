@@ -34,12 +34,12 @@ body
    var bottom = $(window).height() -
    $('.scrollLink').click( function() {
     $('html, body').animate({
-    scrollTop: $('#site-footer').offset().top - 78
+    scrollTop: $('#site-footer').offset().top - 77
     }, 1000)-1;
    });
   
   script(type='text/javascript').
-   var footer = $('#site-footer').offset().top - 78;
+   var footer = $('#site-footer').offset().top - 79;
    $(window).scroll(function() {
     if ($(this).scrollTop() >= footer) {
      $('.whitebar').addClass("scroll");
@@ -48,6 +48,3 @@ body
      $('.whitebar').removeClass("scroll");
     }
    });
-   
-
-    
