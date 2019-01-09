@@ -219,10 +219,6 @@ body[data-view="index"] .thumbnails {
     max-width: 1200px;
 }
 
-/*.thumb_image {
-    background-image: url(http://payload557.cargocollective.com/1/18/603602/13453946/Thumbnails7.jpg);
-}*/
-
 .thumbnail:hover .thumb_image img {
 opacity: 0;
 border: none; 
