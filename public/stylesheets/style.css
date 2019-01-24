@@ -8,34 +8,58 @@ body a:hover {
     
 }
 
-.container, header, footer {
-  max-width: 980px;
+.thumbnails, .clear, header {
+ max-width:980px;
   margin: auto;
 }
 
-.container {
+#index {
+    /*position: fixed;
+    z-index: -1;*/
     text-align: center;
-    padding: 0 50x;
-    background:white;
-	color: #000000;
-	font-family: 'NeuzeitSLTStd-Book' , sans-serif;
-	line-height: 1.6;
-    min-height: 100vh;
-    opacity: 1;
-    z-index: -1;
-    width: 100%;
-    top: 0;
+    background: white;
+    padding: 50px 0px 0px;
 }
 
 .project {
+    max-width: 980px;
 	min-height: 100%;
 	padding-left:60px;
 	padding-right: 60px;
     background-color: white;
 	background-size: contain;
-    position: relative;
-    z-index: 50;
+    margin: auto;
     
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.column h1 {
+    font-size: 28px;
+}
+
+.column h2 {
+    font-size: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.home-content-section {
+  margin-bottom: 3.75rem;
+  padding-top: 100px;
+  padding-right: 150px;
+  padding-left: 150px;
 }
 
 .content-section {
@@ -46,15 +70,6 @@ body a:hover {
 .text-content{
   text-align: left;
 }
-
-.text-content h1 {
-    
-}
-
-.text-content h2 {
-    
-}
-
 
 .wio-link {
   background-color: #31a8fd !important;
@@ -93,7 +108,7 @@ body a:hover {
 /* Header */
 .site-header {
   height: 30px;
-  padding: 20px 0;
+  padding: 20px 50px;
 }
 .site-header,
 .site-header a {
@@ -123,7 +138,7 @@ body a:hover {
     left: 0;
     right: 0;
     height:78px;
-    z-index: 80;
+    z-index: 100;
 }
 
 .whitebar.scroll {
@@ -133,10 +148,11 @@ body a:hover {
 /* Footer */
 
 #site-footer {
-    width: 100%; height: auto;
+    width: 100%;
     background: #00b7a0;
-    position: relative;
-    z-index: 1;
+    display:none;
+    position: fixed;
+    overflow: auto;
 }
 
 #site-footer  a {
@@ -151,58 +167,12 @@ div.info {
     padding-bottom: 10px;
     color: black;
     max-width: 900px;
-    background-color: #00b7a0; 
+    background-color: #00b7a0;
+    overflow: auto;
 }
 
-/*Basic Grid Styles*/
-.Grid {
-  display: flex;
-  flex-flow: row; 
-  flex-wrap: wrap;
-}
-
-.u-textBig {
- text-align: left;
-    font-size: 2.8vw;
-}
-
-.u-textSmall {
-    text-align: left;
-    font-size: 2.1vw;
-}
-
-.u-textProject {
-	text-align: left;
-}
-
-.Grid-cell {
-  flex: 1;
-}
-
-.Grid-spacing-info {
-  padding-bottom:15px;
-  padding-right: 23px;
-  padding-left: 30px
-    
-}
-
-.Grid-spacing { 
-  padding-bottom: 15px;
-}
-
-/* Base classes for all media - Mobile first */
-.Grid--cols-2 > .Grid-cell {
-  flex: 0 0 100%; 
-}
-
-.Grid--cols-3 > .Grid-cell {
-  flex: 0 0 100%; 
-}
-
-/* One of -- columns*/
-.Grid--1of2 > .Grid-cell,
-.Grid--1of3 > .Grid-cell:first-of-type {
-  flex: 0 0 100%;
+.wrapper {
+    margin: 50px 0px;
 }
 
 /*Homepage Thumbnails*/
@@ -217,6 +187,11 @@ body[data-view="index"] .thumbnails {
 	position: ;
 	font-size: 16px;
     max-width: 1200px;
+}
+
+.clear {
+    z-index: -1;
+    background-color: white;
 }
 
 .thumbnail:hover .thumb_image img {

@@ -7,12 +7,15 @@ block prepend body
     
     // Content Section
     div.container
-     div.thumbails.clear
+     div.thumbails.clear(id='index')
       //- Display the slices
       for slice in pageContent.data.page_content
         case slice.slice_type
           when 'thumbnail'
             include ./partials/thumbnail.pug
+          when 'text'
+            include ./partials/home-text-section.pug  
+     include ./partials/footer.pug
 
 
 

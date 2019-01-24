@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   src: url('stylesheets/fonts/MaterialIcons-Regular.woff');
   src: local('Material Icons'),
     local('MaterialIcons-Regular'),
@@ -29,10 +29,27 @@
 ::-moz-selection {
   background: #FFF7C7; /* Gecko Browsers */
 }
+* {
+  box-sizing: border-box;
+}
 
 /*
  * Globals
  */
+body::-webkit-scrollbar {
+    width: .75em;
+}
+ 
+body::-webkit-scrollbar-track {
+background-color:  white;
+   
+  }
+ 
+body::-webkit-scrollbar-thumb {
+  background-color:#00b7a0;
+  outline: none;
+}
+
 body {
     background:white;
 	color: #000000;
@@ -65,14 +82,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 42px; 
   font-weight: normal; 
-  color: #484D52; 
-  line-height: 52px; 
+  color: black; 
   letter-spacing : 1.14;
   margin-bottom: 1rem;
 }
 h2, h2 a {
   margin-bottom: 1rem;
-  color: rgb(128, 128, 128);
   font-size: 32px;
   font-weight: normal;
   letter-spacing : 0.85;

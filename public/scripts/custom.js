@@ -25,3 +25,28 @@ jQuery (document).ready(function(){
     });
     
 });
+
+
+
+
+
+
+
+  script(type='text/javascript').
+   var footer = $('#site-footer');
+   var bottom = $(window).height() -
+   $('.scrollLink').click( function() {
+    $('html, body').animate({
+    scrollTop: $('#site-footer').offset().top - 77
+    }, 2000)-1;
+   });
+  script(type='text/javascript').
+   var footer = $('#site-footer').offset().top - 77;
+   $(window).scroll(function() {
+    if ($(this).scrollTop() >= footer) {
+     $('.whitebar').addClass("scroll");
+    }
+    else {
+     $('.whitebar').removeClass("scroll");
+    }
+   });

@@ -6,13 +6,24 @@ block prepend body
   include ./partials/header.pug
 
   // Content Section
+  - var project = pageContent.data.project_info[0]
   div.container
    div.project(style="display: block;")
+    section.content-section(class=sectionClass)
+     .row
+      .column
+       h1
+        != PrismicDOM.RichText.asText(project.title)
+       h2
+        != PrismicDOM.RichText.asText(project.subtitle) + " "
+        i.material-icons arrow_forward 
+        != PrismicDOM.RichText.asText(project.year) 
+      .column
+       p
+        != PrismicDOM.RichText.asText(project.description)
     //- Display the slices
     for slice in pageContent.data.page_content
       case slice.slice_type
         when 'full_width_image'
           include ./partials/full-width-image.pug
-        when 'text_section'
-          include ./partials/text-section.pug
-
+   include ./partials/footer.pug

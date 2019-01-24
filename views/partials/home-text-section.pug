@@ -4,6 +4,6 @@ if ( slice.slice_label )
 else 
   - var sectionClass = "text-section-1col"
 
-section.content-section.text-content(class=sectionClass)
+section.home-content-section.text-content(class=sectionClass)
   //- i.material-icons arrow_forward
-  != PrismicDOM.RichText.asHtml(slice.primary.rich_text, ctx.linkResolver)
+  != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)

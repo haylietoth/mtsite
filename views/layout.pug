@@ -16,30 +16,16 @@ head
   link(href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', rel='stylesheet', type='text/css')
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
   meta(name="viewport", content="width=device-width, initial-scale=1")
-  script(src='/scripts/custom.js')
+  //script(src='/scripts/custom.js')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
   
   // Required for Previews and Experiments
   script(src="//code.jquery.com/jquery-2.1.1.min.js")
   script
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
-
-body
-  block body
-    
-   include ./partials/footer.pug
-  
   script(type='text/javascript').
-   var footer = $('#site-footer');
-   var bottom = $(window).height() -
-   $('.scrollLink').click( function() {
-    $('html, body').animate({
-    scrollTop: $('#site-footer').offset().top - 77
-    }, 1000)-1;
-   });
-  
-  script(type='text/javascript').
-   var footer = $('#site-footer').offset().top - 79;
+   var footer = $('#site-footer').offset().top - 78;
    $(window).scroll(function() {
     if ($(this).scrollTop() >= footer) {
      $('.whitebar').addClass("scroll");
@@ -48,3 +34,25 @@ body
      $('.whitebar').removeClass("scroll");
     }
    });
+  script(type='text/javascript').
+   $(function(){
+    $("#info").click(function() {
+     $('#site-footer').css({
+      'display': 'block'
+     });
+     $('#site-footer').animate({'top': '77px'}, 1000);
+    });
+   }); 
+  script(type='text/javascript').
+   $(function(){
+    $("#leaveInfo").click(function() {
+     $('#site-footer').css({
+       'display': 'none'
+     });
+     $('#site-footer').animate({'top': '600'}, 1000);
+    }); 
+   }); 
+
+     
+body
+  block body
