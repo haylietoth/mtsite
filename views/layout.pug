@@ -25,7 +25,7 @@ head
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
   script(type='text/javascript').
-   var footer = $('#site-footer').offset().top - 78;
+   var footer = $('#site-footer').offset().top - 67;
    $(window).scroll(function() {
     if ($(this).scrollTop() >= footer) {
      $('.whitebar').addClass("scroll");
@@ -37,22 +37,19 @@ head
   script(type='text/javascript').
    $(function(){
     $("#info").click(function() {
-     $('#site-footer').css({
-      'display': 'block'
-     });
-     $('#site-footer').animate({'top': '77px'}, 1000);
+     if($('#site-footer').is(':hidden')) {
+      $('#site-footer').css({
+       'display': 'block'
+      });
+      $('#site-footer').animate({'top': '67px'}, 1000);
+     }
+     else {
+      $('#site-footer').css({
+       'display': 'none'
+      });
+     }
     });
    }); 
-  script(type='text/javascript').
-   $(function(){
-    $("#leaveInfo").click(function() {
-     $('#site-footer').css({
-       'display': 'none'
-     });
-     $('#site-footer').animate({'top': '600'}, 1000);
-    }); 
-   }); 
-
      
 body
   block body

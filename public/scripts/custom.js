@@ -27,11 +27,6 @@ jQuery (document).ready(function(){
 });
 
 
-
-
-
-
-
   script(type='text/javascript').
    var footer = $('#site-footer');
    var bottom = $(window).height() -

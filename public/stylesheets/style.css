@@ -36,8 +36,6 @@ body a:hover {
 .column {
   float: left;
   width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 .column h1 {
@@ -147,13 +145,17 @@ body a:hover {
 
 /* Footer */
 
-#site-footer {
+.site-footer {
     width: 100%;
-    background: #00b7a0;
-    display:none;
+    top: 67px;
+    bottom: 0px;
     position: fixed;
-    overflow: auto;
+    display:none;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    background: #00b7a0;
 }
+
 
 #site-footer  a {
     color: black;
@@ -162,9 +164,8 @@ body a:hover {
 
 div.info {
     margin: auto;
-    padding-top: 50px;
+    padding: 20px 20px 10px 20px;
     width: 100%;
-    padding-bottom: 10px;
     color: black;
     max-width: 900px;
     background-color: #00b7a0;
