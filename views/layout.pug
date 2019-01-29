@@ -42,13 +42,22 @@ head
        'display': 'block'
       });
       $('#site-footer').animate({'top': '67px'}, 1000);
+      $('.whitebar').addClass("scroll");
+      $('body').css({
+       'overflow': 'hidden'
+      });
      }
      else {
       $('#site-footer').css({
        'display': 'none'
       });
+      $('.whitebar').removeClass("scroll");
+      $('body').css({
+       'overflow': 'auto'
+      });
      }
     });
+    
    }); 
      
 body
