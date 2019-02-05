@@ -62,6 +62,11 @@ a {
   letter-spacing : 0.35;
   line-height: 28px;
   text-decoration: none;
+  cursor: none;
+}
+
+a:hover {
+  cursor: none;
 }
 
 p a {

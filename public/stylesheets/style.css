@@ -216,7 +216,6 @@ border: none;
     -ms-transition: transform .03s ease-out;
     -webkit-transition: transform .03s ease-out;
     display: inline-block;
-    cursor: pointer;
     position: relative;
     transition: transform .03s ease-out;
     vertical-align: top;
@@ -352,7 +351,6 @@ body.phone .thumbnail {
 
 .thumbnail a.toggleSize {
 	color: #fff;
-	cursor: pointer;
 	display: none;
 	opacity: 0.5;
 	position: absolute;
