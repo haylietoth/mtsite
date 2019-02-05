@@ -62,11 +62,11 @@ a {
   letter-spacing : 0.35;
   line-height: 28px;
   text-decoration: none;
-  cursor: none;
+  cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
 }
 
 a:hover {
-  cursor: none;
+  cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
 }
 
 p a {
