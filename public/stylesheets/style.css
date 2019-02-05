@@ -3,8 +3,8 @@ html {
     cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
 }
 
-body a:hover {
-   cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/hover.png), auto;
+html a:hover {
+   cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
     
 }
 
@@ -56,13 +56,14 @@ body a:hover {
 .home-content-section {
   margin-bottom: 3.75rem;
   padding-top: 100px;
-  padding-right: 150px;
-  padding-left: 150px;
+  padding-right: 230px;
+  padding-left: 230px;
 }
 
 .content-section {
   margin-bottom: 3.75rem;
   padding-top: 100px;
+  font-size: 22px;
 }
 
 .text-content{
@@ -115,6 +116,10 @@ body a:hover {
   font-size: 20px;
     
 }
+
+.site-header a:hover {
+    line-height: 20px;
+}
 .site-header .logo {
   display: inline-block;
   font-size: 20px;
@@ -151,6 +156,7 @@ body a:hover {
     bottom: 0px;
     position: fixed;
     display:none;
+    top:67px;
     overflow-y:scroll;
     overflow-x:hidden;
     background: #00b7a0;
@@ -167,11 +173,9 @@ body a:hover {
 }
 
 div.info {
-    margin: auto;
-    padding: 20px 100px 10px 100px;
+    padding: 20px 150px 10px 150px;
     width: 100%;
     color: black;
-    max-width: 900px;
     background-color: #00b7a0;
 }
 
@@ -201,7 +205,7 @@ body[data-view="index"] .thumbnails {
 .thumbnail:hover .thumb_image img {
 opacity: 0;
 border: none; 
-        cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/hover.png), auto;
+        cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
 }
 
 .thumbnail:hover img {
@@ -421,7 +425,7 @@ body.phone .thumbnail {
 	    position: relative!important;
 	    left: auto!important;
 	    top: auto!important;
-	    width: 30%!important;
+	    width: 39%!important;
 	}
 } 
 

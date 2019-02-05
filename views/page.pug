@@ -10,20 +10,20 @@ block prepend body
   div.container
    div.project(style="display: block;")
     section.content-section(class=sectionClass)
-     .row
-      .column
-       h1
-        != PrismicDOM.RichText.asText(project.title)
        h2
-        != PrismicDOM.RichText.asText(project.subtitle) + " "
-        i.material-icons(style="font-size:20px;vertical-align:text-top;") arrow_forward 
-        != PrismicDOM.RichText.asText(project.year) 
-      .column
-       p
-        != PrismicDOM.RichText.asText(project.description)
-    //- Display the slices
-    for slice in pageContent.data.page_content
-      case slice.slice_type
-        when 'full_width_image'
-          include ./partials/full-width-image.pug
-   include ./partials/footer.pug
+        != PrismicDOM.RichText.asText(project.title)
+        i.material-icons(style="font-size:20px;vertical-align:text-top;") arrow_down
+       //- Display the slices
+       for slice in pageContent.data.page_content
+         case slice.slice_type
+           when 'full_width_image'
+             include ./partials/full-width-image.pug
+           when 'text-section'
+             include ./partials/text-section.pug
+       h3
+          != PrismicDOM.RichText.asText(project.client)
+       h3
+          != PrismicDOM.RichText.asText(project.type) + " "
+          i.material-icons(style="font-size:20px;vertical-align:text-top;") arrow_forward 
+          != PrismicDOM.RichText.asText(project.year)
+  include ./partials/footer.pug
