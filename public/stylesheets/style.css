@@ -152,14 +152,16 @@ html a:hover {
 
 .site-footer {
     width: 100%;
-    top: 67px;
+    top: 1000px;
     bottom: 0px;
     position: fixed;
-    display:none;
-    top:67px;
+    /*display:none;*/
     overflow-y:scroll;
-    overflow-x:hidden;
     background: #00b7a0;
+    z-index: 10;
+}
+
+.site-footer.closed {
 }
 
 

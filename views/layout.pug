@@ -25,40 +25,25 @@ head
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
   script(type='text/javascript').
-   var footer = $('#site-footer').offset().top - 67;
-   $(window).scroll(function() {
-    if ($(this).scrollTop() >= footer) {
-     $('.whitebar').addClass("scroll");
-    }
-    else {
-     $('.whitebar').removeClass("scroll");
-    }
-   });
-  script(type='text/javascript').
    $(function(){
     $("#info").click(function() {
-     if($('#site-footer').is(':hidden')) {
-      $('#site-footer').css({
-       'display': 'block'
-      });
-      $('#site-footer').animate({'top': '67px'}, 1000);
-      $('.whitebar').addClass("scroll");
-      $('body').css({
+     if(!$('#site-footer').hasClass('closed')) {
+      $('#body').css({
        'overflow': 'hidden'
       });
+      $('#site-footer').animate({'top': '67px'}, 1000);
+      $('.whitebar').delay(1000)
+                    .queue(function() {
+                     $(this).addClass("scroll");
+                     $(this).dequeue();
+                    });
      }
      else {
-      $('#site-footer').css({
-       'display': 'none'
-      });
+      $('#site-footer').animate({'top': '1000px'}, 1000)
       $('.whitebar').removeClass("scroll");
-      $('body').css({
-       'overflow': 'auto'
-      });
      }
     });
-    
-   }); 
+   });
      
 body
   block body
