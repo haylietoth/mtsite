@@ -35,7 +35,6 @@ html a:hover {
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 50%;
 }
 
 .column h1 {
@@ -174,7 +173,7 @@ html a:hover {
     text-decoration: underline;
 }
 
-div.info {
+.info {
     padding: 20px 150px 10px 150px;
     width: 100%;
     color: black;
@@ -434,14 +433,36 @@ body.phone .thumbnail {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .column {
+    width: 50%;
+  }
 }
 @media (max-width: 767px) {
+  #index {
+    padding: 0px; 
+  }
+  .home-content-section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .content-section h2{
+    padding-top: 100px;
+  }
+  .content-section {
+    padding-top: 25px;
+  }
+  .info {
+    padding: 0px 15px;
+  }
+  .column {
+    width: 100%;
+  }
   h1 {
     font-size: 32px;
     line-height: 40px;
   }
   h2 {
-    font-size: 26px;
+    font-size: 20px;
   }
   h3 {
     font-size: 18px;
@@ -458,11 +479,10 @@ body.phone .thumbnail {
     right: 0;
   }
   .site-header .logo {
-    display: block;
-    text-align: center;
+    display: inline-block;
   }
   .site-header nav {
-    float: none;
+    float: right;
     text-align: center;
   }
   .site-header nav li {
