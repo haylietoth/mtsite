@@ -28,9 +28,6 @@ head
    $(function(){
     $("#info").click(function() {
      if(!$('#site-footer').hasClass('closed')) {
-      $('#body').css({
-       'overflow': 'hidden'
-      });
       $('#site-footer').animate({'top': '67px'}, 1000);
       $('.whitebar').delay(1000)
                     .queue(function() {
