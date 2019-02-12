@@ -8,10 +8,6 @@ html a:hover {
     
 }
 
-.thumbnails, .clear {
-  max-width:1200px;
-}
-
 .thumbnails, .clear, header {
   margin: auto;
 }
