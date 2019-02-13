@@ -69,7 +69,7 @@ a {
   font-size: 14px;
   font-weight: 400;
   letter-spacing : 0.35;
-  line-height: 28px;
+  line-height: 4vmin;
   text-decoration: none;
   cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
 }

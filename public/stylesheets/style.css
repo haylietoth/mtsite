@@ -13,7 +13,7 @@ html a:hover {
 }
 
 .full-width-image {
-    margin-bottom: 5rem;
+    margin-bottom: 10%;
 }
 
 #index {
@@ -37,7 +37,7 @@ html a:hover {
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  padding-right: 140px;
+  padding-right: 188px;
 }
 
 .column h1 {
@@ -175,7 +175,7 @@ html a:hover {
 }
 
 .info {
-    padding: 20px 17% 10px 17%;
+    padding: 55px 17% 10px 17%;
     width: 100%;
     color: black;
     background-color: #00b7a0;

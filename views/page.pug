@@ -23,6 +23,8 @@ block prepend body
        h3
           != PrismicDOM.RichText.asText(project.client)
        h3
+          != PrismicDOM.RichText.asText(project.collab)
+       h3
           != PrismicDOM.RichText.asText(project.type) + " "
           i.material-icons(style="font-size:20px;vertical-align:sub;") arrow_forward 
           != PrismicDOM.RichText.asText(project.year)
