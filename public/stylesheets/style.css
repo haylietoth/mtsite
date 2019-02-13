@@ -13,7 +13,7 @@ html a:hover {
 }
 
 .full-width-image {
-    margin-bottom: 3.75rem;
+    margin-bottom: 5rem;
 }
 
 #index {
@@ -37,6 +37,7 @@ html a:hover {
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
+  padding-right: 140px;
 }
 
 .column h1 {
@@ -65,11 +66,11 @@ html a:hover {
 .content-section {
   margin-bottom: 3.75rem;
   padding-top: 100px;
-  font-size: 22px;
 }
 
 .text-content{
   text-align: left;
+  margin-bottom: 5em;
 }
 
 .wio-link {
@@ -174,7 +175,7 @@ html a:hover {
 }
 
 .info {
-    padding: 20px 150px 10px 150px;
+    padding: 20px 17% 10px 17%;
     width: 100%;
     color: black;
     background-color: #00b7a0;

@@ -4,5 +4,5 @@ if ( slice.slice_label )
 else 
   - var sectionClass = "text-section-1col"
 
-section.content-section.text-content(class=sectionClass)
+section.text-content(class=sectionClass)
   != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
