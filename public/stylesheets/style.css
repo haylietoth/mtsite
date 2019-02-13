@@ -196,9 +196,11 @@ body[data-view="index"] .thumbnails {
 
 .thumbnail:nth-child(even) {
     float: left;
+    padding-left: 40px;
 }
 .thumbnail:nth-child(odd) {
     float: right;
+    padding-right: 40px;
 }
 
 .clear {
@@ -426,7 +428,7 @@ body.phone .thumbnail {
 	    position: relative!important;
 	    left: auto!important;
 	    top: auto!important;
-	    width: 49%!important;
+	    width: 50%!important;
 	}
 } 
 
