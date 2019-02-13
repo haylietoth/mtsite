@@ -54,8 +54,8 @@ html a:hover {
 .home-content-section {
   margin-bottom: 3.75rem;
   padding-top: 100px;
-  padding-right: 230px;
-  padding-left: 230px;
+  padding-right: 17%;
+  padding-left: 17%;
 }
 
 .content-section {
@@ -442,6 +442,12 @@ body.phone .thumbnail {
   }
 }
 @media (max-width: 767px) {
+  .thumbnail:nth-child(even) {
+    padding-left: 0px;
+  }
+  .thumbnail:nth-child(odd) {
+    padding-right: 0px;
+  }
   #index {
     padding: 0px; 
   }
