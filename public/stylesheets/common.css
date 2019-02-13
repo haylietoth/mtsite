@@ -59,7 +59,7 @@ body {
 	line-height: 1.6;
     min-height: 100vh;
     opacity: 1;
-
+    padding-bottom: 2000px;
 	-webkit-transition: background 1s ease;
 	-moz-transition: background 500ms ease;
 	transition: background 500ms ease;

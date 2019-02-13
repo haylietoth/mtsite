@@ -12,6 +12,10 @@ html a:hover {
   margin: auto;
 }
 
+.full-width-image {
+    margin-bottom: 3.75rem;
+}
+
 #index {
     /*position: fixed;
     z-index: -1;*/
@@ -21,10 +25,9 @@ html a:hover {
 }
 
 .project {
-    max-width: 1200px;
 	min-height: 100%;
-	padding-left:60px;
-	padding-right: 60px;
+	padding-left: 10%;
+	padding-right: 10%;
     background-color: white;
 	background-size: contain;
     margin: auto;
@@ -53,7 +56,8 @@ html a:hover {
 
 .home-content-section {
   margin-bottom: 3.75rem;
-  padding-top: 100px;
+  padding-top: 155px;
+  padding-bottom: 130px;
   padding-right: 17%;
   padding-left: 17%;
 }

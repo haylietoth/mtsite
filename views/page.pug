@@ -10,9 +10,9 @@ block prepend body
   div.container
    div.project(style="display: block;")
     section.content-section(class=sectionClass)
-       h2
+       h2(style='font-size:3vmin;')
         != PrismicDOM.RichText.asText(project.title)+ " "
-        i.material-icons(style="font-size:20px;vertical-align:text-top;") arrow_downward
+        i.material-icons(style="font-size:3vmin;vertical-align:text-top;") arrow_downward
        //- Display the slices
        for slice in pageContent.data.page_content
          case slice.slice_type
