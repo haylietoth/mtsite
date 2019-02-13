@@ -195,10 +195,10 @@ body[data-view="index"] .thumbnails {
 }
 
 .thumbnail:nth-child(even) {
-    float: right;
+    float: left;
 }
 .thumbnail:nth-child(odd) {
-    float: left;
+    float: right;
 }
 
 .clear {
@@ -423,11 +423,10 @@ body.phone .thumbnail {
 @media screen and (min-width: 1138px) { 
 	.thumbnail {
 	    /*thumbnail override*/
-	    margin: 1%;    
 	    position: relative!important;
 	    left: auto!important;
 	    top: auto!important;
-	    width: 39%!important;
+	    width: 49%!important;
 	}
 } 
 
