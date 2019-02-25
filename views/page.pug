@@ -10,7 +10,7 @@ block prepend body
   div.container
    div.project(style="display: block;")
     section.content-section(class=sectionClass)
-       h2(style='font-size:3vmin;')
+       h2
         != PrismicDOM.RichText.asText(project.title)+ " "
         i.material-icons(style="font-size:3vmin;vertical-align:text-top;") arrow_downward
        //- Display the slices

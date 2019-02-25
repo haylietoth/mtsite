@@ -68,6 +68,10 @@ html a:hover {
   padding-top: 100px;
 }
 
+.content-section h2 {
+  font-size: 3vmin;
+}
+
 .text-content{
   text-align: left;
   margin-bottom: 5em;
@@ -121,8 +125,10 @@ html a:hover {
 }
 
 .site-header a:hover {
-    line-height: 20px;
+    line-height: 3.6vmin;
 }
+
+
 .site-header .logo {
   display: inline-block;
   font-size: 20px;
@@ -185,6 +191,20 @@ html a:hover {
     margin: 50px 0px;
 }
 
+.footer-p1 {
+    font-size: 4vmin;
+}
+
+.footer-p2 {
+    font-size: 3vmin;
+}
+
+.footer-column {
+    font-size: 2.5vmin;
+}
+
+
+
 /*Homepage Thumbnails*/
 
 body[data-view="index"] .thumbnails {
@@ -196,16 +216,17 @@ body[data-view="index"] .thumbnails {
 	margin-bottom: 40px;
 	position: ;
 	font-size: 16px;
-    max-width: 1200px;
 }
 
 .thumbnail:nth-child(even) {
     float: left;
     padding-left: 40px;
+    padding-right: 20px;
 }
 .thumbnail:nth-child(odd) {
     float: right;
     padding-right: 40px;
+    padding-left: 20px;
 }
 
 .clear {
@@ -230,7 +251,6 @@ border: none;
     position: relative;
     transition: transform .03s ease-out;
     vertical-align: top;
-    max-width: 1200px;
     
 }
 
@@ -444,14 +464,17 @@ body.phone .thumbnail {
   }
   .column {
     width: 50%;
+    padding-right: 0;
   }
 }
 @media (max-width: 767px) {
   .thumbnail:nth-child(even) {
-    padding-left: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .thumbnail:nth-child(odd) {
-    padding-right: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   #index {
     padding: 0px; 
@@ -471,6 +494,7 @@ body.phone .thumbnail {
   }
   .column {
     width: 100%;
+    padding-right: 0;
   }
   h1 {
     font-size: 32px;
@@ -512,5 +536,23 @@ body.phone .thumbnail {
     -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
     -moz-column-gap: 40px; /* Firefox */
     column-gap: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  p {
+    font-size: 4.5vmin    
+  }
+  .content-section h2 {
+    font-size: 5vmin;
+  }
+  .footer-p1 {
+        font-size: 6vmin;
+  }
+  .footer-p2 {
+        font-size: 4.5vmin;
+  }
+  #site-footer a, .footer-column {
+        font-size: 4vmin;
   }
 }
