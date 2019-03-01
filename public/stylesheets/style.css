@@ -470,12 +470,16 @@ body.phone .thumbnail {
 }
 @media (max-width: 767px) {
   .thumbnail:nth-child(even) {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   .thumbnail:nth-child(odd) {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .project {
+	padding-left: 5%;
+	padding-right: 5%;
   }
   #index {
     padding: 0px; 
