@@ -235,22 +235,22 @@ body[data-view="index"] .thumbnails {
     background-color: white;
 }
 
-.thumbnail:hover .thumb_image img {
-opacity: 0;
-border: none; 
-        cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
+.thumb_image:hover img {
+    opacity: 0;
+    border: none; 
+            cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
+    -ms-transition: .5s ease;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
 }
 
-.thumbnail:hover img {
-    opacity: 0;
-}
+
 
 .thumbnail {
     -ms-transition: transform .03s ease-out;
     -webkit-transition: transform .03s ease-out;
     display: inline-block;
     position: relative;
-    transition: transform .03s ease-out;
     vertical-align: top;
     
 }
@@ -307,6 +307,7 @@ body.phone .thumbnail {
 	border: 0;
 	display: block;
 	margin: 0 auto;
+    transition: .5s ease;
 }
 
 .thumbnail.default_thumb .thumb_image {
@@ -448,7 +449,7 @@ body.phone .thumbnail {
 }
 
 /* Media Queries */
-@media screen and (min-width: 1138px) { 
+@media screen and (min-width: 767px) { 
 	.thumbnail {
 	    /*thumbnail override*/
 	    position: relative!important;
@@ -485,8 +486,8 @@ body.phone .thumbnail {
     padding: 0px; 
   }
   .home-content-section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .content-section h2{
     padding-top: 100px;

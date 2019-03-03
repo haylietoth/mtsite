@@ -7,7 +7,7 @@ div.whitebar
     nav
       ul
        li
-        a.scrollLink(href='#site-footer' id='info' onclick="document.getElementById('site-footer').classList.toggle('closed')") Info
+        a(href='#site-footer' id='info' onclick="document.getElementById('site-footer').classList.toggle('closed')") Info
         each menuLink in menuContent.data.menu_links
           li
             a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver))
