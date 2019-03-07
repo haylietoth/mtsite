@@ -1,6 +1,12 @@
 doctype html(lang='en')
 
 head
+  script(async src='https://www.googletagmanager.com/gtag/js?id=UA-135736418-1')
+  script(type='text/javascript').
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'UA-135736418-1');
   title Madeleine Toth → Graphic Designer
   meta(http-equiv="Pragma", content="no-cache")
   meta(http-equiv="Expires", content="-1")
@@ -25,6 +31,29 @@ head
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
   script(type='text/javascript').
+   /*Google Analytics*/
+   $(function() {
+    $('a').each(function() {
+     this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
+    });
+   });
+   /*page fade-in and fade-out*/
+   $(document).ready(function() {
+    $('body').css('display','none');
+    $('body').fadeIn(500);
+   });
+   $(document).on("click", "a", function () {
+    var newUrl = $(this).attr("href");
+    if (!newUrl || newUrl[0] === "#") {
+     location.hash = newUrl;
+     return;
+    }
+    $("html").fadeOut(function () {
+     location = newUrl;
+    });
+    return false;
+   });
+   /*info section animation*/
    $(function(){
     $('#info').click(function() {
      if(!$('#site-footer').hasClass('closed')) {
@@ -48,6 +77,5 @@ head
      }
     });
    });
-     
 body
   block body
