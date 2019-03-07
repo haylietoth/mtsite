@@ -1,35 +1,34 @@
 doctype html(lang='en')
 
 head
+  title Madeleine Toth → Graphic Designer
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  meta(id="project_list_data" data-offset="0")
+  link(href="https://favicon.cargocollective.com/603602-1530726908.ico", rel="shortcut icon")
+  link(rel="stylesheet", href="/stylesheets/reset.css")
+  link(rel='stylesheet', href='/stylesheets/common.css')
+  link(rel="stylesheet", href="/stylesheets/style.css")
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  //Google Analytics//
   script(async src='https://www.googletagmanager.com/gtag/js?id=UA-135736418-1')
   script(type='text/javascript').
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
    gtag('config', 'UA-135736418-1');
-  title Madeleine Toth → Graphic Designer
-  meta(http-equiv="Pragma", content="no-cache")
-  meta(http-equiv="Expires", content="-1")
-  meta(name="robots", content="noindex")
-  meta(name="googebot", content="noindex")
-  meta(id="project_list_data" data-offset="0")
-  //base(href="//madeleinetoth.com")
-  link(href="https://favicon.cargocollective.com/603602-1530726908.ico", rel="shortcut icon")
-  link(rel="stylesheet", href="/stylesheets/reset.css")
-  link(rel='stylesheet', href='/stylesheets/common.css')
-  link(rel="stylesheet", href="/stylesheets/style.css")
-  link(href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic', rel='stylesheet', type='text/css')
-  link(href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', rel='stylesheet', type='text/css')
-  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
-  meta(name="viewport", content="width=device-width, initial-scale=1")
-  //script(src='/scripts/custom.js')
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-  
-  // Required for Previews and Experiments
-  script(src="//code.jquery.com/jquery-2.1.1.min.js")
-  script
-    = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
-  script(src="//static.cdn.prismic.io/prismic.min.js")
+  script(type='text/javascript').
+   $(function() {
+    $('a').each(function() {
+     if ($(this).attr('id') == 'info') {
+      this.setAttribute("onclick","document.getElementById('site-footer').classList.toggle('closed');ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
+     }
+     else {
+      this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
+     }
+    });
+   });
+  //End Google Analytics//
   script(type='text/javascript').
    /*page fade-in and fade-out*/
    $(document).ready(function() {
