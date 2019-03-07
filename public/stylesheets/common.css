@@ -53,6 +53,7 @@
 }
 
 body {
+    display:none;
     background:white;
 	color: #000000;
 	font-family: 'NeuzeitSLTStd-Book' , sans-serif;
