@@ -31,12 +31,6 @@ head
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
   script(type='text/javascript').
-   /*Google Analytics*/
-   $(function() {
-    $('a').each(function() {
-     this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
-    });
-   });
    /*page fade-in and fade-out*/
    $(document).ready(function() {
     $('body').css('display','none');
@@ -69,7 +63,6 @@ head
                      $(this).dequeue();
                     });
      }
-     
      else {
       $(this).removeClass('material-icons').text('Info');
       $('#site-footer').animate({'top': '1500px'}, 1000)
