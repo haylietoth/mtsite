@@ -485,7 +485,7 @@ body.phone .thumbnail {
 }
 
 /* Media Queries */
-@media screen and (min-width: 767px) { 
+@media screen and (min-width: 850px) { 
 	.thumbnail {
 	    /*thumbnail override*/
 	    position: relative!important;
@@ -512,12 +512,13 @@ body.phone .thumbnail {
   }
   
 }
-
-@media (max-width: 767px) {
-    
+@media (max-width: 849px) { 
   .thumbnail .thumb_image img {
     padding: 0 2px;
   }
+}
+
+@media (max-width: 767px) {
   a.thumb {
     font-size: 20px;
   }
