@@ -485,6 +485,15 @@ body.phone .thumbnail {
 }
 
 /* Media Queries */
+@media screen and (min-width: 767px) { 
+	.thumbnail {
+	    /*thumbnail override*/
+	    position: relative!important;
+	    left: auto!important;
+	    top: auto!important;
+	    width: 50%!important;
+	}
+} 
 @media (max-width: 1060px) {
   .site-header {
     padding-left: 20px;
@@ -502,19 +511,13 @@ body.phone .thumbnail {
     font-size: 4vm;
   }
   
+}
+
+@media (max-width: 767px) {
+    
   .thumbnail .thumb_image img {
     padding: 0 2px;
   }
-    
-  .thumbnail {
-    /*thumbnail override*/
-    position: relative!important;
-    left: auto!important;
-    top: auto!important;
-    width: 100%!important;
-  }
-}
-@media (max-width: 767px) {
   a.thumb {
     font-size: 20px;
   }
