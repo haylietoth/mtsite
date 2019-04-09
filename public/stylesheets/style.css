@@ -1,12 +1,4 @@
 /* General */
-html {
-    cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
-}
-
-html a:hover {
-   cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
-    
-}
 
 .thumbnails, .clear, header {
   margin: auto;
@@ -31,7 +23,6 @@ html a:hover {
     background-color: white;
 	background-size: contain;
     margin: auto;
-    
 }
 
 /* Create two equal columns that floats next to each other */
@@ -208,6 +199,40 @@ html a:hover {
 
 /*Homepage Thumbnails*/
 
+/* POP UPS */
+
+#thumbwrap {
+	position:relative;
+	margin:relative;
+}
+
+.thumb img { 
+	border:0px solid #000;
+	margin:0px;
+    min-width: 170px;
+	float:left;
+}
+.thumb span { 
+	position:absolute;
+	visibility:hidden;
+    margin-top: -25%;
+}
+.thumb:hover, .thumb:hover span { 
+	visibility:visible;
+	top:0px; left:0px;
+    z-index: 1;
+}
+
+a.thumb {
+    padding-bottom: 0.1em;
+    border-bottom: 0.01em solid rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+a.thumb:hover {
+    border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+}
+
 body[data-view="index"] .thumbnails {
 	display: block;
 }
@@ -221,27 +246,37 @@ body[data-view="index"] .thumbnails {
 
 .thumbnail:nth-child(even) {
     float: left;
-    padding-left: 40px;
-    padding-right: 20px;
 }
 .thumbnail:nth-child(odd) {
     float: right;
-    padding-right: 40px;
-    padding-left: 20px;
+}
+
+.thumbnail:nth-child(odd) .slide-in {
+    transform: translateX( 100% );
+    animation: slide-in 0.8s ease forwards;
+}
+.thumbnail:nth-child(even) .slide-in {
+    transform: translateX( -100% );
+    animation: slide-in 0.8s ease forwards;
+}
+@keyframes slide-in {
+    to { transform: translateX( 0 ); }
 }
 
 .clear {
     z-index: -1;
     background-color: white;
+    padding: 0 70px;
+    margin: 0 auto;
 }
 
 .thumb_image:hover img {
     opacity: 0;
     border: none; 
-            cursor: url(http://payload446.cargocollective.com/1/18/603602/11221720/cursor.png), auto;
     -ms-transition: .5s ease;
     -webkit-transition: .5s ease;
     transition: .5s ease;
+    padding: 10px 35px 0 35px;
 }
 
 
@@ -308,6 +343,7 @@ body.phone .thumbnail {
 	display: block;
 	margin: 0 auto;
     transition: .5s ease;
+    padding: 10px 35px 0 35px;
 }
 
 .thumbnail.default_thumb .thumb_image {
@@ -488,6 +524,7 @@ body.phone .thumbnail {
   .home-content-section {
     padding-right: 10%;
     padding-left: 10%;
+    padding-bottom: 0;
   }
   .content-section h2{
     padding-top: 100px;

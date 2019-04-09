@@ -6,4 +6,30 @@ else
 
 section.home-content-section.text-content(class=sectionClass)
   //- i.material-icons arrow_forward
-  != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
+  //!= PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
+  h2
+      | Designer living in the Midwest. Currently working on a 
+      span#thumbwrap
+        a.thumb(target='new')
+          | typeface
+          span
+            img(src='/images/info-typeface.png', alt='typeface')
+      |    based on my trip to Europe, an icon library, and 
+      span#thumbwrap
+        a.thumb(target='new')
+          | Aa stool
+          span
+            img(src='/images/info-Aastool.jpg', alt='Aa stool')
+      | . Balancing reading 
+      span#thumbwrap
+        a.thumb(target='new')
+          | Food Rules
+          span
+            img(src='/images/info-FoodRules.jpg', alt='Food Rules')
+      |    by Michael Pollan and 
+      span#thumbwrap
+        a.thumb(target='new')
+          | Graphic Design Theory
+          span
+            img(src='/images/info-GDTheory.jpg', alt='Graphic Design Theory')
+      | : Readings from the Field edited by Helen Armstrong.
