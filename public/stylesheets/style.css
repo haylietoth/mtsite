@@ -485,16 +485,6 @@ body.phone .thumbnail {
 }
 
 /* Media Queries */
-@media screen and (min-width: 767px) { 
-	.thumbnail {
-	    /*thumbnail override*/
-	    position: relative!important;
-	    left: auto!important;
-	    top: auto!important;
-	    width: 50%!important;
-	}
-} 
-
 @media (max-width: 1060px) {
   .site-header {
     padding-left: 20px;
@@ -504,15 +494,29 @@ body.phone .thumbnail {
     width: 50%;
     padding-right: 0;
   }
+    
+  a.thumb {
+    padding-bottom: 0;
+    border-bottom: none;
+    text-decoration: none;
+    font-size: 4vm;
+  }
+  
+  .thumbnail .thumb_image img {
+    padding: 0 2px;
+  }
+    
+  .thumbnail {
+    /*thumbnail override*/
+    position: relative!important;
+    left: auto!important;
+    top: auto!important;
+    width: 100%!important;
+  }
 }
 @media (max-width: 767px) {
-  .thumbnail:nth-child(even) {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .thumbnail:nth-child(odd) {
-    padding-left: 5%;
-    padding-right: 5%;
+  a.thumb {
+    font-size: 20px;
   }
   .project {
 	padding-left: 5%;
