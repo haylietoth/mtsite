@@ -36,6 +36,10 @@
 /*
  * Globals
  */
+
+html {
+    margin-bottom: 150px;
+}
 .site-footer::-webkit-scrollbar {
     width: 17px;
 }
