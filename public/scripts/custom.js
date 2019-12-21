@@ -27,15 +27,10 @@ jQuery (document).ready(function(){
                 location.hash = newUrl;
                 return;
             }
-            if(location = "./#thumbnails") {
- 
-            }
-            else {
-                $("html").fadeOut(function () {
-                    location = newUrl;
-                });
-                return false;
-            }
+            $("html").fadeOut(function () {
+                location = newUrl;
+            });
+            return false;
         });
         
     /*Smooth scroll*/
