@@ -21,19 +21,17 @@ jQuery (document).ready(function(){
     $('body').css('display','none');
     $('body').fadeIn(500);
 
-    if ($('a').innerHTML != 'Work') {
-        $(document).on("click", "a", function () {
-            var newUrl = $(this).attr("href");
-            if (!newUrl || newUrl[0] === "#") {
-                location.hash = newUrl;
-                return;
-            }
-            $("html").fadeOut(function () {
-                location = newUrl;
-            });
-            return false;
+    $(document).on("click", "a", function () {
+        var newUrl = $(this).attr("href");
+        if (!newUrl || newUrl[0] === "#") {
+            location.hash = newUrl;
+            return;
+        }
+        $("html").fadeOut(function () {
+            location = newUrl;
         });
-    }
+        return false;
+    });
     
     /*Smooth scroll*/
     $(document).ready(function(){
