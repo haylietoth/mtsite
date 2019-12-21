@@ -18,20 +18,25 @@ jQuery (document).ready(function(){
     });
     
     /*page fade-in and fade-out */
-    $('body').css('display','none');
-    $('body').fadeIn(500);
+        $('body').css('display','none');
+        $('body').fadeIn(500);
 
-    $(document).on("click", "a", function () {
-        var newUrl = $(this).attr("href");
-        if (!newUrl || newUrl[0] === "#" || newUrl[1] === "#") {
-            location.hash = newUrl;
-            return;
-        }
-        $("html").fadeOut(function () {
-            location = newUrl;
+        $(document).on("click", "a", function () {
+            var newUrl = $(this).attr("href");
+            if (!newUrl || newUrl[0] === "#") {
+                location.hash = newUrl;
+                return;
+            }
+            if(location = "./#thumbnails") {
+ 
+            }
+            else {
+                $("html").fadeOut(function () {
+                    location = newUrl;
+                });
+                return false;
+            }
         });
-        return false;
-    });
         
     /*Smooth scroll*/
     $(document).ready(function(){
