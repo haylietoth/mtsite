@@ -40,21 +40,6 @@
 html {
     margin-bottom: 150px;
 }
-.site-footer::-webkit-scrollbar {
-    width: 17px;
-}
- 
-.site-footer::-webkit-scrollbar-track {
-    background-color:  #00b7a0;
-  }
- 
-.site-footer::-webkit-scrollbar-thumb {
-    -webkit-border-radius:8px;
-    border-radius:8px;
-    border-left: 4.3px solid #00b7a0;
-    border-right:4.3px solid #00b7a0;
-    background: #C2C2C2;
-}
 
 body {
     display:none;

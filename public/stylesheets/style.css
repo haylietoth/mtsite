@@ -28,7 +28,18 @@
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  padding-right: 188px;
+}
+
+.column:nth-child(1) {
+    width: 30%;
+}
+
+.column:nth-child(2) {
+    width: 55%;
+}
+
+.column:nth-child(3){
+    width: 1%;
 }
 
 .column h1 {
@@ -39,6 +50,9 @@
     font-size: 20px;
 }
 
+.row {
+    padding-top: 20px;
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -49,9 +63,17 @@
 .home-content-section {
   margin-bottom: 3.75rem;
   padding-top: 155px;
-  padding-bottom: 130px;
   padding-right: 17%;
   padding-left: 17%;
+}
+
+letter {
+  transition: color .3s linear, text-shadow .3s linear;
+}
+
+.painted {
+  color: #00b7a0;
+  font-family: Georgia, serif;
 }
 
 .content-section {
@@ -110,20 +132,11 @@
     z-index: 100;
 }
 
-.whitebar.scroll {
-   background: #00b7a0; 
-}
-
 /* Footer */
 
 .site-footer {
     width: 100%;
-    top: 1500px;
-    bottom: 0px;
-    position: fixed;
-    /*display:none;*/
-    overflow-y:scroll;
-    background: #00b7a0;
+    overflow-y:hidden;
     z-index: 10;
 }
 
@@ -135,14 +148,13 @@
 }
 
 #site-footer a:hover {
-    text-decoration: underline;
+    color: #00b7a0;
 }
 
 .info {
     padding: 55px 17% 150px 17%;
     width: 100%;
     color: black;
-    background-color: #00b7a0;
 }
 
 .wrapper {
@@ -162,9 +174,11 @@
 }
 
 
-
 /*Homepage Thumbnails*/
 
+#thumbnails {
+  padding-top: 130px;
+}
 /* POP UPS */
 
 #thumbwrap {
@@ -465,9 +479,15 @@ body.phone .thumbnail {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .column {
-    width: 50%;
-    padding-right: 0;
+  .column:nth-child(1) {
+    width: 100%;
+  }
+    
+  .column:nth-child(2) {
+    width: 75%;
+  }
+      .column:nth-child(3) {
+    width: 25%;
   }
     
   a.thumb {
@@ -509,9 +529,10 @@ body.phone .thumbnail {
   .info {
     padding: 0px 15px;
   }
-  .column {
+  .column:nth-child(1), 
+  .column:nth-child(2),
+  .column:nth-child(3) {
     width: 100%;
-    padding-right: 0;
   }
   h1 {
     font-size: 32px;

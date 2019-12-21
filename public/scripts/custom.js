@@ -33,29 +33,32 @@ jQuery (document).ready(function(){
         return false;
     });
     
-    /*info section animation*/
-    $(function(){
-        $('#info').click(function() {
-            if(!$('#site-footer').hasClass('closed')) {
-                $('#site-footer').animate({'top': '67px'}, 1000);
-                    $(this).delay(1000)
-                           .queue(function () {
-                                $(this).addClass('material-icons').text('arrow_downward');
-                                $(this).dequeue();
-                           });
-                $('.whitebar').delay(1000)
-                              .queue(function() {
-                                $(this).addClass("scroll");
-                                $(this).dequeue();
-                              });
+    /*Smooth scroll*/
+    $(document).ready(function(){
+        $("a").on('click', function(event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 1000, function(){
+                window.location.hash = hash;
+              });
             }
-            else {
-                $(this).removeClass('material-icons').text('Info');
-                $('#site-footer').animate({'top': '1500px'}, 1000)
-                $('.whitebar').removeClass("scroll");
-            }
+          });
         });
-    });
+    
+    /*Keep hover letter style after hover*/
+    $('letter').hover(
+       function(){ 
+           $(this).addClass('painted'); 
+       }
+    );
+    $('.thumb').hover(
+       function(){ 
+           $(this).addClass('painted'); 
+       }
+    );
     
     /*thumbnail slide-in*/
     (function($) {
