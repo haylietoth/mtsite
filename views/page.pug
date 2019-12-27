@@ -11,8 +11,7 @@ block prepend body
    div.project(style="display: block;")
     section.content-section(class=sectionClass)
        h2
-        != PrismicDOM.RichText.asText(project.title)+ " "
-        i.material-icons(style="line-height:.8;vertical-align:text-top;") arrow_downward
+        != PrismicDOM.RichText.asText(project.title)
        //- Display the slices
        for slice in pageContent.data.page_content
          case slice.slice_type

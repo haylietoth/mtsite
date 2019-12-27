@@ -105,9 +105,9 @@ letter {
 }
 
 .site-header a:hover {
-    line-height: 3.6vmin;
+    color: #00b7a0;
+    font-family: Georgia;
 }
-
 
 .site-header .logo {
   display: inline-block;
@@ -150,6 +150,7 @@ letter {
 
 .site-footer a:hover {
     color: #00b7a0;
+    font-family: Georgia;
 }
 
 .info {
