@@ -31,11 +31,11 @@
 }
 
 .column:nth-child(1) {
-    width: 30%;
+    width: 35%;
 }
 
 .column:nth-child(2) {
-    width: 55%;
+    width: 50%;
 }
 
 .column:nth-child(3){
@@ -154,7 +154,7 @@ letter {
 }
 
 .info {
-    padding: 0 17% 0px 17%;
+    padding: 0 3% 0px 3%;
     width: 100%;
     color: black;
 }
@@ -165,6 +165,7 @@ letter {
 
 .footer-p1 {
     font-size: 4vmin;
+    padding: 20px;
 }
 
 .footer-p2 {
@@ -227,10 +228,10 @@ body[data-view="index"] .thumbnails {
 }
 
 .thumbnail:nth-child(even) {
-    float: left;
+    float: right;
 }
 .thumbnail:nth-child(odd) {
-    float: right;
+    float: left;
 }
 
 .thumbnail:nth-child(odd) .slide-in {
