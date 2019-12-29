@@ -247,6 +247,9 @@ hr {
     text-decoration: none;
     font-size: 4vm;
   } 
+  .thumbnails {
+    padding: 0;     
+  }
   .site-footer a {
     text-decoration: underline;
     text-underline-position: under;
