@@ -36,6 +36,9 @@
 /*
  * Globals
  */
+html {
+  width: 100%;
+}
 
 body {
     display:none;
