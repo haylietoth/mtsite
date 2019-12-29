@@ -21,36 +21,24 @@
 
 * {
   -webkit-font-smoothing: antialiased;
-   font-family: 'NeuzeitSLTStd-Book' , sans-serif;
-}
-::selection {
-  background: #FFF7C7; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: #FFF7C7; /* Gecko Browsers */
-}
-* {
+  font-family: 'NeuzeitSLTStd-Book' , sans-serif;
   box-sizing: border-box;
 }
 
-/*
- * Globals
- */
 html {
   width: 100%;
 }
 
 body {
-    display:none;
-    background:white;
-	color: #000000;
-	font-family: 'NeuzeitSLTStd-Book' , sans-serif;
-	line-height: 1.6;
-    min-height: 100vh;
-    opacity: 1;
-	-webkit-transition: background 1s ease;
-	-moz-transition: background 500ms ease;
-	transition: background 500ms ease;
+  display:none;
+  background:white;
+  color: #000;
+  font-family: 'NeuzeitSLTStd-Book' , sans-serif;
+  line-height: 1.6;
+  opacity: 1;
+  -webkit-transition: background 1s ease;
+  -moz-transition: background 500ms ease;
+  transition: background 500ms ease;
 }
 
 a {
@@ -61,19 +49,6 @@ a {
   text-decoration: none;
 }
 
-p a {
-  text-decoration: underline;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'NeuzeitSLTStd-Book' , sans-serif;
-}
-h1 {
-  font-size: 42px; 
-  font-weight: normal; 
-  color: black; 
-  letter-spacing : 1.14;
-  margin-bottom: 1rem;
-}
 h2, h2 a {
   margin-bottom: 1rem;
   font-size: 4vmin;
@@ -92,15 +67,6 @@ h3, h3 a {
 p {
   margin-bottom: 2rem;
   font-size: 3vmin;
-}
-pre, ul {
-  margin-bottom: 20px;
-}
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
 }
 img {
   max-width: 100%;

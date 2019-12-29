@@ -1,8 +1,2 @@
-//- Add the class that defines the number of columns
-if ( slice.slice_label )
-  - var sectionClass = "text-section-" + slice.slice_label
-else 
-  - var sectionClass = "text-section-1col"
-
 section.text-content(class=sectionClass)
   != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)

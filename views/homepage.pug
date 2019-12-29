@@ -6,12 +6,12 @@ block prepend body
     include ./partials/header-home.pug
     
     // Content Section
-    div.container
+    div
      for slice in pageContent.data.page_content
         case slice.slice_type
           when 'text'
             include ./partials/home-text-section.pug  
-     div.thumbails.clear(id="thumbnails")
+     div.thumbails(id="thumbnails")
       //- Display the slices
       for slice in pageContent.data.page_content
         case slice.slice_type
@@ -19,7 +19,6 @@ block prepend body
             include ./partials/thumbnail.pug 
      #site-footer.home.site-footer
        #info.info
-         .wrapper
            p.footer-p
             letter I 
             letter  a

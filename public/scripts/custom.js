@@ -45,8 +45,8 @@ jQuery (document).ready(function(){
                 window.location.hash = hash;
               });
             }
-          });
         });
+    });
     
     /*Keep hover letter style after hover*/
     $('letter').hover(
