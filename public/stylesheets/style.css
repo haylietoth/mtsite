@@ -99,7 +99,7 @@ a.thumb:hover {
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 0 70px;
+  padding: 130px 70px 0;
   margin: 0 auto;
 }
 .thumbnail {

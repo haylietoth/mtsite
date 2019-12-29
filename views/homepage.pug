@@ -11,7 +11,7 @@ block prepend body
         case slice.slice_type
           when 'text'
             include ./partials/home-text-section.pug  
-     div.thumbails(id="thumbnails")
+     div.thumbnails(id="thumbnails")
       //- Display the slices
       for slice in pageContent.data.page_content
         case slice.slice_type
