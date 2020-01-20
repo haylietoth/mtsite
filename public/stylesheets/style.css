@@ -57,16 +57,14 @@ letter {
 }
 .text-content{
   text-align: left;
-  margin-bottom: 5em;
+  /*margin-bottom: 5em;*/
 }
 /*End General*/
 
 /*Home page*/
 .home-content-section {
-  margin-bottom: 3.75rem;
-  padding-top: 155px;
-  padding-right: 17%;
-  padding-left: 17%;
+  padding: 22% 17%;
+  height: 100vh;
 }
 #thumbwrap {
   position:relative;
@@ -94,12 +92,12 @@ a.thumb {
   text-decoration: none;
 }
 a.thumb:hover {
-  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+  border-bottom: 0.01em solid black;
 }
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 130px 70px 0;
+  padding: 5em 70px 0;
   margin: 0 auto;
 }
 .thumbnail {
@@ -237,6 +235,12 @@ hr {
   }
 }
 @media (max-width: 1060px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
@@ -261,6 +265,11 @@ hr {
   .column:nth-child(2) {
     width: 60%;
   }
+}
+@media (max-width: 1024px) {
+    /*.home-content-section {
+    padding: 45% 10%;
+    }
 }
 @media screen and (min-width: 850px) { 
 	.thumbnail {
@@ -299,6 +308,9 @@ hr {
   }
   .site-header a {
     font-size: 20px;
+  }
+  .home-content-section {
+    height: auto;
   }
 /*Home*/
   a.thumb {
