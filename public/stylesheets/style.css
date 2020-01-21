@@ -64,9 +64,10 @@ letter {
 /*Home page*/
 .home-content-section {
   margin-bottom: 3.75rem;
-  padding-top: 155px;
+  padding-top: 25%;
   padding-right: 17%;
   padding-left: 17%;
+  height: 100vh;
 }
 #thumbwrap {
   position:relative;
@@ -75,7 +76,6 @@ letter {
 .thumb img { 
   border:0px solid #000;
   margin:0px;
-  min-width: 170px;
   float:left;
 }
 .thumb span { 
@@ -99,7 +99,7 @@ a.thumb:hover {
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 130px 70px 0;
+  padding: 10px 70px 0;
   margin: 0 auto;
 }
 .thumbnail {
@@ -308,6 +308,7 @@ hr {
     padding-right: 10%;
     padding-left: 10%;
     padding-bottom: 0;
+    height: auto;
   }
 /*Project*/
   .project {
@@ -338,6 +339,9 @@ hr {
   .column:nth-child(3) {
     width: 100%;
   }
+  .footer-p, .footer-column, .column i  {
+    font-size: 18px;
+  }
 }
 @media (max-width: 450px) {
 /*Home*/
@@ -354,9 +358,6 @@ hr {
 /*Footer*/
   .home {
     padding-top: 0;
-  }
-  .footer-p, .footer-column, .column i  {
-    font-size: 20px;
   }
   .site-footer a {
     font-size: 20px;
