@@ -73,28 +73,26 @@ letter {
   position:relative;
   margin:relative;
 }
-.thumb img { 
-  border:0px solid #000;
-  margin:0px;
-  float:left;
-}
-.thumb span { 
-  position:absolute;
-  visibility:hidden;
-  margin-top: -25%;
-}
-.thumb:hover, .thumb:hover span { 
-  visibility:visible;
-  top:0px; left:0px;
-  z-index: 1;
-}
 a.thumb {
   padding-bottom: 0.1em;
   border-bottom: 0.01em solid black;
   text-decoration: none;
 }
-a.thumb:hover {
+a.typeface:hover {
   border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+  cursor: url("../images/info-typeface-cursor.png"), auto;
+}
+a.aastool:hover {
+  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+  cursor: url("../images/info-Aastool-cursor.png"), auto;
+}
+a.food:hover {
+  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+  cursor: url("../images/info-FoodRules-cursor.png"), auto;
+}
+a.graphic:hover {
+  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
+  cursor: url("../images/info-GDTheory-cursor.png"), auto;
 }
 .thumbnails {
   z-index: -1;
@@ -225,7 +223,7 @@ hr {
 }
 /*footer text for home page only*/
 .home {
-  padding-top: 55px;
+  padding-top: 100px;
 }
 /*End Footer*/
 
