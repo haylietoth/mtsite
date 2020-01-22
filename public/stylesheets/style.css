@@ -273,7 +273,7 @@ hr {
     width: 60%;
   }
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 768px) {
 	.thumbnail {
 	    /*thumbnail override*/
 	    position: relative!important;
