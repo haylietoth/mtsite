@@ -21,7 +21,7 @@
 .site-header a {
   color: black;
   letter-spacing: 1.0px;
-  font-size: 3vmin;
+  font-size: calc(14px + 14.361*(100vw - 576px)/864);
 }
 .site-header a:hover {
   color: #00b7a0;
@@ -118,7 +118,7 @@ a.graphic:hover {
 }
 .thumb_image:hover img {
   opacity: 0;
-  border: none; 
+  border: none;
   -ms-transition: .5s ease;
   -webkit-transition: .5s ease;
   transition: .5s ease;
@@ -153,9 +153,6 @@ a.graphic:hover {
   margin-bottom: 3.75rem;
   padding-top: 100px;
 }
-.content-section h2 {
-  font-size: 3vmin;
-}
 /*End Project page*/
 
 /*End Body*/
@@ -169,7 +166,7 @@ a.graphic:hover {
 .site-footer a {
   color: black;
   text-decoration: none;
-  font-size: 2.5vmin;
+  font-size: calc(10px + 14.361*(100vw - 576px)/864);;
 }
 .site-footer a:hover {
   color: #00b7a0;
@@ -210,15 +207,14 @@ hr {
   vertical-align:text-top;
 }
 .c-style {
-  font-size:6vmin;
+  font-size:calc(35px + 14.361*(100vw - 576px)/864);
   margin-bottom:0px;
   font-weight:bold;
 }
 .footer-column {
-  font-size: 2.5vmin;
+  font-size: calc(10px + 14.361*(100vw - 576px)/864);
 }
 .footer-p {
-    font-size: 4vmin;
     padding: 20px;
 }
 /*footer text for home page only*/
@@ -242,24 +238,23 @@ hr {
   a.thumb {
     padding-bottom: 0;
     text-decoration: none;
-    font-size: 4vm;
-  } 
+  }
   .thumbnails {
-    padding: 80px 0 0;     
+    padding: 80px 0 0;
   }
   .site-footer a {
     text-decoration: underline;
     text-underline-position: under;
-  } 
+  }
   .column:nth-child(1) {
     width: 25%;
   }
-    
+
   .column:nth-child(2) {
     width: 60%;
   }
 }
-@media screen and (min-width: 850px) { 
+@media screen and (min-width: 850px) {
 	.thumbnail {
 	    /*thumbnail override*/
 	    position: relative!important;
@@ -267,9 +262,15 @@ hr {
 	    top: auto!important;
 	    width: 50%!important;
 	}
-} 
+}
 /*Cell Phones*/
 @media (max-width: 767px) {
+  html, .header a, .thumb a, .footer-p, .footer-column, .column i  {
+    font-size: 16px;
+  }
+  .site-header a {
+    font-size: 20px;
+  }
 /*Header*/
   .whitebar {
     padding-top: 10px;
@@ -294,20 +295,13 @@ hr {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .site-header a {
-    font-size: 20px;
-  }
 /*Home*/
-  a.thumb {
-    font-size: 20px;
-  }
   .home-content-section {
-    
     padding: 10rem 1rem 2rem;
     height: auto;
     margin-bottom: 0;
   }
-  .thumb_image:hover img, 
+  .thumb_image:hover img,
   .thumbnail .thumb_image img {
     padding: 0 1rem 2rem;
   }
@@ -325,15 +319,9 @@ hr {
   .content-section {
     padding-top: 25px;
   }
-  h2 {
-    font-size: 20px;
-  }
-  h3 {
-    font-size: 18px;
-  }
   .content-section {
     margin-bottom: 2rem;
-  } 
+  }
 /*Footer*/
   .info {
     margin: 0px;
@@ -343,43 +331,35 @@ hr {
   .footer-p{
     padding: 0 1rem 0rem;
   }
-    
+
   .row {
-    padding: 0 1rem 2rem;
+    padding: 2rem 1rem;
   }
   .column:nth-child(1),
   .column:nth-child(2),
   .column:nth-child(3) {
     width: 100%;
   }
-  .footer-p, .footer-column, .column i  {
-    font-size: 18px;
-  }
 }
+
 @media (max-width: 450px) {
 /*Home*/
   .clear {
     padding: 0 30px;
-  }
-/*Project*/
-  p {
-    font-size: 4.5vmin    
-  }
-  .content-section h2 {
-    font-size: 5vmin;
   }
 /*Footer*/
   .home {
     padding-top: 10px;
   }
   .site-footer a {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
   }
   .c-style {
     font-size:30px;
-  } 
+  }
 }
+
 @media (max-width: 320px) {
   .site-header {
     padding-left: 15px;

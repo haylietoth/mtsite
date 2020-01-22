@@ -27,6 +27,7 @@
 
 html {
   width: 100%;
+  font-size: calc(16px + 14.361*(100vw - 576px)/864);
 }
 
 body {
@@ -42,7 +43,6 @@ body {
 }
 
 a {
-  font-size: 14px;
   font-weight: 400;
   letter-spacing : 0.35;
   line-height: 4vmin;
@@ -51,23 +51,20 @@ a {
 
 h2, h2 a {
   margin-bottom: 1rem;
-  font-size: 4vmin;
   font-weight: normal;
   letter-spacing : 0.85;
   line-height: 6.4vmin;
   text-align: center;
- 
+
 }
 h3, h3 a {
   Color:  black;
-  font-size: 18px;
   font-weight: 400;
   letter-spacing : 0.52;
   line-height: 28px;
 }
 p {
   margin-bottom: 2rem;
-  font-size: 3vmin;
 }
 img {
   max-width: 100%;
