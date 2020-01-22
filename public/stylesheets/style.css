@@ -235,6 +235,9 @@ hr {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .home-content-section {
+    height: auto;
+  }
   a.thumb {
     padding-bottom: 0;
     text-decoration: none;
