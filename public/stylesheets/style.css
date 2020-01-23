@@ -332,11 +332,13 @@ hr {
     height: auto;
     margin-bottom: 0;
   }
+  .thumbnail:nth-child(odd),
+  .thumbnail:nth-child(even),
   .thumbnail img {
-    padding: 0 1rem 2rem;
+    padding: 0;
   }
   .thumbnail {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
   }
   /*Project*/
   .project {
@@ -355,13 +357,11 @@ hr {
   /*Footer*/
   .info {
     margin: 0px;
-    padding: 50px 0px 0px 0px;
+    padding: 4rem 0 0;
   }
-
   .footer-p{
     padding: 0 1rem 0rem;
   }
-
   .row {
     padding: 2rem 1rem;
   }
