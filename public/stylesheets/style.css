@@ -135,10 +135,6 @@ a.graphic:hover {
     content: " \2192 ";
     color: #333;
 }
-/* .thumbnail-title > .material-icons {
-  vertical-align: sub;
-  font-size: calc(16px + 14.361*(100vw - 576px)/864);
-} */
 /*End Home page*/
 
 /*Project page*/
@@ -174,7 +170,7 @@ a.graphic:hover {
   font-family: Georgia;
 }
 .info {
-  padding: 0 3% 0px 3%;
+  padding: 0 2rem 0px 2rem;
   width: 100%;
   color: black;
   margin: 50px 0px;
@@ -216,7 +212,7 @@ hr {
   font-size: calc(10px + 14.361*(100vw - 576px)/864);
 }
 .footer-p {
-    padding: 20px;
+ text-align: justify;
 }
 /*footer text for home page only*/
 .home {
@@ -324,8 +320,7 @@ hr {
     height: auto;
     margin-bottom: 0;
   }
-  .thumb_image:hover img,
-  .thumbnail .thumb_image img {
+  .thumbnail img {
     padding: 0 1rem 2rem;
   }
   .thumbnail {
