@@ -104,11 +104,16 @@ a.graphic:hover {
   text-align: left;
   margin-bottom: 40px;
   font-size: 16px;
-  -ms-transition: transform .03s ease-out;
-  -webkit-transition: transform .03s ease-out;
   display: inline-block;
   position: relative;
   vertical-align: top;
+  padding: 10px 10px 0 10px;
+}
+.thumbnail img {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  transition: .5s ease;
 }
 .thumbnail:nth-child(even) {
   float: right;
@@ -116,28 +121,24 @@ a.graphic:hover {
 .thumbnail:nth-child(odd) {
   float: left;
 }
-.thumb_image:hover img {
+.thumbnail-title {
+  padding: 0.5rem 0 0;
   opacity: 0;
-  border: none;
-  -ms-transition: .5s ease;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-  padding: 10px 10px 0 10px;
+  -webkit-transition: opacity 150ms ease;
+  -o-transition: opacity 150ms ease;
+  transition: opacity 150ms ease;
 }
-.thumbnail .thumb_image {
-  background-color: #ffffff;
-  background-size: contain;
-  background-repeat:no-repeat;
-  position: relative;
-  margin-bottom: 15px;
+.thumbnail-link:hover + .thumbnail-title {
+  opacity: 1;
 }
-.thumbnail .thumb_image img {
-  border: 0;
-  display: block;
-  margin: 0 auto;
-  transition: .5s ease;
-  padding: 10px 10px 0 10px;
+.thumbnail-title:after {
+    content: " \2192 ";
+    color: #333;
 }
+/* .thumbnail-title > .material-icons {
+  vertical-align: sub;
+  font-size: calc(16px + 14.361*(100vw - 576px)/864);
+} */
 /*End Home page*/
 
 /*Project page*/
@@ -230,7 +231,7 @@ hr {
     padding-top: 20px;
   }
 }
-@media (max-width: 1060px) {
+@media (max-width: 1024px) {
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
@@ -246,16 +247,19 @@ hr {
     padding: 80px 0 0;
   }
   .thumbnail:nth-child(odd) {
-    padding: 0 0.5rem 1rem 1rem;
+    padding: 0 0.5rem 2rem 1rem;
   }
   .thumbnail:nth-child(even) {
-    padding: 0 1rem 1rem 0.5rem;
+    padding: 0 1rem 2rem 0.5rem;
   }
   .thumbnail {
     margin-bottom: 0;
   }
-  .thumbnail .thumb_image img {
+  .thumbnail img {
     padding: 0;
+  }
+  .thumbnail-title {
+    opacity: 1;
   }
   .project {
     padding-left: 2rem;

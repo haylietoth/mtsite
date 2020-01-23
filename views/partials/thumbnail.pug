@@ -1,4 +1,5 @@
 div.thumbnail
- a(href=PrismicDOM.Link.url(slice.primary.link, ctx.linkResolver))
-  div.thumb_image(style="background-image: url("+slice.primary.hover_image.url+")")
-   img(name='image-link', src=slice.primary.image.url)
+ a.thumbnail-link(href=PrismicDOM.Link.url(slice.primary.link, ctx.linkResolver))
+  img(name='image-link', src=slice.primary.image.url)
+ div.thumbnail-title
+  != PrismicDOM.RichText.asText(slice.primary.thumbnail_title, ctx.linkResolver)
