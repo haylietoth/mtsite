@@ -243,12 +243,13 @@ hr {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .home-content-section {
+  .container {
     height: auto;
   }
   a.thumb {
     padding-bottom: 0;
     text-decoration: none;
+    border-bottom: none;
   }
   .thumbnails {
     padding: 80px 0 0;
@@ -295,7 +296,7 @@ hr {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
-  html, .header a, .thumb a, .footer-p, .footer-column, .column i  {
+  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i  {
     font-size: 16px;
   }
   .site-header a {
