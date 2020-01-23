@@ -107,7 +107,7 @@ a.graphic:hover {
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 10px 70px 0;
+  padding: 1rem 2rem 0 2rem;
   margin: 0 auto;
 }
 .thumbnail {
@@ -238,13 +238,26 @@ hr {
     padding-top: 20px;
   }
 }
+@media (min-width: 1365px) {
+  .thumbnails {
+    padding: 4rem 2rem 0 2rem;
+  }
+}
 @media (max-width: 1024px) {
+  body {
+    padding: 0 1rem 0rem;
+  }
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
   }
   .container {
     height: auto;
+  }
+  .home-content-section {
+    padding: 10rem 1rem 2rem;
+    height: auto;
+    margin-bottom: 0;
   }
   a.thumb {
     padding-bottom: 0;
@@ -255,23 +268,21 @@ hr {
     padding: 80px 0 0;
   }
   .thumbnail:nth-child(odd) {
-    padding: 0 0.5rem 2rem 1rem;
+    padding: 0 0.5rem 1rem 0;
   }
   .thumbnail:nth-child(even) {
-    padding: 0 1rem 2rem 0.5rem;
+    padding: 0 0 1rem 0.5rem;
+  }
+  .thumbnail img,
+  .project,
+  .info {
+    padding: 0;
   }
   .thumbnail {
     margin-bottom: 0;
   }
-  .thumbnail img {
-    padding: 0;
-  }
   .thumbnail-title {
     opacity: 1;
-  }
-  .project {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
   .site-footer a {
     text-decoration: underline;
@@ -280,7 +291,6 @@ hr {
   .column:nth-child(1) {
     width: 25%;
   }
-
   .column:nth-child(2) {
     width: 60%;
   }
@@ -299,10 +309,10 @@ hr {
   html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i  {
     font-size: 16px;
   }
+  /*Header*/
   .site-header a {
     font-size: 20px;
   }
-  /*Header*/
   .whitebar {
     padding-top: 10px;
   }
@@ -327,24 +337,17 @@ hr {
     margin-right: 10px;
   }
   /*Home*/
-  .home-content-section {
-    padding: 10rem 1rem 2rem;
-    height: auto;
-    margin-bottom: 0;
-  }
   .thumbnail:nth-child(odd),
   .thumbnail:nth-child(even),
-  .thumbnail img {
+  .thumbnail img,
+  .footer-p,
+  .project {
     padding: 0;
   }
   .thumbnail {
     margin-bottom: 1rem;
   }
   /*Project*/
-  .project {
-  	padding-left: 1rem;
-  	padding-right: 1rem;
-  }
   .content-section h2{
     padding-top: 100px;
   }
@@ -359,11 +362,8 @@ hr {
     margin: 0px;
     padding: 4rem 0 0;
   }
-  .footer-p{
-    padding: 0 1rem 0rem;
-  }
   .row {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
   .column:nth-child(1),
   .column:nth-child(2),
