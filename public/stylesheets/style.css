@@ -62,12 +62,22 @@ letter {
 /*End General*/
 
 /*Home page*/
-.home-content-section {
-  margin-bottom: 3.75rem;
-  padding-top: 25%;
-  padding-right: 17%;
-  padding-left: 17%;
+.container {
   height: 100vh;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+  -ms-flex-pack:center;
+  justify-content:center;
+}
+.home-content-section {
+  padding: 67px 17% 0;
 }
 #thumbwrap {
   position:relative;
@@ -122,6 +132,7 @@ a.graphic:hover {
   float: left;
 }
 .thumbnail-title {
+  font-size: calc(10px + 14.361*(100vw - 576px)/864);
   padding: 0.5rem 0 0;
   opacity: 0;
   -webkit-transition: opacity 150ms ease;
