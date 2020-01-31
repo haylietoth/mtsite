@@ -155,7 +155,6 @@ a.graphic:hover {
   -o-transition: opacity 150ms ease;
   transition: opacity 150ms ease;
 }
-
 .thumbnail-title i.material-icons {
   font-size: calc(10px + 14.361*(100vw - 576px)/864) !important;
   padding-top: .1rem;
@@ -361,7 +360,7 @@ hr {
     line-height: 2rem;
     font-size: 18px;
   }
-  i.material-icons {
+  i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
   }
   .thumbnail:nth-child(odd),

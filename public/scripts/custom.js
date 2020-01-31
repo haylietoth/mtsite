@@ -67,15 +67,15 @@ jQuery (document).ready(function(){
       var viewportTop = $(window).scrollTop();
       var viewportBottom = viewportTop + $(window).height();
 
-      return elementBottom > viewportTop && elementTop < viewportBottom;
+      return elementBottom < viewportTop && elementTop > viewportBottom;
     };
 
-    $(window).on('resize scroll', function() {
+    $(window).on('scroll', function() {
       $('.thumbnail').each(function() {
         if ($(this).isInViewport()) {
-          $(this).removeClass('below-viewport ');
-        } else {
           $(this).addClass('below-viewport');
+        } else {
+          $(this).removeClass('below-viewport');
         }
       });
     });
