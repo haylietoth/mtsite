@@ -1,2 +1,3 @@
 section.text-content(class=sectionClass)
-  != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
+  span!= PrismicDOM.RichText.asText(project.title)
+  != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)

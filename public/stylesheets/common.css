@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'NeuzeitSLTStd-Book';
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
+  src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot?#iefix') format('embedded-opentype');
 }
 
@@ -58,10 +59,16 @@ h2, h2 a {
 
 }
 h3, h3 a {
-  Color:  black;
+  Color:  grey;
   font-weight: 400;
   letter-spacing : 0.52;
   line-height: 28px;
+  font-size: calc(12px + 14.361*(100vw - 576px)/864);
+}
+h3 i.material-icons {
+  float: none !important;
+  vertical-align:middle;
+  font-size: calc(12px + 14.361*(100vw - 576px)/864);
 }
 p {
   margin-bottom: 2rem;

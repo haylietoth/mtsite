@@ -1,11 +1,11 @@
 jQuery (document).ready(function(){
-    
+
     /*Google Analytics*/
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-135736418-1');
-    
+
     $(function() {
         $('a').each(function() {
             if ($(this).attr('id') == 'info') {
@@ -16,7 +16,7 @@ jQuery (document).ready(function(){
             }
         });
     });
-    
+
     /*page fade-in and fade-out */
         $('body').css('display','none');
         $('body').fadeIn(500);
@@ -32,7 +32,7 @@ jQuery (document).ready(function(){
             });
             return false;
         });
-        
+
     /*Smooth scroll*/
     $(document).ready(function(){
         $("a").on('click', function(event) {
@@ -47,16 +47,37 @@ jQuery (document).ready(function(){
             }
         });
     });
-    
+
     /*Keep hover letter style after hover*/
     $('letter').hover(
-       function(){ 
-           $(this).addClass('painted'); 
+       function(){
+           $(this).addClass('painted');
        }
     );
     $('.thumb').hover(
-       function(){ 
-           $(this).addClass('painted'); 
+       function(){
+           $(this).addClass('painted');
        }
     );
+
+    $.fn.isInViewport = function() {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    $(window).on('resize scroll', function() {
+      $('.thumbnail').each(function() {
+        if ($(this).isInViewport()) {
+          $(this).removeClass('below-viewport ');
+        } else {
+          $(this).addClass('below-viewport');
+        }
+      });
+    });
+
 });

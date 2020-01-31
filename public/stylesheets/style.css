@@ -58,6 +58,13 @@ letter {
 .text-content{
   text-align: left;
   margin-bottom: 5em;
+  text-align: justify;
+}
+
+.text-content span{
+  font-family: Georgia, serif;
+  font-size: calc(17px + 14.361*(100vw - 576px)/864);
+  padding-right: 1rem;
 }
 /*End General*/
 
@@ -119,6 +126,13 @@ a.graphic:hover {
   vertical-align: top;
   padding: 10px 10px 0 10px;
 }
+.scroll-transition-fade {
+    transition: transform 1s ease-in-out,opacity .8s ease-in-out;
+}
+.below-viewport {
+    opacity: 0;
+    transform: translateY(40px);
+}
 .thumbnail img {
   border: 0;
   display: block;
@@ -127,9 +141,11 @@ a.graphic:hover {
 }
 .thumbnail:nth-child(even) {
   float: right;
+  padding: 0 0 0 1rem;
 }
 .thumbnail:nth-child(odd) {
   float: left;
+  padding: 0 1rem 0 0;
 }
 .thumbnail-title {
   font-size: calc(10px + 14.361*(100vw - 576px)/864);
@@ -139,12 +155,14 @@ a.graphic:hover {
   -o-transition: opacity 150ms ease;
   transition: opacity 150ms ease;
 }
+
+.thumbnail-title i.material-icons {
+  font-size: calc(10px + 14.361*(100vw - 576px)/864) !important;
+  padding-top: .1rem;
+  float: right;
+}
 .thumbnail-link:hover + .thumbnail-title {
   opacity: 1;
-}
-.thumbnail-title:after {
-    content: " \2192 ";
-    color: #333;
 }
 /*End Home page*/
 
@@ -255,9 +273,12 @@ hr {
     height: auto;
   }
   .home-content-section {
-    padding: 10rem 1rem 2rem;
+    padding: 10rem 0 0;
     height: auto;
     margin-bottom: 0;
+  }
+  h2 {
+    line-height: 2.5rem;
   }
   a.thumb {
     padding-bottom: 0;
@@ -285,7 +306,6 @@ hr {
     opacity: 1;
   }
   .site-footer a {
-    text-decoration: underline;
     text-underline-position: under;
   }
   .column:nth-child(1) {
@@ -306,7 +326,7 @@ hr {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
-  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i  {
+  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i, h3  {
     font-size: 16px;
   }
   /*Header*/
@@ -337,6 +357,13 @@ hr {
     margin-right: 10px;
   }
   /*Home*/
+  h2 {
+    line-height: 2rem;
+    font-size: 18px;
+  }
+  i.material-icons {
+    font-size: 16px !important;
+  }
   .thumbnail:nth-child(odd),
   .thumbnail:nth-child(even),
   .thumbnail img,
@@ -373,6 +400,9 @@ hr {
 }
 @media (max-width: 450px) {
   /*Home*/
+  h2 {
+    font-size: 16px;
+  }
   .clear {
     padding: 0 30px;
   }

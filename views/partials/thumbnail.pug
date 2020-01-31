@@ -1,5 +1,7 @@
-div.thumbnail
+div.thumbnail.scroll-transition-fade.below-viewpoint(style="will-change: opacity, transform;")
  a.thumbnail-link(href=PrismicDOM.Link.url(slice.primary.link, ctx.linkResolver))
   img(name='image-link', src=slice.primary.image.url)
  div.thumbnail-title
   != PrismicDOM.RichText.asText(slice.primary.thumbnail_title, ctx.linkResolver)
+  i.material-icons
+   | arrow_forward &nbsp; 

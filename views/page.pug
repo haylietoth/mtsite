@@ -9,8 +9,6 @@ block prepend body
   - var project = pageContent.data.project_info[0]
    div.project(style="display: block;")
     section.content-section(class=sectionClass)
-       h2
-        != PrismicDOM.RichText.asText(project.title)
        //- Display the slices
        for slice in pageContent.data.page_content
          case slice.slice_type
@@ -24,6 +22,6 @@ block prepend body
           != PrismicDOM.RichText.asText(project.collab)
        h3
           != PrismicDOM.RichText.asText(project.type) + " "
-          i.material-icons(style="font-size:20px;vertical-align:sub;") arrow_forward 
+          i.material-icons arrow_forward 
           != PrismicDOM.RichText.asText(project.year)
   include ./partials/footer.pug
