@@ -147,7 +147,7 @@ a.graphic:hover {
   padding: 0 1rem 0 0;
 } */
 .thumbnail-title {
-  font-size: 16px;
+  font-size: 18px;
   padding: 0.5rem 0 1rem 0;
   opacity: 0;
   -webkit-transition: opacity 150ms ease;
