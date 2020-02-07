@@ -155,7 +155,7 @@ a.graphic:hover {
   transition: opacity 150ms ease;
 }
 .thumbnail-title i.material-icons {
-  font-size: 16px !important;
+  font-size: 18px !important;
   padding-top: .1rem;
   float: right;
 }
