@@ -59,6 +59,7 @@ letter {
   text-align: left;
   margin-bottom: 5em;
   text-align: justify;
+  font-size: calc(12px + 14.361*(100vw - 576px)/864);
 }
 .text-content span{
   font-family: Georgia, serif;
@@ -386,6 +387,9 @@ hr {
   }
   .content-section {
     margin-bottom: 2rem;
+  }
+  .text-content{
+    text-align: left;
   }
   /*Footer*/
   .info {
