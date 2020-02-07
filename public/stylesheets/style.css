@@ -147,7 +147,7 @@ a.graphic:hover {
   padding: 0 1rem 0 0;
 } */
 .thumbnail-title {
-  font-size: calc(10px + 11.361*(100vw - 576px)/864);
+  font-size: 16px;
   padding: 0.5rem 0 1rem 0;
   opacity: 0;
   -webkit-transition: opacity 150ms ease;
@@ -155,7 +155,7 @@ a.graphic:hover {
   transition: opacity 150ms ease;
 }
 .thumbnail-title i.material-icons {
-  font-size: calc(10px + 14.361*(100vw - 576px)/864) !important;
+  font-size: 16px !important;
   padding-top: .1rem;
   float: right;
 }
