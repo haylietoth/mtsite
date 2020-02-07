@@ -63,7 +63,7 @@ h3, h3 a {
   font-weight: 400;
   letter-spacing : 0.52;
   line-height: 28px;
-  font-size: calc(11px + 14.361*(100vw - 576px)/864);
+  font-size: 20px;
 }
 h3 i.material-icons {
   float: none !important;
