@@ -267,10 +267,6 @@ hr {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .home-content-section {
-    margin-bottom: 0;
-    padding: 67px 0;
-  }
   h2 {
     line-height: 2.5rem;
   }
@@ -351,6 +347,10 @@ hr {
     margin-right: 10px;
   }
   /*Home*/
+  .home-content-section {
+    margin-bottom: 0;
+    padding: 67px 0;
+  }
   h2 {
     line-height: 2rem;
     letter-spacing: 0;
