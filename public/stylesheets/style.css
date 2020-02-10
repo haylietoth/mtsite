@@ -127,7 +127,7 @@ a.graphic:hover {
   display: inline-block;
   position: relative;
   vertical-align: top;
-  padding: 0px 15px 0 15px;
+  padding: 0px .75rem 0 .75rem;
 }
 .scroll-transition-fade {
     transition: transform 1s ease-in-out,opacity .8s ease-in-out;
@@ -142,17 +142,10 @@ a.graphic:hover {
   margin: 0 auto;
   transition: .5s ease;
 }
-/* .thumbnail:nth-child(even) {
-  float: right;
-  padding: 0 0 0 1rem;
-}
-.thumbnail:nth-child(odd) {
-  float: left;
-  padding: 0 1rem 0 0;
-} */
+
 .thumbnail-title {
   font-size: 17px;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   opacity: 0;
   -webkit-transition: opacity 150ms ease;
   -o-transition: opacity 150ms ease;
@@ -274,13 +267,9 @@ hr {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .container {
-    height: auto;
-  }
   .home-content-section {
-    padding: 10rem 0 0;
-    height: auto;
     margin-bottom: 0;
+    padding: 67px 0;
   }
   h2 {
     line-height: 2.5rem;
@@ -331,7 +320,7 @@ hr {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
-  html, .header a, .thumb a, .thumbnail-title, .footer-p, .site-footer a, .footer-column, .column i, h3  {
+  html, .header a, .thumb a, .thumbnail-title, .footer-p, .site-footer a, .footer-column, .column i, h3, .text-content  {
     font-size: 16px;
   }
   /*Header*/
@@ -364,7 +353,8 @@ hr {
   /*Home*/
   h2 {
     line-height: 2rem;
-    font-size: 18px;
+    letter-spacing: 0;
+    font-size: 18px !important;
   }
   i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
