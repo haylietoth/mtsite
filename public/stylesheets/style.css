@@ -245,12 +245,6 @@ hr {
 /*End Footer*/
 
 /* Media Queries */
-@media (min-width: 1500px) {
-  .whitebar {
-    height: 120px;
-    padding-top: 20px;
-  }
-}
 @media (min-width: 1365px) {
   .thumbnails {
     padding: 4rem 2rem 0 2rem;
