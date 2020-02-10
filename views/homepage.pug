@@ -10,7 +10,10 @@ block prepend body
      for slice in pageContent.data.page_content
         case slice.slice_type
           when 'main_text'
-            include ./partials/home-text-section.pug  
+            div.container
+              div.home-content-section(class=sectionClass)
+                h2.to-letter
+                  != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
      div.thumbnails(id="thumbnails")
       //- Display the slices
       for slice in pageContent.data.page_content
@@ -18,10 +21,9 @@ block prepend body
           when 'thumbnail'
             include ./partials/thumbnail.pug 
      #site-footer.home.site-footer
-       #info.info
-           p.footer-p
-            | I am a graphic designer living in the Midwest interested in creating visual solutions for the everyday. I combine my training in traditional graphic design across multiple disciplines which has expanded my work to include object design, fabrication, environmental signage, and other interdisciplinary projects. I find a varied field of exploration indispensable for the ability to execute a project to any medium it may naturally lead. Through research and experimentation, I seek what is essential to create a holistic approach to clearly communicate and interact with our environment. 
-            br
-            br
-            | Currently working on a typeface based on a trip to Europe and (Aa) stool. Also balancing reading The Goldfinch by Donna Tartt and Graphic Design Theory: Readings from the Field edited by Helen Armstrong. 
+       #info.info.footer-p
+         for slice in pageContent.data.page_content
+            case slice.slice_type
+              when 'footer_text'
+                != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
      include ./partials/footer.pug

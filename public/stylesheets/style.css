@@ -51,6 +51,10 @@
 letter {
   transition: color .3s linear, text-shadow .3s linear;
 }
+
+word::after {
+  content: ' ';
+}
 .painted {
   color: #00b7a0;
   font-family: Georgia, serif;

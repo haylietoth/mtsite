@@ -47,6 +47,22 @@ jQuery (document).ready(function(){
             }
         });
     });
+    /*String to letters*/
+    $('.to-letter').each(function() {
+      var words = $(this).text().split(' '),
+      $homeContentSection = $(this).empty();
+      $.each(words, function(_, word) {
+        $('<word>', {text: word}).appendTo($homeContentSection);
+      });
+    });
+
+    $('word').each(function() {
+      var letters = $(this).text().split(''),
+      $wordElement = $(this).empty();
+      $.each(letters, function(_, letter) {
+        $('<letter>', {text: letter}).appendTo($wordElement);
+      });
+    });
 
     /*Keep hover letter style after hover*/
     $('letter').hover(
@@ -60,6 +76,9 @@ jQuery (document).ready(function(){
        }
     );
 
+
+
+    /*Delayed scroll on thumbnails*/
     $.fn.isInViewport = function() {
       var elementTop = $(this).offset().top;
       var elementBottom = elementTop + $(this).outerHeight();
