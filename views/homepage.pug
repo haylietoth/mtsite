@@ -9,7 +9,7 @@ block prepend body
     div
      for slice in pageContent.data.page_content
         case slice.slice_type
-          when 'text'
+          when 'main_text'
             include ./partials/home-text-section.pug  
      div.thumbnails(id="thumbnails")
       //- Display the slices
