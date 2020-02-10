@@ -25,5 +25,6 @@ block prepend body
          for slice in pageContent.data.page_content
             case slice.slice_type
               when 'footer_text'
-                != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
+                  p.to-letter
+                    != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
      include ./partials/footer.pug
