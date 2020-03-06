@@ -117,7 +117,7 @@ a.graphic:hover {
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 67px 2rem 0 2rem;
+  padding: 68px 1rem 0 1rem;
   margin: 0 auto;
 }
 .thumbnail {
@@ -244,11 +244,6 @@ hr {
 /*End Footer*/
 
 /* Media Queries */
-@media (min-width: 1365px) {
-  .thumbnails {
-    padding: 4rem 2rem 0 2rem;
-  }
-}
 @media (max-width: 1024px) {
   .thumbnail {
       width: 50%!important;
