@@ -307,6 +307,11 @@ hr {
 	    width: 33.33%!important;
 	}
 }
+@media (max-width: 990px) {
+  .footer-p {
+    font-size: 25px;
+  }
+}
 /*Cell Phones*/
 @media (max-width: 767px) {
   html, .header a, .thumb a, .thumbnail-title, .footer-p, .site-footer a, .footer-column, .column i, h3, .text-content  {
