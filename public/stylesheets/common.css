@@ -41,6 +41,7 @@ body {
   -webkit-transition: background 1s ease;
   -moz-transition: background 500ms ease;
   transition: background 500ms ease;
+  margin: 0;
 }
 
 a {
@@ -54,8 +55,10 @@ h2, h2 a {
   margin-bottom: 1rem;
   font-weight: normal;
   letter-spacing : 0.85;
-  line-height: 6.4vmin;
-  text-align: center;
+  text-align: left;
+  padding: 0 15px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 
 }
 h3, h3 a {
