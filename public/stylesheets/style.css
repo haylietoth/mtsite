@@ -51,9 +51,6 @@
 letter {
   transition: color .3s linear, text-shadow .3s linear;
 }
-word {
-  line-height: 1.5;
-}
 word::after {
   content: ' ';
 }
@@ -90,8 +87,7 @@ word::after {
   justify-content:center;
 }
 .home-content-section {
-  padding: 0 75px;
-  font-size: 32px;
+  padding: 0 17%;
 }
 #thumbwrap {
   position:relative;
@@ -234,16 +230,16 @@ hr {
   margin-bottom:0px;
   font-weight:bold;
 }
+.footer-p {
+  font-size: 32px;
+}
 .footer-column {
   font-size: 16px;
 }
-.footer-p {
- text-align: justify;
-}
 /*footer text for home page only*/
 .home {
-  padding-top: 100px;
-  padding-bottom: 1.5rem;
+  padding: 100px 75px 1.5rem;
+  line-height: 1.5;
 }
 /*End Footer*/
 
@@ -386,6 +382,9 @@ hr {
   .info {
     margin: 0px;
     padding: 4rem 0 0;
+  }
+  .home {
+    padding: 0;
   }
   .row {
     padding: 2rem 0;
