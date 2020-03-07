@@ -60,7 +60,7 @@ word::after {
 }
 .text-content{
   text-align: left;
-  margin-bottom: 5em;
+  margin-bottom: 10%;
   text-align: justify;
   font-size: calc(12px + 14.361*(100vw - 576px)/864);
 }
@@ -144,7 +144,7 @@ a.graphic:hover {
 
 .thumbnail-title {
   font-size: 17px;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.3rem 0 1rem 0;
   opacity: 0;
   -webkit-transition: opacity 150ms ease;
   -o-transition: opacity 150ms ease;
@@ -231,7 +231,7 @@ hr {
   font-weight:bold;
 }
 .footer-p {
-  font-size: 32px;
+  font-size: 22px;
 }
 .footer-column {
   font-size: 16px;
@@ -370,7 +370,7 @@ hr {
     padding-top: 100px;
   }
   .content-section {
-    padding-top: 25px;
+    padding-top: 90px;
   }
   .content-section {
     margin-bottom: 2rem;
