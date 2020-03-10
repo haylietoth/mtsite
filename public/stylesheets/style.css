@@ -51,12 +51,15 @@
 letter {
   transition: color .3s linear, text-shadow .3s linear;
 }
-word::after, a::after {
+word::after{
   content: ' ';
 }
 .painted {
   color: #00b7a0;
   font-family: Georgia, serif;
+}
+a.joyful.painted {
+  text-decoration-color: #00b7a0;
 }
 .text-content{
   text-align: left;
@@ -93,17 +96,17 @@ word::after, a::after {
   position:relative;
   margin:relative;
 }
-a.thumb {
+a.thumb, a.joyful {
   padding-bottom: 0.1em;
-  border-bottom: 0.01em solid black;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 a.joyful:hover {
   border-bottom: 0.01em solid rgba(0, 0, 0, 0);
-  -webkit-animation: cursor .75s infinite;
+  -webkit-animation: cursor 1s infinite;
   -moz-animation: cursor 1s infinite;
-  -o-animation: cursor .75s infinite;
-  animation: cursor .75s infinite;
+  -o-animation: cursor 1s infinite;
+  animation: cursor 1s infinite;
 }
 @-webkit-keyframes cursor {
   0%{

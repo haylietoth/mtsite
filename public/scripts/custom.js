@@ -54,6 +54,7 @@ jQuery (document).ready(function(){
       $.each(words, function(_, word) {
         if (word == "joyful") {
             $('<a>', {text: word}).appendTo($homeContentSection);
+            $('<word>').appendTo($homeContentSection);
             $('.to-letter a').addClass('joyful');
         } else {
             $('<word>', {text: word}).appendTo($homeContentSection);
