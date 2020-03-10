@@ -52,7 +52,12 @@ jQuery (document).ready(function(){
       var words = $(this).text().split(' '),
       $homeContentSection = $(this).empty();
       $.each(words, function(_, word) {
-        $('<word>', {text: word}).appendTo($homeContentSection);
+        if (word == "joyful") {
+            $('<a>', {text: word}).appendTo($homeContentSection);
+            $('.to-letter a').addClass('joyful');
+        } else {
+            $('<word>', {text: word}).appendTo($homeContentSection);
+        }
       });
     });
 
@@ -69,6 +74,11 @@ jQuery (document).ready(function(){
        function(){
            $(this).addClass('painted');
        }
+    );
+    $('.to-letter a').hover(
+      function(){
+          $(this).addClass('painted');
+      }
     );
     $('.thumb').hover(
        function(){
@@ -98,5 +108,36 @@ jQuery (document).ready(function(){
         }
       });
     });
+
+    //animated cursor
+    var joyful = document.querySelector(".joyful");
+    var cursorArray = ['url("../images/cursor/01.png"), auto',
+                       'url("../images/cursor/02.png"), auto',
+                       'url("../images/cursor/03.png"), auto',
+                       'url("../images/cursor/04.png"), auto',
+                       'url("../images/cursor/05.png"), auto',
+                       'url("../images/cursor/06.png"), auto',
+                       'url("../images/cursor/07.png"), auto',
+                       'url("../images/cursor/08.png"), auto',
+                       'url("../images/cursor/09.png"), auto',
+                       'url("../images/cursor/10.png"), auto',
+                       'url("../images/cursor/11.png"), auto',
+                       'url("../images/cursor/12.png"), auto',
+                       'url("../images/cursor/13.png"), auto',
+                       'url("../images/cursor/14.png"), auto',
+                       'url("../images/cursor/15.png"), auto',
+                       'url("../images/cursor/16.png"), auto',
+                       'url("../images/cursor/17.png"), auto',
+                       'url("../images/cursor/18.png"), auto',
+                       'url("../images/cursor/19.png"), auto'];
+    i = 0;
+    (function cursor(){
+      joyful.style.cursor  = cursorArray[i];
+      i++;
+      if(i == cursorArray.length){
+        i = 0;
+      }
+       setTimeout(cursor, 50);
+    })();
 
 });
