@@ -137,7 +137,7 @@ jQuery (document).ready(function(){
       if(i == cursorArray.length){
         i = 0;
       }
-       setTimeout(cursor, 50);
+       setTimeout(cursor, 75);
     })();
 
 });
