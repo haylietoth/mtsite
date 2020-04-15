@@ -51,12 +51,15 @@
 letter {
   transition: color .3s linear, text-shadow .3s linear;
 }
-word::after {
+word::after{
   content: ' ';
 }
 .painted {
   color: #00b7a0;
   font-family: Georgia, serif;
+}
+a.joyful.painted {
+  text-decoration-color: #00b7a0;
 }
 .text-content{
   text-align: left;
@@ -93,26 +96,253 @@ word::after {
   position:relative;
   margin:relative;
 }
-a.thumb {
+a.thumb, a.joyful {
   padding-bottom: 0.1em;
-  border-bottom: 0.01em solid black;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: black;
 }
-a.typeface:hover {
+a.joyful:hover {
   border-bottom: 0.01em solid rgba(0, 0, 0, 0);
-  cursor: url("../images/info-typeface-cursor.png"), auto;
+  -webkit-animation: cursor 1s infinite;
+  -moz-animation: cursor 1s infinite;
+  -o-animation: cursor 1s infinite;
+  animation: cursor 1s infinite;
 }
-a.aastool:hover {
-  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
-  cursor: url("../images/info-Aastool-cursor.png"), auto;
+@-webkit-keyframes cursor {
+  0%{
+    cursor: url("../images/cursor/01.png"), auto;
+  }
+  5%{
+    cursor: url("../images/cursor/02.png"), auto;
+  }
+  10%{
+    cursor: url("../images/cursor/03.png"), auto;
+  }
+  15%{
+    cursor: url("../images/cursor/04.png"), auto;
+  }
+  20%{
+    cursor: url("../images/cursor/05.png"), auto;
+  }
+  26%{
+    cursor: url("../images/cursor/06.png"), auto;
+  }
+  31%{
+    cursor: url("../images/cursor/07.png"), auto;
+  }
+  36%{
+    cursor: url("../images/cursor/08.png"), auto;
+  }
+  41%{
+    cursor: url("../images/cursor/09.png"), auto;
+  }
+  46%{
+    cursor: url("../images/cursor/10.png"), auto;
+  }
+  52%{
+    cursor: url("../images/cursor/11.png"), auto;
+  }
+  57%{
+    cursor: url("../images/cursor/12.png"), auto;
+  }
+  62%{
+    cursor: url("../images/cursor/13.png"), auto;
+  }
+  67%{
+    cursor: url("../images/cursor/14.png"), auto;
+  }
+  72%{
+    cursor: url("../images/cursor/15.png"), auto;
+  }
+  77%{
+    cursor: url("../images/cursor/16.png"), auto;
+  }
+  83%{
+    cursor: url("../images/cursor/17.png"), auto;
+  }
+  95%{
+    cursor: url("../images/cursor/18.png"), auto;
+  }
+  100%{
+    cursor: url("../images/cursor/19.png"), auto;
+  }
 }
-a.food:hover {
-  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
-  cursor: url("../images/info-FoodRules-cursor.png"), auto;
+@-moz-keyframes cursor {
+  0%{
+    cursor: url("../images/cursor/01.png"), auto;
+  }
+  5.2%{
+    cursor: url("../images/cursor/02.png"), auto;
+  }
+  10.4%{
+    cursor: url("../images/cursor/03.png"), auto;
+  }
+  15.6%{
+    cursor: url("../images/cursor/04.png"), auto;
+  }
+  20.8%{
+    cursor: url("../images/cursor/05.png"), auto;
+  }
+  26%{
+    cursor: url("../images/cursor/06.png"), auto;
+  }
+  31.2%{
+    cursor: url("../images/cursor/07.png"), auto;
+  }
+  36.4%{
+    cursor: url("../images/cursor/08.png"), auto;
+  }
+  41.6%{
+    cursor: url("../images/cursor/09.png"), auto;
+  }
+  46.8%{
+    cursor: url("../images/cursor/10.png"), auto;
+  }
+  52%{
+    cursor: url("../images/cursor/11.png"), auto;
+  }
+  57.2%{
+    cursor: url("../images/cursor/12.png"), auto;
+  }
+  62.4%{
+    cursor: url("../images/cursor/13.png"), auto;
+  }
+  67.6%{
+    cursor: url("../images/cursor/14.png"), auto;
+  }
+  72.8%{
+    cursor: url("../images/cursor/15.png"), auto;
+  }
+  77%{
+    cursor: url("../images/cursor/16.png"), auto;
+  }
+  83.2%{
+    cursor: url("../images/cursor/17.png"), auto;
+  }
+  95.4%{
+    cursor: url("../images/cursor/18.png"), auto;
+  }
+  100%{
+    cursor: url("../images/cursor/19.png"), auto;
+  }
 }
-a.graphic:hover {
-  border-bottom: 0.01em solid rgba(0, 0, 0, 0);
-  cursor: url("../images/info-GDTheory-cursor.png"), auto;
+@-o-keyframes cursor {
+  0%{
+    cursor: url("../images/cursor/01.png"), auto;
+  }
+  5.2%{
+    cursor: url("../images/cursor/02.png"), auto;
+  }
+  10.4%{
+    cursor: url("../images/cursor/03.png"), auto;
+  }
+  15.6%{
+    cursor: url("../images/cursor/04.png"), auto;
+  }
+  20.8%{
+    cursor: url("../images/cursor/05.png"), auto;
+  }
+  26%{
+    cursor: url("../images/cursor/06.png"), auto;
+  }
+  31.2%{
+    cursor: url("../images/cursor/07.png"), auto;
+  }
+  36.4%{
+    cursor: url("../images/cursor/08.png"), auto;
+  }
+  41.6%{
+    cursor: url("../images/cursor/09.png"), auto;
+  }
+  46.8%{
+    cursor: url("../images/cursor/10.png"), auto;
+  }
+  52%{
+    cursor: url("../images/cursor/11.png"), auto;
+  }
+  57.2%{
+    cursor: url("../images/cursor/12.png"), auto;
+  }
+  62.4%{
+    cursor: url("../images/cursor/13.png"), auto;
+  }
+  67.6%{
+    cursor: url("../images/cursor/14.png"), auto;
+  }
+  72.8%{
+    cursor: url("../images/cursor/15.png"), auto;
+  }
+  77%{
+    cursor: url("../images/cursor/16.png"), auto;
+  }
+  83.2%{
+    cursor: url("../images/cursor/17.png"), auto;
+  }
+  95.4%{
+    cursor: url("../images/cursor/18.png"), auto;
+  }
+  100%{
+    cursor: url("../images/cursor/19.png"), auto;
+  }
+}
+@keyframes cursor {
+  0%{
+    cursor: url("../images/cursor/01.png"), auto;
+  }
+  5.2%{
+    cursor: url("../images/cursor/02.png"), auto;
+  }
+  10.4%{
+    cursor: url("../images/cursor/03.png"), auto;
+  }
+  15.6%{
+    cursor: url("../images/cursor/04.png"), auto;
+  }
+  20.8%{
+    cursor: url("../images/cursor/05.png"), auto;
+  }
+  26%{
+    cursor: url("../images/cursor/06.png"), auto;
+  }
+  31.2%{
+    cursor: url("../images/cursor/07.png"), auto;
+  }
+  36.4%{
+    cursor: url("../images/cursor/08.png"), auto;
+  }
+  41.6%{
+    cursor: url("../images/cursor/09.png"), auto;
+  }
+  46.8%{
+    cursor: url("../images/cursor/10.png"), auto;
+  }
+  52%{
+    cursor: url("../images/cursor/11.png"), auto;
+  }
+  57.2%{
+    cursor: url("../images/cursor/12.png"), auto;
+  }
+  62.4%{
+    cursor: url("../images/cursor/13.png"), auto;
+  }
+  67.6%{
+    cursor: url("../images/cursor/14.png"), auto;
+  }
+  72.8%{
+    cursor: url("../images/cursor/15.png"), auto;
+  }
+  77%{
+    cursor: url("../images/cursor/16.png"), auto;
+  }
+  83.2%{
+    cursor: url("../images/cursor/17.png"), auto;
+  }
+  95.4%{
+    cursor: url("../images/cursor/18.png"), auto;
+  }
+  100%{
+    cursor: url("../images/cursor/19.png"), auto;
+  }
 }
 .thumbnails {
   z-index: -1;

@@ -13,7 +13,7 @@ block prepend body
             div.container
               div.home-content-section(class=sectionClass)
                 h2.to-letter
-                  != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
+                  != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
      div.thumbnails(id="thumbnails")
       //- Display the slices
       for slice in pageContent.data.page_content
