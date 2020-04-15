@@ -16,6 +16,8 @@ block prepend body
              include ./partials/full-width-image.pug
            when 'text-section'
              include ./partials/text-section.pug
+           when 'video'
+             include ./partials/video.pug
        h3
           != PrismicDOM.RichText.asText(project.client)
        h3
