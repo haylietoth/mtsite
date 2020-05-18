@@ -1,3 +1,5 @@
 section.text-content(class=sectionClass)
-  //span!= PrismicDOM.RichText.asText(project.title)
+  span
+    != PrismicDOM.RichText.asText(project.title) + " "
+    i.material-icons arrow_forward 
   != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)

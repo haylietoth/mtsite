@@ -20,11 +20,32 @@ block prepend body
         case slice.slice_type
           when 'thumbnail'
             include ./partials/thumbnail.pug 
-     #site-footer.home.site-footer
-       #info.info.footer-p
+    div.home
+      div.home-row
+        div.home-column
          for slice in pageContent.data.page_content
             case slice.slice_type
               when 'footer_text'
                   p.to-letter
                     != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
-     include ./partials/footer.pug
+        div.home-column
+          #site-footer.site-footer.home-row
+            #info
+              p.child.c-home
+               | C
+              p.child
+               | For inquiries, collaborations, or to 
+               br
+               | simply say hi, please contact me here:
+               br
+               br
+               | E  
+               i.material-icons
+                | arrow_forward &nbsp; 
+               a(href='mailto:hello@madeleinetoth.com') hello@madeleinetoth.com
+              p.child
+               a(href='https://www.linkedin.com/in/madeleinetoth/', target='_blank') Linkedin
+               br
+               a(href='http://instagram.com/madeleine_toth', target='_blank') Instagram
+               br
+               a(href='https://www.behance.net/madeleinetoth/', target='_blank') Behance
