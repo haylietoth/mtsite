@@ -46,7 +46,14 @@
 
 /*General*/
 .full-width-image {
-    margin-bottom: 10%;
+    margin-top: 10%;
+}
+.full-width-image:first-of-type {
+    margin-top: 0;
+}
+
+h3:last-of-type {
+  margin-bottom: 10em;
 }
 letter {
   transition: color .3s linear, text-shadow .3s linear;
@@ -63,7 +70,7 @@ a.joyful.painted {
 }
 .text-content{
   text-align: left;
-  margin-bottom: 10%;
+  margin: 5em 0;
   font-size: 16px;
   width: 60%;
 }
