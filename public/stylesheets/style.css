@@ -15,7 +15,7 @@
 }
 .site-header {
   height: 30px;
-  padding: 20px .75rem;
+  padding: 30px 1rem;
 }
 .site-header,
 .site-header a {
@@ -424,6 +424,10 @@ a.joyful:hover {
 .home-column p {
   font-size: calc(10px + 12.361*(100vw - 576px)/864);
 }
+
+.child {
+  font-size: 16px !important;
+}
 .c-home {
   font-size:calc(60px + 15.361*(100vw - 576px)/864) !important;
   margin-bottom: 0;
@@ -515,7 +519,7 @@ hr {
 
 /* Media Queries */
 @media (min-width: 1500px) {
-  .home-column .material-icons {
+  .home-column .material-icons, .child {
     font-size: 25px !important;
   }
   .home-column p {
