@@ -418,7 +418,7 @@ a.joyful:hover {
 }
 
 .home-column .material-icons {
-  font-size: calc(10px + 12.361*(100vw - 576px)/864) !important;
+  font-size: 16px !important;
   vertical-align: text-bottom;
 }
 .home-column p {
