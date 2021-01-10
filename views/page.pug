@@ -14,6 +14,8 @@ block prepend body
          case slice.slice_type
            when 'full_width_image'
              include ./partials/full-width-image.pug
+           when 'two_column_image'
+             include ./partials/two_column_image.pug
            when 'text-section'
              include ./partials/text-section.pug
            when 'video'
