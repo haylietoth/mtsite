@@ -448,6 +448,21 @@ a.joyful:hover {
   margin-bottom: 3.75rem;
   padding-top: 100px;
 }
+.two-col-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.two-col {
+  float: left;
+  width: 50%;
+}
+.leftImg {
+  padding-right: 30px;
+}
+.rightImg {
+  padding-left: 30px;
+}
 /*End Project page*/
 
 /*End Body*/
