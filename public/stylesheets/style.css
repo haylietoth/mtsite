@@ -110,6 +110,7 @@ a.thumb {
 a.joyful {
   color: #00b7a0;
   font-family: Georgia, serif;
+  text-decoration: underline;
 }
 a.joyful:hover {
   -webkit-animation: cursor 1.25s infinite;
@@ -379,6 +380,20 @@ a.joyful:hover {
   display: block;
   margin: 0 auto;
   transition: .5s ease;
+  cursor: none;
+}
+.thumbnail a {
+  cursor: none;
+}
+.img_title {
+  display: table;
+  background: none;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
+  font-family: 'NeuzeitSLTStd-Book' , sans-serif;
 }
 .thumbnail-title {
   font-size: 17px;
@@ -399,6 +414,12 @@ a.joyful:hover {
 .thumbnail img:hover {
   webkit-filter: blur(4px); /* Chrome, Safari, Opera */
   filter: blur(4px);
+}
+.thumbnail:nth-child(odd) {
+  padding: 0 1rem 2rem 0;
+}
+.thumbnail:nth-child(even) {
+  padding: 0 0 2rem 1rem;
 }
 .home {
   padding: 100px 3.5rem 8rem 1.75rem;
@@ -770,3 +791,132 @@ hr {
   }
 }
 /* End Media Queries */
+
+/*TESTING*/
+ .the-arrow {
+	 width: 1px;
+	 transition: all 0.2s;
+}
+ .the-arrow.-left {
+	 position: absolute;
+	 top: 60%;
+	 left: 0;
+}
+ .the-arrow.-left > .shaft {
+	 width: 0;
+	 background-color: #4c4c4c;
+}
+ .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
+	 width: 0;
+	 background-color: #4c4c4c;
+}
+ .the-arrow.-left > .shaft:before {
+	 transform: rotate(0);
+}
+ .the-arrow.-left > .shaft:after {
+	 transform: rotate(0);
+}
+ .the-arrow.-right {
+	 top: 3px;
+}
+ .the-arrow.-right > .shaft {
+	 width: 1px;
+	 transition-delay: 0.2s;
+}
+ .the-arrow.-right > .shaft:before, .the-arrow.-right > .shaft:after {
+	 width: 8px;
+	 transition-delay: 0.3s;
+	 transition: all 0.5s;
+}
+ .the-arrow.-right > .shaft:before {
+	 transform: rotate(40deg);
+}
+ .the-arrow.-right > .shaft:after {
+	 transform: rotate(-40deg);
+}
+ .the-arrow > .shaft {
+	 background-color: #4c4c4c;
+	 display: block;
+	 height: 1px;
+	 position: relative;
+	 transition: all 0.2s;
+	 transition-delay: 0;
+	 will-change: transform;
+}
+ .the-arrow > .shaft:before, .the-arrow > .shaft:after {
+	 background-color: #4c4c4c;
+	 content: '';
+	 display: block;
+	 height: 1px;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 transition: all 0.2s;
+	 transition-delay: 0;
+}
+ .the-arrow > .shaft:before {
+	 transform-origin: top right;
+}
+ .the-arrow > .shaft:after {
+	 transform-origin: bottom right;
+}
+ .animated-arrow {
+	 display: inline-block;
+	 color: #4c4c4c;
+	 font-size: 1.25em;
+	 text-decoration: none;
+	 position: relative;
+	 transition: all 0.2s;
+   padding-bottom: 10px;
+}
+ .animated-arrow:hover {
+	 color: #808080;
+}
+ .animated-arrow:hover > .the-arrow.-left > .shaft {
+	 width: 64px;
+	 transition-delay: 0.1s;
+	 background-color: #808080;
+}
+ .animated-arrow:hover > .the-arrow.-left > .shaft:before, .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+	 width: 8px;
+	 transition-delay: 0.1s;
+	 background-color: #808080;
+}
+ .animated-arrow:hover > .the-arrow.-left > .shaft:before {
+	 transform: rotate(40deg);
+}
+ .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+	 transform: rotate(-40deg);
+}
+ .animated-arrow:hover > .main {
+	 transform: translateX(17px);
+	 transform: translateX(80px);
+}
+ .animated-arrow:hover > .main > .the-arrow.-right > .shaft {
+	 width: 0;
+	 transform: translateX(200%);
+	 transition-delay: 0;
+}
+ .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before, .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+	 width: 0;
+	 transition-delay: 0;
+	 transition: all 0.1s;
+}
+ .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before {
+	 transform: rotate(0);
+}
+ .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+	 transform: rotate(0);
+}
+ .animated-arrow > .main {
+	 display: flex;
+	 align-items: center;
+	 transition: all 0.2s;
+}
+ .animated-arrow > .main > .text {
+	 margin: 0 16px 0 0;
+	 line-height: 1;
+}
+ .animated-arrow > .main > .the-arrow {
+	 position: relative;
+}

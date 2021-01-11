@@ -110,6 +110,39 @@ jQuery (document).ready(function(){
       });
     });
 
+    ///cursor for thumbnails
+    var title = "";
+    $(document).mousemove(function (e) {
+        $(".thumbnail a").each(function(i, v) {
+            var container = v;
+            var img = $(this).children()[0];
+            var test = '<i class="material-icons">arrow_forward &nbsp; </i>';
+
+            if((e.pageY < $(img).offset().top ||
+               e.pageY > $(img).offset().top + $(img).height() ||
+               e.pageX < $(img).offset().left ||
+               e.pageX > $(img).offset().left + $(img).width()) ){
+
+                if( $(container).children().length == 2){
+                   $(container).children()[0].title = $($(container).children()[1]).html();
+                   container.removeChild($(container).children()[1]);
+                }
+            }
+            else {
+                if($(container).children().length == 1){ 
+                    title = $("<div class='img_title'>" + $(container).children()[0].title + "</div>");
+                    $(container).children()[0].title = "";
+                    $(container).append(title);
+                }
+                title.offset({
+                    top: (e.pageY ? e.pageY : e.clientX),
+                    left: (e.pageX ? e.pageX : e.clientY)
+                });
+            }
+            test = "";
+        });
+    });
+
     //animated cursor
     // var joyful = document.querySelector(".joyful");
     // var cursorArray = ['url("../images/cursor/01.png"), auto',
