@@ -51,7 +51,6 @@
 .full-width-image:first-of-type {
     margin-top: 0;
 }
-
 h3:last-of-type {
   margin-bottom: 150px;
 }
@@ -67,6 +66,7 @@ word::after{
 }
 a.joyful.painted {
   text-decoration-color: #00b7a0;
+  text-decoration: underline;
 }
 .text-content{
   text-align: left;
@@ -396,6 +396,10 @@ a.joyful:hover {
 .thumbnail-link:hover + .thumbnail-title {
   opacity: 1;
 }
+.thumbnail img:hover {
+  webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+  filter: blur(4px);
+}
 .home {
   padding: 100px 3.5rem 8rem 1.75rem;
   line-height: 1.5;
@@ -416,7 +420,6 @@ a.joyful:hover {
   width: 40%;
   padding: 0 0 0 10%;
 }
-
 .home-column .material-icons {
   font-size: 16px !important;
   vertical-align: text-bottom;
@@ -424,7 +427,6 @@ a.joyful:hover {
 .home-column p {
   font-size: calc(10px + 12.361*(100vw - 576px)/864);
 }
-
 .child {
   font-size: 16px !important;
 }
@@ -465,6 +467,24 @@ a.joyful:hover {
 }
 /*End Project page*/
 
+/* Archive Page*/
+.archive-row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+.archive-column {
+  -ms-flex: 33.33%; /* IE10 */
+  flex: 33.33%;
+  max-width: 33.33%;
+  padding: 1rem;
+}
+.block-img {
+  margin-bottom: 2rem;
+}
+/* End Archive Page*/
 /*End Body*/
 
 /* Footer */
@@ -612,7 +632,7 @@ hr {
 	    position: relative!important;
 	    left: auto!important;
 	    top: auto!important;
-	    width: 33.33%!important;
+	    width: 50%!important;
 	}
 }
 /*Cell Phones*/
