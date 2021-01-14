@@ -1,15 +1,18 @@
 div.whitebar
  header.site-header
-  a(href='./')
-    .logo Madeleine Toth Edwards
+  span.box
+   a.underline(href='./')
+     .logo Madeleine Toth Edwards
   
   if menuContent != null
     nav
       ul
        li
-        a(href="#thumbnails") Work
+        div.box
+         a.underline(href="#thumbnails") WORK
        li
-        a(href='#site-footer') Info
+        div.box
+         a.underline(href='#site-footer') INFO
         each menuLink in menuContent.data.menu_links
           li
             a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver))
