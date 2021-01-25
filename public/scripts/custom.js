@@ -18,20 +18,20 @@ jQuery (document).ready(function(){
     });
 
     /*page fade-in and fade-out */
-        $('body').css('display','none');
-        $('body').fadeIn(500);
+    $('body').css('display','none');
+    $('body').fadeIn(500);
 
-        $(document).on("click", "a", function () {
-            var newUrl = $(this).attr("href");
-            if (!newUrl || newUrl[0] === "#") {
-                location.hash = newUrl;
-                return;
-            }
-            $("html").fadeOut(function () {
-                location = newUrl;
-            });
-            return false;
+    $(document).on("click", "a", function () {
+        var newUrl = $(this).attr("href");
+        if (!newUrl || newUrl[0] === "#") {
+            location.hash = newUrl;
+            return;
+        }
+        $("html").fadeOut(function () {
+            location = newUrl;
         });
+        return false;
+    });
 
     /*Smooth scroll*/
     $(document).ready(function(){
@@ -47,6 +47,7 @@ jQuery (document).ready(function(){
             }
         });
     });
+
     /*String to letters*/
     $('.to-letter').each(function() {
       var words = $(this).text().split(' '),
@@ -87,6 +88,14 @@ jQuery (document).ready(function(){
        }
     );
 
+    const span = document.createElement('span');
+    const image = document.createElement('img');
+    image.src  = 'images/IMG_6479.GIF';
+
+    $('.joyful').wrap('<span class="wrap"></span>');
+    $('.joyful').append(span);
+    $('.joyful span').append(image);
+//$('<span><img src="images/IMG_6479.GIF"></img></span>', {text: word}).appendTo($homeContentSection);
 
 
     /*Delayed scroll on thumbnails*/
@@ -129,7 +138,7 @@ jQuery (document).ready(function(){
                 }
             }
             else {
-                if($(container).children().length == 1){ 
+                if($(container).children().length == 1){
                     title = $("<div class='img_title'>" + $(container).children()[0].title + "</div>");
                     $(container).children()[0].title = "";
                     $(container).append(title);
@@ -142,36 +151,4 @@ jQuery (document).ready(function(){
             test = "";
         });
     });
-
-    //animated cursor
-    // var joyful = document.querySelector(".joyful");
-    // var cursorArray = ['url("../images/cursor/01.png"), auto',
-    //                    'url("../images/cursor/02.png"), auto',
-    //                    'url("../images/cursor/03.png"), auto',
-    //                    'url("../images/cursor/04.png"), auto',
-    //                    'url("../images/cursor/05.png"), auto',
-    //                    'url("../images/cursor/06.png"), auto',
-    //                    'url("../images/cursor/07.png"), auto',
-    //                    'url("../images/cursor/08.png"), auto',
-    //                    'url("../images/cursor/09.png"), auto',
-    //                    'url("../images/cursor/10.png"), auto',
-    //                    'url("../images/cursor/11.png"), auto',
-    //                    'url("../images/cursor/12.png"), auto',
-    //                    'url("../images/cursor/13.png"), auto',
-    //                    'url("../images/cursor/14.png"), auto',
-    //                    'url("../images/cursor/15.png"), auto',
-    //                    'url("../images/cursor/16.png"), auto',
-    //                    'url("../images/cursor/17.png"), auto',
-    //                    'url("../images/cursor/18.png"), auto',
-    //                    'url("../images/cursor/19.png"), auto'];
-    // i = 0;
-    // (function cursor(){
-    //   joyful.style.cursor  = cursorArray[i];
-    //   i++;
-    //   if(i == cursorArray.length){
-    //     i = 0;
-    //   }
-    //    setTimeout(cursor, 75);
-    // })();
-
 });

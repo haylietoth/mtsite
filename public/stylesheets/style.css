@@ -16,7 +16,7 @@
 }
 .site-header {
   padding: 26px 1rem;
-  margin-left: 0.75rem;
+  margin: 0 0.75rem;
 
 }
 .site-header,
@@ -54,6 +54,13 @@
 .box:hover .underline::after {
   width: 100%;
   transition: 0.3s ease all;
+}
+.box:hover .logo::after {
+  width: 100%;
+  transition: 0.5s ease all !important;
+}
+.logo::after {
+  transition: 0.5s ease all .5s !important;
 }
 .site-header .logo {
   display: inline-block;
@@ -137,10 +144,31 @@ a.thumb {
   text-decoration-color: black;
 }
 a.joyful {
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   text-decoration: underline;
 }
-a.joyful:hover {
+.wrap {
+  position: relative;
+  margin: relative;
+}
+.joyful span {
+	position:absolute;
+	visibility:hidden;
+  margin-top: -25%;
+}
+.joyful:hover, .joyful:hover span {
+	visibility: visible;
+	top:0px;
+  left:0px;
+  z-index: 1;
+}
+.joyful img {
+	border:0px solid #000;
+	margin:0px;
+  min-width: 300px;
+	float:left;
+}
+/* a.joyful:hover {
   -webkit-animation: cursor 1.25s infinite;
   -moz-animation: cursor 1.25s infinite;
   -o-animation: cursor 1.25s infinite;
@@ -381,7 +409,7 @@ a.joyful:hover {
   100%{
     cursor: url("../images/cursor/19.png"), auto;
   }
-}
+} */
 .thumbnails {
   z-index: -1;
   background-color: white;
@@ -522,7 +550,7 @@ a.joyful:hover {
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding: 0 2rem;
+  padding: 0;
 }
 .archive-column {
   -ms-flex: 33.33%; /* IE10 */
@@ -547,10 +575,11 @@ a.joyful:hover {
   color: black;
   text-decoration: none;
   font-size: 16px;
+  line-height: 2;
 }
 .site-footer a:hover {
   color: black;
-  font-family: Georgia;
+  /* font-family: Georgia; */
 }
 .info {
   padding: 0 2rem 0px 2rem;
@@ -757,6 +786,7 @@ hr {
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
+    margin: 0 0;
   }
   h2 {
     line-height: 1.5rem;
