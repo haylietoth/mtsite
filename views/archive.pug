@@ -6,7 +6,7 @@ block prepend body
     include ./partials/header.pug
 
     // Content Section
-    div.container(style='padding-top:140px;')
+    div.page(style='padding-top:140px;')
      div.archive-row
        //- Display the slices
        for slice in pageContent.data.body
@@ -17,8 +17,8 @@ block prepend body
                  != PrismicDOM.RichText.asHtml(richTextItem.left_column, ctx.linkResolver)
              div.archive-column
                each richTextItem in slice.items
-                   != PrismicDOM.RichText.asHtml(richTextItem.middle_column, ctx.linkResolver)
+                 != PrismicDOM.RichText.asHtml(richTextItem.middle_column, ctx.linkResolver)
              div.archive-column
                each richTextItem in slice.items
-                   != PrismicDOM.RichText.asHtml(richTextItem.right_column, ctx.linkResolver)
-     include ./partials/footer.pug
+                 != PrismicDOM.RichText.asHtml(richTextItem.right_column, ctx.linkResolver)
+  include ./partials/footer.pug
