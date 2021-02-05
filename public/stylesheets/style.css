@@ -15,7 +15,7 @@
   height: 78px;
 }
 .site-header {
-  padding: 26px 1rem;
+  padding: 19px 1rem 26px 1rem;
   margin: 0 0.75rem;
 
 }
@@ -98,7 +98,8 @@ word::after{
 }
 .painted {
   color: #00b7a0;
-  font-family: Georgia, serif;
+  font-family: linotype-sabon, sans-serif;
+  font-size: calc(11px + 12.361*(100vw - 576px)/864);
 }
 a.joyful.painted {
   text-decoration-color: #00b7a0;
@@ -130,6 +131,7 @@ a.joyful.painted {
   -webkit-justify-content:center;
   -ms-flex-pack:center;
   justify-content:center;
+  /* background-color: #4a9885; */
 }
 .home-content-section {
   padding: 0 17%;
@@ -144,29 +146,28 @@ a.thumb {
   text-decoration-color: black;
 }
 a.joyful {
-  /* font-family: Georgia, serif; */
+  /* font-family: linotype-sabon, sans-serif; */
   text-decoration: underline;
 }
 .wrap {
   position: relative;
-  margin: relative;
 }
-.joyful span {
-	position:absolute;
-	visibility:hidden;
-  margin-top: -25%;
+.wrap a span {
+  position:absolute;
+  display:none;
+  z-index:99;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-.joyful:hover, .joyful:hover span {
-	visibility: visible;
-	top:0px;
-  left:0px;
-  z-index: 1;
+.joyful:hover span {
+	display:block;
 }
 .joyful img {
 	border:0px solid #000;
 	margin:0px;
-  min-width: 300px;
-	float:left;
+  min-width: 469px;
 }
 /* a.joyful:hover {
   -webkit-animation: cursor 1.25s infinite;
@@ -415,6 +416,7 @@ a.joyful {
   background-color: white;
   padding: 68px 1rem 0 1rem;
   margin: 0 auto;
+  /* background-color: #4a9885; */
 }
 .thumbnail {
   text-align: left;
@@ -481,6 +483,7 @@ a.joyful {
   padding: 100px 3.5rem 8rem 1.75rem;
   line-height: 1.5;
   font-size: 22px;
+  /* background-color: #4a9885; */
 }
 .home-row:after {
   content: "";
@@ -508,7 +511,7 @@ a.joyful {
   font-size: 16px !important;
 }
 .c-home {
-  font-size:calc(46px + 12.361*(100vw - 576px)/864) !important;
+  font-size:calc(60px + 12.361*(100vw - 576px)/864) !important;
   margin-bottom: 0;
 }
 .ls1 {
@@ -607,16 +610,17 @@ a.joyful {
   color: black;
   text-decoration: none;
   font-size: 16px;
-  line-height: 2;
+  line-height: 2.5;
 }
 .site-footer a:hover {
   color: black;
-  /* font-family: Georgia; */
+  /* font-family: linotype-sabon, sans-serif; */
 }
 .info {
-  padding: 0 2rem 0px 2rem;
+  padding: 1rem 2rem 0px 2rem;
   width: 100%;
   color: black;
+  /* background-color: #4a9885; */
 }
 hr {
   border-bottom: 1px solid black;
@@ -624,6 +628,7 @@ hr {
 }
 .row {
   padding-top: 25px;
+  border-top: 1px solid #000;
 }
 .row:after {
   content: "";
@@ -673,11 +678,11 @@ hr {
  }
  .the-arrow.-left > .shaft {
 	 width: 0;
-	 background-color: #4c4c4c;
+	 background-color: #000000;
  }
  .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
 	 width: 0;
-	 background-color: #4c4c4c;
+	 background-color: #000000;
  }
  .the-arrow.-left > .shaft:before {
 	 transform: rotate(0);
@@ -704,7 +709,7 @@ hr {
 	 transform: rotate(-40deg);
  }
  .the-arrow > .shaft {
-	 background-color: #4c4c4c;
+	 background-color: #000000;
 	 display: block;
 	 height: 1px;
 	 position: relative;
@@ -713,7 +718,7 @@ hr {
 	 will-change: transform;
  }
  .the-arrow > .shaft:before, .the-arrow > .shaft:after {
-	 background-color: #4c4c4c;
+	 background-color: #000000;
 	 content: '';
 	 display: block;
 	 height: 1px;
@@ -731,7 +736,7 @@ hr {
  }
  .animated-arrow {
 	 display: inline-block;
-	 color: #4c4c4c;
+	 color: #000000;
 	 font-size: 1.25em;
 	 text-decoration: none;
 	 position: relative;
@@ -739,17 +744,17 @@ hr {
    padding-bottom: 10px;
  }
  .animated-arrow:hover {
-	 color: #808080;
+	 color: #000000;
  }
  .animated-arrow:hover > .the-arrow.-left > .shaft {
 	 width: 64px;
 	 transition-delay: 0.1s;
-	 background-color: #808080;
+	 background-color: #000000;
  }
  .animated-arrow:hover > .the-arrow.-left > .shaft:before, .animated-arrow:hover > .the-arrow.-left > .shaft:after {
 	 width: 8px;
 	 transition-delay: 0.1s;
-	 background-color: #808080;
+	 background-color: #000000;
  }
  .animated-arrow:hover > .the-arrow.-left > .shaft:before {
 	 transform: rotate(40deg);
@@ -878,6 +883,9 @@ hr {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
+  .wrap {
+    position: inherit;
+  }
   html, .header a, .thumb a, .thumbnail-title, .footer-p, .site-footer a, .footer-column, .column i, h3, .text-content  {
     font-size: 16px;
   }
@@ -1013,6 +1021,21 @@ hr {
   .c-style {
     font-size:30px;
   }
+  .wrap {
+    position: inherit;
+  }
+  .joyful img {
+    min-width: auto;
+    padding: 0 16px;
+  }
+  .wrap a span {
+    position:absolute;
+    display:none;
+    left:0;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+  }
 }
 @media (max-width: 320px) {
   .site-header {
@@ -1022,5 +1045,6 @@ hr {
   .site-header a {
     font-size: 18px;
   }
+
 }
 /* End Media Queries */
