@@ -16,7 +16,6 @@ jQuery (document).ready(function(){
             }
         });
     });
-
     /*page fade-in and fade-out */
     $('body').css('display','none');
     $('body').fadeIn(500);
@@ -151,4 +150,18 @@ jQuery (document).ready(function(){
             test = "";
         });
     });
+});
+
+/*sticky nav background color change*/
+$(window).on("scroll", function() {
+  var thumbnailOffset = $( ".thumbnails" ).offset();
+  var infoOffset = $( ".home" ).offset();
+  var thumbTop = thumbnailOffset.top;
+  var infoTop = infoOffset.top;
+    if($(window).scrollTop() > (thumbTop-78) && $(window).scrollTop() < (infoTop - 78)) {
+        $(".homepage .whitebar").css("background-color", "white");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".homepage .whitebar").css("background-color", "#4a9885");
+    }
 });

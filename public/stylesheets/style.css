@@ -97,9 +97,8 @@ word::after{
   content: ' ';
 }
 .painted {
-  color: #00b7a0;
+  color: #FFFFFF;
   font-family: linotype-sabon, sans-serif;
-  font-size: calc(11px + 12.361*(100vw - 576px)/864);
 }
 a.joyful.painted {
   text-decoration-color: #00b7a0;
@@ -131,7 +130,7 @@ a.joyful.painted {
   -webkit-justify-content:center;
   -ms-flex-pack:center;
   justify-content:center;
-  /* background-color: #4a9885; */
+  background-color: #4a9885;
 }
 .home-content-section {
   padding: 0 17%;
@@ -148,6 +147,7 @@ a.thumb {
 a.joyful {
   /* font-family: linotype-sabon, sans-serif; */
   text-decoration: underline;
+  line-height: 0;
 }
 .wrap {
   position: relative;
@@ -416,7 +416,6 @@ a.joyful {
   background-color: white;
   padding: 68px 1rem 0 1rem;
   margin: 0 auto;
-  /* background-color: #4a9885; */
 }
 .thumbnail {
   text-align: left;
@@ -483,7 +482,7 @@ a.joyful {
   padding: 100px 3.5rem 8rem 1.75rem;
   line-height: 1.5;
   font-size: 22px;
-  /* background-color: #4a9885; */
+  background-color: #4a9885;
 }
 .home-row:after {
   content: "";
@@ -506,6 +505,10 @@ a.joyful {
 }
 .home-column p {
   font-size: calc(10px + 12.361*(100vw - 576px)/864);
+}
+
+.home-column p .painted {
+  font-size: calc(12.5px + 12.361*(100vw - 576px)/864);
 }
 .child {
   font-size: 16px !important;
@@ -610,17 +613,17 @@ a.joyful {
   color: black;
   text-decoration: none;
   font-size: 16px;
-  line-height: 2.5;
+  line-height: 2;
 }
 .site-footer a:hover {
   color: black;
   /* font-family: linotype-sabon, sans-serif; */
 }
 .info {
-  padding: 1rem 2rem 0px 2rem;
+  padding: 1rem 2.5rem 0px 2.5rem;
   width: 100%;
   color: black;
-  /* background-color: #4a9885; */
+  background-color: #4a9885;
 }
 hr {
   border-bottom: 1px solid black;
@@ -628,7 +631,6 @@ hr {
 }
 .row {
   padding-top: 25px;
-  border-top: 1px solid #000;
 }
 .row:after {
   content: "";
@@ -642,13 +644,10 @@ hr {
   margin: 0;
 }
 .column:nth-child(1) {
-  width: 33%;
+  width: 90%;
 }
 .column:nth-child(2) {
-  width: 52%;
-}
-.column:nth-child(3){
-  width: 1%;
+  width: 10%;
 }
 .column i {
   font-size:16px;
@@ -656,9 +655,9 @@ hr {
 }
 .c-style {
   font-size:calc(60px + 15.361*(100vw - 576px)/864) !important;
-  padding-left: 5%;
   margin-bottom:0px;
   line-height: 1.5;
+  padding: .5rem 0;
 }
 .footer-p {
   font-size: 22px;
@@ -802,8 +801,18 @@ hr {
   .home-column .material-icons, .child {
     font-size: 25px !important;
   }
+  /* h2 {
+    font-size: 16px;
+  }
+  h2 .painted {
+    font-size: 17px;
+  } */
   .home-column p {
     font-size: 23.2051px;
+  }
+
+  .home-column p .painted {
+    font-size: 24.2051px;;
   }
   .c-home {
     font-size: 75px !important;
@@ -817,9 +826,13 @@ hr {
   .thumbnail {
       width: 50%!important;
   }
-  body {
+  .project {
     padding: 0 1rem 0rem;
   }
+  /* .info {
+    padding: 1rem 2rem 0px 2rem;
+
+  } */
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
@@ -842,9 +855,7 @@ hr {
   .thumbnail:nth-child(even) {
     padding: 0 2rem 4rem 2.5rem;
   }
-  .thumbnail img,
-  .project,
-  .info {
+  .thumbnail img {
     padding: 0;
   }
   .thumbnail {
@@ -859,17 +870,11 @@ hr {
   .home-column p {
     font-size: 16px;
   }
-  .home {
-    padding: 0;
+  .home-column p .painted {
+    font-size: 17px;
   }
   .site-footer a {
     text-underline-position: under;
-  }
-  .column:nth-child(1) {
-    width: 25%;
-  }
-  .column:nth-child(2) {
-    width: 60%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -895,6 +900,9 @@ hr {
   }
   .site-header {
     height: auto;
+  }
+  .container, .thumbnails, .home {
+    padding: 0 3rem;
   }
   .homepage .site-header {
     position: absolute;
@@ -923,6 +931,10 @@ hr {
     letter-spacing: 0;
     font-size: 18px !important;
   }
+  h2 .painted {
+    font-size: 21px !important;
+  }
+
   i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
   }
@@ -935,8 +947,7 @@ hr {
   }
 
   .thumbnail img,
-  .footer-p,
-  .project {
+  .footer-p {
     padding: 0;
   }
   .thumbnail {
@@ -969,10 +980,7 @@ hr {
   /*Footer*/
   .info {
     margin: 0px;
-    padding: 4rem 0 0;
-  }
-  .home {
-    padding: 0;
+    padding: 4rem 2rem 0 2rem;
   }
   .home-column:nth-child(1) {
       width: 100%;
@@ -1001,11 +1009,17 @@ hr {
   .home-column p {
     font-size: 16px;
   }
+  .home-column p .painted {
+    font-size: 17px;
+  }
 }
 @media (max-width: 450px) {
   /*Home*/
   h2 {
     font-size: 16px;
+  }
+  h2 .painted {
+    font-size: 17px;
   }
   .clear {
     padding: 0 30px;

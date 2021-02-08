@@ -31,6 +31,13 @@ html {
   font-size: calc(16px + 14.361*(100vw - 576px)/864);
 }
 
+h2 {
+  font-size: calc(16px + 14.361*(100vw - 576px)/864);;
+}
+h2 .painted {
+  font-size: calc(19.5px + 14.361*(100vw - 576px)/864);
+}
+
 body {
   display:none;
   background:white;
@@ -55,7 +62,6 @@ h2, h2 a {
   font-weight: normal;
   letter-spacing : 0.85;
   text-align: center;
-
 }
 h3, h3 a {
   Color:  grey;
