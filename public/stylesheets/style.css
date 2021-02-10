@@ -2,6 +2,52 @@
 .thumbnails, .clear, header {
   margin: auto;
 }
+.center {
+  position: relative;
+  text-align: center;
+}
+.loader {
+  display: flex;
+  /* justify-content: center; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+
+  animation-name: loading;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.circle:first-child {
+  background-color: #4a9885;
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  background-color: #4a9885;
+  animation-delay: 0.2s;
+}
+.circle:nth-child(3) {
+  background-color: #4a9885;
+  animation-delay: 0.4s;
+  margin-right: 0px;
+}
+@keyframes loading {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
 /*End General*/
 
 /* Header */
@@ -15,9 +61,7 @@
   height: 78px;
 }
 .site-header {
-  padding: 19px 1rem 26px 1rem;
-  margin: 0 0.75rem;
-
+  padding: 19px 1.75rem 26px 1.75rem;
 }
 .site-header,
 .site-header a {
@@ -99,6 +143,7 @@ word::after{
 .painted {
   color: #FFFFFF;
   font-family: linotype-sabon, sans-serif;
+  line-height: 1;
 }
 a.joyful.painted {
   text-decoration-color: #00b7a0;
@@ -414,7 +459,7 @@ a.joyful {
 .thumbnails {
   z-index: -1;
   background-color: white;
-  padding: 68px 1rem 0 1rem;
+  padding: 100px 1rem 0 1rem;
   margin: 0 auto;
 }
 .thumbnail {
@@ -468,7 +513,7 @@ a.joyful {
 .thumbnail-link:hover + .thumbnail-title {
   opacity: 1;
 }
-.thumbnail img:hover {
+.blur {
   webkit-filter: blur(4px); /* Chrome, Safari, Opera */
   filter: blur(4px);
 }
@@ -506,7 +551,6 @@ a.joyful {
 .home-column p {
   font-size: calc(10px + 12.361*(100vw - 576px)/864);
 }
-
 .home-column p .painted {
   font-size: calc(12.5px + 12.361*(100vw - 576px)/864);
 }
@@ -548,7 +592,7 @@ a.joyful {
   50% { border-color: black; }
 }
 .home #info {
-  margin: 2rem 0;
+  margin: 2rem 0 3rem 0;
 }
 /*End Home page*/
 
@@ -847,7 +891,7 @@ hr {
     border-bottom: none;
   }
   .thumbnails {
-    padding: 80px 0 0;
+    padding: 100px 0 0;
   }
   .thumbnail:nth-child(odd) {
     padding: 0 2.5rem 4rem 2rem;
@@ -901,8 +945,11 @@ hr {
   .site-header {
     height: auto;
   }
-  .container, .thumbnails, .home {
+  .container, .home {
     padding: 0 3rem;
+  }
+  .thumbnails {
+    padding: 4rem 3rem 0 3rem;
   }
   .homepage .site-header {
     position: absolute;
@@ -1040,7 +1087,7 @@ hr {
     position: fixed;
     bottom: 0;
     width: 100%;
-    left: -1;
+    left: 0;
     text-align: justify !important;
   }
   nav ul {
@@ -1052,7 +1099,7 @@ hr {
   }
   /*Footer*/
   .home {
-    padding: 10px 0;
+    padding: 10px 3rem;
   }
   .site-footer a {
     font-size: 16px;

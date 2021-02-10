@@ -1,21 +1,19 @@
-jQuery (document).ready(function(){
+jQuery(document).ready(function(){
 
     /*Google Analytics*/
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-135736418-1');
-
-    $(function() {
-        $('a').each(function() {
-            if ($(this).attr('id') == 'info') {
-                this.setAttribute("onclick","document.getElementById('site-footer').classList.toggle('closed');ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
-            }
-            else {
-                this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
-            }
-        });
+    $('a').each(function() {
+      if ($(this).attr('id') == 'info') {
+        this.setAttribute("onclick","document.getElementById('site-footer').classList.toggle('closed');ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
+      }
+      else {
+        this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
+      }
     });
+
     /*page fade-in and fade-out */
     $('body').css('display','none');
     $('body').fadeIn(500);
@@ -34,19 +32,36 @@ jQuery (document).ready(function(){
 
     /*Smooth scroll*/
     $(document).ready(function(){
-        $("a").on('click', function(event) {
-            if (this.hash !== "") {
-              event.preventDefault();
-              var hash = this.hash;
-              $('html, body').animate({
-                scrollTop: $(hash).offset().top
-              }, 1000, function(){
-                window.location.hash = hash;
-              });
-            }
-        });
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 1000, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
     });
 
+    /* Image blur on thumbnail hover */
+    $(".thumbnail a").mouseenter(function(){
+      $(this).children('img').addClass("blur");
+    });
+    $(".thumbnail a").mouseleave(function(){
+      $(this).children('img').removeClass("blur");
+    });
+
+    /* Loading icon while image loads */
+    $('img').on('load', function() {
+      if ($(this).parent().hasClass("block-img")) {
+        $(this).parent().prev().css("display","none");
+     } else {
+       $(this).prev().css("display","none");
+     }
+
+    });
     /*String to letters*/
     $('.to-letter').each(function() {
       var words = $(this).text().split(' '),
@@ -61,7 +76,6 @@ jQuery (document).ready(function(){
         }
       });
     });
-
     $('word').each(function() {
       var letters = $(this).text().split(''),
       $wordElement = $(this).empty();
@@ -87,6 +101,7 @@ jQuery (document).ready(function(){
        }
     );
 
+    /* add joyful hover image */
     const span = document.createElement('span');
     const image = document.createElement('img');
     image.src  = 'images/IMG_6479.GIF';
@@ -94,31 +109,8 @@ jQuery (document).ready(function(){
     $('.joyful').wrap('<span class="wrap"></span>');
     $('.joyful').append(span);
     $('.joyful span').append(image);
-//$('<span><img src="images/IMG_6479.GIF"></img></span>', {text: word}).appendTo($homeContentSection);
 
-
-    /*Delayed scroll on thumbnails*/
-    $.fn.isInViewport = function() {
-      var elementTop = $(this).offset().top;
-      var elementBottom = elementTop + $(this).outerHeight();
-
-      var viewportTop = $(window).scrollTop();
-      var viewportBottom = viewportTop + $(window).height();
-
-      return elementBottom < viewportTop && elementTop > viewportBottom;
-    };
-
-    $(window).on('scroll', function() {
-      $('.thumbnail').each(function() {
-        if ($(this).isInViewport()) {
-          $(this).addClass('below-viewport');
-        } else {
-          $(this).removeClass('below-viewport');
-        }
-      });
-    });
-
-    ///cursor for thumbnails
+    /* cursor for thumbnails */
     var title = "";
     $(document).mousemove(function (e) {
         $(".thumbnail a").each(function(i, v) {
@@ -152,16 +144,51 @@ jQuery (document).ready(function(){
     });
 });
 
-/*sticky nav background color change*/
+/*Delayed scroll on thumbnails*/
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom < viewportTop && elementTop > viewportBottom;
+};
+
 $(window).on("scroll", function() {
-  var thumbnailOffset = $( ".thumbnails" ).offset();
-  var infoOffset = $( ".home" ).offset();
-  var thumbTop = thumbnailOffset.top;
-  var infoTop = infoOffset.top;
+  /* sticky nav background color change */
+  if ($( ".thumbnails" ).offset() != undefined) {
+    var thumbnailOffset = $( ".thumbnails" ).offset();
+    var infoOffset = $( ".home" ).offset();
+    var thumbTop = thumbnailOffset.top;
+    var infoTop = infoOffset.top;
+
     if($(window).scrollTop() > (thumbTop-78) && $(window).scrollTop() < (infoTop - 78)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
         //remove the background property so it comes transparent again (defined in your css)
        $(".homepage .whitebar").css("background-color", "#4a9885");
     }
+
+    var thumbBottom = $( ".thumbnails" ).outerHeight();
+
+    if ($(window).width() <= 450) {
+      if($(window).scrollTop() > 53 && $(window).scrollTop() < thumbBottom) {
+          // $("nav ul").css("background-color", "white");
+          $("nav ul").css("display", "none");
+      } else {
+          //remove the background property so it comes transparent again (defined in your css)
+         // $("nav ul").css("background-color", "#4a9885");
+         $("nav ul").css("display", "block");
+      }
+    }
+  }
+  /*Delayed scroll on thumbnails*/
+  $('.thumbnail').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('below-viewport');
+    } else {
+      $(this).removeClass('below-viewport');
+    }
+  });
 });
