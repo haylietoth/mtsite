@@ -389,7 +389,7 @@ a.joyful {
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding: 0;
+  padding: 140px 0 0 0;
 }
 .archive-column {
   -ms-flex: 33.33%; /* IE10 */
@@ -815,6 +815,9 @@ hr {
   }
   .home-column p .painted {
     font-size: 17px;
+  }
+  .archive-row {
+    padding: 60px 0 0 0;
   }
   .archive-column {
     -ms-flex: 100%; /* IE10 */
