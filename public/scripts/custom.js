@@ -150,14 +150,14 @@ $(document).ready(function(){
       }
     });
 
-    $('.block-img').each(function() {
-      $(this).addClass('scroll-transition-fade');
-      if ($(this).isInViewport()) {
-        $(this).removeClass('below-viewport');
-      } else {
-        $(this).addClass('below-viewport');
-      }
-    });
+    // $('.block-img').each(function() {
+    //   $(this).addClass('scroll-transition-fade');
+    //   if ($(this).isInViewport()) {
+    //     $(this).removeClass('below-viewport');
+    //   } else {
+    //     $(this).addClass('below-viewport');
+    //   }
+    // });
 });
 
 /*Delayed scroll on thumbnails*/
@@ -230,11 +230,11 @@ $(window).on("scroll", function() {
     }
   });
 
-  $('.block-img').each(function() {
-    if ($(this).isInViewport()) {
-      $(this).removeClass('below-viewport');
-    } else {
-      $(this).addClass('below-viewport');
-    }
-  });
+  // $('.block-img').each(function() {
+  //   if ($(this).isInViewport()) {
+  //     $(this).removeClass('below-viewport');
+  //   } else {
+  //     $(this).addClass('below-viewport');
+  //   }
+  // });
 });
