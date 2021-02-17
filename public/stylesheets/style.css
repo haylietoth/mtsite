@@ -816,6 +816,11 @@ hr {
   .home-column p .painted {
     font-size: 17px;
   }
+  .archive-column {
+    -ms-flex: 100%; /* IE10 */
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 @media (max-width: 450px) {
   /*Home*/
