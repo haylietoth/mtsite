@@ -53,14 +53,13 @@ $(document).ready(function(){
     });
 
     /* Loading icon while image loads */
-    $('img').on('load', function() {
-      if ($(this).parent().hasClass("block-img")) {
-        $(this).parent().prev().css("display","none");
-     } else {
-       $(this).prev().css("display","none");
-     }
-
-    });
+    // $('img').on('load', function() {
+    //   if ($(this).parent().hasClass("block-img")) {
+    //     $(this).parent().prev().css("display","none");
+    //  } else {
+    //    $(this).prev().css("display","none");
+    //  }
+    // });
     /*String to letters*/
     $('.to-letter').each(function() {
       var words = $(this).text().split(' '),
@@ -150,14 +149,14 @@ $(document).ready(function(){
       }
     });
 
-    // $('.block-img').each(function() {
-    //   $(this).addClass('scroll-transition-fade');
-    //   if ($(this).isInViewport()) {
-    //     $(this).removeClass('below-viewport');
-    //   } else {
-    //     $(this).addClass('below-viewport');
-    //   }
-    // });
+    $('.block-img').each(function() {
+      $(this).addClass('scroll-transition-fade');
+      if ($(this).isInViewport()) {
+        $(this).removeClass('below-viewport');
+      } else {
+        $(this).addClass('below-viewport');
+      }
+    });
 });
 
 /*Delayed scroll on thumbnails*/
@@ -230,11 +229,11 @@ $(window).on("scroll", function() {
     }
   });
 
-  // $('.block-img').each(function() {
-  //   if ($(this).isInViewport()) {
-  //     $(this).removeClass('below-viewport');
-  //   } else {
-  //     $(this).addClass('below-viewport');
-  //   }
-  // });
+  $('.block-img').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).removeClass('below-viewport');
+    } else {
+      $(this).addClass('below-viewport');
+    }
+  });
 });
