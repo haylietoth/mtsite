@@ -14,26 +14,37 @@ block prepend body
            when 'archive_column'
              div.archive-column
                each richTextItem in slice.items
-                div.center
-                 div.loader
-                   div.circle
-                   div.circle
-                   div.circle
                  != PrismicDOM.RichText.asHtml(richTextItem.left_column, ctx.linkResolver)
              div.archive-column
                each richTextItem in slice.items
-                div.center
-                 div.loader
-                   div.circle
-                   div.circle
-                   div.circle
                  != PrismicDOM.RichText.asHtml(richTextItem.middle_column, ctx.linkResolver)
              div.archive-column
                each richTextItem in slice.items
-                div.center
-                 div.loader
-                  div.circle
-                  div.circle
-                  div.circle
                  != PrismicDOM.RichText.asHtml(richTextItem.right_column, ctx.linkResolver)
   include ./partials/footer.pug
+
+
+  //- div.archive-column
+  //-   each richTextItem in slice.items
+  //-    div.center
+  //-     div.loader
+  //-       div.circle
+  //-       div.circle
+  //-       div.circle
+  //-     != PrismicDOM.RichText.asHtml(richTextItem.left_column, ctx.linkResolver)
+  //- div.archive-column
+  //-   each richTextItem in slice.items
+  //-    div.center
+  //-     div.loader
+  //-       div.circle
+  //-       div.circle
+  //-       div.circle
+  //-     != PrismicDOM.RichText.asHtml(richTextItem.middle_column, ctx.linkResolver)
+  //- div.archive-column
+  //-   each richTextItem in slice.items
+  //-    div.center
+  //-     div.loader
+  //-      div.circle
+  //-      div.circle
+  //-      div.circle
+  //-     != PrismicDOM.RichText.asHtml(richTextItem.right_column, ctx.linkResolver)

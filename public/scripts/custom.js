@@ -1,5 +1,4 @@
-jQuery(document).ready(function(){
-
+$(document).ready(function(){
     /*Google Analytics*/
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -142,17 +141,47 @@ jQuery(document).ready(function(){
             test = "";
         });
     });
+
+    $('.full-width-image').each(function() {
+      if ($(this).isInViewport()) {
+        $(this).removeClass('below-viewport');
+      } else {
+        $(this).addClass('below-viewport');
+      }
+    });
+
+    $('.block-img').each(function() {
+      $(this).addClass('scroll-transition-fade');
+      if ($(this).isInViewport()) {
+        $(this).removeClass('below-viewport');
+      } else {
+        $(this).addClass('below-viewport');
+      }
+    });
 });
 
 /*Delayed scroll on thumbnails*/
 $.fn.isInViewport = function() {
-  var elementTop = $(this).offset().top;
-  var elementBottom = elementTop + $(this).outerHeight();
+  var myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myHeight = document.body.clientHeight;
+  }
 
-  var viewportTop = $(window).scrollTop();
-  var viewportBottom = viewportTop + $(window).height();
+  var top_of_element = $(this).offset().top;
+  var bottom_of_screen = $(window).scrollTop() + myHeight
 
-  return elementBottom < viewportTop && elementTop > viewportBottom;
+  if (top_of_element < bottom_of_screen){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 $(window).on("scroll", function() {
@@ -183,12 +212,29 @@ $(window).on("scroll", function() {
       }
     }
   }
+
   /*Delayed scroll on thumbnails*/
   $('.thumbnail').each(function() {
     if ($(this).isInViewport()) {
-      $(this).addClass('below-viewport');
-    } else {
       $(this).removeClass('below-viewport');
+    } else {
+      $(this).addClass('below-viewport');
+    }
+  });
+
+  $('.full-width-image').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).removeClass('below-viewport');
+    } else {
+      $(this).addClass('below-viewport');
+    }
+  });
+
+  $('.block-img').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).removeClass('below-viewport');
+    } else {
+      $(this).addClass('below-viewport');
     }
   });
 });
