@@ -842,7 +842,7 @@ hr {
     font-size: 20px;
   }
   .site-header {
-    padding-left: 40px;
+    text-align: center;
   }
   nav {
     position: fixed;
