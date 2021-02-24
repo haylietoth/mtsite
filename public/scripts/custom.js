@@ -214,23 +214,8 @@ $(window).on("scroll", function() {
   }
 
   /*Delayed scroll on thumbnails*/
-  $('.thumbnail').each(function() {
-    if ($(this).isInViewport()) {
-      $(this).removeClass('below-viewport');
-    } else {
-      $(this).addClass('below-viewport');
-    }
-  });
 
-  $('.full-width-image').each(function() {
-    if ($(this).isInViewport()) {
-      $(this).removeClass('below-viewport');
-    } else {
-      $(this).addClass('below-viewport');
-    }
-  });
-
-  $('.block-img').each(function() {
+  $('.thumbnail, .full-width-image, .block-img, .text-content, .animate, .to-letter, .child, .animated-arrow, .underline, .c-style').each(function() {
     if ($(this).isInViewport()) {
       $(this).removeClass('below-viewport');
     } else {

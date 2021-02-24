@@ -26,14 +26,14 @@ block prepend body
          for slice in pageContent.data.page_content
             case slice.slice_type
               when 'footer_text'
-                  p.to-letter
+                  p.to-letter.scroll-transition-fade
                     != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
         div.home-column
           div.site-footer.home-row
             #info
-              p.child.c-home
+              p.child.c-home.scroll-transition-fade
                | C
-              p.child
+              p.child.scroll-transition-fade
                | For inquiries, collaborations, or to simply say hi, please contact me here:
                br
                br
@@ -46,7 +46,7 @@ block prepend body
                   //- span.the-arrow.-right
                   //-   span.shaft
               p.child
-               a.animated-arrow(href='https://www.linkedin.com/in/madeleinetoth/', target='_blank')
+               a.animated-arrow.scroll-transition-fade(href='https://www.linkedin.com/in/madeleinetoth/', target='_blank')
                 span.the-arrow.-left
                   span.shaft
                 span.main
@@ -55,7 +55,7 @@ block prepend body
                   //- span.the-arrow.-right
                   //-   span.shaft
                br
-               a.animated-arrow(href='http://instagram.com/madeleine_toth', target='_blank')
+               a.animated-arrow.scroll-transition-fade(href='http://instagram.com/madeleine_toth', target='_blank')
                 span.the-arrow.-left
                   span.shaft
                 span.main
@@ -64,7 +64,7 @@ block prepend body
                   //- span.the-arrow.-right
                   //-   span.shaft
                br
-               a.animated-arrow(href='https://www.behance.net/madeleinetoth/', target='_blank')
+               a.animated-arrow.scroll-transition-fade(href='https://www.behance.net/madeleinetoth/', target='_blank')
                 span.the-arrow.-left
                   span.shaft
                 span.main

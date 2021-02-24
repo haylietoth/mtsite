@@ -20,11 +20,11 @@ block prepend body
              include ./partials/text-section.pug
            when 'video'
              include ./partials/video.pug
-       h3
+       h3.animate.scroll-transition-fade
           != PrismicDOM.RichText.asText(project.client)
-       h3
+       h3.animate.scroll-transition-fade
           != PrismicDOM.RichText.asText(project.collab)
-       h3
+       h3.animate.scroll-transition-fade
           != PrismicDOM.RichText.asText(project.type) + " "
           i.material-icons arrow_forward 
           != PrismicDOM.RichText.asText(project.year)

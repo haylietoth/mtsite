@@ -823,6 +823,7 @@ hr {
     -ms-flex: 100%; /* IE10 */
     flex: 100%;
     max-width: 100%;
+    padding: 0 1rem;
   }
 }
 @media (max-width: 450px) {
