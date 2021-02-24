@@ -252,6 +252,7 @@ a.joyful {
   font-size: 18px;
   width: 175px;
   text-align: center;
+  line-height: normal;
   font-family: 'NeuzeitSLTStd-Book' , sans-serif;
 }
 .thumbnail-title {
@@ -348,7 +349,7 @@ a.joyful {
   from, to { border-color: transparent }
   50% { border-color: black; }
 }
-.home #info {
+.home #project-info {
   margin: 2rem 0 3rem 0;
 }
 /*End Home page*/
@@ -699,14 +700,18 @@ hr {
   .site-header a {
     font-size: 18px;
   }
+  .whitebar {
+    height: 53px;
+  }
   .site-header {
     height: auto;
+    padding: .5rem 1rem;
   }
   .container, .home {
-    padding: 0 3rem;
+    padding: 0 1rem;
   }
   .thumbnails {
-    padding: 4rem 3rem 0 3rem;
+    padding: 4rem 1rem 0 1rem;
   }
   .homepage .site-header {
     position: absolute;
@@ -839,11 +844,11 @@ hr {
   }
   .thumbnail:nth-child(odd),
   .thumbnail:nth-child(even) {
-    padding: 1rem 0 !important;
+    padding: .5rem 0 !important;
   }
   /*Nav*/
   .site-header .logo {
-    font-size: 20px;
+    font-size: 18px;
   }
   .site-header {
     text-align: center;
@@ -864,7 +869,7 @@ hr {
   }
   /*Footer*/
   .home {
-    padding: 10px 3rem;
+    padding: 10px 1rem;
   }
   .site-footer a {
     font-size: 16px;
@@ -890,7 +895,7 @@ hr {
   }
 
   .info {
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 4rem 1rem 2rem 1rem;
   }
 }
 @media (max-width: 320px) {

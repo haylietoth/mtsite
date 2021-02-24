@@ -9,10 +9,10 @@ div.whitebar(style="background-color:#4a9885")
       ul
        li
         div.box
-         a.underline(href="#thumbnails") WORK
+         a.underline(href="#work") WORK
        li
         div.box
-         a.underline(href='#site-footer') INFO
+         a.underline(href='#info') INFO
         each menuLink in menuContent.data.menu_links
           li
             a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver))

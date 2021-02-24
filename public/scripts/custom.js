@@ -191,8 +191,14 @@ $(window).on("scroll", function() {
     var infoOffset = $( ".home" ).offset();
     var thumbTop = thumbnailOffset.top;
     var infoTop = infoOffset.top;
+    var whitebar = 0;
+    if ($(window).width() < 767) {
+      whitebar = 53;
+    } else {
+      whitebar = 78;
+    }
 
-    if($(window).scrollTop() > (thumbTop-78) && $(window).scrollTop() < (infoTop - 78)) {
+    if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
         //remove the background property so it comes transparent again (defined in your css)
