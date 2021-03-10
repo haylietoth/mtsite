@@ -68,8 +68,6 @@ $(document).ready(function(){
       localStorage.setItem("to-home", "info");
       location.href="./";
     });
-
-    console.log($(".home").offset().top);
     if(localStorage.getItem("to-home") == "work") {
       var whitebar = 0;
       if ($(window).width() < 767) {
