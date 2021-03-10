@@ -30,6 +30,7 @@ $(document).ready(function(){
     });
 
     /*Smooth scroll*/
+    //for home page
     $('.scroll-work').click(function (e) {
         e.preventDefault();
         var whitebar = 0;
@@ -54,6 +55,7 @@ $(document).ready(function(){
             scrollTop: $(".home").offset().top - whitebar
         }, 1200);
     });
+    //for non-home pages
     $('.to-work').click(function (e) {
       // Store
       localStorage.setItem("to-home", "work");
@@ -64,7 +66,7 @@ $(document).ready(function(){
       localStorage.setItem("to-home", "info");
       location.href="./";
     });
-    console.log(localStorage.getItem("to-home"));
+
     if(localStorage.getItem("to-home") == "work") {
       var whitebar = 0;
       if ($(window).width() < 767) {
@@ -78,15 +80,15 @@ $(document).ready(function(){
       // Reset
       localStorage.setItem("to-home", "");
     } else if (localStorage.getItem("to-home") == "info") {
-      var whitebar = 0;
-      if ($(window).width() < 767) {
-        whitebar = 52;
-      } else {
-        whitebar = 77;
-      }
-      $('html, body').animate({
-          scrollTop: $(".home").offset().top - whitebar
-      }, 1200);
+        var whitebar = 0;
+        if ($(window).width() < 767) {
+          whitebar = 52;
+        } else {
+          whitebar = 77;
+        }
+        $('html, body').animate({
+            scrollTop: $(".home").offset().top - whitebar
+        }, 1200);
       // Reset
       localStorage.setItem("to-home", "");
     }
