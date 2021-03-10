@@ -9,10 +9,10 @@ div.whitebar
       ul
        li
         div.box
-         a.underline(href="./#work") WORK
+         a.underline.to-work(href="#" aria-label="link to homepage work section") WORK
        li
         div.box
-         a.underline(href='./#info') INFO
+         a.underline.to-info(href='#' aria-label="link to homepage info section") INFO
         each menuLink in menuContent.data.menu_links
           li
             a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver))

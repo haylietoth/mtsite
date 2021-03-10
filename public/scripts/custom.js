@@ -30,19 +30,66 @@ $(document).ready(function(){
     });
 
     /*Smooth scroll*/
-    $(document).ready(function(){
-      $("a").on('click', function(event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 1000, function(){
-            window.location.hash = hash;
-          });
+    $('.scroll-work').click(function (e) {
+        e.preventDefault();
+        var whitebar = 0;
+        if ($(window).width() < 767) {
+          whitebar = 52;
+        } else {
+          whitebar = 77;
         }
-      });
+        $('html, body').animate({
+            scrollTop: $(".thumbnails").offset().top - whitebar
+        }, 1200);
     });
+    $('.scroll-info').click(function (e) {
+        e.preventDefault();
+        var whitebar = 0;
+        if ($(window).width() < 767) {
+          whitebar = 52;
+        } else {
+          whitebar = 77;
+        }
+        $('html, body').animate({
+            scrollTop: $(".home").offset().top - whitebar
+        }, 1200);
+    });
+    $('.to-work').click(function (e) {
+      // Store
+      localStorage.setItem("to-home", "work");
+      location.href="./";
+    });
+    $('.to-info').click(function (e) {
+      // Store
+      localStorage.setItem("to-home", "info");
+      location.href="./";
+    });
+    console.log(localStorage.getItem("to-home"));
+    if(localStorage.getItem("to-home") == "work") {
+      var whitebar = 0;
+      if ($(window).width() < 767) {
+        whitebar = 52;
+      } else {
+        whitebar = 77;
+      }
+      $('html, body').animate({
+          scrollTop: $(".thumbnails").offset().top - whitebar
+      }, 1200);
+      // Reset
+      localStorage.setItem("to-home", "");
+    } else if (localStorage.getItem("to-home") == "info") {
+      var whitebar = 0;
+      if ($(window).width() < 767) {
+        whitebar = 52;
+      } else {
+        whitebar = 77;
+      }
+      $('html, body').animate({
+          scrollTop: $(".home").offset().top - whitebar
+      }, 1200);
+      // Reset
+      localStorage.setItem("to-home", "");
+    }
 
     /* Image blur on thumbnail hover */
     $(".thumbnail a").mouseenter(function(){
