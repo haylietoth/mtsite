@@ -54,6 +54,8 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: $(".home").offset().top - whitebar
         }, 1200);
+
+        console.log($(".home").offset().top);
     });
     //for non-home pages
     $('.to-work').click(function (e) {
@@ -67,6 +69,7 @@ $(document).ready(function(){
       location.href="./";
     });
 
+    console.log($(".home").offset().top);
     if(localStorage.getItem("to-home") == "work") {
       var whitebar = 0;
       if ($(window).width() < 767) {
@@ -86,7 +89,8 @@ $(document).ready(function(){
         } else {
           whitebar = 77;
         }
-        $('html, body').animate({
+        console.log($(".home").offset().top);
+        $('html, body').delay( 800 ).animate({
             scrollTop: $(".home").offset().top - whitebar
         }, 1200);
       // Reset
