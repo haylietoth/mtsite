@@ -84,6 +84,7 @@ $(document).ready(function(){
     //    $(this).prev().css("display","none");
     //  }
     // });
+    
     /*String to letters*/
     $('.to-letter').each(function() {
       var words = $(this).text().split(' '),
@@ -182,6 +183,11 @@ $(document).ready(function(){
         $(this).addClass('below-viewport');
       }
     });
+
+    /* scroll to top */
+    $('.scrollToTopBtn').on("click",function(){
+      $('html, body').animate({scrollTop:0}, 'slow');
+    });
 });
 
 $(window).bind("load", function () {
@@ -239,6 +245,14 @@ $.fn.isInViewport = function() {
 };
 
 $(window).on("scroll", function() {
+  /* show scroll to top button */
+
+  if ($(this).scrollTop()) {
+       $('.scrollToTopBtn').addClass('showBtn');
+   } else {
+       $('.scrollToTopBtn').removeClass('showBtn');
+   }
+
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
     var thumbnailOffset = $( ".thumbnails" ).offset();

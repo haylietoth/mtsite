@@ -1,19 +1,15 @@
 div.whitebar(style="background-color:#4a9885")
  header.site-header
-  span.box
-   a.underline.logo(href='./')
-     .logo Madeleine Toth Edwards
-  
-  if menuContent != null
-    nav
-      ul
-       li
-        div.box
-         a.underline.scroll-work(href='#') WORK
-       li
-        div.box
-         a.underline.scroll-info(href='#') INFO
-        each menuLink in menuContent.data.menu_links
-          li
-            a(href=PrismicDOM.Link.url(menuLink.link, ctx.linkResolver))
-              != PrismicDOM.RichText.asText(menuLink.label)
+   // Centered link
+   .topnav-centered
+     span.box
+      a.underline.logo(href='./')
+        .logo Madeleine Toth Edwards
+   nav
+     // Left-aligned links (default)
+     div.box(style="height: 0px;")
+      a.underline.scroll-work(href='#') WORK
+     // Right-aligned links
+     .topnav-right
+      div.box
+        a.underline.scroll-info(href='#') INFO

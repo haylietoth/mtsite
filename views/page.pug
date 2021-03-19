@@ -4,7 +4,8 @@ block prepend body
   body(data-wio-id=pageContent.id)
 
   include ./partials/header.pug
-
+  button(class="scrollToTopBtn")
+    img(src="/images/Scroll-2-Top.png")
   // Content Section
   - var project = pageContent.data.project_info[0]
    div.project(style="display: block;")

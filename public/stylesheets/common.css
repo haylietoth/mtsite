@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "BRSonoma-Regular";
+  src: url('fonts/BRSonomaRegular/font.woff2') format('woff2'), url('stylesheets/fonts/BRSonomaRegular/font.woff') format('woff');
+}
+
+@font-face {
   font-family: 'NeuzeitSLTStd-Book';
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
@@ -22,7 +27,7 @@
 
 * {
   -webkit-font-smoothing: antialiased;
-  font-family: 'NeuzeitSLTStd-Book' , sans-serif;
+  font-family: 'BRSonoma-Regular' , sans-serif;
   box-sizing: border-box;
 }
 
@@ -42,7 +47,7 @@ body {
   display:none;
   background:white;
   color: #000;
-  font-family: 'NeuzeitSLTStd-Book' , sans-serif;
+  font-family: 'BRSonoma-Regular' , sans-serif;
   line-height: 1.6;
   opacity: 1;
   -webkit-transition: background 1s ease;
