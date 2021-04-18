@@ -47,7 +47,19 @@
     transform: translateY(0px);
   }
 }
-
+.loading {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  background-color: #C5DDBA;
+  height: 100vh;
+  height: calc(var(--vh,1vh) * 100);
+  bottom: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  pointer-events: none;
+}
 /*End General*/
 
 /* Header */
@@ -154,12 +166,6 @@ a.joyful.painted {
   text-decoration: none;
   border-bottom: 1px solid #FFF;
 }
-.text-content{
-  text-align: left;
-  margin: 5em 0;
-  font-size: 16px;
-  width: 60%;
-}
 .text-content span i {
   font-size: 16px !important;
   vertical-align: text-bottom;
@@ -178,12 +184,12 @@ a.joyful.painted {
   line-height: 48px;
   width: 48px;
   position: fixed;
-  bottom: 60px;
+  bottom: 20px;
   right: 30px;
   z-index: 100;
   opacity: 0;
   transform: translateY(100px);
-  transition: all .5s ease
+  transition: all .5s ease;
 }
 
 .showBtn {
@@ -265,6 +271,28 @@ a.joyful {
     opacity: 0;
     transform: translateY(40px);
 }
+.archive-below-viewport {
+    transform: scale(.5);
+}
+/* .archive-column img {
+  max-width: 100%;
+  height: auto;
+} */
+.archive-column p {
+  animation: archiveScale .5s;
+  -webkit-animation: archiveScale .5s;
+}
+@keyframes archiveScale {
+    0% {transform: scale(.5);}
+    65% {transform: scale(1);}
+    100% {transform: scale(.9);}
+}
+@-webkit-keyframes archiveScale {
+    0% {transform: scale(.5);}
+    65% {transform: scale(1);}
+    100% {transform: scale(.9);}
+}
+
 .thumbnail img {
   border: 0;
   display: block;
@@ -412,6 +440,33 @@ a.joyful {
 }
 .rightImg {
   padding-left: 30px;
+}
+.project-row {
+  margin-top: 3rem;
+}
+.project-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.project-column {
+  float: left;
+}
+.project-column:nth-child(1) {
+  width: 40%;
+}
+.project-column:nth-child(2) {
+  width: 60%;
+}
+#title {
+  line-height: normal;
+  text-align: left;
+  font-family: linotype-sabon, sans-serif;
+  font-size: 32px;
+}
+.text-content {
+  font-size: 16px;
+  width: 75%
 }
 /*End Project page*/
 
@@ -792,10 +847,6 @@ hr {
   }
   .content-section {
     margin-bottom: 2rem;
-  }
-  .text-content{
-    text-align: left;
-    width: 100%;
   }
   .two-col {
     width: 100%;

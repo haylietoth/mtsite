@@ -44,15 +44,11 @@ h2 .painted {
 }
 
 body {
-  display:none;
   background:white;
   color: #000;
   font-family: 'BRSonoma-Regular' , sans-serif;
   line-height: 1.6;
   opacity: 1;
-  -webkit-transition: background 1s ease;
-  -moz-transition: background 500ms ease;
-  transition: background 500ms ease;
 }
 
 a {
