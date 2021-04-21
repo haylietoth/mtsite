@@ -311,6 +311,9 @@ a.joyful {
   font-size: 16px !important;
   vertical-align: text-bottom;
 }
+.title {
+  font-family: inotype-sabon, sans-serif;
+}
 .info-container p .painted {
    font-size: 25.5px;
 }
@@ -537,12 +540,6 @@ a.joyful {
   }
   .home-column .material-icons {
     font-size: 16px !important;
-  }
-  .home-column p {
-    font-size: 16px;
-  }
-  .home-column p .painted {
-    font-size: 17px;
   }
   .site-footer a {
     text-underline-position: under;

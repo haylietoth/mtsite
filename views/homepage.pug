@@ -9,13 +9,10 @@ block prepend body
     
     // Content Section
     div
-     for slice in pageContent.data.page_content
-        case slice.slice_type
-          when 'main_text'
-            div.container
-              div.home-content-section(class=sectionClass)
-                h2.to-letter
-                  != PrismicDOM.RichText.asHtml(slice.primary.text, ctx.linkResolver)
+     div.container
+      div.home-content-section(class=sectionClass)
+        h2.to-letter
+          != PrismicDOM.RichText.asHtml(pageContent.data.main_text)
      div.thumbnails(id="work")
       //- Display the slices
       for slice in pageContent.data.page_content
@@ -25,20 +22,14 @@ block prepend body
     footer.home-footer(id="info")
       .info-container
         .info-main
-         for slice, index in pageContent.data.page_content
-          case slice.slice_type
-            when 'footer_text'
-              if index == 9
-                p.to-letter.scroll-transition-fade(id=index)
-                  != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
+          p.to-letter.scroll-transition-fade
+            != PrismicDOM.RichText.asText(pageContent.data.info_main_text)
         div.home-row
           div.home-column
-           for slice, index in pageContent.data.page_content
-              case slice.slice_type
-                when 'footer_text'
-                  if index == 10
-                    p.to-letter.scroll-transition-fade(id=index)
-                      != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
+            p.to-letter.scroll-transition-fade
+              span.title
+                != PrismicDOM.RichText.asText(pageContent.data.info_column_title)
+              != PrismicDOM.RichText.asText(pageContent.data.info_column_text)
           div.home-column
             div.site-footer.home-row
               #info
