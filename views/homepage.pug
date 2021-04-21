@@ -22,76 +22,66 @@ block prepend body
         case slice.slice_type
           when 'thumbnail'
             include ./partials/thumbnail.pug 
-    #info.home
-      div.home-row
-        div.info-main
+    footer.home-footer(id="info")
+      .info-container
+        .info-main
          for slice, index in pageContent.data.page_content
-           case slice.slice_type
-             when 'footer_text'
-               if index == 10
-                 p.to-letter.scroll-transition-fade(id=index)
-                   != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
-        div.home-column
-         for slice, index in pageContent.data.page_content
-            case slice.slice_type
-              when 'footer_text'
-                if index == 11
-                  p.to-letter.scroll-transition-fade(id=index)
-                    != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
-        div.home-column
-          div.site-footer.home-row
-            #info
-              p.child.c-home.scroll-transition-fade
-               | C
-              p.child.scroll-transition-fade
-               | For inquiries, collaborations, or to simply say hi, please contact me here:
-               br
-               br
-               a.animated-arrow(href='mailto:hello@madeleinetoth.com', target='_blank')
-                span.the-arrow.-left
-                  span.shaft
-                span.main
-                  span.text
-                    | hello@madeleinetoth.com
-                  //- span.the-arrow.-right
-                  //-   span.shaft
-              p.child
-               a.animated-arrow.scroll-transition-fade(href='https://www.linkedin.com/in/madeleinetoth/', target='_blank')
-                span.the-arrow.-left
-                  span.shaft
-                span.main
-                  span.text
-                    | Linkedin
-                  //- span.the-arrow.-right
-                  //-   span.shaft
-               br
-               a.animated-arrow.scroll-transition-fade(href='http://instagram.com/madeleine_toth', target='_blank')
-                span.the-arrow.-left
-                  span.shaft
-                span.main
-                  span.text
-                    | Instagram
-                  //- span.the-arrow.-right
-                  //-   span.shaft
-               br
-               a.animated-arrow.scroll-transition-fade(href='https://www.behance.net/madeleinetoth/', target='_blank')
-                span.the-arrow.-left
-                  span.shaft
-                span.main
-                  span.text
-                    | Behance
-                  //- span.the-arrow.-right
-                  //-   span.shaft
-
-                  
-                  //div.typewriter
-                  //- p.child.c-home
-                  //-  span.ls1
-                  //-    | C
-                  //-  span.ls2
-                  //-   | O
-                  //-  span.ls3
-                  //-   | N
-                  //-  | TAC
-                  //-  span.ls1
-                  //-   | T
+          case slice.slice_type
+            when 'footer_text'
+              if index == 9
+                p.to-letter.scroll-transition-fade(id=index)
+                  != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
+        div.home-row
+          div.home-column
+           for slice, index in pageContent.data.page_content
+              case slice.slice_type
+                when 'footer_text'
+                  if index == 10
+                    p.to-letter.scroll-transition-fade(id=index)
+                      != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
+          div.home-column
+            div.site-footer.home-row
+              #info
+                p.child.c-home.scroll-transition-fade
+                 | CONTACT
+                br
+                div.child.scroll-transition-fade
+                 | For inquiries, collaborations, or to simply say hi, please contact me here:
+                 br
+                 br
+                 a.animated-arrow(href='mailto:hello@madeleinetoth.com', target='_blank')
+                  span.the-arrow.-left
+                    span.shaft
+                  span.main
+                    span.text
+                      | hello@madeleinetoth.com
+                    //- span.the-arrow.-right
+                    //-   span.shaft
+                br
+                div.child
+                 a.animated-arrow.scroll-transition-fade(href='https://www.linkedin.com/in/madeleinetoth/', target='_blank')
+                  span.the-arrow.-left
+                    span.shaft
+                  span.main
+                    span.text
+                      | Linkedin
+                    //- span.the-arrow.-right
+                    //-   span.shaft
+                 br
+                 a.animated-arrow.scroll-transition-fade(href='http://instagram.com/madeleine_toth', target='_blank')
+                  span.the-arrow.-left
+                    span.shaft
+                  span.main
+                    span.text
+                      | Instagram
+                    //- span.the-arrow.-right
+                    //-   span.shaft
+                 br
+                 a.animated-arrow.scroll-transition-fade(href='https://www.behance.net/madeleinetoth/', target='_blank')
+                  span.the-arrow.-left
+                    span.shaft
+                  span.main
+                    span.text
+                      | Behance
+                    //- span.the-arrow.-right
+                    //-   span.shaft

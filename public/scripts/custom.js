@@ -60,15 +60,6 @@ $(document).ready(function(){
       $(this).children('img').removeClass("blur");
     });
 
-    /* Loading icon while image loads */
-    // $('img').on('load', function() {
-    //   if ($(this).parent().hasClass("block-img")) {
-    //     $(this).parent().prev().css("display","none");
-    //  } else {
-    //    $(this).prev().css("display","none");
-    //  }
-    // });
-
     /*String to letters*/
     $('.to-letter').each(function() {
       var words = $(this).text().split(' '),
@@ -185,13 +176,6 @@ $(document).ready(function(){
       $('.loading').css('bottom', '-100%');
     }, 1500);
 
-    // setTimeout(function() {
-    //   $('.archive-column p').each(function() {
-    //     if ($(this).isInViewport()) {
-    //       $(this).removeClass('archive-below-viewport');
-    //     }
-    //   });
-    // }, 1750);
 
 });
 
@@ -266,7 +250,7 @@ $(window).on("scroll", function() {
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
     var thumbnailOffset = $( ".thumbnails" ).offset();
-    var infoOffset = $( ".home" ).offset();
+    var infoOffset = $( ".home-footer" ).offset();
     var thumbTop = thumbnailOffset.top;
     var infoTop = infoOffset.top;
     var whitebar = 0;
