@@ -36,10 +36,10 @@ $(document).ready(function(){
           whitebar = 77;
         }
         $('html, body').animate({
-            scrollTop: $(".home").offset().top - whitebar
+            scrollTop: $(".home-footer").offset().top - whitebar
         }, 1200);
 
-        console.log($(".home").offset().top);
+        console.log($(".home-footer").offset().top);
     });
     //for non-home pages
     $('.to-work').click(function (e) {
@@ -207,7 +207,7 @@ $(window).bind("load", function () {
       whitebar = 77;
     }
     $('html, body').animate({
-        scrollTop: $(".home").offset().top - whitebar
+        scrollTop: $(".home-footer").offset().top - whitebar
     }, 1200);
     // Reset
     localStorage.setItem("to-home", "");
