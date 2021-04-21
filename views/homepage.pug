@@ -24,11 +24,19 @@ block prepend body
             include ./partials/thumbnail.pug 
     #info.home
       div.home-row
+        div.info-main
+         for slice, index in pageContent.data.page_content
+           case slice.slice_type
+             when 'footer_text'
+               if index == 10
+                 p.to-letter.scroll-transition-fade(id=index)
+                   != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
         div.home-column
-         for slice in pageContent.data.page_content
+         for slice, index in pageContent.data.page_content
             case slice.slice_type
               when 'footer_text'
-                  p.to-letter.scroll-transition-fade
+                if index == 11
+                  p.to-letter.scroll-transition-fade(id=index)
                     != PrismicDOM.RichText.asText(slice.primary.text, ctx.linkResolver)
         div.home-column
           div.site-footer.home-row

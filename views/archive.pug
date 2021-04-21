@@ -7,6 +7,10 @@ block prepend body
 
     // Content Section
     div.page
+     h1.archive-title
+      != PrismicDOM.RichText.asText(pageContent.data.page_title)
+     div.archive-desc
+      != PrismicDOM.RichText.asText(pageContent.data.page_desc)
      div.archive-row
        //- Display the slices
        for slice in pageContent.data.body

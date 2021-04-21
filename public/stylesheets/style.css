@@ -60,6 +60,12 @@
   transition: all .5s ease;
   pointer-events: none;
 }
+.page, .project {
+  position: relative;
+  z-index: 2;
+  background: white;
+  margin-bottom: calc(100vh - 90px) !important;
+}
 /*End General*/
 
 /* Header */
@@ -98,7 +104,7 @@
 .underline {
   position: relative;
   display: inline-block;
-  font-size: 24px;
+  /* font-size: 24px; */
   text-align: center;
 }
 .underline,
@@ -135,7 +141,6 @@
 .site-header .logo {
   display: inline-block;
 }
-
 /*End Header*/
 
 /*Body*/
@@ -170,7 +175,6 @@ a.joyful.painted {
   font-size: 16px !important;
   vertical-align: text-bottom;
 }
-
 .scrollToTopBtn:focus {
   outline:0;
 }
@@ -191,7 +195,6 @@ a.joyful.painted {
   transform: translateY(100px);
   transition: all .5s ease;
 }
-
 .showBtn {
   opacity: 1;
   transform: translateY(0)
@@ -271,28 +274,6 @@ a.joyful {
     opacity: 0;
     transform: translateY(40px);
 }
-.archive-below-viewport {
-    transform: scale(.5);
-}
-/* .archive-column img {
-  max-width: 100%;
-  height: auto;
-} */
-.archive-column p {
-  animation: archiveScale .5s;
-  -webkit-animation: archiveScale .5s;
-}
-@keyframes archiveScale {
-    0% {transform: scale(.5);}
-    65% {transform: scale(1);}
-    100% {transform: scale(.9);}
-}
-@-webkit-keyframes archiveScale {
-    0% {transform: scale(.5);}
-    65% {transform: scale(1);}
-    100% {transform: scale(.9);}
-}
-
 .thumbnail img {
   border: 0;
   display: block;
@@ -341,10 +322,13 @@ a.joyful {
   padding: 3rem 3rem 3rem 3.5rem;
 }
 .home {
-  padding: 100px 3.5rem 8rem 1.75rem;
+  padding: 100px 3.5rem 8rem 3.5rem;
   line-height: 1.5;
   font-size: 22px;
-  background-color: #4a9885;
+  background-color: #C5DDBA;
+}
+.info-main {
+  text-align: center;
 }
 .home-row:after {
   content: "";
@@ -471,12 +455,22 @@ a.joyful {
 /*End Project page*/
 
 /* Archive Page*/
+.archive-title {
+  padding-top: 150px;
+  font-size: 102px;
+  text-align: center;
+  letter-spacing: 5;
+}
+.archive-desc {
+  text-align: center;
+  margin: 40px 20px;
+  font-size: 20px;
+}
 .archive-row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding: 140px 0 0 0;
 }
 .archive-column {
   -ms-flex: 33.33%; /* IE10 */
@@ -487,16 +481,33 @@ a.joyful {
 .block-img {
   margin-bottom: 2rem;
 }
+.archive-below-viewport {
+    transform: scale(.5);
+}
+/* .archive-column img {
+  max-width: 100%;
+  height: auto;
+} */
+.archive-column p {
+  animation: archiveScale .5s;
+  -webkit-animation: archiveScale .5s;
+}
+@keyframes archiveScale {
+    0% {transform: scale(.5);}
+    65% {transform: scale(1);}
+    100% {transform: scale(.9);}
+}
+@-webkit-keyframes archiveScale {
+    0% {transform: scale(.5);}
+    65% {transform: scale(1);}
+    100% {transform: scale(.9);}
+}
+
 /* End Archive Page*/
 
 /*End Body*/
 
 /* Footer */
-.site-footer {
-  width: 100%;
-  overflow-y:hidden;
-  z-index: 10;
-}
 .site-footer a {
   color: black;
   text-decoration: none;
@@ -513,12 +524,25 @@ a.joyful {
   color: black;
   background-color: #4a9885;
 }
-hr {
-  border-bottom: 1px solid black;
-  color: black;
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  top: 90;
+  width: 100%;
+  height: 200vh;
+  font-size: 16px;
+  background: #C5DDBA;
+  padding: 5rem 0 0 1.5rem;
+}
+.page-footer p {
+  margin: 1rem 1rem 0 0;
+  padding: 0;
+}
+.footer-img {
+  width: 75%;
 }
 .row {
-  padding-top: 25px;
+  /* padding-top: 50px; */
 }
 .row:after {
   content: "";
@@ -527,32 +551,25 @@ hr {
 }
 .column {
   float: left;
-}
-.column p {
-  margin: 0;
-}
-.column:nth-child(1) {
-  width: 90%;
-}
-.column:nth-child(2) {
-  width: 10%;
-}
-.column i {
-  font-size:16px;
-  vertical-align:text-top;
-}
-.c-style {
-  font-size:calc(60px + 15.361*(100vw - 576px)/864) !important;
-  margin-bottom:0px;
-  line-height: 1.5;
-  padding: .5rem 0;
-}
-.footer-p {
-  font-size: 22px;
-}
-.footer-column {
+  width: 50%;
   font-size: 16px;
 }
+.column:nth-child(1) {
+  padding: 0 3rem 0 0;
+}
+.column:nth-child(2) {
+  padding: 0 0 0 3rem;
+}
+.link-col {
+  float: left;
+  width: 30%;
+}
+.contact {
+  font-size: 60px;
+  margin: 0 !important;
+  letter-spacing: 5;
+}
+
 /*FOOTER LINKS*/
  .the-arrow {
 	 width: 1px;
@@ -634,7 +651,7 @@ hr {
 	 color: #000000;
  }
  .animated-arrow:hover > .the-arrow.-left > .shaft {
-	 width: 64px;
+	 width: 20px;
 	 transition-delay: 0.1s;
 	 background-color: #000000;
  }

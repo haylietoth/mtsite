@@ -174,7 +174,11 @@ $(document).ready(function(){
     });
 
     $('.archive-column p').each(function() {
-      $(this).addClass('archive-below-viewport');
+      if ($(this).isInViewport()) {
+        $(this).removeClass('archive-below-viewport');
+      } else {
+        $(this).addClass('archive-below-viewport');
+      }
     });
     //page load animation
     setTimeout(function() {
@@ -275,8 +279,11 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        //remove the background property so it comes transparent again (defined in your css)
-       $(".homepage .whitebar").css("background-color", "#4a9885");
+        if ($(window).scrollTop() < thumbTop) {
+          $(".homepage .whitebar").css("background-color", "#4a9885");
+        } else {
+          $(".homepage .whitebar").css("background-color", "#C5DDBA");
+        }
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
