@@ -556,6 +556,9 @@ a.joyful {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
+  .archive-title {
+    font-size: 51px;
+  }
   .wrap {
     position: inherit;
   }
