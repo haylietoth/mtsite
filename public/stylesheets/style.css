@@ -734,7 +734,10 @@ a.joyful {
   }
   .logo {
     width: max-content;
-    padding-top: 20px;
+  }
+
+  .logo.add-pt {
+    padding-top: 35px;
   }
 
   /*Footer*/
