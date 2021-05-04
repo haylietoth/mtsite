@@ -18,7 +18,7 @@
   z-index: 1000;
   left: 0;
   width: 100%;
-  background-color: #C5DDBA;
+  background-color: #F0EDEC;
   height: 100vh;
   height: calc(var(--vh,1vh) * 100);
   bottom: 0;
@@ -181,7 +181,7 @@ a.joyful.painted {
   -webkit-justify-content:center;
   -ms-flex-pack:center;
   justify-content:center;
-  background-color: #4a9885;
+  background-color: #C5DDBA;
 }
 .home-content-section {
   padding: 0 17%;
@@ -324,6 +324,9 @@ a.joyful {
   font-size:calc(42px + 12.361*(100vw - 576px)/864) !important;
   margin-bottom: 0;
   line-height: 1;
+}
+.link-col:nth-child(2) {
+  margin-right: .75rem;
 }
 .ls1 {
   letter-spacing: .01rem !important;
@@ -723,7 +726,7 @@ a.joyful {
     width: 100%;
     left: 0;
     text-align: justify !important;
-    background-color: #4a9885;
+    background-color: #C5DDBA;
     padding: .5rem 1rem 0 1rem;
   }
   .scrollToTopBtn {

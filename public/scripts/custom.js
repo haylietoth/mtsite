@@ -173,7 +173,7 @@ $(document).ready(function(){
     });
     //page load animation
     setTimeout(function() {
-      $('.loading').css('bottom', '-100%');
+      $('.loading').css('bottom', '-110%');
     }, 1500);
 
 
@@ -263,11 +263,7 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        if ($(window).scrollTop() < thumbTop) {
-          $(".homepage .whitebar").css("background-color", "#4a9885");
-        } else {
-          $(".homepage .whitebar").css("background-color", "#C5DDBA");
-        }
+        $(".homepage .whitebar").css("background-color", "#C5DDBA");
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
@@ -278,7 +274,7 @@ $(window).on("scroll", function() {
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#4a9885");
+         // $("nav ul").css("background-color", "#C5DDBA");
          $("nav ul").css("display", "block");
       }
     }
