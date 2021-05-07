@@ -704,6 +704,21 @@ a.joyful {
     max-width: 100%;
     padding: 0 1rem;
   }
+  .project-row {
+    margin-top: 0;
+  }
+  .project-column:nth-child(1),
+  .project-column:nth-child(2) {
+    width: 100%;
+    max-width: 100%;
+  }
+  h3:last-of-type {
+    margin-bottom: 4rem;
+  }
+  .text-content {
+    width: 100%;
+    padding-bottom: 6rem;
+  }
 
   .scrollToTopBtn {
     bottom: 60px;
