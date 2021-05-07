@@ -66,11 +66,11 @@ $(document).ready(function(){
       var words = $(this).text().split(' '),
       $homeContentSection = $(this).empty();
       $.each(words, function(_, word) {
-        if (word == "joyful") {
+        if (word === "joyful") {
             $('<a>', {text: word}).appendTo($homeContentSection);
             $('<word>').appendTo($homeContentSection);
             $('.to-letter a').addClass('joyful');
-        } else if (word == "traditional") {
+        } else if (word === "traditional") {
           $('<a>', {text: word}).appendTo($homeContentSection);
           $('<word>').appendTo($homeContentSection);
           $('.to-letter a').addClass('traditional');
@@ -78,6 +78,7 @@ $(document).ready(function(){
             $('<word>', {text: word}).appendTo($homeContentSection);
         }
       });
+      $('.joyful').removeClass('traditional');
     });
     $('word').each(function() {
       var letters = $(this).text().split(''),
@@ -108,13 +109,13 @@ $(document).ready(function(){
     $( ".joyful" ).attr('onmouseover', 'addBall();');
     $( ".joyful" ).attr('onclick', 'addBall();')
     /* add joyful hover image */
-    // const span = document.createElement('span');
-    // const image = document.createElement('img');
-    // image.src  = 'images/Traditional_Hover.jpg';
-    //
-    // $('.traditional').wrap('<span class="wrap"></span>');
-    // $('.traditional').append(span);
-    // $('.traditional span').append(image);
+    const span = document.createElement('span');
+    const image = document.createElement('img');
+    image.src  = 'images/Traditional_Hover.jpg';
+    
+    $('.traditional').wrap('<span class="wrap"></span>');
+    $('.traditional').append(span);
+    $('.traditional span').append(image);
 
     /* cursor for thumbnails */
     var title = "";
