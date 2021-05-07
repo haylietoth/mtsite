@@ -673,7 +673,7 @@ a.joyful {
     padding: 0;
   }
   .row {
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
   }
   .child:nth-child(1),
   .child:nth-child(2),
