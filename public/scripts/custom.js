@@ -70,6 +70,10 @@ $(document).ready(function(){
             $('<a>', {text: word}).appendTo($homeContentSection);
             $('<word>').appendTo($homeContentSection);
             $('.to-letter a').addClass('joyful');
+        } else if (word == "traditional") {
+          $('<a>', {text: word}).appendTo($homeContentSection);
+          $('<word>').appendTo($homeContentSection);
+          $('.to-letter a').addClass('traditional');
         } else {
             $('<word>', {text: word}).appendTo($homeContentSection);
         }
@@ -104,13 +108,13 @@ $(document).ready(function(){
     $( ".joyful" ).attr('onmouseover', 'addBall();');
     $( ".joyful" ).attr('onclick', 'addBall();')
     /* add joyful hover image */
-    // const span = document.createElement('span');
-    // const image = document.createElement('img');
-    // image.src  = 'images/IMG_6479.GIF';
-    //
-    // $('.joyful').wrap('<span class="wrap"></span>');
-    // $('.joyful').append(span);
-    // $('.joyful span').append(image);
+    const span = document.createElement('span');
+    const image = document.createElement('img');
+    image.src  = 'images/Traditional_Hover.jpg';
+
+    $('.traditional').wrap('<span class="wrap"></span>');
+    $('.traditional').append(span);
+    $('.traditional span').append(image);
 
     /* cursor for thumbnails */
     var title = "";

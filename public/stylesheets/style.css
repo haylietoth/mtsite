@@ -143,7 +143,8 @@ a.joyful:active::-webkit-selection {
 a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where no href*/
   background: transparent;
 }
-a.joyful.painted {
+a.joyful.painted,
+a.traditional.painted {
   text-decoration: none;
   border-bottom: 1px solid #FFF;
 }
@@ -207,7 +208,8 @@ a.thumb {
   text-decoration: underline;
   text-decoration-color: black;
 }
-a.joyful {
+a.joyful,
+a.traditional {
   text-decoration: none;
   line-height: 0;
   border-bottom: 1px solid #000;
@@ -219,18 +221,19 @@ a.joyful {
   position:absolute;
   display:none;
   z-index:99;
+  width: 200%;
   left:50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.joyful:hover span {
+.traditional:hover span {
 	display:block;
 }
-.joyful img {
+.traditional img {
 	border:0px solid #000;
-	margin:0px;
-  min-width: 469px;
+	margin: 0px;
+  /* max-width: 200px; */
 }
 .thumbnails {
   z-index: -1;
@@ -781,7 +784,7 @@ a.joyful {
   .wrap {
     position: inherit;
   }
-  .joyful img {
+  .traditional img {
     min-width: auto;
     padding: 0 16px;
   }
