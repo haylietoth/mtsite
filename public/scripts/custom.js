@@ -52,6 +52,7 @@ $(document).ready(function(){
       localStorage.setItem("to-home", "info");
       location.href="./";
     });
+
     /* Image blur on thumbnail hover */
     $(".thumbnail a").mouseenter(function(){
       $(this).children('img').addClass("blur");
@@ -99,14 +100,17 @@ $(document).ready(function(){
        }
     );
 
+    /*Joyful Balls*/
+    $( ".joyful" ).attr('onmouseover', 'addBall();');
+    $( ".joyful" ).attr('onclick', 'addBall();')
     /* add joyful hover image */
-    const span = document.createElement('span');
-    const image = document.createElement('img');
-    image.src  = 'images/IMG_6479.GIF';
-
-    $('.joyful').wrap('<span class="wrap"></span>');
-    $('.joyful').append(span);
-    $('.joyful span').append(image);
+    // const span = document.createElement('span');
+    // const image = document.createElement('img');
+    // image.src  = 'images/IMG_6479.GIF';
+    //
+    // $('.joyful').wrap('<span class="wrap"></span>');
+    // $('.joyful').append(span);
+    // $('.joyful span').append(image);
 
     /* cursor for thumbnails */
     var title = "";
@@ -176,6 +180,13 @@ $(document).ready(function(){
       $('.loading').css('bottom', '-110%');
     }, 1500);
 
+
+});
+
+$( window ).resize(function() {
+  $("#canvas").attr('width', window.innerWidth-21);
+  $("#canvas").attr('height', $('#container').height());
+  replaceAll();
 
 });
 
@@ -263,7 +274,7 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        $(".homepage .whitebar").css("background-color", "#C5DDBA");
+        $(".homepage .whitebar").css("background-color", "#CBCCA8");
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
@@ -274,7 +285,7 @@ $(window).on("scroll", function() {
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#C5DDBA");
+         // $("nav ul").css("background-color", "#CBCCA8");
          $("nav ul").css("display", "block");
       }
     }

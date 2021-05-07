@@ -34,6 +34,7 @@
 html {
   width: 100%;
   font-size: calc(16px + 14.361*(100vw - 576px)/864);
+  overflow-x: hidden;
 }
 
 h2 {

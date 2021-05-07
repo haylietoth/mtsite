@@ -9,10 +9,11 @@ block prepend body
     
     // Content Section
     div
-     div.container
-      div.home-content-section(class=sectionClass)
+     div.container(id="container")
+      div.home-content-section
         h2.to-letter
           != PrismicDOM.RichText.asHtml(pageContent.data.main_text)
+      canvas(id="canvas" style="position: absolute;")
      div.thumbnails(id="work")
       //- Display the slices
       for slice in pageContent.data.page_content

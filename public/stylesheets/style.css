@@ -18,7 +18,7 @@
   z-index: 1000;
   left: 0;
   width: 100%;
-  background-color: #F0EDEC;
+  background-color: #F6F1EC;
   height: 100vh;
   height: calc(var(--vh,1vh) * 100);
   bottom: 0;
@@ -133,6 +133,16 @@ word::after{
   font-family: linotype-sabon, sans-serif;
   line-height: 1;
 }
+word:active::-moz-selection {
+  background: transparent;
+}
+a.joyful:active::-webkit-selection {
+  background: transparent;
+}
+
+a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where no href*/
+  background: transparent;
+}
 a.joyful.painted {
   text-decoration: none;
   border-bottom: 1px solid #FFF;
@@ -181,10 +191,12 @@ a.joyful.painted {
   -webkit-justify-content:center;
   -ms-flex-pack:center;
   justify-content:center;
-  background-color: #C5DDBA;
+  background-color: #CBCCA8;
 }
 .home-content-section {
   padding: 0 17%;
+  position: absolute;
+  z-index: 1;"
 }
 #thumbwrap {
   position:relative;
@@ -284,7 +296,7 @@ a.joyful {
   padding: 100px 0 8rem 0;
   line-height: 1.5;
   font-size: 22px;
-  background-color: #C5DDBA;
+  background-color: #CBCCA8;
 }
 .info-container {
   padding: 0 3rem;
@@ -596,7 +608,7 @@ a.joyful {
   /*Home*/
   .home-content-section {
     margin-bottom: 0;
-    padding: 67px 0;
+    padding: 67px 1rem 67px 0;
   }
   h2 {
     line-height: 2rem;
@@ -726,7 +738,7 @@ a.joyful {
     width: 100%;
     left: 0;
     text-align: justify !important;
-    background-color: #C5DDBA;
+    background-color: #CBCCA8;
     padding: .5rem 1rem 0 1rem;
   }
   .scrollToTopBtn {
