@@ -108,13 +108,13 @@ $(document).ready(function(){
     $( ".joyful" ).attr('onmouseover', 'addBall();');
     $( ".joyful" ).attr('onclick', 'addBall();')
     /* add joyful hover image */
-    const span = document.createElement('span');
-    const image = document.createElement('img');
-    image.src  = 'images/Traditional_Hover.jpg';
-
-    $('.traditional').wrap('<span class="wrap"></span>');
-    $('.traditional').append(span);
-    $('.traditional span').append(image);
+    // const span = document.createElement('span');
+    // const image = document.createElement('img');
+    // image.src  = 'images/Traditional_Hover.jpg';
+    //
+    // $('.traditional').wrap('<span class="wrap"></span>');
+    // $('.traditional').append(span);
+    // $('.traditional span').append(image);
 
     /* cursor for thumbnails */
     var title = "";
