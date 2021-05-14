@@ -74,11 +74,24 @@ $(document).ready(function(){
           $('<a>', {text: word}).appendTo($homeContentSection);
           $('<word>').appendTo($homeContentSection);
           $('.to-letter a').addClass('traditional');
-        } else {
-            $('<word>', {text: word}).appendTo($homeContentSection);
+        } else if (word === "naturally") {
+          $('<a>', {text: word}).appendTo($homeContentSection);
+          $('<word>').appendTo($homeContentSection);
+          $('.to-letter a').addClass('naturally');
+        } else if (word === "varied" || word === "field") {
+          if (word === "varied") {
+            $('<a>', {text: "varied field"}).appendTo($homeContentSection);
+            $('<word>').appendTo($homeContentSection);
+            $('.to-letter a').addClass('varied');
+          }
+        }
+        else {
+          $('<word>', {text: word}).appendTo($homeContentSection);
         }
       });
-      $('.joyful').removeClass('traditional');
+      $('.joyful').removeClass('traditional naturally varied');
+      $('.traditional').removeClass('naturally varied');
+      $('.varied').removeClass('naturally');
     });
     $('word').each(function() {
       var letters = $(this).text().split(''),
@@ -108,14 +121,34 @@ $(document).ready(function(){
     /*Joyful Balls*/
     $( ".joyful" ).attr('onmouseover', 'addBall();');
     $( ".joyful" ).attr('onclick', 'addBall();')
-    /* add joyful hover image */
-    const span = document.createElement('span');
-    const image = document.createElement('img');
-    image.src  = 'images/Traditional_Hover.jpg';
-    
+    /* add traditional hover image */
+    const tSpan = document.createElement('span');
+    const tImage = document.createElement('img');
+    tImage.src  = 'images/Traditional_Hover.jpg';
+
     $('.traditional').wrap('<span class="wrap"></span>');
-    $('.traditional').append(span);
-    $('.traditional span').append(image);
+    $('.traditional').append(tSpan);
+    $('.traditional span').append(tImage);
+
+    /* add naturally hover image */
+    const nSpan = document.createElement('span');
+    const nImage = document.createElement('img');
+    nImage.src  = 'images/naturally.jpg';
+
+    $('.naturally').wrap('<span class="wrap"></span>');
+    $('.naturally').append(nSpan);
+    $('.naturally span').append(nImage);
+
+    /* add naturally hover image */
+    const vSpan = document.createElement('span');
+    const vImage = document.createElement('img');
+    vImage.src  = 'images/VariedField.jpg';
+
+    $('.varied').wrap('<span class="wrap"></span>');
+    $('.varied').append(vSpan);
+    $('.varied span').append(vImage);
+
+
 
     /* cursor for thumbnails */
     var title = "";
