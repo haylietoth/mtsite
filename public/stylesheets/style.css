@@ -570,6 +570,7 @@ a.varied {
   .site-footer a {
     text-underline-position: under;
   }
+
 }
 @media screen and (min-width: 1025px) {
 	.thumbnail {
@@ -579,6 +580,27 @@ a.varied {
 	    top: auto!important;
 	    width: 50%!important;
 	}
+}
+@media (max-width: 768px) {
+  .project-row {
+    margin-top: 0;
+  }
+  .project-column:nth-child(1),
+  .project-column:nth-child(2) {
+    width: 100%;
+    max-width: 100%;
+  }
+  h3:last-of-type {
+    margin-bottom: 4rem;
+  }
+  .text-content {
+    width: 100%;
+    padding-bottom: 6rem;
+  }
+  .project-column h2 {
+    font-size: 33px !important;
+  }
+
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
@@ -715,21 +737,7 @@ a.varied {
     max-width: 100%;
     padding: 0 1rem;
   }
-  .project-row {
-    margin-top: 0;
-  }
-  .project-column:nth-child(1),
-  .project-column:nth-child(2) {
-    width: 100%;
-    max-width: 100%;
-  }
-  h3:last-of-type {
-    margin-bottom: 4rem;
-  }
-  .text-content {
-    width: 100%;
-    padding-bottom: 6rem;
-  }
+
 
   .scrollToTopBtn {
     bottom: 60px;
@@ -738,6 +746,9 @@ a.varied {
 }
 @media (max-width: 450px) {
   /*Home*/
+  .project-column h2 {
+    font-size: 25px !important;
+  }
   h2 {
     font-size: 16px;
   }
