@@ -18,7 +18,7 @@
   z-index: 1000;
   left: 0;
   width: 100%;
-  background-color: #F6F1EC;
+  background-color: #CBCCA8;
   height: 100vh;
   height: calc(var(--vh,1vh) * 100);
   bottom: 0;
@@ -306,7 +306,6 @@ a.varied {
 .home-footer {
   padding: 100px 0 8rem 0;
   line-height: 1.5;
-  font-size: 22px;
   background-color: #CBCCA8;
 }
 .info-container {
@@ -337,49 +336,29 @@ a.varied {
 .title {
   font-family: inotype-sabon, sans-serif;
 }
-.info-container p .painted {
+.info-main p {
+   font-size: 24px;
+}
+.info-main p .painted {
+   font-size: 29px;
+}
+.home-column:nth-child(1) {
+  font-size: 22px !important;
+}
+.home-column:nth-child(1) p .painted {
    font-size: 25.5px;
 }
-.child {
-  font-size: 16px !important;
+.child:nth-child(3){
+   font-size: 20px !important;
 }
 .c-home {
-  font-size:calc(42px + 12.361*(100vw - 576px)/864) !important;
+  font-size: 50px !important;
   margin-bottom: 0;
   line-height: 1;
+  color: #FFF;
 }
 .link-col:nth-child(2) {
   margin-right: .75rem;
-}
-.ls1 {
-  letter-spacing: .01rem !important;
-}
-.ls2 {
-  letter-spacing: 0rem !important;
-}
-.ls3 {
-  margin: 0 3px 0 3px;
-}
-.typewriter p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  text-align: right;
-  border-right: 3px solid black; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .2rem;
-  animation:
-    typing 7s steps(7, end),
-    blink-caret .75s step-end infinite;
-}
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: black; }
 }
 .home-footer #project-info {
   margin: 2rem 0 3rem 0;
@@ -515,7 +494,7 @@ a.varied {
     font-size: 24.2051px;;
   }
   .c-home {
-    font-size: 75px !important;
+    font-size: 50px !important;
     line-height: 1;
   }
   .home-footer a {
@@ -604,13 +583,34 @@ a.varied {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
+  .site-footer a {
+    font-size: 18px !important;
+  }
+  .c-home {
+    font-size: 55px !important;
+  }
+  .info-main p {
+     font-size: 20px !important;
+  }
+  .info-main p .painted {
+     font-size: 24.5px;
+  }
+  .home-column:nth-child(1) {
+    font-size: 20px !important;
+  }
+  .home-column:nth-child(1) p .painted {
+     font-size: 24.5px;
+  }
+  .child:nth-child(3){
+     font-size: 20px !important;
+  }
   .archive-title {
     font-size: 51px;
   }
   /* .wrap {
     position: inherit;
   } */
-  html, .header a, .thumb a, .thumbnail-title, .footer-p, .site-footer a, .footer-column, .column i, h3, .text-content  {
+  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i, h3, .text-content  {
     font-size: 16px;
   }
   /*Header*/
@@ -718,12 +718,6 @@ a.varied {
   }
   .home-column .material-icons {
     font-size: 16px !important;
-  }
-  .info-container p  {
-    font-size: 16px;
-  }
-  .info-container p .painted {
-    font-size: 17.5px;
   }
   .info-main {
     text-align: left;
