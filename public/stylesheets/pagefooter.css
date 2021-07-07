@@ -48,7 +48,7 @@
 }
 .column img {
   padding-right: 5px;
-  max-width: 6% !important;
+  max-width: 35px !important;
   vertical-align: middle;
 }
 .column:nth-child(1) {
