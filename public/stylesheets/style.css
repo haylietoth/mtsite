@@ -163,11 +163,7 @@ a.varied.painted {
 .scrollToTopBtn {
   background-color: transparent;
   border: none;
-  border-radius: 50%;
-  color: white;
   cursor: pointer;
-  font-size: 16px;
-  line-height: 48px;
   width: 48px;
   position: fixed;
   bottom: 20px;
