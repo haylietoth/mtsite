@@ -248,6 +248,7 @@ a.varied {
   background-color: white;
   padding: 6rem 1rem 0 1rem;
   margin: 0 auto;
+  max-width: 1375px;
 }
 .thumbnail {
   text-align: left;
@@ -298,10 +299,10 @@ a.varied {
   filter: blur(5px);
 }
 .thumbnail:nth-child(odd) {
-  padding: 3rem 3.5rem 3rem 7rem;
+  padding: 3rem 3.5rem 3rem 3rem;
 }
 .thumbnail:nth-child(even) {
-  padding: 3rem 7rem 3rem 3.5rem;
+  padding: 3rem 3rem 3rem 3.5rem;
 }
 .home-footer {
   padding: 100px 0 8rem 0;

@@ -54,10 +54,10 @@ $(document).ready(function(){
     });
 
     /* Image blur on thumbnail hover */
-    $(".thumbnail a").mouseenter(function(){
+    $(".thumbnail a").on('mouseenter', function() {
       $(this).children('img').addClass("blur");
     });
-    $(".thumbnail a").mouseleave(function(){
+    $(".thumbnail a").on('mouseleave', function() {
       $(this).children('img').removeClass("blur");
     });
 
