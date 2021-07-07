@@ -32,6 +32,9 @@
   background: white;
   margin-bottom: calc(100vh - 90px) !important;
 }
+.project {
+  margin-bottom: calc(90vh - 90px) !important;
+}
 /*End General*/
 
 /* Header */
@@ -195,6 +198,9 @@ a.varied.painted {
   -ms-flex-pack:center;
   justify-content:center;
   background-color: #CBCCA8;
+  /* position: relative;
+  z-index: 20;
+  margin-top: 78px; */
 }
 .home-content-section {
   padding: 0 17%;
@@ -249,6 +255,8 @@ a.varied {
   padding: 6rem 1rem 0 1rem;
   margin: 0 auto;
   max-width: 1375px;
+  /* position: relative;
+  z-index: 20; */
 }
 .thumbnail {
   text-align: left;
@@ -308,6 +316,8 @@ a.varied {
   padding: 100px 0 8rem 0;
   line-height: 1.5;
   background-color: #CBCCA8;
+  /* position: relative;
+  z-index: 20; */
 }
 .info-container {
   padding: 0 3rem;
@@ -740,6 +750,14 @@ a.varied {
 
 }
 @media (max-width: 450px) {
+  /* .whitebar {
+  	z-index: 100;
+  }
+  .container, .thumbnails, .home-footer {
+    position: inherit;
+    z-index: 1;
+    margin-top: 0;
+  } */
   /*Home*/
   .project-column h2 {
     font-size: 25px !important;
