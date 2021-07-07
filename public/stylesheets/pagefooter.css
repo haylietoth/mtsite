@@ -97,7 +97,7 @@
     text-align: left;
     height: 45%;
   }
-  .page, .project {
+  .project {
     margin-bottom: calc(85vh - 90px) !important;
   }
 }
@@ -110,6 +110,20 @@
   .footer-container {
     top: 40%;
   }
+  .page-footer {
+    padding: 0 1rem;
+    text-align: left;
+    height: 70%;
+  }
+  .project {
+    margin-bottom: calc(100vh - 90px) !important;
+  }
+  .row {
+    padding: 1rem;
+  }
+  .send-note {
+    position: relative;
+  }
 }
 @media only screen and (max-width: 320px) {
   .link-col {
@@ -119,9 +133,9 @@
     margin-left: 0;
     padding: 0;
   }
-  .footer-container {
-    width: 75%;
-    top: 35%;
+  .send-note {
+    margin-left: 0;
   }
+
 }
 /* End Media Queries */
