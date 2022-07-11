@@ -28,7 +28,7 @@
   width: 100%;
   height: 50%;
   font-size: 16px;
-  background: #CBCCA8;
+  background: #C8B765;
 }
 .row:after,
 .link-row:after {
@@ -100,6 +100,10 @@
   .project {
     margin-bottom: calc(85vh - 90px) !important;
   }
+  .footer-container {
+    width: 450px;
+    margin-left: -225px;
+  }
 }
 @media only screen and (max-height: 550px) {
   .footer-container {
@@ -108,7 +112,25 @@
 }
 @media only screen and (max-width: 450px) {
   .footer-container {
-    top: 40%;
+    width: 350px;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -150px;
+  }
+  .desc {
+    font-size: 26px;
+  }
+  .roles{
+    display: grid;
+  }
+  .roles span {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .contact a {
+    text-decoration: underline !important
   }
   .page-footer {
     padding: 0 1rem;

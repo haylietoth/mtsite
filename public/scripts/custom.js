@@ -83,6 +83,13 @@ $(document).ready(function(){
             $('<word>').appendTo($homeContentSection);
             $('.to-letter a').addClass('varied');
           }
+        } else if (word === "Fritz" || word === "Porter.") {
+          if (word == "Fritz") {
+            //  /* add link to fritz porter */ www.fritzporter.com
+            $('<a>', {text: "Fritz Porter.", href: "https://www.fritzporter.com", target: "_blank"}).appendTo($homeContentSection);
+            $('<word>').appendTo($homeContentSection);
+            $('.to-letter a').addClass('fritz');
+          }
         }
         else {
           $('<word>', {text: word}).appendTo($homeContentSection);
@@ -91,6 +98,7 @@ $(document).ready(function(){
       $('.joyful').removeClass('traditional naturally varied');
       $('.traditional').removeClass('naturally varied');
       $('.varied').removeClass('naturally');
+      $('.fritz').removeClass('traditional varied naturally');
     });
     $('word').each(function() {
       var letters = $(this).text().split(''),
@@ -146,7 +154,6 @@ $(document).ready(function(){
     $('.varied').wrap('<span class="wrap"></span>');
     $('.varied').append(vSpan);
     $('.varied span').append(vImage);
-
 
 
     /* cursor for thumbnails */
@@ -311,7 +318,7 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        $(".homepage .whitebar").css("background-color", "#CBCCA8");
+        $(".homepage .whitebar").css("background-color", "#C8B765");
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
@@ -322,7 +329,7 @@ $(window).on("scroll", function() {
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#CBCCA8");
+         // $("nav ul").css("background-color", "#C8B765");
          $("nav ul").css("display", "block");
       }
     }
