@@ -1,17 +1,4 @@
 $(document).ready(function(){
-    /*Google Analytics*/
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-135736418-1');
-    $('a').each(function() {
-      if ($(this).attr('id') == 'info') {
-        this.setAttribute("onclick","document.getElementById('site-footer').classList.toggle('closed');ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
-      }
-      else {
-        this.setAttribute("onclick","ga('send', 'event', '"+$(this).attr("href")+"', 'Click', '"+$(this).text()+"');")
-      }
-    });
 
     /*Smooth scroll*/
     //for home page
@@ -65,40 +52,14 @@ $(document).ready(function(){
       var words = $(this).text().split(' '),
       $homeContentSection = $(this).empty();
       $.each(words, function(_, word) {
-        if (word === "joyful") {
-            $('<a>', {text: word}).appendTo($homeContentSection);
-            $('<word>').appendTo($homeContentSection);
-            $('.to-letter a').addClass('joyful');
-        } else if (word === "traditional") {
-          $('<a>', {text: word}).appendTo($homeContentSection);
-          $('<word>').appendTo($homeContentSection);
-          $('.to-letter a').addClass('traditional');
-        } else if (word === "naturally") {
-          $('<a>', {text: word}).appendTo($homeContentSection);
-          $('<word>').appendTo($homeContentSection);
-          $('.to-letter a').addClass('naturally');
-        } else if (word === "varied" || word === "field") {
-          if (word === "varied") {
-            $('<a>', {text: "varied field"}).appendTo($homeContentSection);
-            $('<word>').appendTo($homeContentSection);
-            $('.to-letter a').addClass('varied');
-          }
-        } else if (word === "Fritz" || word === "Porter.") {
-          if (word == "Fritz") {
-            //  /* add link to fritz porter */ www.fritzporter.com
-            $('<a>', {text: "Fritz Porter.", href: "https://www.fritzporter.com", target: "_blank"}).appendTo($homeContentSection);
-            $('<word>').appendTo($homeContentSection);
-            $('.to-letter a').addClass('fritz');
-          }
-        }
-        else {
+        if (word === "&") { 
+          $('<word>', {text: word}).appendTo($homeContentSection);
+          $('</br>').appendTo($homeContentSection);
+        } else {
           $('<word>', {text: word}).appendTo($homeContentSection);
         }
+        
       });
-      $('.joyful').removeClass('traditional naturally varied');
-      $('.traditional').removeClass('naturally varied');
-      $('.varied').removeClass('naturally');
-      $('.fritz').removeClass('traditional varied naturally');
     });
     $('word').each(function() {
       var letters = $(this).text().split(''),
@@ -114,46 +75,12 @@ $(document).ready(function(){
            $(this).addClass('painted');
        }
     );
-    $('.to-letter a').hover(
-      function(){
-          $(this).addClass('painted');
-      }
-    );
-    $('.thumb').hover(
-       function(){
-           $(this).addClass('painted');
-       }
-    );
 
     /*Joyful Balls*/
-    $( ".joyful" ).attr('onmouseover', 'addBall();');
-    $( ".joyful" ).attr('onclick', 'addBall();')
-    /* add traditional hover image */
-    const tSpan = document.createElement('span');
-    const tImage = document.createElement('img');
-    tImage.src  = 'images/Traditional_Hover.jpg';
-
-    $('.traditional').wrap('<span class="wrap"></span>');
-    $('.traditional').append(tSpan);
-    $('.traditional span').append(tImage);
-
-    /* add naturally hover image */
-    const nSpan = document.createElement('span');
-    const nImage = document.createElement('img');
-    nImage.src  = 'images/naturally.jpg';
-
-    $('.naturally').wrap('<span class="wrap"></span>');
-    $('.naturally').append(nSpan);
-    $('.naturally span').append(nImage);
-
-    /* add naturally hover image */
-    const vSpan = document.createElement('span');
-    const vImage = document.createElement('img');
-    vImage.src  = 'images/VariedField.jpg';
-
-    $('.varied').wrap('<span class="wrap"></span>');
-    $('.varied').append(vSpan);
-    $('.varied span').append(vImage);
+    $( ".joyful" ).on( "click, mouseover", function() {
+      console.log("joyful clicked");
+      addBall();
+    });
 
 
     /* cursor for thumbnails */
@@ -318,7 +245,7 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        $(".homepage .whitebar").css("background-color", "#C8B765");
+        $(".homepage .whitebar").css("background-color", "#7A8117");
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
@@ -329,7 +256,7 @@ $(window).on("scroll", function() {
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#C8B765");
+         // $("nav ul").css("background-color", "#7A8117");
          $("nav ul").css("display", "block");
       }
     }

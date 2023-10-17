@@ -37,6 +37,11 @@ html {
   overflow-x: hidden;
 }
 
+h1 {
+  font-family: Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+
 h2 {
   font-size: calc(16px + 14.361*(100vw - 576px)/864);;
 }
@@ -87,4 +92,8 @@ img, video {
 
 video {
   margin-bottom: 10%;
+}
+
+strong {
+  font-weight: bold;
 }

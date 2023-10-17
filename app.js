@@ -1,50 +1,50 @@
-/*jslint node: true */
-/*jshint esnext: true */
-"use strict";
+'use strict';
+import app from './config.js';
+import { client, repoName } from './prismic-configuration.js';
+import * as prismicH from '@prismicio/helpers';
+import asyncHandler from './utils/async-handler.js';
 
-/**
- * Module dependencies.
- */
-const Prismic = require('prismic-javascript');
-const PrismicDOM = require('prismic-dom');
-const app = require('./config');
-const Cookies = require('cookies');
-const PrismicConfig = require('./prismic-configuration');
-const PORT = app.get('port');
+const route = app();
+const PORT = route.get('port');
 
-app.listen(PORT, () => {
+route.listen(PORT, () => {
   process.stdout.write(`Point your browser to: http://localhost:${PORT}\n`);
 });
 
-// Middleware to inject prismic context
-app.use((req, res, next) => {
+// Middleware to enables Previews
+const prismicAutoPreviewsMiddleware = (req, _res, next) => {
+  client.enableAutoPreviewsFromReq(req);
+  next();
+};
+route.use(prismicAutoPreviewsMiddleware);
+
+// Middleware to connect to inject prismic context
+route.use((req, res, next) => {
   res.locals.ctx = {
-    endpoint: PrismicConfig.apiEndpoint,
-    linkResolver: PrismicConfig.linkResolver,
+    prismicH,
+    repoName,
   };
-  // add PrismicDOM in locals to access them in templates.
-  res.locals.PrismicDOM = PrismicDOM;
-  Prismic.api(PrismicConfig.apiEndpoint, {
-    accessToken: PrismicConfig.accessToken,
-    req,
-  }).then((api) => {
-    req.prismic = { api };
-    next();
-  }).catch((error) => {
-    next(error.message);
-  });
+  next();
 });
+
+// Route for Previews
+route.get(
+  '/preview',
+  asyncHandler(async (req, res, next) => {
+    const redirectUrl = await client.resolvePreviewURL({ defaultURL: '/' });
+    res.redirect(302, redirectUrl);
+  })
+);
 
 // Query the site layout with every route
-app.route('*').get((req, res, next) => {
-  req.prismic.api.getSingle('menu')
-  .then(function(menuContent){
-
-    // Define the layout content
+route.get(
+  '*',
+  asyncHandler(async (req, res, next) => {
+    const menuContent = await client.getSingle('menu');
     res.locals.menuContent = menuContent;
     next();
-  });
-});
+  })
+);
 
 
 /*
@@ -54,7 +54,7 @@ app.route('*').get((req, res, next) => {
 /*
  * Preconfigured prismic preview
  */
-app.get('/preview', (req, res) => {
+route.get('/preview', (req, res) => {
   const token = req.query.token;
   if (token) {
     req.prismic.api.previewSession(token, PrismicConfig.linkResolver, '/')
@@ -73,7 +73,7 @@ app.get('/preview', (req, res) => {
 /*
  * Page route
  */
-app.get('/:uid', (req, res, next) => {
+route.get('/:uid', (req, res, next) => {
   // Store the param uid in a variable
   const uid = req.params.uid;
 
@@ -107,19 +107,11 @@ app.get('/:uid', (req, res, next) => {
     }
 });
 
-/*
- * Homepage route
- */
-app.get('/', (req, res, next) => {
-  req.prismic.api.getSingle("homepage")
-  .then((pageContent) => {
-    if (pageContent) {
-      res.render('homepage', { pageContent });
-    } else {
-      res.status(404).send('Could not find a homepage document. Make sure you create and publish a homepage document in your repository.');
-    }
+// Route for homepage
+route.get(
+  '/',
+  asyncHandler(async (req, res, next) => {
+    const pageContent = await client.getSingle('homepage');
+    res.render('Homepage', { pageContent });
   })
-  .catch((error) => {
-    next(`error when retriving page ${error.message}`);
-  });
-});
+);

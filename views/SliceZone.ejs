@@ -1,0 +1,15 @@
+<%- 
+SliceZone.reduce((prevSlices, slice, index) => {
+  if (slice.slice_type === 'thumbnail') {
+    if (index == 0 || index % 3 == 0) {
+      return prevSlices + include('./slices/thumbnail-1.ejs', { slice: slice })
+    } else if ((index - 1) % 3 == 0) {
+      return prevSlices + include('./slices/thumbnail-2.ejs', { slice: slice })
+    } else {
+      return prevSlices + include('./slices/thumbnail-3.ejs', { slice: slice })
+    }
+  } else {
+    return '<h1>No Slices found</h1>';
+  } 
+}, '') %>
+

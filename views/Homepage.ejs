@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="homepage" data-wio-id="<%- pageContent.id %>"">
+    <%- include('./partials/home-nav'); %>
+    <%- include('./partials/scroll-btn'); %>
+    <div>
+      <div class="container" id="container">
+        <div class="home-content">
+          <div class="details">
+            <h1 class="to-letter">
+              <%- ctx.prismicH.asText(pageContent.data.title) %>
+            </h1>
+            <div class="links">
+              <% pageContent.data.links.map(item => { %>
+                <span>
+                  <a href="<%- ctx.prismicH.asText(item.link) %>">
+                    <%- ctx.prismicH.asText(item.text) %> 
+                  </a>       
+                </span>
+              <% }) %>
+            </div>
+          </div>
+          <div class="details">
+            <%- ctx.prismicH.asText(pageContent.data.details) %>
+          </div>
+        </div>
+        <canvas id="canvas" style="position: absolute;"></canvas>
+      </div>
+      <div class="thumbnails" id="work">
+        <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
+      </div>
+    </div>
+    <footer class="home-footer" id="info">
+      <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>
+    </footer>
+  </body>
+  <script src="/scripts/joyful.js"></script>
+</html>
+
+
