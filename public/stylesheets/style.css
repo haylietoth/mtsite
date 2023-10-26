@@ -39,19 +39,20 @@
 
 /* Header */
 .whitebar {
-	background: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  height: 78px;
+  height: 80px;
+  background-color: #7A8117;
 }
 .topnav a {
   float: left;
   text-align: center;
 }
-.topnav-centered a {
+
+.logo-container a {
   float: none;
   position: absolute;
   top: 50%;
@@ -61,16 +62,100 @@
 .topnav-right {
   float: right;
   display: flex;
+  margin: 20px 0;
 }
-.site-header {
-  padding: 19px 1.75rem 26px 1.75rem;
-}
+
 .site-header,
 .site-header a {
   color: black;
   letter-spacing: 1.0px;
-  font-size: 18px;
+  font-size: 16px;
 }
+
+/* testing navigation icons */
+.menu {
+  display:none;
+}
+.menu .icon-left {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  top: 30px;
+  background-color: #212121;
+}
+.menu .icon-left:before {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #212121;
+  content: "";
+  top: -10px;
+}
+.menu .icon-left:after {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #212121;
+  content: "";
+  top: 10px;
+}
+.menu .icon-left:hover {
+  cursor: pointer;
+}
+.menu .icon-right {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  top: 30px;
+  background-color: #212121;
+  left: 15px;
+}
+.menu .icon-right:before {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #212121;
+  content: "";
+  top: -10px;
+}
+.menu .icon-right:after {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #212121;
+  content: "";
+  top: 10px;
+}
+.menu.open .icon-left {
+  transition-duration: 0.5s;
+  background: transparent;
+}
+.menu.open .icon-left:before {
+  transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+}
+.menu.open .icon-left:after {
+  transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+}
+.menu.open .icon-right {
+  transition-duration: 0.5s;
+  background: transparent;
+}
+.menu.open .icon-right:before {
+  transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+}
+.menu.open .icon-right:after {
+  transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+}
+.menu:hover {
+  cursor: pointer;
+}
+
 .underline {
   position: relative;
   display: inline-block;
@@ -99,7 +184,7 @@
 }
 
 .box {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 .box:hover .underline::after {
@@ -115,6 +200,10 @@
 }
 .site-header .logo {
   display: inline-block;
+}
+
+.logo {
+  width: 175px;
 }
 /*End Header*/
 
@@ -203,7 +292,7 @@ a.fritz.painted {
   background-color: #7A8117;
   /* position: relative;
   z-index: 20;
-  margin-top: 78px; */
+  margin-top: 80px; */
 }
 .home-content-section {
   padding: 0 17%;
@@ -355,8 +444,8 @@ a.fritz {
   display: block;
   width: 100%;
   border: none;
-  background-color: #d5cfb6;
-  color: #f8f5e6;
+  background-color: #D0C9AC;
+  color: #F9F7EB;
   font-size: 13rem;
   text-align: center;  
   font-family: Helvetica, sans-serif;
@@ -589,8 +678,6 @@ a.fritz {
 
   } */
   .site-header {
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 0;
   }
   h2 {
@@ -646,6 +733,9 @@ a.fritz {
   .project-column h2 {
     font-size: 33px !important;
   }
+  .responsive.topnav-right {
+    display: flex;  
+  }
 
 }
 /*Cell Phones*/
@@ -682,20 +772,41 @@ a.fritz {
   }
   /*Header*/
   .site-header a {
-    font-size: 18px;
+    font-size: 16px;
   }
-  .whitebar {
-    height: 53px;
-  }
+
   .site-header {
-    height: auto;
-    padding: .5rem 1rem;
+    margin: auto;
+  }
+
+  .logo-container a {
+    left: 15%;
+  }
+
+  .topnav-right {
+    display: none;   
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    background-color: #D0C9AC;
+  }
+
+  .menu {
+    display: flex;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 4rem;
+    height: 60px;
+    transition-duration: 0.5s;
   }
   .container {
     padding: 0 1rem;
   }
   .homepage .site-header {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
   }
@@ -826,23 +937,14 @@ a.fritz {
     text-align: center;
   }
   nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    text-align: justify !important;
     background-color: #7A8117;
-    padding: .5rem 1rem 0 1rem;
   }
   .scrollToTopBtn {
     right: 5px;
     bottom: 60px;
   }
   .logo {
-    width: max-content;
-  }
-  .logo.add-pt {
-    padding-top: 35px;
+    width: 100px;
   }
 
   /*Footer*/
