@@ -233,20 +233,18 @@ $(window).on("scroll", function() {
     var infoOffset = $( ".home-footer" ).offset();
     var thumbTop = thumbnailOffset.top;
     var infoTop = infoOffset.top;
-    // var whitebar = 0;
-    // if ($(window).width() < 767) {
-    //   whitebar = 53;
-    // } else {
-    //   whitebar = 78;
-    // }
+    var whitebar = 0;
+    if ($(window).width() < 767) {
+      whitebar = 53;
+    } else {
+      whitebar = 78;
+    }
 
-    // if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
-    //   $(".homepage .whitebar").css("background-color", "#D0C9AC");
-    //   $(".site-header a").css("color", "F9F7EB");
-    // } else {
-    //     $(".homepage .whitebar").css("background-color", "#7A8117");
-    //     $(".site-header a").css("color", "#000");
-    // }
+    if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
+        $(".homepage .whitebar").css("background-color", "white");
+    } else {
+        $(".homepage .whitebar").css("background-color", "#7A8117");
+    }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
 
