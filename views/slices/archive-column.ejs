@@ -1,0 +1,9 @@
+div.archive-column
+  each richTextItem in slice.items
+    != ctx.prismicH.asHtml(richTextItem.left_column, ctx.linkResolver)
+  div.archive-column
+    each richTextItem in slice.items
+      != ctx.prismicH.asHtml(richTextItem.middle_column, ctx.linkResolver)
+  div.archive-column
+    each richTextItem in slice.items
+      != ctx.prismicH.asHtml(richTextItem.right_column, ctx.linkResolver)

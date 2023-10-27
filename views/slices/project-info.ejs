@@ -1,0 +1,16 @@
+<div style="margin: 20px 1rem 0 0;" class="project-row">
+   <div class="project-column">
+     <h2 class="animate scroll-transition-fade" id="title"><%= ctx.prismicH.asText(slice.primary.title) %></h2>
+     <h3 class="animate scroll-transition-fade"><%= ctx.prismicH.asText(slice.primary.client) %></h3>
+     <h3 class="animate scroll-transition-fade"><%= ctx.prismicH.asText(slice.primary.collab) %></h3>
+     <h3 class="animate scroll-transition-fade">
+       <%= ctx.prismicH.asText(slice.primary.type) %>, <%= ctx.prismicH.asText(slice.primary.year) %>
+     </h3>
+   </div>
+   <div class="project-column">
+     <section class="text-content scroll-transition-fade">
+       <span><%= ctx.prismicH.asText(slice.primary.desc) %></span>
+     </section>
+   </div>
+ </div>
+ 

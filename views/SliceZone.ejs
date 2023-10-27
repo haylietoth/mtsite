@@ -8,8 +8,19 @@ SliceZone.reduce((prevSlices, slice, index) => {
     } else {
       return prevSlices + include('./slices/thumbnail-3.ejs', { slice: slice })
     }
+  } else if (slice.slice_type === 'full_width_image') {
+    return prevSlices + include('./slices/full-width-img.ejs', { slice: slice })
+  } else if (slice.slice_type === 'two_column_image') {
+    return prevSlices + include('./slices/two-col-img.ejs', { slice: slice })
+  } else if (slice.slice_type === 'video') {
+    return prevSlices + include('./slices/video.ejs', { slice: slice })
+  } else if (slice.slice_type === 'text-section') {
+    return prevSlices + include('./slices/text-section.ejs', { slice: slice })
+  } else if (slice.slice_type === 'archive_column') {
+    return prevSlices + include('./slices/archive_column.ejs', { slice: slice })
+  }  else if (slice.slice_type === 'project_info') {
+    return prevSlices + include('./slices/project-info.ejs', { slice: slice })
   } else {
     return '<h1>No Slices found</h1>';
   } 
 }, '') %>
-

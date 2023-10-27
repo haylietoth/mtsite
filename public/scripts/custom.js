@@ -220,6 +220,8 @@ $.fn.isInViewport = function() {
 
 $(window).on("scroll", function() {
   /* show scroll to top button */
+  // var svgUrl = "../../public/images/logos/MadeleineEdwards_Monogram_Black-02";
+  // $(".logo").html(svgUrl);
 
   if ($(this).scrollTop()) {
        $('.scrollToTopBtn').addClass('showBtn');

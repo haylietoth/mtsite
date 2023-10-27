@@ -70,48 +70,27 @@ route.get('/preview', (req, res) => {
   }
 });
 
-/*
- * Page route
- */
-route.get('/:uid', (req, res, next) => {
-  // Store the param uid in a variable
-  const uid = req.params.uid;
-
+// Route for generic pages and archive page
+route.get(
+  '/:uid',
+  asyncHandler(async (req, res, next) => {
+    const uid = req.params.uid;
     if (uid == 'archive') {
-      // Get a page by its uid
-      req.prismic.api.getByUID("archive", uid)
-      .then((pageContent) => {
-        if (pageContent) {
-          res.render('archive', { pageContent });
-        } else {
-          res.status(404).render('404');
-        }
-      })
-      .catch((error) => {
-        next(`error when retriving page ${error.message}`);
-      });
+      const pageContent = await client.getByUID('archive', uid);
+      res.render('archive', { pageContent });
     }
     else {
-      // Get a page by its uid
-      req.prismic.api.getByUID("page", uid)
-      .then((pageContent) => {
-        if (pageContent) {
-          res.render('page', { pageContent });
-        } else {
-          res.status(404).render('404');
-        }
-      })
-      .catch((error) => {
-        next(`error when retriving page ${error.message}`);
-      });
+      const pageContent = await client.getByUID('page', uid);
+      res.render('page', { pageContent });
     }
-});
+  })
+);
 
 // Route for homepage
 route.get(
   '/',
   asyncHandler(async (req, res, next) => {
     const pageContent = await client.getSingle('homepage');
-    res.render('Homepage', { pageContent });
+    res.render('homepage', { pageContent });
   })
 );

@@ -1,39 +1,16 @@
-extends ./layout.pug
-
-block prepend body 
-  body(data-wio-id=pageContent.id)
-
-  include ./partials/header.pug
-  button(class="scrollToTopBtn")
-    img(src="/images/Scroll-2-Top.png")
-  // Content Section
-  - var project = pageContent.data.project_info[0]
-   div.project(style="display: block;")
-    section.content-section(class=sectionClass)
-       //- Display the slices
-       for slice in pageContent.data.page_content
-         case slice.slice_type
-           when 'full_width_image'
-             include ./partials/full-width-image.pug
-           when 'two_column_image'
-             include ./partials/two_column_image.pug
-           when 'video'
-             include ./partials/video.pug
-       div.project-row
-         div.project-column
-           h2.animate.scroll-transition-fade(id='title')
-              != PrismicDOM.RichText.asText(project.title)
-           h3.animate.scroll-transition-fade
-              != PrismicDOM.RichText.asText(project.client)
-           h3.animate.scroll-transition-fade
-              != PrismicDOM.RichText.asText(project.collab)
-           h3.animate.scroll-transition-fade
-              != PrismicDOM.RichText.asText(project.type)
-              != PrismicDOM.RichText.asText(project.year)
-         div.project-column
-           //- Display the slices
-           for slice in pageContent.data.page_content
-             case slice.slice_type
-               when 'text-section'
-                 include ./partials/text-section.pug
-  include ./partials/footer.pug
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body data-wio-id="<%- pageContent.id %>"">
+    <div class="whitebar" style="background-color: #FFF;">
+    <%- include('./partials/nav'); %>
+    <%- include('./partials/scroll-btn'); %>
+    <div class="project" style="display:block;">
+      <section class="content-section">
+        <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
+      </section>
+    </div>
+    <%- include('./partials/footer'); %>
+  </body>
+</html>
