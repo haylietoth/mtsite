@@ -69,6 +69,8 @@
   color: black;
   letter-spacing: 1.0px;
   font-size: 16px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
 }
 
 /* testing navigation icons */
@@ -226,9 +228,9 @@ word::after{
   content: ' ';
 }
 .painted {
-  color: #FFFFFF !important;
-  font-family: linotype-sabon, sans-serif;
-  line-height: 1;
+  color: #F9F7EB !important;
+  font-family:"ivypresto-display", Helvetica, sans-serif;
+  line-height: 0.8em;
 }
 word:active::-moz-selection {
   background: transparent;
@@ -240,13 +242,9 @@ a.joyful:active::-webkit-selection {
 a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where no href*/
   background: transparent;
 }
-a.joyful.painted,
-a.traditional.painted,
-a.naturally.painted,
-a.varied.painted,
-a.fritz.painted {
+.joyful:hover {
   text-decoration: none;
-  border-bottom: 1px solid #FFF;
+  color:#F9F7EB;
 }
 .text-content span i {
   font-size: 16px !important;
@@ -307,6 +305,8 @@ a.fritz.painted {
 .details {
   flex: 50%;
   margin: auto;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
 }
 
 .details:first-child {
@@ -324,6 +324,10 @@ letter {
   padding: 2rem 4rem 2rem 2rem;
 }
 
+.details p strong {
+  font-size: 15px;
+}
+
 #thumbwrap {
   position:relative;
   margin:relative;
@@ -334,7 +338,7 @@ a.thumb {
   text-decoration-color: black;
 }
 
-a.joyful,
+/* a.joyful,
 a.traditional,
 a.naturally,
 a.varied,
@@ -343,7 +347,7 @@ a.fritz {
   line-height: 0;
   border-bottom: 1px solid #000;
   color: #000;
-}
+} */
 .wrap {
   position: relative;
 }
@@ -445,10 +449,11 @@ a.fritz {
   border: none;
   background-color: #D0C9AC;
   color: #F9F7EB;
-  font-size: 13rem;
+  font-size: 12em;
   text-align: center;  
-  font-family: Helvetica, sans-serif;
-  font-weight: 100;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  letter-spacing: inherit;
+  font-weight: lighter;
   line-height: inherit;
   text-transform: capitalize;
   cursor: pointer;  
@@ -536,6 +541,7 @@ a.fritz {
 }
 .project-row {
   margin-top: 3rem;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .project-row:after {
   content: "";
@@ -554,7 +560,7 @@ a.fritz {
 #title {
   line-height: normal;
   text-align: left;
-  font-family: linotype-sabon, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 32px;
 }
 .text-content {
@@ -571,9 +577,11 @@ a.fritz {
   margin-top: -275px;
 }
 .desc {
-  font-family: 'linotype-sabon, sans-serif';
-  font-size: 30px;
-  line-height: normal;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
+  text-transform: capitalize;
+  font-size: 3.5em;
+  line-height: 0.8em;
 }
 .links {
   margin-top: 40px;
@@ -657,6 +665,9 @@ a.fritz {
 
 /* Media Queries */
 @media (min-width: 1500px) {
+  .home-footer a {
+    font-size: 13em;
+  }
   .home-column .material-icons, .child {
     font-size: 25px !important;
   }
@@ -711,9 +722,9 @@ a.fritz {
   .site-footer a {
     text-underline-position: under;
   }
-
 }
-@media screen and (min-width: 1025px) {
+
+@media screen and (min-width: 769px) {
 	.thumbnail {
 	    /*thumbnail override*/
 	    position: relative!important;
@@ -723,6 +734,16 @@ a.fritz {
 	}
 }
 @media (max-width: 768px) {
+  .home-footer a {
+    font-size: 10em;
+  }
+
+  .thumbnail {
+    width: 100%!important;
+  }
+  .blank {
+    display: none !important;
+  }
   .project-row {
     margin-top: 0;
   }
@@ -745,9 +766,6 @@ a.fritz {
     display: flex;  
   }
 
-}
-/*Cell Phones*/
-@media (max-width: 767px) {
   .site-footer a {
     font-size: 18px !important;
   }
@@ -847,13 +865,6 @@ a.fritz {
 
   i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
-  }
-  .thumbnail {
-      width: 100%!important;
-  }
-  
-  .blank {
-    display: none !important;
   }
   .thumbnail img,
   .footer-p {

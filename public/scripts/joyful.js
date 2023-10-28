@@ -13,7 +13,7 @@ var Pelota = function () {
 	this.bounciness = 0.9;
 	this.friction = 1.01;
 	this.pos = [100, 0];
-	this.color = "white";
+	this.color = "#F9F7EB";
 	this.stop = false;
 
 	this.stopTimes = 0;
@@ -39,7 +39,7 @@ Pelota.prototype.draw = function () {
 	}
 	this.ctx.beginPath();
 	this.ctx.fillStyle = this.color;
-	this.ctx.strokeStyle = "white";
+	this.ctx.strokeStyle = "#F9F7EB";
 	this.ctx.moveTo(this.pos[0] + this.size, this.pos[1]);
 	this.ctx.arc(this.pos[0], this.pos[1], this.size, 0, Math.PI * 2, true);
 	this.ctx.fill();
@@ -127,7 +127,7 @@ function addBall (e) {
 
 	// p[num].color = "rgb(" + parseInt(Math.random() * 255) + ", "
 	// 	+ parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
-  p[num].color = "white";
+  p[num].color = "#F9F7EB";
 	p[num].velocity = [
 		Math.random() * 20 - 10,
 		Math.random() * 5 - 2.5

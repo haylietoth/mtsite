@@ -220,13 +220,26 @@ $.fn.isInViewport = function() {
 
 $(window).on("scroll", function() {
   /* show scroll to top button */
-  // var svgUrl = "../../public/images/logos/MadeleineEdwards_Monogram_Black-02";
-  // $(".logo").html(svgUrl);
+  /* use same logic to change svg logo */
+  //svg paths and container it should display in
+   var svgFull = "../images/logos/MadeleineEdwards_Logo_Black-01.svg";
+   var svgMono = "../images/logos/MadeleineEdwards_Monogram_Black-02.svg";
+   var $svgContainer = $('.logo');
 
   if ($(this).scrollTop()) {
        $('.scrollToTopBtn').addClass('showBtn');
+       $svgContainer.load(svgMono, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
    } else {
        $('.scrollToTopBtn').removeClass('showBtn');
+       $svgContainer.load(svgFull, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
    }
 
   /* sticky nav background color change */

@@ -38,8 +38,10 @@ html {
 }
 
 h1 {
-  font-family: Helvetica, sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
   text-transform: capitalize;
+  line-height: 0.8em;
 }
 
 h2 {
