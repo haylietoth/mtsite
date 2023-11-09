@@ -15,8 +15,8 @@
             </h1>
             <div class="links">
               <% pageContent.data.links.map(item => { %>
-                <span>
-                  <a href="<%- ctx.prismicH.asText(item.link) %>">
+                <span class="box">
+                  <a href="<%- ctx.prismicH.asText(item.link) %>" class="underline">
                     <%- ctx.prismicH.asText(item.text) %> 
                   </a>       
                 </span>
