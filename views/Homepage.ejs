@@ -1,9 +1,9 @@
+<!DOCTYPE html(lang='en')>
 <html>
   <head>
     <%- include('./partials/head'); %>
   </head>
-  <body class="homepage" data-wio-id="<%- pageContent.id %>"">
-    <div class="loading"></div>
+  <body class="homepage" data-wio-id="<%- pageContent.id %>">
     <div class="whitebar" style="background-color: #7A8117;">
     <%- include('./partials/nav'); %>
     <%- include('./partials/scroll-btn'); %>
@@ -38,6 +38,7 @@
       <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>
     </footer>
   </body>
+  <script src="/scripts/joyful.js"></script>
 </html>
 
 
