@@ -1,17 +1,18 @@
 <html>
   <head>
-    <%- include('./partials/head') %>
+    <%- include('./partials/head'); %>
   </head>
-  <body class="container">
-    <!-- Content Section -->
-    <div class="page">
+  <body data-wio-id="<%- pageContent.id %>"">
+    <div class="loading"></div>
+    <div class="whitebar" style="background-color: #FFF;">
+    <%- include('./partials/nav'); %>
+    <%- include('./partials/scroll-btn'); %>
+    <div class="archive" style="display:block;">
       <h1 class="archive-title"><%- ctx.prismicH.asText(pageContent.data.page_title) %></h1>
-      <div class="archive-desc"><%- ctx.prismicH.asText(pageContent.data.page_desc) %></div>
-      <div class="archive-row">
+      <div class="archive-container">
+        <%- include("SliceZone", {SliceZone: pageContent.data.body}); %>
       </div>
     </div>
-    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/footer'); %>
   </body>
 </html>
-
-

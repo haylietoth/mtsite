@@ -280,7 +280,7 @@ $(window).on("scroll", function() {
     }
   });
   //different animation for archive page
-  $('.archive-column p').each(function() {
+  $('.archive-column img').each(function() {
     if ($(this).isInViewport()) {
       $(this).removeClass('archive-below-viewport');
     } else {

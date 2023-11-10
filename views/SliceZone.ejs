@@ -16,11 +16,11 @@ SliceZone.reduce((prevSlices, slice, index) => {
     return prevSlices + include('./slices/video.ejs', { slice: slice })
   } else if (slice.slice_type === 'text-section') {
     return prevSlices + include('./slices/text-section.ejs', { slice: slice })
-  } else if (slice.slice_type === 'archive_column') {
-    return prevSlices + include('./slices/archive_column.ejs', { slice: slice })
-  }  else if (slice.slice_type === 'project_info') {
+  } else if (slice.slice_type === 'archive_col') {
+    return include('./slices/archive-col.ejs', { slice: slice })
+  } else if (slice.slice_type === 'project_info') {
     return prevSlices + include('./slices/project-info.ejs', { slice: slice })
   } else {
-    return '<h1>No Slices found</h1>';
+    return prevSlices + '<h1>Slice type "'+slice.slice_type+'" not found</h1>';
   } 
 }, '') %>

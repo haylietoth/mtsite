@@ -26,7 +26,7 @@
   transition: all .5s ease;
   pointer-events: none;
 }
-.page, .project {
+.page, .project, .archive {
   position: relative;
   z-index: 2;
   background: white;
@@ -622,11 +622,14 @@ a.fritz {
 /*End Project page*/
 
 /* Archive Page*/
+.archive {
+  padding-top: 8rem;
+}
 .archive-title {
-  padding-top: 150px;
   font-size: 102px;
   text-align: center;
   letter-spacing: 5;
+  padding-bottom: 4rem;
 }
 .archive-desc {
   text-align: center;
@@ -640,10 +643,14 @@ a.fritz {
   flex-wrap: wrap;
 }
 .archive-column {
-  -ms-flex: 33.33%; /* IE10 */
-  flex: 33.33%;
-  max-width: 33.33%;
-  padding: 1rem;
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 10px;
+}
+
+.archive-column img {
+  margin-bottom: 20px;
 }
 .block-img {
   margin-bottom: 2rem;
@@ -655,7 +662,7 @@ a.fritz {
   max-width: 100%;
   height: auto;
 } */
-.archive-column p {
+.archive-column img {
   animation: archiveScale .5s;
   -webkit-animation: archiveScale .5s;
 }
@@ -670,6 +677,50 @@ a.fritz {
     100% {transform: scale(.9);}
 }
 
+.archive-container {
+  width: 1100px;
+  margin: 0 auto;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1200px) {
+  .archive-container {
+    width: 950px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .archive-container {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .archive-container {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .archive-container {
+    width: 420px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .archive-container {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .archive-container {
+    width: 95%;
+  }
+}
 /* End Archive Page*/
 
 /*End Body*/
@@ -972,8 +1023,8 @@ a.fritz {
     max-width: 100%;
     padding: 0 1rem;
   }
-
 }
+
 @media (max-width: 450px) {
   /*Home*/
   .project-column h2 {
