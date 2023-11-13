@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body id="services">
+    <div class="loading"></div>
+    <div class="whitebar" style="background-color: #F6F9DD;">
+    <%- include('./partials/nav'); %>
+    <%- include('./partials/scroll-btn'); %>
+    <div class="service-content">
+      <div class="services">
+       <h2 style="font-size: 16px;">CREATIVE SERVICES</h2>
+        <%- ctx.prismicH.asHTML(pageContent.data.creative_services) %>
+        <img 
+          class="badge"
+          src="<%- pageContent.data.badge.url %>" 
+          alt="<%- pageContent.data.badge.alt %>" 
+        />
+        <div class="box">
+          <a class="underline" href="mailto:hello@madeleine.work">HELLO@MADELEINE.WORK</a>
+        </div>
+      </div>
+      <div class="services">
+        <img 
+          src="<%- pageContent.data.image.url %>" 
+          alt="<%- pageContent.data.image.alt %>"
+        />
+        <div>
+          <h2 style="font-size: 40px;">PROCESS</h2>
+          <%- ctx.prismicH.asHTML(pageContent.data.process) %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

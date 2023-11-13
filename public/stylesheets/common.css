@@ -52,11 +52,18 @@ h2 .painted {
 }
 
 body {
-  background:white;
   color: #000;
   font-family: 'BRSonoma-Regular' , sans-serif;
   line-height: 1.6;
   opacity: 1;
+}
+
+#archive, #homepage, #page {
+  background: #FFFFFF;
+}
+
+#services {
+  background-color: #F6F9DD;
 }
 
 a {

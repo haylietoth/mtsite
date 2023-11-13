@@ -16,7 +16,11 @@ export const client = prismic.createClient(repoName, {
     },
     {
       type: 'archive',
-      path: '/:uid',
+      path: '/archive',
+    },
+    {
+      type: 'services',
+      path: '/services',
     },
   ],
 });

@@ -306,7 +306,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   z-index: 1;
 }
 
-.home-content {
+.home-content, .service-content {
   display: flex;    
   z-index: 90;
 }
@@ -317,6 +317,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: lighter;
 }
+
 
 .details:first-child {
   text-align: center;
@@ -388,14 +389,13 @@ a.fritz {
   margin: 0 auto;
   max-width: 1375px;
   flex-direction: column;
-  min-height: 100%;
   display: flex;
   /* flex-direction: row;
   flex-wrap: wrap; */
 }
 
 .row-container {
-  flex: 30 0 50%;
+  flex: 0 0 50%;
 }
 
 .tn-row {
@@ -677,6 +677,55 @@ a.fritz {
     100% {transform: scale(.9);}
 }
 
+/* services page */
+.service-content {
+  padding-top: 8rem;
+  max-width: 1024px;
+  margin: 0 auto 3rem auto;
+}
+
+.services {
+  font-family: "neue-haas-grotesk-display",sans-serif;
+  flex: 50%;
+}
+
+/* .services:nth-child(1) {
+  padding: 0 4rem;
+}
+
+.services:nth-child(2) {
+  padding: 0 4rem;
+} */
+
+.services h2 {
+  text-align: left;
+  margin: 0;
+}
+
+.services ul {
+  font-size: 40px;
+  margin-bottom: 13rem;
+}
+
+.services ul li {
+  line-height: 1.3;
+}
+
+.badge {
+  width: 200px;
+  margin-left: -5px;
+  margin-bottom: 0 !important;
+}
+
+.services img {
+  margin-bottom: 3rem;
+}
+
+.services p {
+  margin: 1rem 0;
+}
+
+/* end services page */
 .archive-container {
   width: 1100px;
   margin: 0 auto;
@@ -937,11 +986,11 @@ a.fritz {
     padding: 67px 1rem 67px 0;
   }
 
-  .home-content {
+  .home-content, .service-content {
     display: block;
   }
 
-  .details {
+  .details, .services {
     flex: auto;
     width: 100%;
   }

@@ -70,22 +70,6 @@ route.get('/preview', (req, res) => {
   }
 });
 
-// Route for generic pages and archive page
-route.get(
-  '/:uid',
-  asyncHandler(async (req, res, next) => {
-    const uid = req.params.uid;
-    if (uid == 'archive') {
-      const pageContent = await client.getByUID('archive', uid);
-      res.render('archive', { pageContent });
-    }
-    else {
-      const pageContent = await client.getByUID('page', uid);
-      res.render('page', { pageContent });
-    }
-  })
-);
-
 // Route for homepage
 route.get(
   '/',
@@ -94,3 +78,33 @@ route.get(
     res.render('homepage', { pageContent });
   })
 );
+
+// Route for services
+route.get(
+  '/services',
+  asyncHandler(async (req, res, next) => {
+    const pageContent = await client.getSingle('services');
+    res.render('services', { pageContent });
+  })
+);
+
+// Route for archive
+route.get(
+  '/archive',
+  asyncHandler(async (req, res, next) => {
+    const pageContent = await client.getByUID('archive');
+    res.render('archive', { pageContent });
+  })
+);
+
+// Route for generic pages
+route.get(
+  '/:uid',
+  asyncHandler(async (req, res, next) => {
+    const uid = req.params.uid;
+    const pageContent = await client.getByUID('page', uid);
+    res.render('page', { pageContent });
+  })
+);
+
+
