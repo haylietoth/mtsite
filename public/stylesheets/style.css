@@ -865,3 +865,32 @@ a.fritz {
   }
 }
 /* End Media Queries */
+
+
+
+
+.maintenance {
+  background-color: #f5f7dd;
+  position: relative;
+  height: 100vh;
+}
+
+.maintenance div {
+  text-align: center;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.cs-title {
+  font-size: 45px;
+}
+
+.cs-contact {
+  color:#000;
+  text-decoration: none;
+}
