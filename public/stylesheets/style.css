@@ -617,6 +617,9 @@ a.fritz {
 }
 /*Cell Phones*/
 @media (max-width: 767px) {
+  .cs-title {
+    font-size: 38px;
+  }
   .site-footer a {
     font-size: 18px !important;
   }
@@ -768,9 +771,7 @@ a.fritz {
 
 }
 @media (max-width: 450px) {
-  .cs-title {
-    font-size: 38px;
-  }
+
 
   /* .whitebar {
   	z-index: 100;
