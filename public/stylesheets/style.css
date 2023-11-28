@@ -618,7 +618,7 @@ a.fritz {
 /*Cell Phones*/
 @media (max-width: 767px) {
   .cs-title {
-    font-size: 38px;
+    font-size: 38px !important;
   }
   .site-footer a {
     font-size: 18px !important;
