@@ -222,6 +222,7 @@ $(window).on("scroll", function() {
    var $svgContainer = $('.logo');
 
   if ($(this).scrollTop()) {
+       $("#whitebar").height('80px');
        $('.scrollToTopBtn').addClass('showBtn');
        $svgContainer.load(svgMono, function(response, status, xhr) {
         if (status === 'error') {
@@ -229,6 +230,7 @@ $(window).on("scroll", function() {
         }
       });
    } else {
+       $("#whitebar").height('55px');
        $('.scrollToTopBtn').removeClass('showBtn');
        $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {
