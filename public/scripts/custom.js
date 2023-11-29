@@ -220,9 +220,13 @@ $(window).on("scroll", function() {
    var svgFull = "../images/logos/MadeleineEdwards_Logo_Black-01.svg";
    var svgMono = "../images/logos/MadeleineEdwards_Monogram_Black-02.svg";
    var $svgContainer = $('.logo');
+   var windowWidth = $(window).width();
 
   if ($(this).scrollTop()) {
-       $("#whitebar").height('80px');
+      if (windowWidth >= 768) {
+        $(".whitebar").css('height','55px');
+      }
+       $(".logo").css('transform','scale(.9)');
        $('.scrollToTopBtn').addClass('showBtn');
        $svgContainer.load(svgMono, function(response, status, xhr) {
         if (status === 'error') {
@@ -230,7 +234,10 @@ $(window).on("scroll", function() {
         }
       });
    } else {
-       $("#whitebar").height('55px');
+       if (windowWidth >= 768) {
+        $(".whitebar").css('height', '80px');
+       }
+       $(".logo").css('transform','scale(1)');
        $('.scrollToTopBtn').removeClass('showBtn');
        $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {

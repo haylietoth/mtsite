@@ -93,6 +93,7 @@ h3 i.material-icons {
 }
 p {
   margin: 2rem 0;
+  letter-spacing: 0.02em;
 }
 img, video {
   max-width: 100%;
