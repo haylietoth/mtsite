@@ -30,10 +30,7 @@
   position: relative;
   z-index: 2;
   background: white;
-  margin-bottom: calc(100vh - 90px) !important;
-}
-.project {
-  margin-bottom: calc(90vh - 90px) !important;
+  margin-bottom: 50vh !important;
 }
 /*End General*/
 
@@ -233,9 +230,6 @@
 .full-width-image:first-of-type {
     margin-top: 0;
 }
-h3:last-of-type {
-  margin-bottom: 150px;
-}
 letter {
   transition: color .3s linear, text-shadow .3s linear;
 }
@@ -315,6 +309,8 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 .home-content, .service-content {
   display: flex;    
   z-index: 90;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .details {
@@ -405,7 +401,7 @@ a.fritz {
   z-index: -1;
   background-color: white;
   margin: 0 auto;
-  max-width: 1375px;
+  /* max-width: 1375px; */
   flex-direction: column;
   display: flex;
   /* flex-direction: row;
@@ -568,6 +564,7 @@ a.fritz {
 }
 .project-row {
   margin-top: 3rem;
+  padding-bottom: 100px;
   font-family: Helvetica, Arial, sans-serif;
 }
 .project-row:after {
@@ -579,20 +576,30 @@ a.fritz {
   float: left;
 }
 .project-column:nth-child(1) {
-  width: 40%;
+  width: 60%;
+  padding-right: 2rem;
 }
 .project-column:nth-child(2) {
-  width: 60%;
+  width: 40%;
 }
 #title {
   line-height: normal;
   text-align: left;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 32px;
+  font-size: 24px;
 }
+
+.collab_title {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.collab_name {
+font-size: 14px;
+}
+
 .text-content {
   font-size: 16px;
-  width: 75%
 }
 .footer-container {
   text-align: center;
@@ -884,15 +891,15 @@ a.fritz {
     width: 100%;
     max-width: 100%;
   }
-  h3:last-of-type {
-    margin-bottom: 4rem;
-  }
   .text-content {
     width: 100%;
-    padding-bottom: 6rem;
+    padding-bottom: 3rem;
   }
   .project-column h2 {
     font-size: 33px !important;
+  }
+  .project-column h3 {
+    font-size: 28px !important;
   }
   .responsive.topnav-right {
     display: flex;  
@@ -925,7 +932,7 @@ a.fritz {
   /* .wrap {
     position: inherit;
   } */
-  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i, h3, .text-content  {
+  html, .header a, .thumb a, .thumbnail-title, .footer-p, .footer-column, .column i, .text-content  {
     font-size: 16px;
   }
   /*Header*/
@@ -992,6 +999,8 @@ a.fritz {
   .container {
     padding: 0 1rem;
   }
+
+
   .homepage .site-header {
     /* position: absolute; */
     left: 0;
@@ -1006,6 +1015,9 @@ a.fritz {
     padding: 67px 1rem 67px 0;
   }
 
+  .home-content {
+    padding: 300px 0 100px 0;
+  }
   .home-content, .service-content {
     display: block;
   }

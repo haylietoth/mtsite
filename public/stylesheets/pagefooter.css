@@ -73,7 +73,7 @@
     height: 50%;
   }
   .page, .project {
-    margin-bottom: calc(90vh - 90px) !important;
+    margin-bottom: 50vh;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -92,7 +92,7 @@
     height: 45%;
   }
   .project {
-    margin-bottom: calc(85vh - 90px) !important;
+    margin-bottom: 55vh;
   }
   .footer-container {
     width: 450px;
@@ -129,10 +129,10 @@
   .page-footer {
     padding: 0 1rem;
     text-align: left;
-    height: 70%;
+    height: 50%;
   }
   .project {
-    margin-bottom: calc(100vh - 90px) !important;
+    margin-bottom: 50vh;
   }
   .row {
     padding: 1rem;
