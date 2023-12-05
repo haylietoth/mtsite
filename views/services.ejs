@@ -1,3 +1,4 @@
+<!DOCTYPE html(lang='en')>
 <html>
   <head>
     <%- include('./partials/head'); %>
@@ -5,7 +6,7 @@
   <body id="services">
     <div class="loading"></div>
     <div class="whitebar" style="background-color: #F6F9DD;">
-    <%- include('./partials/nav'); %>
+    <%- include('./partials/nav', { id: 'services' }); %>
     <%- include('./partials/scroll-btn'); %>
     <div class="service-content">
       <div class="services">
@@ -17,7 +18,7 @@
           alt="<%- pageContent.data.badge.alt %>" 
         />
         <div class="box">
-          <a class="underline" style="line-height: 2;" href="mailto:hello@madeleine.work">HELLO@MADELEINE.WORK</a>
+          <a class="underline" style="line-height: 2;margin-top: 0;margin-left: 12px" href="mailto:hello@madeleine.work">HELLO@MADELEINE.WORK</a>
         </div>
       </div>
       <div class="services">

@@ -1,3 +1,4 @@
+<!DOCTYPE html(lang='en')>
 <html>
   <head>
     <%- include('./partials/head'); %>
@@ -5,7 +6,7 @@
   <body id="page">
     <div class="loading"></div>
     <div class="whitebar" style="background-color: #FFF;">
-    <%- include('./partials/nav'); %>
+    <%- include('./partials/nav', { id: 'page' }); %>
     <%- include('./partials/scroll-btn'); %>
     <div class="project" style="display:block;">
       <section class="content-section">

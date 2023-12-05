@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "BRSonoma-Regular";
-  src: url('fonts/BRSonomaRegular/font.woff2') format('woff2'), url('stylesheets/fonts/BRSonomaRegular/font.woff') format('woff');
-}
-
-@font-face {
   font-family: 'NeuzeitSLTStd-Book';
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
   src: url('stylesheets/fonts/Neuzeit_S_Book_/webfonts/362727_0_0.eot');
@@ -27,35 +22,20 @@
 
 * {
   -webkit-font-smoothing: antialiased;
-  font-family: 'BRSonoma-Regular' , sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
   box-sizing: border-box;
 }
 
 html {
   width: 100%;
-  
   overflow-x: hidden;
-}
-
-h1 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: lighter;
-  text-transform: capitalize;
-  line-height: 0.8em;
-}
-
-h2 {
-  font-size: calc(16px + 14.361*(100vw - 576px)/864);;
-}
-h2 .painted {
-  font-size: calc(19.5px + 14.361*(100vw - 576px)/864);
 }
 
 body {
   color: #000;
-  font-family: 'BRSonoma-Regular' , sans-serif;
   line-height: 1.6;
   opacity: 1;
+  font-weight: 400;
 }
 
 #archive, #homepage, #page {
@@ -71,21 +51,29 @@ a {
   letter-spacing : 0.35;
   line-height: 2.5;
   text-decoration: none;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+h1 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
+  text-transform: capitalize;
+  line-height: 0.8em;
 }
 
 h2, h2 a {
   margin-bottom: 1.5rem;
-  font-weight: normal;
+  font-weight: lighter;
   letter-spacing : 0.85;
   text-align: center;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 h3, h3 a {
   margin-bottom: 0.5rem;
   letter-spacing : 0.52;
   line-height: 28px;
   font-size: 20px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: lighter;
 }
 h3 i.material-icons {
   float: none !important;
@@ -95,7 +83,9 @@ h3 i.material-icons {
 p {
   margin: 2rem 0;
   letter-spacing: 0.02em;
+  font-weight: 400;
 }
+
 img, video {
   max-width: 100%;
   width: 100%;

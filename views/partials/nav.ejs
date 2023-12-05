@@ -1,3 +1,11 @@
+<% 
+var workClass;
+if (id == 'home') {
+  workClass = 'scroll-work';
+} else {
+  workClass = 'to-work';
+}
+%>
   <header class="site-header">
     <!-- Centered link-->
     <div class="logo-container">
@@ -16,25 +24,25 @@
           <div style="width: 100px;"><%- include("../../public/images/logos/MadeleineEdwards_Monogram_Cream-04.svg") %></div>
         </div>
         <div class="box">
-          <a class="underline scroll-work" href="#">WORK</a>
+          <a class="underline <%- workClass %>" href="#thumbnails">WORK</a>
         </div>
         <div class="box">
           <a class="underline" href="/services">SERVICES</a>
         </div>
         <div class="box">
-          <a class="underline" href="#">RISETTE</a>
+          <a class="underline" href="#" target="_blank">RISETTE</a>
         </div>
         <div class="box">
-          <a class="underline" href="mailto:hello@madeleine.work">CONTACT</a>
+          <a class="underline" href="mailto:hello@madeleine.work" target="_blank">CONTACT</a>
         </div>
         <div class="box mobile">
-          <a class="underline" href="#" >INSTAGRAM</a>
+          <a class="underline" href="https://www.instagram.com/madeleineedwards__/" target="_blank">INSTAGRAM</a>
         </div>
         <div class="box mobile">
-          <a class="underline" href="#">INSPIRATION</a>
+          <a class="underline" href="#" target="_blank">INSPIRATION</a>
         </div>
         <div class="box mobile">
-          <a class="underline" href="#">LINKEDIN</a>
+          <a class="underline" href="https://www.linkedin.com/in/madeleineedwards2" target="_blank">LINKEDIN</a>
         </div>
       </div>
     </nav>

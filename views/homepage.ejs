@@ -5,34 +5,38 @@
   </head>
   <body class="homepage" id="homepage">
     <div class="whitebar" style="background-color: #7A8117;">
-    <%- include('./partials/nav'); %>
-    <%- include('./partials/scroll-btn'); %>
-    <div>
-      <div class="container" id="container">
-        <div class="home-content">
-          <div class="details">
-            <h1 class="to-letter">
-              <%- ctx.prismicH.asText(pageContent.data.title) %>
-            </h1>
-            <div class="links">
-              <% pageContent.data.links.map(item => { %>
-                <span class="box">
-                  <a href="<%- ctx.prismicH.asText(item.link) %>" class="underline">
-                    <%- ctx.prismicH.asText(item.text) %> 
-                  </a>       
-                </span>
-              <% }) %>
-            </div>
-          </div>
-          <div class="details">
-            <%- ctx.prismicH.asText(pageContent.data.details) %>
+      <%- include('./partials/nav', { id: 'home' }); %>
+      <%- include('./partials/scroll-btn'); %>
+    </div>
+    <div class="container" id="container">
+      <div class="home-content">
+        <div class="details">
+          <h1 class="to-letter">
+            <%- ctx.prismicH.asText(pageContent.data.title) %>
+          </h1>
+          <div class="links">
+            <span class="box">
+              <a href="mailto:hellow@madeleine.work" target="_blank" class="underline">
+                EMAIL
+              </a>       
+            </span>
+            <% pageContent.data.links.map(item => { %>
+              <span class="box">
+                <a href="<%- ctx.prismicH.asLink(item.link) %>" class="underline" target="_blank">
+                  <%- ctx.prismicH.asText(item.text) %> 
+                </a>       
+              </span>
+            <% }) %>
           </div>
         </div>
-        <canvas id="canvas" style="position: absolute;"></canvas>
+        <div class="details">
+          <%- ctx.prismicH.asText(pageContent.data.details) %>
+        </div>
       </div>
-      <div class="thumbnails" id="work">
-        <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
-      </div>
+      <canvas id="canvas" style="position: absolute;"></canvas>
+    </div>
+    <div class="thumbnails" id="work">
+      <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
     </div>
     <footer class="home-footer" id="info">
       <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>

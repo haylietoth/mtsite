@@ -1,3 +1,4 @@
+<!DOCTYPE html(lang='en')>
 <html>
   <head>
     <%- include('./partials/head'); %>
@@ -5,7 +6,7 @@
   <body id="archive">
     <div class="loading"></div>
     <div class="whitebar" style="background-color: #FFF;">
-    <%- include('./partials/nav'); %>
+    <%- include('./partials/nav', { id: 'archive' }); %>
     <%- include('./partials/scroll-btn'); %>
     <div class="archive" style="display:block;">
       <h1 class="archive-title"><%- ctx.prismicH.asText(pageContent.data.page_title) %></h1>

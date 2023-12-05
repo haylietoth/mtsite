@@ -71,7 +71,7 @@
   letter-spacing: 0.02em;
   font-size: 14px;
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 /* testing navigation icons */
@@ -317,7 +317,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   flex: 50%;
   margin: auto;
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .to-letter {
@@ -444,7 +444,7 @@ a.fritz {
   width: 175px;
   text-align: center;
   line-height: normal;
-  font-family: 'BRSonoma-Regular' , sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 .thumbnail-title {
   font-size: 17px;
@@ -476,7 +476,7 @@ a.fritz {
   letter-spacing: -0.035em;
   text-align: center;  
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: lighter;
+  font-weight: 400;
   line-height: inherit;
   text-transform: capitalize;
   cursor: pointer;  
@@ -539,6 +539,7 @@ a.fritz {
   min-height: 100%;
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 60px;
   background-color: white;
   background-size: contain;
   margin: auto;
@@ -565,7 +566,7 @@ a.fritz {
 .project-row {
   margin-top: 3rem;
   padding-bottom: 100px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 .project-row:after {
   content: "";
@@ -585,7 +586,7 @@ a.fritz {
 #title {
   line-height: normal;
   text-align: left;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
   font-size: 24px;
 }
 
@@ -628,6 +629,7 @@ font-size: 14px;
 .links span {
   border-right: 1px solid #000; 
   padding-right: 5px;
+  margin-right: 5px;
 }
 
 .links span:last-of-type {
@@ -735,6 +737,7 @@ font-size: 14px;
 
 .services ul li {
   line-height: 1.3;
+  font-weight: lighter !important;
 }
 
 .badge {

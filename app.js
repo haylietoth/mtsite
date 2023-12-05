@@ -27,14 +27,6 @@ route.use((req, res, next) => {
   next();
 });
 
-// Route for Previews
-route.get(
-  '/preview',
-  asyncHandler(async (req, res, next) => {
-    const redirectUrl = await client.resolvePreviewURL({ defaultURL: '/' });
-    res.redirect(302, redirectUrl);
-  })
-);
 
 // Query the site layout with every route
 route.get(
@@ -46,29 +38,9 @@ route.get(
   })
 );
 
-
 /*
  * -------------- Routes --------------
  */
-
-/*
- * Preconfigured prismic preview
- */
-route.get('/preview', (req, res) => {
-  const token = req.query.token;
-  if (token) {
-    req.prismic.api.previewSession(token, PrismicConfig.linkResolver, '/')
-    .then((url) => {
-      const cookies = new Cookies(req, res);
-      cookies.set(Prismic.previewCookie, token, { maxAge: 30 * 60 * 1000, path: '/', httpOnly: false });
-      res.redirect(302, url);
-    }).catch((err) => {
-      res.status(500).send(`Error 500 in preview: ${err.message}`);
-    });
-  } else {
-    res.send(400, 'Missing token from querystring');
-  }
-});
 
 // Route for homepage
 route.get(
@@ -88,11 +60,13 @@ route.get(
   })
 );
 
+
 // Route for archive
 route.get(
   '/archive',
   asyncHandler(async (req, res, next) => {
-    const pageContent = await client.getByUID('archive');
+    console.log('get archive');
+    const pageContent = await client.getSingle('archive');
     res.render('archive', { pageContent });
   })
 );
