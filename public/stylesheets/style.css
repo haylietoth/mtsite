@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 3;
   height: 80px;
   transition: all .4s linear!important;
   -webkit-transition: all .4s linear!important;
@@ -314,7 +314,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 }
 
 .details {
-  flex: 50%;
+  flex: 60%;
   margin: auto;
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 400;
@@ -327,6 +327,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 
 
 .details:first-child {
+  flex: 40%;
   text-align: center;
 }
 
@@ -678,7 +679,56 @@ font-size: 14px;
 
 .archive-column img {
   margin-bottom: 20px;
+  cursor: pointer;
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.img-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-icon {
+  float: right;
+  font-size: 24px;
+  margin-left: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+  color: #F9F7EB;
+}
+
+.zoomed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 44px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.zoomed img {
+  width: 45%;
+  transition-duration: 300ms; 
+  transform: translate3d(0px, 0px, 0px) scale(1);
+}
+
 .block-img {
   margin-bottom: 2rem;
 }
