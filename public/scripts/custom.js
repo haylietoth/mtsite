@@ -235,8 +235,10 @@ $( window ).resize(function() {
 
   if (windowWidth < 768) {
       $("#badge").appendTo("#process");
+      $('.topnav-right').css("display", "none");
   } else {
       $("#badge").appendTo("#list");
+      $('.topnav-right').css("display", "flex");
   }
   
   $("#canvas").attr('width', window.innerWidth-21);
@@ -316,33 +318,31 @@ $(window).on("scroll", function() {
     //hide scroll button
     $('.scrollToTopBtn').removeClass('showBtn');
 
-    //update logo
-    $(".logo").css('transform','scale(1)');
-      $svgContainer.load(svgFull, function(response, status, xhr) {
-      if (status === 'error') {
-        $(".logo").html("SVG image not found :/");
-      }
-    });
-
-    //update height of nav on non-mobile only     
+    //update height of nav and logo on non-mobile only     
     if (windowWidth >= 768) {
       $(".whitebar").css('height', '80px');
+
+      $(".logo").css('transform','scale(1)');
+        $svgContainer.load(svgFull, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
     }
    } else {
     //show scroll button
     $('.scrollToTopBtn').addClass('showBtn');
 
-    //update logo
-    $(".logo").css('transform','scale(.9)');
-      $svgContainer.load(svgMono, function(response, status, xhr) {
-      if (status === 'error') {
-        $(".logo").html("SVG image not found :/");
-      }
-    });
 
-    //update height of nav on non-mobile only
+    //update height of nav and logo on non-mobile only
     if (windowWidth >= 768) {
       $(".whitebar").css('height','55px');
+      $(".logo").css('transform','scale(.9)');
+        $svgContainer.load(svgMono, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
     }
   }
 

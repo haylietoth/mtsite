@@ -1059,6 +1059,7 @@ font-size: 14px;
 
   .container {
     padding: 0 1rem;
+    height: 110vh;
   }
 
 
@@ -1077,7 +1078,7 @@ font-size: 14px;
   }
 
   .home-content {
-    padding: 300px 0 100px 0;
+    padding: 150px 0 100px 0;
   }
   .home-content, .service-content {
     display: block;
@@ -1180,6 +1181,11 @@ font-size: 14px;
   .details:last-of-type {
     padding: 1rem 2rem;
   }
+
+  .logo {
+    width: 140px;
+    padding-left: 1rem;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1227,10 +1233,6 @@ font-size: 14px;
   .scrollToTopBtn {
     right: 5px;
     bottom: 60px;
-  }
-
-  .logo {
-    width: 100px;
   }
 
   /*Footer*/
