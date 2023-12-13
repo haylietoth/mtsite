@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  if (window.matchMedia("(max-width: 768px)").matches && ('ontouchstart' in window || navigator.maxTouchPoints)) {
+    // Remove the class on mobile devices
+    $(".topnav-right .underline::after").css("background-color", "D0C9AC");
+}
+
   $('.menu').click (function(){
     $(this).toggleClass('open');
     $('.topnav-right').slideToggle();
