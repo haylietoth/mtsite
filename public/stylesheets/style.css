@@ -432,12 +432,15 @@ a.fritz {
   position: relative;
   vertical-align: top;
 }
-.thumbnail img {
+.thumbail-img {
   border: 0;
   display: block;
   margin: 0 auto;
   transition: .5s ease;
   cursor: none;
+  background-size: cover;
+  background-position: center;
+  height: 330px;
 }
 .thumbnail a {
   cursor: none;
@@ -903,7 +906,7 @@ font-size: 14px;
     text-decoration: none;
     border-bottom: none;
   }
-  .thumbnail img {
+  .thumbail-img {
     padding: 0;
   }
   .thumbnail {
@@ -1097,7 +1100,7 @@ font-size: 14px;
   i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
   }
-  .thumbnail img,
+  .thumbail-img,
   .footer-p {
     padding: 0;
   }
