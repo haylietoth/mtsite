@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 99;
   height: 80px;
   transition: all .4s linear!important;
   -webkit-transition: all .4s linear!important;
@@ -77,6 +77,12 @@
 /* testing navigation icons */
 .menu, .mobile-logo, .mobile {
   display:none;
+}
+
+.draperie {
+  color: #F9F7EB;
+  margin: 3rem 0.5rem;
+  font-size: 16px;
 }
 
 .open .icon-left:before,
@@ -339,7 +345,7 @@ letter {
 }
 
 .details:last-of-type {
-  padding: 2rem 4rem 2rem 2rem;
+  padding: 2rem 4rem;
 }
 
 .details p strong {
@@ -604,13 +610,12 @@ font-size: 14px;
   font-size: 16px;
 }
 .footer-container {
-  text-align: center;
   width: 600px;
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: 100%; 
-  margin-left: -300px;
-  margin-top: -275px;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .desc {
   font-family: "neue-haas-grotesk-display", sans-serif;
@@ -925,7 +930,7 @@ font-size: 14px;
 	}
 }
 @media (max-width: 768px) {
-  
+
   .home-footer a {
     font-size: 10em;
   }
@@ -1174,20 +1179,15 @@ font-size: 14px;
     padding: 0 30px;
   }
   
+  
   /*Nav*/
-  .site-header .logo {
-    font-size: 18px;
-  }
-  .site-header {
-    text-align: center;
-  }
-  nav {
-    background-color: #7A8117;
-  }
+ 
+
   .scrollToTopBtn {
     right: 5px;
     bottom: 60px;
   }
+
   .logo {
     width: 100px;
   }

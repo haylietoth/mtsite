@@ -96,21 +96,12 @@
   }
   .footer-container {
     width: 450px;
-    margin-left: -225px;
   }
 }
-@media only screen and (max-height: 550px) {
-  .footer-container {
-    margin-bottom: 1rem;
-  }
-}
+
 @media only screen and (max-width: 450px) {
   .footer-container {
     width: 350px;
-    left: 50%;
-    top: 50%;
-    margin-left: -175px;
-    margin-top: -150px;
   }
   .desc {
     font-size: 26px;
