@@ -10,15 +10,19 @@
     <%- include('./partials/scroll-btn'); %>
     <div class="service-content">
       <div class="services">
-       <h2 style="font-size: 16px;">CREATIVE SERVICES</h2>
-        <%- ctx.prismicH.asHTML(pageContent.data.creative_services) %>
-        <img 
-          class="badge"
-          src="<%- pageContent.data.badge.url %>" 
-          alt="<%- pageContent.data.badge.alt %>" 
-        />
-        <div class="box">
-          <a class="underline" style="line-height: 2;margin-top: 0;margin-left: 12px" href="mailto:hello@madeleine.work">HELLO@MADELEINE.WORK</a>
+        <div id="list">
+          <h2 style="font-size: 16px;">CREATIVE SERVICES</h2>
+          <%- ctx.prismicH.asHTML(pageContent.data.creative_services) %>
+        </div>
+        <div id="badge">
+          <img 
+            class="badge"
+            src="<%- pageContent.data.badge.url %>" 
+            alt="<%- pageContent.data.badge.alt %>" 
+          />
+          <div class="box">
+            <a class="underline" style="line-height: 2;margin-top: 0;margin-left: 12px" href="mailto:hello@madeleine.work" target="_blank">HELLO@MADELEINE.WORK</a>
+          </div>
         </div>
       </div>
       <div class="services">
@@ -26,8 +30,8 @@
           src="<%- pageContent.data.image.url %>" 
           alt="<%- pageContent.data.image.alt %>"
         />
-        <div>
-          <h2 style="font-size: 40px;">PROCESS</h2>
+        <div id="process">
+          <h2 style="font-size: 40px !important;">PROCESS</h2>
           <%- ctx.prismicH.asHTML(pageContent.data.process) %>
         </div>
       </div>

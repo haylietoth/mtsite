@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+  var windowWidth = $(window).width();
+  if (windowWidth < 768) {
+      $("#badge").appendTo("#process");
+  } else {
+      $("#badge").appendTo("#list");
+  }
+
   if (window.matchMedia("(max-width: 768px)").matches && ('ontouchstart' in window || navigator.maxTouchPoints)) {
     $(".topnav-right .underline::after").css("background-color", "#D0C9AC");
 }
@@ -224,10 +231,17 @@ $(document).ready(function(){
 });
 
 $( window ).resize(function() {
+  var windowWidth = $(window).width();
+
+  if (windowWidth < 768) {
+      $("#badge").appendTo("#process");
+  } else {
+      $("#badge").appendTo("#list");
+  }
+  
   $("#canvas").attr('width', window.innerWidth-21);
   $("#canvas").attr('height', $('#container').height());
   replaceAll();
-
 });
 
 //page load animation

@@ -335,6 +335,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 .details:first-child {
   flex: 40%;
   text-align: center;
+  padding-left: 1rem;
 }
 
 letter {
@@ -770,8 +771,6 @@ font-size: 14px;
 /* services page */
 .service-content {
   padding: 200px 0 100px 0;
-  max-width: 1024px;
-  margin: 0 auto 3rem auto;
 }
 
 .services {
@@ -922,6 +921,10 @@ font-size: 14px;
   }
   .site-footer a {
     text-underline-position: under;
+  }
+
+  .service-content {
+    margin: 0 2rem;
   }
 }
 
@@ -1162,10 +1165,48 @@ font-size: 14px;
     max-width: 100%;
     padding: 0 1rem;
   }
+
+  .service-content {
+    margin: 0 1rem;
+  }
+  .services ul {
+    margin-bottom: 3rem;
+  }
+
+  .service-content {
+    padding: 100px 0 100px 0;
+  }
+
+  .details:last-of-type {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .home-footer a {
+    font-size: 8em;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-footer a {
+    font-size: 7em;
+  }
 }
 
 @media (max-width: 450px) {
   /*Home*/
+  .home-content {
+    padding: 250px 0 100px 0;
+  }
+
+  .details:last-of-type {
+    padding: 0rem 1rem;
+  }
+  .home-footer a {
+    font-size: 6em;
+  }
+
   .project-column h2 {
     font-size: 25px !important;
   }
