@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
   if (window.matchMedia("(max-width: 768px)").matches && ('ontouchstart' in window || navigator.maxTouchPoints)) {
-    // Remove the class on mobile devices
     $(".topnav-right .underline::after").css("background-color", "#D0C9AC");
 }
 
@@ -299,29 +298,39 @@ $(window).on("scroll", function() {
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
 
-  if ($(this).scrollTop()) {
-      if (windowWidth >= 768) {
-        $(".whitebar").css('height','55px');
+  if ($(this).scrollTop() === 0) {
+    //hide scroll button
+    $('.scrollToTopBtn').removeClass('showBtn');
+
+    //update logo
+    $(".logo").css('transform','scale(1)');
+      $svgContainer.load(svgFull, function(response, status, xhr) {
+      if (status === 'error') {
+        $(".logo").html("SVG image not found :/");
       }
-       $(".logo").css('transform','scale(.9)');
-       $('.scrollToTopBtn').addClass('showBtn');
-       $svgContainer.load(svgMono, function(response, status, xhr) {
-        if (status === 'error') {
-          $(".logo").html("SVG image not found :/");
-        }
-      });
+    });
+
+    //update height of nav on non-mobile only     
+    if (windowWidth >= 768) {
+      $(".whitebar").css('height', '80px');
+    }
    } else {
-       if (windowWidth >= 768) {
-        $(".whitebar").css('height', '80px');
-       }
-       $(".logo").css('transform','scale(1)');
-       $('.scrollToTopBtn').removeClass('showBtn');
-       $svgContainer.load(svgFull, function(response, status, xhr) {
-        if (status === 'error') {
-          $(".logo").html("SVG image not found :/");
-        }
-      });
-   }
+    //show scroll button
+    $('.scrollToTopBtn').addClass('showBtn');
+
+    //update logo
+    $(".logo").css('transform','scale(.9)');
+      $svgContainer.load(svgMono, function(response, status, xhr) {
+      if (status === 'error') {
+        $(".logo").html("SVG image not found :/");
+      }
+    });
+
+    //update height of nav on non-mobile only
+    if (windowWidth >= 768) {
+      $(".whitebar").css('height','55px');
+    }
+  }
 
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
