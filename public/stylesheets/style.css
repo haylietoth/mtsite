@@ -434,7 +434,7 @@ a.fritz {
   background-position: center;
 }
 
-.thumbnail-img {
+.title-container {
   margin: 0 auto;
   transition: .5s ease;
   cursor: none;
@@ -911,7 +911,7 @@ font-size: 14px;
     text-decoration: none;
     border-bottom: none;
   }
-  .thumbnail-img {
+  .title-container {
     padding: 0;
   }
   .thumbnail-title {
@@ -1097,7 +1097,7 @@ font-size: 14px;
   i.material-icons, .thumbnail-title i.material-icons {
     font-size: 16px !important;
   }
-  .thumbnail-img,
+  .title-container,
   .footer-p {
     padding: 0;
   }
