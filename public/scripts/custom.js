@@ -90,7 +90,7 @@ $(document).ready(function(){
                   container.removeChild($(container).children()[1]);
               }
                 /* Image blur removed */
-              $(this).children('img').removeClass("blur");
+              $(this).children('.thumbnail-img').removeClass("blur");
           }
           else {
               if($(container).children().length == 1){
@@ -103,7 +103,7 @@ $(document).ready(function(){
                   left: (e.pageX ? e.pageX : e.clientY)
               });
               /* Image blur added */
-              $(this).children('img').addClass("blur");
+              $(this).children('.thumbnail-img').addClass("blur");
           }
           test = "";
       });

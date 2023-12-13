@@ -2,9 +2,9 @@
     <div class="tn-row">
         <div class="thumbnail blank">
         </div>
-        <div class="thumbnail">
+        <div class="thumbnail" style="background-image: url('<%- slice.primary.image.url %>')" >
             <a class="thumbnail-link" href="<%- ctx.prismicH.asLink(slice.primary.link) %>">
-                <div class="thumbail-img" name="image-link" src="<%- slice.primary.image.url %>" style="background-image: url('<%- slice.primary.image.url %>')"  title="<%- ctx.prismicH.asHTML(slice.primary.thumbnail_title).toUpperCase() %>"></div>
+                <div class="thumbnail-img" name="image-link" title="<%- ctx.prismicH.asHTML(slice.primary.thumbnail_title).toUpperCase() %>"></div>
             </a>
         </div>
         <div class="thumbnail blank">

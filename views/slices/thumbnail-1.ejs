@@ -1,11 +1,10 @@
 <div class="row-container">
   <div class="tn-row">
-      <div class="thumbnail">
+      <div class="thumbnail" style="background-image: url('<%- slice.primary.image.url %>')" >
           <a class="thumbnail-link" href="<%- ctx.prismicH.asLink(slice.primary.link) %>">
             <div 
-              class="thumbail-img"
+              class="thumbnail-img"
               name="image-link" 
-              style="background-image: url('<%- slice.primary.image.url %>')" 
               title="<%- ctx.prismicH.asText(slice.primary.thumbnail_title).toUpperCase() %>">
             </div>
           </a>
