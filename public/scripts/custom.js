@@ -175,17 +175,42 @@ $(document).ready(function(){
     zoomedContainer.append(zoomedImg);
     $('.overlay').append(zoomedContainer);
     $('.overlay').fadeIn();
-
-    $('.zoomed, #exit').click(function() {
-        $('.overlay').fadeOut();
-        zoomedContainer.remove();
-    });
   }
 
-  // zoom in archive images
+  function closeOverlay() {
+    $('.overlay').fadeOut();
+    zoomedContainer.remove();
+  }
+
+  $('.zoomed, #exit').click(function() {
+    closeOverlay();
+  });
+
+  $('.overlay').click(function(event) {
+    if (!$(event.target).is('img')) {
+        closeOverlay();
+    }
+  });
+
+  // zoom in archive images & call for generation of share links
   $('.archive-thumbnail').click(function() {
     openOverlay($(this));
+    var imageId = $(this).attr('id');
+    var shareLink = "/archive?image="+imageId;
+    generateShareLinks(shareLink, "https://madeleine-work-dev-b847d126f6d6.herokuapp.com");
   });
+
+  function generateShareLinks(imageUrl, pageUrl) {
+    var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&amp;picture=" + encodeURIComponent(imageUrl);
+    $("#fb").attr("href", facebookShareUrl);
+
+    var twitterShareUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(pageUrl + imageUrl) + "&text=" + encodeURIComponent("Check out this image!");
+    $("#twt").attr("href", twitterShareUrl);
+
+    var pinterestShareUrl = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(pageUrl) + "&media=" + encodeURIComponent(imageUrl);
+    $("pnst").attr("href", pinterestShareUrl);
+    $("#dwn").attr("href", imageUrl);
+  }
 
   var isFullScreen = false;
   var fullScreenIcon = $("#fullscreen");
@@ -263,18 +288,6 @@ $(document).ready(function(){
   $("#share-menu").click(function(e) {
     e.stopPropagation();
   });
-
-  function generateShareLinks(imageUrl, pageUrl) {
-    var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&amp;picture=" + encodeURIComponent(imageUrl);
-    $("#fb").attr("href", facebookShareUrl);
-
-    var twitterShareUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(pageUrl) + "&text=" + encodeURIComponent("Check out this image!");
-    $("#twt").attr("href", twitterShareUrl);
-
-    var pinterestShareUrl = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(pageUrl) + "&media=" + encodeURIComponent(imageUrl);
-    $("pnst").attr("href", pinterestShareUrl);
-    $("#dwn").attr("href", imageUrl);
-  }
 });
 
 $( window ).resize(function() {
