@@ -9,7 +9,7 @@ $(document).ready(function(){
 
   if (window.matchMedia("(max-width: 768px)").matches && ('ontouchstart' in window || navigator.maxTouchPoints)) {
     $(".topnav-right .underline::after").css("background-color", "#D0C9AC");
-}
+  }
 
   $('.menu').click (function(){
     $(this).toggleClass('open');
@@ -21,7 +21,7 @@ $(document).ready(function(){
   $('.scroll-work').click(function (e) {
       e.preventDefault();
       $('html, body').animate({
-          scrollTop: $(".thumbnails").offset().top - 80
+          scrollTop: $(".thumbnails").offset().top - 55
       }, 1200);
   });
   // $('.scroll-info').click(function (e) {
@@ -155,19 +155,36 @@ $(document).ready(function(){
     $('.loading').css('bottom', '-110%');
   }, 1500);
 
-  // zoom in archive images
-  $('.archive-thumbnail').click(function() {
-      var zoomedImg = $(this).clone();
-      var zoomedContainer = $("<div class='zoomed'></div>");
+  //trigger overlay from archive image share links
+  if (window.location.pathname.includes('archive')) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var imageId = urlParams.get('image');
 
-      zoomedContainer.append(zoomedImg);
-      $('.overlay').append(zoomedContainer);
-      $('.overlay').fadeIn();
+    if (imageId) {
+        var imageContainer = $('.archive-thumbnail[id="' + imageId + '"]');
+        if (imageContainer.length > 0) {
+          openOverlay(imageContainer);
+        }
+    }
+  }
 
-      $('.zoomed, #exit').click(function() {
+  function openOverlay(imageContainer) {
+    var zoomedImg = imageContainer.clone();
+    var zoomedContainer = $("<div class='zoomed'></div>");
+
+    zoomedContainer.append(zoomedImg);
+    $('.overlay').append(zoomedContainer);
+    $('.overlay').fadeIn();
+
+    $('.zoomed, #exit').click(function() {
         $('.overlay').fadeOut();
         zoomedContainer.remove();
-      });
+    });
+  }
+
+  // zoom in archive images
+  $('.archive-thumbnail').click(function() {
+    openOverlay($(this));
   });
 
   var isFullScreen = false;
@@ -205,6 +222,7 @@ $(document).ready(function(){
     fullScreenIcon.html(changeIcon);
   });
 
+
   var isZoomed = false;
   var zoomIcon = $("#zoom");
 
@@ -228,6 +246,35 @@ $(document).ready(function(){
       $('.zoomed img ').css('transform', 'translate3d(0px, 0px, 0px) scale(1)');
     }
   });
+
+  $("#share").click(function(e) {
+    e.stopPropagation(); // Prevent click event from bubbling to document
+
+    // Toggle menu visibility
+    $("#share-menu").toggle();
+  });
+
+  // Close the menu when clicking outside of it
+  $(document).click(function() {
+    $("#share-menu").hide();
+  });
+
+  // Prevent menu from closing when clicking inside it
+  $("#share-menu").click(function(e) {
+    e.stopPropagation();
+  });
+
+  function generateShareLinks(imageUrl, pageUrl) {
+    var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&amp;picture=" + encodeURIComponent(imageUrl);
+    $("#fb").attr("href", facebookShareUrl);
+
+    var twitterShareUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(pageUrl) + "&text=" + encodeURIComponent("Check out this image!");
+    $("#twt").attr("href", twitterShareUrl);
+
+    var pinterestShareUrl = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(pageUrl) + "&media=" + encodeURIComponent(imageUrl);
+    $("pnst").attr("href", pinterestShareUrl);
+    $("#dwn").attr("href", imageUrl);
+  }
 });
 
 $( window ).resize(function() {
@@ -253,12 +300,7 @@ $(document).on("click", ".logo, .thumbnail-link", function () {
 
 $(window).bind("load", function () {
   if(localStorage.getItem("to-home") == "work") {
-    var whitebar = 0;
-    if ($(window).width() < 767) {
-      whitebar = 52;
-    } else {
-      whitebar = 77;
-    }
+    var whitebar = 55;
     $('html, body').animate({
         scrollTop: $(".thumbnails").offset().top - whitebar
     }, 1200);
@@ -267,12 +309,7 @@ $(window).bind("load", function () {
   }
   if (localStorage.getItem("to-home") == "info") {
     // console.log($(".home").offset().top);
-    var whitebar = 0;
-    if ($(window).width() < 767) {
-      whitebar = 52;
-    } else {
-      whitebar = 77;
-    }
+    var whitebar = 55;
     $('html, body').animate({
         scrollTop: $(".home-footer").offset().top - whitebar
     }, 1200);
@@ -309,8 +346,8 @@ $(window).on("scroll", function() {
   /* show scroll to top button */
   /* use same logic to change svg logo */
   //svg paths and container it should display in
-   var svgFull = "../images/logos/MadeleineEdwards_Logo_Black-01.svg";
-   var svgMono = "../images/logos/MadeleineEdwards_Monogram_Black-02.svg";
+   var svgFull = "../images/logos/MadeleineEdwards_Black.svg";
+   var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
 
@@ -320,9 +357,7 @@ $(window).on("scroll", function() {
 
     //update height of nav and logo on non-mobile only     
     if (windowWidth >= 768) {
-      $(".whitebar").css('height', '80px');
-
-      $(".logo").css('transform','scale(1)');
+      $(".whitebar").css('height', '62px');
         $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
@@ -337,7 +372,6 @@ $(window).on("scroll", function() {
     //update height of nav and logo on non-mobile only
     if (windowWidth >= 768) {
       $(".whitebar").css('height','55px');
-      $(".logo").css('transform','scale(.9)');
         $svgContainer.load(svgMono, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
@@ -352,17 +386,12 @@ $(window).on("scroll", function() {
     var infoOffset = $( ".home-footer" ).offset();
     var thumbTop = thumbnailOffset.top;
     var infoTop = infoOffset.top;
-    var whitebar = 0;
-    if ($(window).width() < 767) {
-      whitebar = 53;
-    } else {
-      whitebar = 78;
-    }
+    var whitebar = 55;
 
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        $(".homepage .whitebar").css("background-color", "#7A8117");
+        $(".homepage .whitebar").css("background-color", "#5E6E24");
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
@@ -373,7 +402,7 @@ $(window).on("scroll", function() {
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#7A8117");
+         // $("nav ul").css("background-color", "#5E6E24");
          $("nav ul").css("display", "block");
       }
     }

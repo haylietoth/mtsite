@@ -35,7 +35,7 @@ body {
   color: #000;
   line-height: 1.6;
   opacity: 1;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #archive, #homepage, #page {
@@ -47,7 +47,7 @@ body {
 }
 
 a {
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing : 0.35;
   line-height: 2.5;
   text-decoration: none;
@@ -83,7 +83,7 @@ h3 i.material-icons {
 p {
   margin: 2rem 0;
   letter-spacing: 0.02em;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 img, video {

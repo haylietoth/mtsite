@@ -2,7 +2,8 @@
    <div class="project-column">
      <h2 class="animate scroll-transition-fade" id="title"><%= ctx.prismicH.asText(slice.primary.title).toUpperCase() %></h2>
      <section class="text-content scroll-transition-fade">
-       <span><%= ctx.prismicH.asText(slice.primary.description) %></span>
+       <div><%= ctx.prismicH.asText(slice.primary.description) %></div>
+       <div class="note"><%= ctx.prismicH.asText(slice.primary.note) %></div>
      </section>
    </div>
    <div class="project-column">
