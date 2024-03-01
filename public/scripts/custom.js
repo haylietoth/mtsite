@@ -163,10 +163,20 @@ $(document).ready(function(){
     if (imageId) {
         var imageContainer = $('.archive-thumbnail[id="' + imageId + '"]');
         if (imageContainer.length > 0) {
+          console.log('overlay');
           openOverlay(imageContainer);
         }
     }
   }
+
+  // zoom in archive images & call for generation of share links
+  $('.archive-thumbnail').click(function() {
+    console.log('image click');
+    openOverlay($(this));
+    var imageId = $(this).attr('id');
+    var shareLink = "/archive?image="+imageId;
+    generateShareLinks(shareLink, "https://madeleine-work-dev-b847d126f6d6.herokuapp.com");
+  });
 
   function openOverlay(imageContainer) {
     var zoomedImg = imageContainer.clone();
@@ -179,7 +189,7 @@ $(document).ready(function(){
 
   function closeOverlay() {
     $('.overlay').fadeOut();
-    zoomedContainer.remove();
+    $('.zoomed').remove();
   }
 
   $('.zoomed, #exit').click(function() {
@@ -190,14 +200,6 @@ $(document).ready(function(){
     if (!$(event.target).is('img')) {
         closeOverlay();
     }
-  });
-
-  // zoom in archive images & call for generation of share links
-  $('.archive-thumbnail').click(function() {
-    openOverlay($(this));
-    var imageId = $(this).attr('id');
-    var shareLink = "/archive?image="+imageId;
-    generateShareLinks(shareLink, "https://madeleine-work-dev-b847d126f6d6.herokuapp.com");
   });
 
   function generateShareLinks(imageUrl, pageUrl) {
