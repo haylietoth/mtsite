@@ -178,6 +178,7 @@ $(document).ready(function(){
     generateShareLinks(shareLink, "https://madeleine-work-dev-b847d126f6d6.herokuapp.com");
   });
 
+  // open archive image overlay
   function openOverlay(imageContainer) {
     var zoomedImg = imageContainer.clone();
     var zoomedContainer = $("<div class='zoomed'></div>");
@@ -187,21 +188,19 @@ $(document).ready(function(){
     $('.overlay').fadeIn();
   }
 
+  // close the overlay
   function closeOverlay() {
     $('.overlay').fadeOut();
     $('.zoomed').remove();
   }
-
-  $('.zoomed, #exit').click(function() {
-    closeOverlay();
-  });
-
-  $('.overlay').click(function(event) {
+  // click functinos to call overlay close
+  $('.overlay, #exit').click(function(event) {
     if (!$(event.target).is('img')) {
-        closeOverlay();
+      closeOverlay();
     }
   });
 
+  // generates share links for a selected image
   function generateShareLinks(imageUrl, pageUrl) {
     var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&amp;picture=" + encodeURIComponent(imageUrl);
     $("#fb").attr("href", facebookShareUrl);
@@ -214,6 +213,7 @@ $(document).ready(function(){
     $("#dwn").attr("href", imageUrl);
   }
 
+  // handles fullscreen option
   var isFullScreen = false;
   var fullScreenIcon = $("#fullscreen");
   
@@ -249,7 +249,7 @@ $(document).ready(function(){
     fullScreenIcon.html(changeIcon);
   });
 
-
+  // handles zoom option
   var isZoomed = false;
   var zoomIcon = $("#zoom");
 
@@ -274,6 +274,7 @@ $(document).ready(function(){
     }
   });
 
+  // handles share option
   $("#share").click(function(e) {
     e.stopPropagation(); // Prevent click event from bubbling to document
 
@@ -365,6 +366,8 @@ $(window).on("scroll", function() {
    var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
+
+  console.log($(this).scrollTop());
 
   if ($(this).scrollTop() === 0) {
     //hide scroll button
