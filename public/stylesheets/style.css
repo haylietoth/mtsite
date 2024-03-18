@@ -350,7 +350,6 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 }
 
 letter {
-  font-family: Helvetica, sans-serif;
   text-transform: capitalize;
   line-height: .8;
   font-size: 3rem;
@@ -360,15 +359,20 @@ letter {
   padding: 32px 15px 32px 64px;
 }
 
-.details p strong {
+.details strong,
+.details strong a {
   font-size: 15px;
   font-size: 13px;
   letter-spacing: 0.05em;
+  color: black;
+  font-weight: bold;
 }
 
-.details p strong:hover {
+.details strong:hover,
+.details strong a:hover {
   text-decoration: none;
   color:#F9F7EB;
+  cursor:pointer;
 }
 
 #thumbwrap {
@@ -614,19 +618,20 @@ a.fritz {
 .note {
   margin-top: 10px;
   font-family: "ivypresto-display", Helvetica, sans-serif;
-  font-family: 20px;
+  font-family: 22px;
 }
 #title {
   line-height: normal;
   text-align: left;
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-size: 24px;
+  font-size: 35px;
 }
 
 .collab_title {
   font-weight: bold;
   font-size: 10px;
   padding-right: 10px;
+  letter-spacing: 0.05em;
 }
 
 .collab_name {
@@ -722,7 +727,9 @@ a.fritz {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 999;  
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 .img-menu {
@@ -732,19 +739,18 @@ a.fritz {
   right: 0;
   padding: 10px;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .menu-icon {
   float: right;
   font-size: 24px;
   margin-left: 10px;
-  color: #FFFFFF;
+  color: #000;
   cursor: pointer;
 }
 
 .menu-icon:hover {
-  color: #F9F7EB;
+  color: #7d7d7d;
 }
 
 .share-menu {
@@ -794,8 +800,7 @@ a.fritz {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin-top: 44px;
-  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 44px;
 }
 
 .zoomed img {

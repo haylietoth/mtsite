@@ -21,7 +21,7 @@ $(document).ready(function(){
   $('.scroll-work').click(function (e) {
       e.preventDefault();
       $('html, body').animate({
-          scrollTop: $(".thumbnails").offset().top - 55
+          scrollTop: $(".thumbnails").offset().top - 54
       }, 1200);
   });
   // $('.scroll-info').click(function (e) {
@@ -155,27 +155,10 @@ $(document).ready(function(){
     $('.loading').css('bottom', '-110%');
   }, 1500);
 
-  //trigger overlay from archive image share links
-  if (window.location.pathname.includes('archive')) {
-    var urlParams = new URLSearchParams(window.location.search);
-    var imageId = urlParams.get('image');
-
-    if (imageId) {
-        var imageContainer = $('.archive-thumbnail[id="' + imageId + '"]');
-        if (imageContainer.length > 0) {
-          console.log('overlay');
-          openOverlay(imageContainer);
-        }
-    }
-  }
-
   // zoom in archive images & call for generation of share links
   $('.archive-thumbnail').click(function() {
     console.log('image click');
     openOverlay($(this));
-    var imageId = $(this).attr('id');
-    var shareLink = "/archive?image="+imageId;
-    generateShareLinks(shareLink, "https://madeleine-work-dev-b847d126f6d6.herokuapp.com");
   });
 
   // open archive image overlay
@@ -195,23 +178,10 @@ $(document).ready(function(){
   }
   // click functinos to call overlay close
   $('.overlay, #exit').click(function(event) {
-    if (!$(event.target).is('img')) {
+    if (!$(event.target).is('.img-menu, #zoom, #fullscreen')) {
       closeOverlay();
     }
   });
-
-  // generates share links for a selected image
-  function generateShareLinks(imageUrl, pageUrl) {
-    var facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl) + "&amp;picture=" + encodeURIComponent(imageUrl);
-    $("#fb").attr("href", facebookShareUrl);
-
-    var twitterShareUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(pageUrl + imageUrl) + "&text=" + encodeURIComponent("Check out this image!");
-    $("#twt").attr("href", twitterShareUrl);
-
-    var pinterestShareUrl = "https://www.pinterest.com/pin/create/button/?url=" + encodeURIComponent(pageUrl) + "&media=" + encodeURIComponent(imageUrl);
-    $("pnst").attr("href", pinterestShareUrl);
-    $("#dwn").attr("href", imageUrl);
-  }
 
   // handles fullscreen option
   var isFullScreen = false;
@@ -273,24 +243,6 @@ $(document).ready(function(){
       $('.zoomed img ').css('transform', 'translate3d(0px, 0px, 0px) scale(1)');
     }
   });
-
-  // handles share option
-  $("#share").click(function(e) {
-    e.stopPropagation(); // Prevent click event from bubbling to document
-
-    // Toggle menu visibility
-    $("#share-menu").toggle();
-  });
-
-  // Close the menu when clicking outside of it
-  $(document).click(function() {
-    $("#share-menu").hide();
-  });
-
-  // Prevent menu from closing when clicking inside it
-  $("#share-menu").click(function(e) {
-    e.stopPropagation();
-  });
 });
 
 $( window ).resize(function() {
@@ -316,7 +268,7 @@ $(document).on("click", ".logo, .thumbnail-link", function () {
 
 $(window).bind("load", function () {
   if(localStorage.getItem("to-home") == "work") {
-    var whitebar = 55;
+    var whitebar = 54;
     $('html, body').animate({
         scrollTop: $(".thumbnails").offset().top - whitebar
     }, 1200);
@@ -369,7 +321,7 @@ $(window).on("scroll", function() {
 
   console.log($(this).scrollTop());
 
-  if ($(this).scrollTop() === 0) {
+  if ($(this).scrollTop() <= 10) {
     //hide scroll button
     $('.scrollToTopBtn').removeClass('showBtn');
 
