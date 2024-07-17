@@ -157,7 +157,7 @@ $(document).ready(function(){
 
   // zoom in archive images & call for generation of share links
   $('.archive-thumbnail').click(function() {
-    console.log('image click');
+    // console.log('image click');
     openOverlay($(this));
   });
 
@@ -319,7 +319,7 @@ $(window).on("scroll", function() {
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
 
-  console.log($(this).scrollTop());
+  // console.log($(this).scrollTop());
 
   if ($(this).scrollTop() <= 10) {
     //hide scroll button

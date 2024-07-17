@@ -1,19 +1,16 @@
-<footer class="page-footer" style="background-color: <%-footerContent.data.background_color %>">
+<footer class="page-footer" style="background-color:<%-footerContent.data.background_color %>">
   <div class="footer-container">
     <div class="painted">
-      DESIGN & <br> 
-      ART DIRECTION
+      <%- ctx.prismicH.asText(footerContent.data.title) %>
     </div>
     <div class="links">
-      <span class="box">
-        <a class="underline" href="mailto:hello@madeleine.work" target="_blank">GET IN TOUCH</a>
-      </span>
-      <span class="box">
-        <a class="underline" href="https://www.instagram.com/madeleineedwards__/" target="_blank">INSTAGRAM</a>
-      </span>
-      <span class="box">
-        <a class="underline" href="/archive">ARCHIVE</a>
-      </span>
+      <% footerContent.data.links.map(menuLink => { %>
+        <span class="box">
+          <a class="underline"  href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>">
+            <%- ctx.prismicH.asText(menuLink.text) %>
+          </a>
+        </span>
+      <% }) %>
     </div>
   </div>
 </footer>
@@ -22,5 +19,7 @@
 
 <!-- <div class="box contact">
   <a class="underline" href="mailto:hello@madeleine.work">hello@madeleine.work</a>
-</div> -->
+</div> 
+
+<%= JSON.stringify(footerContent.data.links, null, 2) %>-->
 
