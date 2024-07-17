@@ -17,39 +17,30 @@ if (id == 'home') {
       <!-- Left-aligned links (default)-->
       <div class="box topnav-left">
         <!-- <a class="underline scroll-work" href="#">CO-FOUNDER & CREATIVE DIRECTOR AT <strong>DRAPERIE</strong></a> -->
-        <a href="#">DESIGN & ART DIRECTION</a>
+        <a href="<%- ctx.prismicH.asLink(menuContent.data.left_link) %>" disabled aria-disabled="true"><%- ctx.prismicH.asText(menuContent.data.left_link_label) %></a>
       </div>
       <!-- Right-aligned links-->
       <div class="topnav-right">
         <div class="box mobile">
           <div style="width: 110px;"><%- include("../../public/images/logos/ME_Ivory.svg") %></div>
         </div>
-        <div class="box">
-          <a class="underline <%- workClass %>" href="#thumbnails">WORK</a>
-        </div>
-        <div class="box">
-          <a class="underline" href="/services">SERVICES</a>
-        </div>
-        <div class="box">
-          <a class="underline" href="https://risetteco.com/" target="_blank">RISETTE</a>
-        </div>
-        <div class="box mobile">
-          <a class="underline" href="/archive">ARCHIVE</a>
-        </div>
-        <div class="box">
-          <a class="underline" href="mailto:hello@madeleine.work" target="_blank">CONTACT</a>
-        </div>
-        <div class="box mobile">
-          <a class="underline" href="https://www.instagram.com/madeleineedwards__/" target="_blank">INSTAGRAM</a>
-        </div>
-        <div class="box mobile">
-          <a class="underline" href="#" target="_blank">INSPIRATION</a>
-        </div>
-        <div class="box mobile">
-          <a class="underline" href="https://www.linkedin.com/in/madeleineedwards2" target="_blank">LINKEDIN</a>
-        </div>
+        <% menuContent.data.menu_links.map(menuLink => { %>
+            <% if (menuLink.view === "mobile") { %>
+              <div class="box mobile">
+            <% } else { %>
+              <div class="box">
+            <% } %>
+              <% if (menuLink.label[0].text === "WORK") { %>
+                <a class="underline <%- workClass %>" href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>">
+              <% } else { %>
+                <a class="underline" href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>">
+              <% } %>
+                <%- ctx.prismicH.asText(menuLink.label) %>
+              </a>
+            </div>
+        <% }) %>
         <div class="mobile draperie">
-          CO-FOUNDER & CREATIVE </br> DIRECTOR AT <strong>DRAPERIE</strong>
+          <%- ctx.prismicH.asText(menuContent.data.draperie_text) %>
         </div>
       </div>
     </nav>
@@ -59,4 +50,7 @@ if (id == 'home') {
     </div>
   </header>
 </div>
+<button class="scrollToTopBtn">
+  <img src="<%= menuContent.data.scroll_icon.url %>" />
+</button>
 
