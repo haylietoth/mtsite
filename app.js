@@ -33,7 +33,9 @@ route.get(
   '*',
   asyncHandler(async (req, res, next) => {
     const menuContent = await client.getSingle('menu');
+    const footerContent = await client.getSingle('footer');
     res.locals.menuContent = menuContent;
+    res.locals.footerContent = footerContent;
     next();
   })
 );

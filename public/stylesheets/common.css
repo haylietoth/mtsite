@@ -36,15 +36,11 @@ body {
   color: #000;
   line-height: 1.6;
   opacity: 1;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 #archive, #homepage, #page {
   background: #FFFFFF;
-}
-
-#services {
-  background-color: #F6F9DD;
 }
 
 a {
@@ -85,7 +81,7 @@ h3 i.material-icons {
 p {
   margin: 2rem 0;
   letter-spacing: 0.02em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 img, video {

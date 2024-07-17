@@ -4,7 +4,7 @@
     <%- include('./partials/head'); %>
   </head>
   <body id="page">
-    <div class="loading"></div>
+    <div class="loading" style="background-color: <%-menuContent.data.homepage_color %>"></div>
     <div class="whitebar" style="background-color: #FFF;">
     <%- include('./partials/nav', { id: 'page' }); %>
     <%- include('./partials/scroll-btn'); %>

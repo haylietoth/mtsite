@@ -4,11 +4,12 @@
     <%- include('./partials/head'); %>
   </head>
   <body class="homepage" id="homepage">
-    <div class="whitebar" style="background-color: #5E6E24;">
+    <div class="loading" style="background-color: <%-pageContent.data.background_color %>"></div>
+    <div class="whitebar" style="background-color: <%-pageContent.data.background_color %>">
       <%- include('./partials/nav', { id: 'home' }); %>
       <%- include('./partials/scroll-btn'); %>
     </div>
-    <div class="container" id="container">
+    <div class="container" id="container" style="background-color: <%-pageContent.data.background_color %>">
       <div class="home-content">
         <div class="details">
           <h1 class="to-letter">

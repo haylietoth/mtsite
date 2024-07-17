@@ -361,18 +361,16 @@ $(window).on("scroll", function() {
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "white");
     } else {
-        $(".homepage .whitebar").css("background-color", "#5E6E24");
+        $(".homepage .whitebar").css("background-color", homeMenuColor);
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();
 
     if ($(window).width() <= 450) {
       if($(window).scrollTop() > 53 && $(window).scrollTop() < thumbBottom) {
-          // $("nav ul").css("background-color", "white");
           $("nav ul").css("display", "none");
       } else {
           //remove the background property so it comes transparent again (defined in your css)
-         // $("nav ul").css("background-color", "#5E6E24");
          $("nav ul").css("display", "block");
       }
     }

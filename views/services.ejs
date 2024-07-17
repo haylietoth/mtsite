@@ -3,9 +3,9 @@
   <head>
     <%- include('./partials/head'); %>
   </head>
-  <body id="services">
-    <div class="loading"></div>
-    <div class="whitebar" style="background-color: #F6F9DD;">
+  <body id="services" style="background-color: <%-pageContent.data.background_color %>">
+    <div class="loading" style="background-color: <%-pageContent.data.background_color %>"></div>
+    <div class="whitebar" style="background-color: <%-pageContent.data.background_color %>">
     <%- include('./partials/nav', { id: 'services' }); %>
     <%- include('./partials/scroll-btn'); %>
     <div class="service-content">
