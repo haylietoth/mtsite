@@ -335,7 +335,7 @@ $(window).on("scroll", function() {
 
   //update height of nav and logo on non-mobile only
   if (windowWidth >= 768) {
-    if ($(this).scrollTop() == 0) {
+    if ($(this).scrollTop() <= 1 ) {
       $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
