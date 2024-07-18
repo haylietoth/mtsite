@@ -251,8 +251,6 @@ $(document).ready(function(){
 });
 
 $( window ).resize(function() {
-  console.log("h:", $(this).scrollTop());
-  console.log("w:", $(window).width());
   var windowWidth = $(window).width();
 
   if (windowWidth < 768) {
@@ -325,7 +323,8 @@ $(window).on("scroll", function() {
    var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
-  // console.log($(this).scrollTop());
+   console.log("h:", $(this).scrollTop());
+   console.log("w:", $(window).width());
 
   if ($(this).scrollTop() <= 10) {
     //hide scroll button
