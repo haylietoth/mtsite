@@ -115,7 +115,7 @@ var can = document.getElementById("canvas"),
 // Get canvas and set size to window size
 var height = document.getElementById('container').offsetHeight;
 can.width = window.innerWidth - 21;
-can.height = height - 21;
+can.height = height;
 
 /** Add a new ball object */
 function addBall (e) {
