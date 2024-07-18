@@ -255,10 +255,8 @@ $( window ).resize(function() {
 
   if (windowWidth < 768) {
       $("#badge").appendTo("#process");
-      $('.topnav-right').css("display", "none");
   } else {
       $("#badge").appendTo("#list");
-      $('.topnav-right').css("display", "flex");
   }
   
   $("#canvas").attr('width', window.innerWidth-21);
@@ -323,7 +321,7 @@ $(window).on("scroll", function() {
    var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
-  console.log($(this).scrollTop());
+  // console.log($(this).scrollTop());
 
   if ($(this).scrollTop() <= 10) {
     //hide scroll button
@@ -333,22 +331,27 @@ $(window).on("scroll", function() {
     $('.scrollToTopBtn').addClass('showBtn');
   }
 
-  //update height of nav and logo on non-mobile only
-  if (windowWidth >= 768) {
-    if ($(this).scrollTop() <= 1 ) {
-      $svgContainer.load(svgFull, function(response, status, xhr) {
-        if (status === 'error') {
-          $(".logo").html("SVG image not found :/");
-        }
-      });
-    } else { 
+  
+    if ($(this).scrollTop() > 1) {
+      $(".logo").css('width','50px');
+      // if (windowWidth < 768) {
+      //   $(".logo-container a").css('left', '50px');
+      // } else {
+      //   $(".logo-container a").css('left', '50%');
+      // }
       $svgContainer.load(svgMono, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
         }
       });
+    } else {
+      $(".logo").css('width', '100px');
+      $svgContainer.load(svgFull, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
     }
-  }
 
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
