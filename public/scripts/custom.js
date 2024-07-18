@@ -323,7 +323,7 @@ $(window).on("scroll", function() {
    var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
-  // console.log($(this).scrollTop());
+  console.log($(this).scrollTop());
 
   if ($(this).scrollTop() <= 10) {
     //hide scroll button
@@ -335,7 +335,7 @@ $(window).on("scroll", function() {
 
   //update height of nav and logo on non-mobile only
   if (windowWidth >= 768) {
-    if ($(this).scrollTop() === 0) {
+    if ($(this).scrollTop() == 0) {
       $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
