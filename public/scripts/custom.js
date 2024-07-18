@@ -251,6 +251,8 @@ $(document).ready(function(){
 });
 
 $( window ).resize(function() {
+  console.log("h:", $(this).scrollTop());
+  console.log("w:", $(window).width());
   var windowWidth = $(window).width();
 
   if (windowWidth < 768) {
@@ -331,27 +333,25 @@ $(window).on("scroll", function() {
     $('.scrollToTopBtn').addClass('showBtn');
   }
 
-  
-    if ($(this).scrollTop() > 1) {
-      $(".logo").css('width','50px');
-      // if (windowWidth < 768) {
-      //   $(".logo-container a").css('left', '50px');
-      // } else {
-      //   $(".logo-container a").css('left', '50%');
-      // }
-      $svgContainer.load(svgMono, function(response, status, xhr) {
-        if (status === 'error') {
-          $(".logo").html("SVG image not found :/");
-        }
-      });
-    } else {
-      $(".logo").css('width', '100px');
-      $svgContainer.load(svgFull, function(response, status, xhr) {
-        if (status === 'error') {
-          $(".logo").html("SVG image not found :/");
-        }
-      });
-    }
+  //if scroll isn't at the top, use mono logo and adjust size
+  if ($(this).scrollTop() > 1) {
+    $(".logo").css('width','50px');
+    $('.logo-container').addClass('mono');
+    $svgContainer.load(svgMono, function(response, status, xhr) {
+      if (status === 'error') {
+        $(".logo").html("SVG image not found :/");
+      }
+    });
+  //if scroll is at the top, use full logo and adjust size
+  } else {
+    $(".logo").css('width', '100px');
+    $('.logo-container').removeClass('mono');
+    $svgContainer.load(svgFull, function(response, status, xhr) {
+      if (status === 'error') {
+        $(".logo").html("SVG image not found :/");
+      }
+    });
+  }
 
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {

@@ -40,7 +40,7 @@
   left: 0;
   right: 0;
   z-index: 99;
-  height: 62px;
+  height: 55px;
   transition: all .4s linear!important;
   -webkit-transition: all .4s linear!important;
   -moz-transition: all .4s linear!important;
@@ -50,7 +50,7 @@
   text-align: center;
 }
 
-.logo-container a {
+.logo-container {
   float: none;
   position: absolute;
   top: 50%;
@@ -61,7 +61,7 @@
 .topnav-left {
   height: 0px;
   position: relative;
-  top: 10;
+  top: 12;
   left: 25;
 }
 
@@ -1092,8 +1092,12 @@ a.fritz {
     margin: auto;
   }
 
-  .logo-container a {
+  .logo-container {
     left: 75px;
+  }
+
+  .mono {
+    left: 50px !important;
   }
 
   .topnav-right {
