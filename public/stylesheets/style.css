@@ -1308,7 +1308,13 @@ a.fritz {
   
   
   /*Nav*/
- 
+  .menu {
+    top: -4px;
+  }
+  
+  .mono {
+    left: 50px;
+  }
 
   .scrollToTopBtn {
     right: 5px;
