@@ -75,10 +75,10 @@
 .site-header,
 .site-header a {
   color: black;
-  letter-spacing: 0.02em;
-  font-size: 14px;
+  letter-spacing: 0.03em;
+  font-size: 12px;
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* testing navigation icons */
@@ -332,7 +332,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   flex: 60%;
   margin: auto;
   font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .to-letter {
@@ -345,6 +345,14 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   flex: 40%;
   text-align: center;
   padding-left: 1rem;
+}
+
+.details:first-child a {
+  color: black;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
 }
 
 letter {
@@ -621,7 +629,7 @@ a.fritz {
 #title {
   line-height: normal;
   text-align: left;
-  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-family: "ivypresto-display", sans-serif;
   font-size: 35px;
 }
 
