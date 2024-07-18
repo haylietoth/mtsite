@@ -257,8 +257,10 @@ $( window ).resize(function() {
 
   if (windowWidth < 768) {
       $("#badge").appendTo("#process");
+      $('.topnav-right').css("display", "none");
   } else {
       $("#badge").appendTo("#list");
+      $('.topnav-right').css("display", "flex");
   }
   
   $("#canvas").attr('width', window.innerWidth-21);
