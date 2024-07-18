@@ -16,6 +16,11 @@ $(document).ready(function(){
     $('.topnav-right').slideToggle();
   });
 
+  $('.scroll-work').click(function(){
+    $('.menu').removeClass('open');
+    $('.topnav-right').slideToggle();
+  })
+
   /*Smooth scroll*/
   //for home page
   $('.scroll-work').click(function (e) {
