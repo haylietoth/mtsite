@@ -333,22 +333,20 @@ $(window).on("scroll", function() {
     $('.scrollToTopBtn').addClass('showBtn');
   }
 
+  //update height of nav and logo on non-mobile only
   if (windowWidth >= 768) {
-    if ($(this).scrollTop() <= 1) {
+    if ($(this).scrollTop() === 0) {
       $svgContainer.load(svgFull, function(response, status, xhr) {
         if (status === 'error') {
           $(".logo").html("SVG image not found :/");
         }
       });
     } else { 
-      //update height of nav and logo on non-mobile only
-      if (windowWidth >= 768) {
-        $svgContainer.load(svgMono, function(response, status, xhr) {
-          if (status === 'error') {
-            $(".logo").html("SVG image not found :/");
-          }
-        });
-      }
+      $svgContainer.load(svgMono, function(response, status, xhr) {
+        if (status === 'error') {
+          $(".logo").html("SVG image not found :/");
+        }
+      });
     }
   }
 
