@@ -472,11 +472,13 @@ a.fritz {
   background: none;
   position: absolute;
   color: black;
-  font-size: 18px;
   width: 175px;
   text-align: center;
   line-height: normal;
   font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 12px;
 }
 .thumbnail-title {
   font-size: 17px;
