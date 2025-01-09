@@ -5,12 +5,37 @@ if (id == 'home') {
 } else {
   workClass = 'to-work';
 }
+
+var logoColor;
+if (id == 'services') {
+  logoColor = 'Ivory';
+} else {
+  logoColor = 'Black';
+}
 %>
+<% if (font_color !== '') { %>
+  <style>
+    .site-header, .site-header a {
+      color: <%- font_color %> !important;
+    }
+    .underline::after  {
+      background-color: <%- font_color %> !important;
+    }
+    .menu .icon-left,
+    .menu .icon-left:before,
+    .menu .icon-left:after,
+    .menu .icon-right,
+    .menu .icon-right:before,
+    .menu .icon-right:after {
+      background-color: <%- font_color %> !important;
+    }
+  </style>
+<% } %>
   <header class="site-header">
     <!-- Centered link-->
     <div class="logo-container">
       <a href="./">
-        <div class="logo"><%- include("../../public/images/logos/MadeleineEdwards_Black.svg") %></div>
+        <div class="logo"><%- include(`../../public/images/logos/MadeleineEdwards_${logoColor}.svg`) %></div>
       </a>
     </div>
     <nav>
@@ -22,7 +47,7 @@ if (id == 'home') {
       <!-- Right-aligned links-->
       <div class="topnav-right">
         <div class="box mobile">
-          <div style="width: 110px;"><%- include("../../public/images/logos/ME_Ivory.svg") %></div>
+          <div style="width: 110px;"><%- include(`../../public/images/logos/ME_Ivory.svg`) %></div>
         </div>
         <% menuContent.data.menu_links.map(menuLink => { %>
             <% if (menuLink.view === "mobile") { %>

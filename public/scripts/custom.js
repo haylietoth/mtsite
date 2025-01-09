@@ -323,8 +323,8 @@ $(window).on("scroll", function() {
    var svgMono = "../images/logos/ME_Black.svg";
    var $svgContainer = $('.logo');
    var windowWidth = $(window).width();
-   console.log("h:", $(this).scrollTop());
-   console.log("w:", $(window).width());
+  //  console.log("h:", $(this).scrollTop());
+  //  console.log("w:", $(window).width());
 
   if ($(this).scrollTop() <= 10) {
     //hide scroll button

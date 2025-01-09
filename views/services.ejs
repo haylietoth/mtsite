@@ -2,36 +2,61 @@
 <html>
   <head>
     <%- include('./partials/head'); %>
+
+    <style>
+      .cls-1 {
+        fill: <%-pageContent.data.font_color %> !important;
+        stroke: <%-pageContent.data.font_color %> !important;
+      }
+    </style>
   </head>
-  <body id="services" style="background-color: <%-pageContent.data.background_color %>">
+  <body id="services" style="background-color: <%-pageContent.data.background_color %>; color:<%-pageContent.data.font_color %>">
     <div class="loading" style="background-color: <%-pageContent.data.background_color %>"></div>
     <div class="whitebar" style="background-color: <%-pageContent.data.background_color %>">
-    <%- include('./partials/nav', { id: 'services' }); %>
+    <%- include('./partials/nav', { id: 'services', font_color: `${pageContent.data.font_color}`, bg_color: 'test' }); %>
     <div class="service-content">
-      <div class="services">
-        <div id="list">
-          <h2 style="font-size: 16px;">CREATIVE SERVICES</h2>
-          <%- ctx.prismicH.asHTML(pageContent.data.creative_services) %>
-        </div>
-        <div id="badge">
-          <img 
-            class="badge"
-            src="<%- pageContent.data.badge.url %>" 
-            alt="<%- pageContent.data.badge.alt %>" 
-          />
-          <div class="box">
-            <a class="underline" style="line-height: 2;margin-top: -15px;margin-left: 0px" href="mailto:hello@madeleine.work" target="_blank">HELLO@MADELEINE.WORK</a>
+      <div style="display: flex">
+        <div class="services">
+          <div id="list">
+            <h2 style="font-size: 16px; font-weight: 500">CREATIVE SERVICES</h2>
+            <%- ctx.prismicH.asHTML(pageContent.data.creative_services) %>
           </div>
         </div>
+        <div class="services">
+          <img 
+            src="<%- pageContent.data.image.url %>" 
+            alt="<%- pageContent.data.image.alt %>"
+          />
+        </div>
       </div>
-      <div class="services">
-        <img 
-          src="<%- pageContent.data.image.url %>" 
-          alt="<%- pageContent.data.image.alt %>"
-        />
-        <div id="process">
-          <h2 style="font-size: 40px !important;">PROCESS</h2>
-          <%- ctx.prismicH.asHTML(pageContent.data.process) %>
+      <div style="display: flex">
+        <div class="services">
+          <div id="process">
+            <h2 style="font-size: 16px; font-weight: 500">PROCESS</h2>
+            <%- ctx.prismicH.asHTML(pageContent.data.process) %>
+          </div>
+        </div>
+        <div class="services">
+          <div id="contact">
+            <h2 style="font-size: 16px; font-weight: 500">CONTACT</h2>
+            <br>
+            <div class='box'>
+              <a class='underline' href='mailto:hello@madeleine.work' target='_blank' style="color: <%-pageContent.data.font_color %> !important">email:hello@madeleine.work</a>
+            </div>
+            <br>
+            <div class='box'>
+              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Instagram</a>
+            </div>
+            <div class='box'>
+              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Behance</a>
+            </div>
+            <div class='box'>
+              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">LinkedIn</a>
+            </div>
+            <div class='box'>
+              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Pinterest</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

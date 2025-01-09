@@ -158,7 +158,7 @@
 }
 .menu.open .icon-left {
   transition-duration: 0.5s;
-  background: transparent;
+  background: transparent !important;
 }
 .menu.open .icon-left:before {
   transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
@@ -168,7 +168,7 @@
 }
 .menu.open .icon-right {
   transition-duration: 0.5s;
-  background: transparent;
+  background: transparent !important;
 }
 .menu.open .icon-right:before {
   transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
@@ -187,6 +187,22 @@
   letter-spacing: 0.02em;
   font-size: 14px;
 }
+
+.services a {
+  font-size: 16px !important;
+  line-height: normal !important;
+  font-weight: 500 !important;
+}
+
+.services .box:not(:first-child) {
+  margin: 0 !important;
+}
+
+.services .underline::after {
+ top: 95%;
+}
+
+
 .underline,
 .underline:hover,
 .underline:focus,
@@ -321,8 +337,10 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   z-index: 1;
 }
 
+.home-content {
+  display: flex; 
+}
 .home-content, .service-content {
-  display: flex;    
   z-index: 90;
   max-width: 1024px;
   margin: 0 auto;
@@ -844,21 +862,22 @@ a.fritz {
 
 /* services page */
 .service-content {
-  padding: 200px 0 100px 0;
+  padding: 150px 0 100px 0;
 }
 
 .services {
   font-family: "neue-haas-grotesk-display",sans-serif;
-  flex: 50%;
 }
 
-/* .services:nth-child(1) {
-  padding: 0 4rem;
+.services:nth-child(1) {
+  flex: 65%;
+  padding: 0 6rem 0 0;
 }
 
 .services:nth-child(2) {
-  padding: 0 4rem;
-} */
+  flex: 35%;
+  /* padding: 0 0 0 2rem; */
+}
 
 .services h2 {
   text-align: left;
@@ -868,7 +887,7 @@ a.fritz {
 
 .services ul {
   font-size: 40px;
-  margin-bottom: 13rem;
+  margin-bottom: 5rem;
 }
 
 .services ul li {
@@ -880,10 +899,6 @@ a.fritz {
   width: 200px;
   margin-left: -5px;
   margin-bottom: 0 !important;
-}
-
-.services img {
-  margin-bottom: 3rem;
 }
 
 .services p {
