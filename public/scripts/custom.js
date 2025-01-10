@@ -318,41 +318,41 @@ $.fn.isInViewport = function() {
 $(window).on("scroll", function() {
   /* show scroll to top button */
   /* use same logic to change svg logo */
-  //svg paths and container it should display in
-   var svgFull = "../images/logos/MadeleineEdwards_Black.svg";
-   var svgMono = "../images/logos/ME_Black.svg";
-   var $svgContainer = $('.logo');
-   var windowWidth = $(window).width();
-  //  console.log("h:", $(this).scrollTop());
-  //  console.log("w:", $(window).width());
+  // //svg paths and container it should display in
+  //  var svgFull = "../images/logos/MadeleineEdwards_Black.svg";
+  //  var svgMono = "../images/logos/ME_Black.svg";
+  //  var $svgContainer = $('.logo');
+  //  var windowWidth = $(window).width();
+  // //  console.log("h:", $(this).scrollTop());
+  // //  console.log("w:", $(window).width());
 
-  if ($(this).scrollTop() <= 10) {
-    //hide scroll button
-    $('.scrollToTopBtn').removeClass('showBtn');
-   } else {
-    //show scroll button
-    $('.scrollToTopBtn').addClass('showBtn');
-  }
+  // if ($(this).scrollTop() <= 10) {
+  //   //hide scroll button
+  //   $('.scrollToTopBtn').removeClass('showBtn');
+  //  } else {
+  //   //show scroll button
+  //   $('.scrollToTopBtn').addClass('showBtn');
+  // }
 
-  //if scroll isn't at the top, use mono logo and adjust size
-  if ($(this).scrollTop() > 1) {
-    $(".logo").css('width','50px');
-    $('.logo-container').addClass('mono');
-    $svgContainer.load(svgMono, function(response, status, xhr) {
-      if (status === 'error') {
-        $(".logo").html("SVG image not found :/");
-      }
-    });
-  //if scroll is at the top, use full logo and adjust size
-  } else {
-    $(".logo").css('width', '100px');
-    $('.logo-container').removeClass('mono');
-    $svgContainer.load(svgFull, function(response, status, xhr) {
-      if (status === 'error') {
-        $(".logo").html("SVG image not found :/");
-      }
-    });
-  }
+  // //if scroll isn't at the top, use mono logo and adjust size
+  // if ($(this).scrollTop() > 1) {
+  //   $(".logo").css('width','50px');
+  //   $('.logo-container').addClass('mono');
+  //   $svgContainer.load(svgMono, function(response, status, xhr) {
+  //     if (status === 'error') {
+  //       $(".logo").html("SVG image not found :/");
+  //     }
+  //   });
+  // //if scroll is at the top, use full logo and adjust size
+  // } else {
+  //   $(".logo").css('width', '100px');
+  //   $('.logo-container').removeClass('mono');
+  //   $svgContainer.load(svgFull, function(response, status, xhr) {
+  //     if (status === 'error') {
+  //       $(".logo").html("SVG image not found :/");
+  //     }
+  //   });
+  // }
 
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
@@ -363,7 +363,7 @@ $(window).on("scroll", function() {
     var whitebar = 55;
 
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
-        $(".homepage .whitebar").css("background-color", "white");
+        $(".homepage .whitebar").css("background-color", "#f8f8f4");
     } else {
         $(".homepage .whitebar").css("background-color", homeMenuColor);
     }

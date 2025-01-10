@@ -28,7 +28,7 @@
 .page, .project, .archive {
   position: relative;
   z-index: 2;
-  background: white;
+  background: #f8f8f4;
   margin-bottom: 50vh !important;
 }
 /*End General*/
@@ -270,7 +270,9 @@ word::after{
 }
 .painted {
   color: #F9F7EB !important;
-  font-family:"ivypresto-display", Helvetica, sans-serif !important;
+  font-family: adobe-ming-std, sans-serif;
+  font-weight: 300;
+  font-style: normal;
   line-height: 0.8em;
 }
 word:active::-moz-selection {
@@ -598,7 +600,7 @@ a.fritz {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 60px;
-  background-color: white;
+  background-color: #f8f8f4;
   background-size: contain;
   margin: auto;
 }
@@ -643,13 +645,17 @@ a.fritz {
 }
 .note {
   margin-top: 10px;
-  font-family: "ivypresto-display", Helvetica, sans-serif;
+  font-family: adobe-ming-std, sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-family: 22px;
 }
 #title {
   line-height: normal;
   text-align: left;
-  font-family: "ivypresto-display", sans-serif;
+  font-family: adobe-ming-std, sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 35px;
 }
 
@@ -785,7 +791,7 @@ a.fritz {
   min-width: 220px;
   top: 3em;
   right: 1.8em;
-  background-color: #fff;
+  background-color: #f8f8f4;
   border-radius: 3px;
   padding: 14px 28px;
   z-index: 999;
@@ -865,6 +871,10 @@ a.fritz {
   padding: 150px 0 100px 0;
 }
 
+.service-row {
+  display: flex;
+}
+
 .services {
   font-family: "neue-haas-grotesk-display",sans-serif;
 }
@@ -937,6 +947,18 @@ a.fritz {
   }
   .topnav-left {
     display: none;
+  }
+  .service-row {
+    display: block;
+  }
+  .services img {
+    margin-bottom: 3rem;
+  }
+  .services:nth-child(1) {
+    padding: 0;
+  }
+  #contact {
+    margin-top: 3rem;
   }
 }
 
@@ -1108,7 +1130,7 @@ a.fritz {
   }
 
   .logo-container {
-    left: 75px;
+    left: 90px;
   }
 
   /* .mono {
