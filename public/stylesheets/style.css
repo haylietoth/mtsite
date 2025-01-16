@@ -1268,19 +1268,16 @@ a.fritz {
     padding: 1rem 2rem;
   }
 }
-
 @media (max-width: 650px) {
   .home-footer a {
     font-size: 8em;
   }
 }
-
 @media (max-width: 500px) {
   .home-footer a {
     font-size: 7em;
   }
 }
-
 @media (max-width: 450px) {
   /*Home*/
   .home-content {
@@ -1379,4 +1376,22 @@ a.fritz {
 
 .grid-item img {
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .grid-item {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-item {
+    width: 33.33%;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-item {
+    width: 50%;
+  }
 }

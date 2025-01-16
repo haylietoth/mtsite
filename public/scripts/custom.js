@@ -2,7 +2,8 @@ $(document).ready(function(){
 
   // init Masonry
   $('.grid').masonry({
-    itemSelector: '.grid-item'
+    itemSelector: '.grid-item',
+    percentPosition: true
   });
 
   var windowWidth = $(window).width();
