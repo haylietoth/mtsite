@@ -17,7 +17,33 @@
     <div class="archive" style="display:block;">
       <h1 class="archive-title"><%- ctx.prismicH.asText(pageContent.data.page_title) %></h1>
       <div class="archive-container">
-        <%- include("SliceZone", {SliceZone: pageContent.data.body}); %>
+        <div class="grid">
+          <% for (let i = 0; i < pageContent.data.tag_order.length; i++) {
+            var currentTag = pageContent.data.tag_order[i].tag;
+            for (let j = 0; j < pageContent.data.archive.length; j++) {
+              if (currentTag == pageContent.data.archive[j].tag ) { %>
+                <div class="grid-item">
+                  <img
+                    class="archive-thumbnail"
+                    id="<%= pageContent.data.archive[j].image.id %>" 
+                    src="<%= pageContent.data.archive[j].image.url %>" 
+                    alt="<%- pageContent.data.archive[j].image.alt %>" />
+                </div>
+            <% }
+            }
+          }
+          for (let j = 0; j < pageContent.data.archive.length; j++) {
+            if (pageContent.data.archive[j].tag == null ) { %>
+              <div class="grid-item">
+                <img
+                    class="archive-thumbnail"
+                    id="<%= pageContent.data.archive[j].image.id %>" 
+                    src="<%= pageContent.data.archive[j].image.url %>" 
+                    alt="<%- pageContent.data.archive[j].image.alt %>" />
+              </div>
+            <% }
+          } %>
+        </div>
       </div>
     </div>
     <%- include('./partials/footer'); %>

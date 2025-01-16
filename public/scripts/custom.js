@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  // init Masonry
+  $('.grid').masonry({
+    itemSelector: '.grid-item'
+  });
+
   var windowWidth = $(window).width();
   if (windowWidth < 768) {
       $("#badge").appendTo("#process");
