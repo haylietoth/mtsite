@@ -85,7 +85,11 @@ $(document).ready(function(){
   );
 
   /*Joyful Balls*/
-  $( ".joyful" ).on( "click, mouseover", function() {
+  $( ".joyful" ).on( "mouseover", function() {
+    addBall();
+  });
+
+  $( ".joyful" ).on("click", function() {
     addBall();
   });
 

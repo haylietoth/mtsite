@@ -318,9 +318,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 /*Home page*/
 .container {
   height: 100vh;
-  -webkit-flex-flow: column wrap;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
+  padding-top: 55px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -333,19 +331,15 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
   z-index: 20;
   margin-top: 80px; */
 }
-.home-content-section {
-  padding: 0 17%;
-  position: absolute;
-  z-index: 1;
-}
 
-.home-content {
-  display: block; 
-}
 .home-content, .service-content {
   z-index: 90;
   max-width: 1024px;
-  margin: -5em auto 0;
+  margin: 0 auto;
+}
+
+.home-content h1 {
+
 }
 
 .details {
@@ -360,19 +354,6 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 .to-letter {
   letter-spacing: -0.2em;
   word-spacing: 0.5em;
-}
-
-
-.details:first-child {
-  text-align: center;
-}
-
-.details:first-child a {
-  color: black;
-  letter-spacing: 0.03em;
-  font-size: 12px;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
 }
 
 letter {
@@ -1008,6 +989,10 @@ a.fritz {
 
 @media (max-width: 768px) {
 
+  .details {
+    bottom: 0;
+    padding: 0 2em;
+  }
   .thumbnail {
     height: 403px;
     flex: 1 1 100%;
@@ -1154,19 +1139,12 @@ a.fritz {
     display: inline-block;
   }
   /*Home*/
-  .home-content-section {
-    margin-bottom: 0;
-    padding: 67px 1rem 67px 0;
-  }
 
-  .home-content {
-    padding: 150px 0 100px 0;
-  }
-  .home-content, .service-content {
+  .service-content {
     display: block;
   }
 
-  .details, .services {
+  .services {
     flex: auto;
     width: 100%;
   }
@@ -1259,10 +1237,6 @@ a.fritz {
   .service-content {
     padding: 100px 0 100px 0;
   }
-
-  .details:last-of-type {
-    padding: 1rem 2rem;
-  }
 }
 @media (max-width: 650px) {
   .home-footer a {
@@ -1276,13 +1250,6 @@ a.fritz {
 }
 @media (max-width: 450px) {
   /*Home*/
-  .home-content {
-    padding: 250px 0 100px 0;
-  }
-
-  .details:last-of-type {
-    padding: 0rem 1rem;
-  }
   .home-footer a {
     font-size: 6em;
   }
