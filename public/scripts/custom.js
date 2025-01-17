@@ -66,13 +66,7 @@ $(document).ready(function(){
     var words = $(this).text().split(' '),
     $homeContentSection = $(this).empty();
     $.each(words, function(_, word) {
-      if (word === "&") { 
-        $('<word>', {text: word}).appendTo($homeContentSection);
-        $('</br>').appendTo($homeContentSection);
-      } else {
-        $('<word>', {text: word}).appendTo($homeContentSection);
-      }
-      
+      $('<word>', {text: word}).appendTo($homeContentSection);      
     });
   });
   $('word').each(function() {

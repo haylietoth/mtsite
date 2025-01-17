@@ -10,25 +10,9 @@
     </div>
     <div class="container" id="container" style="background-color: <%-pageContent.data.background_color %>">
       <div class="home-content">
-        <div class="details">
-          <h1 class="to-letter">
-            <%- ctx.prismicH.asText(pageContent.data.title) %>
-          </h1>
-          <div class="links">
-            <span class="box">
-              <a href="mailto:hellow@madeleine.work" target="_blank" class="underline">
-                EMAIL
-              </a>       
-            </span>
-            <% pageContent.data.links.map(item => { %>
-              <span class="box">
-                <a href="<%- ctx.prismicH.asLink(item.link) %>" class="underline" target="_blank">
-                  <%- ctx.prismicH.asText(item.text) %> 
-                </a>       
-              </span>
-            <% }) %>
-          </div>
-        </div>
+        <h1 class="to-letter" style="text-align:center;">
+          <%- ctx.prismicH.asText(pageContent.data.title) %>
+        </h1>
         <div class="details">
           <%- ctx.prismicH.asText(pageContent.data.details) %>
         </div>
