@@ -345,7 +345,6 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 }
 
 .home-content h1 {
-  /* margin-top: 10em; */
   margin-top: -55px;
   transition: all 0.5s ease;
 }
@@ -999,7 +998,7 @@ a.fritz {
 
   .details {
     bottom: 0;
-    padding: 0 2em;
+    padding: 0 1em;
   }
   .thumbnail {
     height: 403px;
@@ -1368,7 +1367,7 @@ a.fritz {
 }
 
 
-@media (max-height: 650px) {
+@media (max-height: 650px) or (max-width: 576px) {
     .home-content h1 {
         margin-top: -10em;
     }
