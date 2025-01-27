@@ -23,8 +23,10 @@ $(document).ready(function(){
   });
 
   $('.scroll-work').click(function(){
-    $('.menu').removeClass('open');
-    $('.topnav-right').slideToggle();
+    if ($(".menu").hasClass("open")) {
+      $('.menu').removeClass('open');
+      $('.topnav-right').slideToggle();
+    }
   })
 
   /*Smooth scroll*/
