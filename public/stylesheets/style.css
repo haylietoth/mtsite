@@ -349,7 +349,7 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 }
 
 .home-content h1 {
-  margin-top: -55px;
+  margin-top: -175px;
   transition: all 0.5s ease;
 }
 
@@ -1408,7 +1408,7 @@ a.fritz {
 
 @media (max-height: 650px) or (max-width: 576px) {
     .home-content h1 {
-        margin-top: -10em;
+        margin-top: -20em;
     }
 }
 
@@ -1452,3 +1452,12 @@ a.fritz {
   transition: left .25s ease-out;
 }
 
+.moveLogoLeft {
+  left: 90;
+  transition: left .5s linear;
+}
+
+.moveLogoRight {
+  left: 120;
+  transition: left .25s ease-out;
+}
