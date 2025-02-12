@@ -6,7 +6,7 @@
     <div class="links">
       <% footerContent.data.links.map(menuLink => { %>
         <span class="box">
-          <a class="underline"  href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>">
+          <a class="underline"  href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>" style="color: <%-footerContent.data.links_color %> !important">
             <%- ctx.prismicH.asText(menuLink.text) %>
           </a>
         </span>

@@ -31,6 +31,7 @@ if (id == 'services') {
     }
   </style>
 <% } %>
+  <span class="dot"></span>
   <header class="site-header">
     <!-- Centered link-->
     <div class="logo-container">
@@ -45,7 +46,7 @@ if (id == 'services') {
       </div>
       <!-- Right-aligned links-->
       <div class="topnav-right">
-        <div class="box mobile">
+        <div class="box mobile" style="display:none;">
           <div style="width: 110px;"><%- include(`../../public/images/logos/ME_Ivory.svg`) %></div>
         </div>
         <% menuContent.data.menu_links.map(menuLink => { %>
@@ -63,9 +64,6 @@ if (id == 'services') {
               </a>
             </div>
         <% }) %>
-        <div class="mobile draperie">
-          <%- ctx.prismicH.asText(menuContent.data.draperie_text) %>
-        </div>
       </div>
     </nav>
     <div class="menu">
