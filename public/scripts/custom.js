@@ -96,6 +96,11 @@ $(document).ready(function(){
       $('<letter>', {text: letter}).appendTo($wordElement);
     });
   });
+  if ($(window).width() <= 525) {
+    if($("letter:contains(&)").siblings().length == 0) {
+      $('</br>').appendTo($("letter:contains(&)").parent());
+    }
+  }
 
   /*Keep hover letter style after hover*/
   $('letter').hover(
@@ -260,13 +265,23 @@ $(document).ready(function(){
 
 // joyful balls container resizing
 $( window ).resize(function() {  
-  $("#canvas").attr('width', window.innerWidth-21);
-  $("#canvas").attr('height', $('#container').height());
-  replaceAll();
+  // $("#canvas").attr('width', window.innerWidth-21);
+  // $("#canvas").attr('height', $('#container').height());
+  // replaceAll();
 
   if ($(window).width() > 768) {
     $('.topnav-right').removeClass('displayBlock');
     $('.menu').removeClass('open');
+  }
+
+  if ($(window).width() <= 525) {
+    if($("letter:contains(&)").siblings().length == 0) {
+      $('</br>').appendTo($("letter:contains(&)").parent());
+    }
+  } else {
+    if($("letter:contains(&)").siblings().length > 0) {
+      $("letter:contains(&)").parent().children()[1].remove();
+    }
   }
 });
 

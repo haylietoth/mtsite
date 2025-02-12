@@ -1459,5 +1459,5 @@ a.fritz {
 
 .moveLogoRight {
   left: 120;
-  transition: left .25s ease-out;
+  transition: left .3s ease-out;
 }
