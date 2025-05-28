@@ -9,9 +9,15 @@
 .scroll-transition-fade {
   transition: transform 1s ease-in-out, opacity .8s ease-in-out;
 }
+.fadeIn {
+  transition: opacity 1s ease-in-out;
+}
 .below-viewport {
     opacity: 0;
     transform: translateY(40px);
+}
+.archive-below-viewport {
+  opacity: 0;
 }
 .loading {
   position: fixed;

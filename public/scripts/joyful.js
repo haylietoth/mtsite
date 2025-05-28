@@ -129,7 +129,7 @@ function addBall (e) {
 	// 	+ parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
   p[num].color = "#F9F7EB";
 	p[num].velocity = [
-		Math.random() * 20 - 8,
+		Math.random() * 20 - 10,
 		Math.random() * 5 - 2.5
 	];
 	p[num].bounciness = Math.random() * 0.1 + 0.9;

@@ -22,7 +22,7 @@
             var currentTag = pageContent.data.tag_order[i].tag;
             for (let j = 0; j < pageContent.data.archive.length; j++) {
               if (currentTag == pageContent.data.archive[j].tag ) { %>
-                <div class="grid-item">
+                <div class="grid-item fadeIn archive-below-viewport">
                   <img
                     class="archive-thumbnail"
                     id="<%= pageContent.data.archive[j].image.id %>" 
@@ -34,7 +34,7 @@
           }
           for (let j = 0; j < pageContent.data.archive.length; j++) {
             if (pageContent.data.archive[j].tag == null ) { %>
-              <div class="grid-item">
+              <div class="grid-item fadeIn archive-below-viewport">
                 <img
                     class="archive-thumbnail"
                     id="<%= pageContent.data.archive[j].image.id %>" 

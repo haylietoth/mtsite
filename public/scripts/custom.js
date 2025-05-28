@@ -54,13 +54,14 @@ $(document).ready(function(){
     }
   }
 
+  // slow scroll load for project page images
   $('.full-width-image, .two-col-row').each(function() {
     if ($(this).isInViewport()) {
       $(this).removeClass('below-viewport');
     } else {
       $(this).addClass('below-viewport');
     }
-  });
+  }); 
 
   /*Keep hover letter style after hover*/
   $('letter').hover(
@@ -258,6 +259,7 @@ $(document).ready(function(){
       }
     }
 
+    // slow scroll load for images on project pages
     $('.full-width-image, .two-col-row').each(function() {
       if ($(this).isInViewport()) {
         $(this).removeClass('below-viewport');
@@ -266,15 +268,14 @@ $(document).ready(function(){
       }
     });
 
-    /*Delayed scroll on thumbnails*/
-    // $('.thumbnail, .full-width-image, .block-img, .text-content, .animate, .to-letter, .child, .animated-arrow, .underline, .c-style').each(function() {
-    //   if ($(this).isInViewport()) {
-    //     $(this).removeClass('below-viewport');
-    //   } else {
-    //     $(this).addClass('below-viewport');
-    //   }
-    // });
-
+    // fade in images on archive page
+    $('.grid-item').each(function() {
+      if ($(this).isInViewport()) {
+        $(this).removeClass('archive-below-viewport');
+      } else {
+        $(this).addClass('archive-below-viewport');
+      }
+    });
   });
 
     /*Joyful Balls*/
@@ -295,8 +296,17 @@ $(document).ready(function(){
         percentPosition: true,
         transitionDuration: 0
       });
+      
+      $('.grid-item').each(function() {
+        if ($(this).isInViewport()) {
+          $(this).removeClass('archive-below-viewport');
+        } else {
+          $(this).addClass('archive-below-viewport');
+        }
+      });
     });
   }
+
 });
 
 // joyful balls container resizing
