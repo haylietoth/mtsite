@@ -228,6 +228,10 @@
   transition: 0.5s ease all .3s;
 }
 
+.footer-container .underline::after {
+  background-color: #FFF !important;
+}
+
 .box:not(:first-child) {
   margin: 0.8rem 0.5rem;
 }
@@ -269,17 +273,25 @@ letter {
 word::after{
   content: ' ';
 }
-.footer-container .painted {
-  font-size: 3em;
-}
+
 .painted {
   color: #F9F7EB !important;
-  font-family: 'neue-haas-grotesk-display';
+  font-family: adobe-ming-std, sans-serif;
   font-weight: 300;
-  letter-spacing: -0.01em;
   font-style: normal;
   line-height: 0.8em;
 }
+
+.footer-title {
+   color: #F9F7EB !important;
+   font-family: 'neue-haas-grotesk-display';
+   font-weight: 300;
+   letter-spacing: -0.01em;
+   font-style: normal;
+   line-height: 0.8em;
+   font-size: 3em;
+}
+
 word:active::-moz-selection {
   background: transparent;
 }
