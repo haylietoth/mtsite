@@ -98,13 +98,13 @@ $(document).ready(function(){
   });
 
   //Slow load for images
-  $('.full-width-image').each(function() {
-    if ($(this).isInViewport()) {
-      $(this).removeClass('below-viewport');
-    } else {
-      $(this).addClass('below-viewport');
-    }
-  });
+  // $('.full-width-image').each(function() {
+  //   if ($(this).isInViewport()) {
+  //     $(this).removeClass('below-viewport');
+  //   } else {
+  //     $(this).addClass('below-viewport');
+  //   }
+  // });
 
   /* scroll to top */
   $('.scrollToTopBtn').on("click",function(){
@@ -290,8 +290,6 @@ $(document).ready(function(){
       });
     });
   }
-
-
 });
 
 // joyful balls container resizing
