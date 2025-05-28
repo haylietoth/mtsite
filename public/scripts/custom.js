@@ -214,18 +214,82 @@ $(document).ready(function(){
     }
   });
 
+  // get pageId and wrapper
+  const pageId =  $('#left-wrapper').data('page-id');
+  const wrapper = $("#left-wrapper");
 
-  // init Masonry for services page
-  var grid = document.querySelector('.grid');
+  // functions to render button or link
+  function renderButton() {
+    wrapper.html(`<button class="dot" type="button"></button>`);
+  }
+  function renderLink() {
+    wrapper.html(`<a href="${altLink.href}" disabled aria-disabled="true">${altLink.label}</a>`);
+  }
 
-  imagesLoaded(grid, function () {
-    new Masonry(grid, {
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      transitionDuration: 0
-    });
+  // initial left nav lnk render
+  if (pageId === "home") {
+    renderButton(); 
+  } else {
+    renderLink();
+  }
+
+  // handle scroll functionalities
+  $(window).on("scroll", function() {
+    /* sticky nav background color change */
+    if ($( ".thumbnails" ).offset() != undefined) {
+
+      // only do this stuff on the homepage!
+      if (pageId !== "home") return;
+
+      var thumbnailOffset = $( ".thumbnails" ).offset();
+      var infoOffset = $( ".home-footer" ).offset();
+      var thumbTop = thumbnailOffset.top;
+      var infoTop = infoOffset.top;
+      var whitebar = 55;
+
+
+      if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
+          $(".homepage .whitebar").css("background-color", "#f8f8f4");
+          if (!wrapper.find("a").length) renderLink();
+      } else {
+          $(".homepage .whitebar").css("background-color", homeMenuColor);
+          if (!wrapper.find("button").length) renderButton();
+      }
+
+      var thumbBottom = $( ".thumbnails" ).outerHeight();
+
+      if ($(window).width() <= 450) {
+        if($(window).scrollTop() > 53 && $(window).scrollTop() < thumbBottom) {
+            $("nav ul").css("display", "none");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+          $("nav ul").css("display", "block");
+        }
+      }
+    }
+
+    /*Delayed scroll on thumbnails*/
+    // $('.thumbnail, .full-width-image, .block-img, .text-content, .animate, .to-letter, .child, .animated-arrow, .underline, .c-style').each(function() {
+    //   if ($(this).isInViewport()) {
+    //     $(this).removeClass('below-viewport');
+    //   } else {
+    //     $(this).addClass('below-viewport');
+    //   }
+    // });
+
   });
 
+  // init Masonry for archive page
+  if (pageId === "archive") {
+    var grid = document.querySelector('.grid');
+    imagesLoaded(grid, function () {
+      new Masonry(grid, {
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        transitionDuration: 0
+      });
+    });
+  }
 });
 
 // joyful balls container resizing
@@ -290,55 +354,3 @@ $.fn.isInViewport = function() {
     return false;
   }
 };
-
-$(window).on("scroll", function() {
-  /* sticky nav background color change */
-  if ($( ".thumbnails" ).offset() != undefined) {
-
-    const wrapper = $("#left-wrapper");
-
-    function renderButton() {
-      wrapper.html(`<button class="dot" type="button"></button>`);
-    }
-
-    function renderAltLink() {
-      wrapper.html(`<a href="${altLink.href}" disabled aria-disabled="true">${altLink.label}</a>`);
-    }
-
-    var thumbnailOffset = $( ".thumbnails" ).offset();
-    var infoOffset = $( ".home-footer" ).offset();
-    var thumbTop = thumbnailOffset.top;
-    var infoTop = infoOffset.top;
-    var whitebar = 55;
-
-
-    if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
-        $(".homepage .whitebar").css("background-color", "#f8f8f4");
-        if (!wrapper.find("a").length) renderAltLink();
-    } else {
-        $(".homepage .whitebar").css("background-color", homeMenuColor);
-        if (!wrapper.find("button").length) renderButton();
-    }
-
-    var thumbBottom = $( ".thumbnails" ).outerHeight();
-
-    if ($(window).width() <= 450) {
-      if($(window).scrollTop() > 53 && $(window).scrollTop() < thumbBottom) {
-          $("nav ul").css("display", "none");
-      } else {
-          //remove the background property so it comes transparent again (defined in your css)
-         $("nav ul").css("display", "block");
-      }
-    }
-  }
-
-  /*Delayed scroll on thumbnails*/
-  // $('.thumbnail, .full-width-image, .block-img, .text-content, .animate, .to-letter, .child, .animated-arrow, .underline, .c-style').each(function() {
-  //   if ($(this).isInViewport()) {
-  //     $(this).removeClass('below-viewport');
-  //   } else {
-  //     $(this).addClass('below-viewport');
-  //   }
-  // });
-
-});
