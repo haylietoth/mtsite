@@ -17,7 +17,7 @@
           <%- ctx.prismicH.asText(pageContent.data.details) %>
         </div>
       </div>
-      <!-- <canvas id="canvas" style="position: absolute;"></canvas> -->
+      <canvas id="canvas" style="position: absolute;"></canvas>
     </div>
     <div class="thumbnails" id="work">
       <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
@@ -26,6 +26,7 @@
       <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>
     </footer>
   </body>
+  <script src="/scripts/joyful.js"></script>
 </html>
 
 

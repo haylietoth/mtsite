@@ -1,10 +1,4 @@
 $(document).ready(function(){
-  // init Masonry for services page
-  $('.grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true
-  });
-
   if (window.matchMedia("(max-width: 768px)").matches && ('ontouchstart' in window || navigator.maxTouchPoints)) {
     $(".topnav-right .underline::after").css("background-color", "#D0C9AC");
   }
@@ -17,39 +11,39 @@ $(document).ready(function(){
   }
 
   //new joy ball
-  if (!isMobile) {
-    $('.joy').on('mouseover', function () {
-      $('.dot').addClass('visible');
-      $('.dot').removeClass('hidden');
-      $('.topnav-left').addClass('moveRight');
-      $('.topnav-left').removeClass('moveLeft');
+  // if (!isMobile) {
+  //   $('.joy').on('mouseover', function () {
+  //     $('.dot').addClass('visible');
+  //     $('.dot').removeClass('hidden');
+  //     $('.topnav-left').addClass('moveRight');
+  //     $('.topnav-left').removeClass('moveLeft');
 
-    });
-    $('.joy').on('mouseout', function () {
-      $('.dot').addClass('hidden');
-      $('.dot').removeClass('visible');
-      $('.topnav-left').removeClass('moveRight');
-      $('.topnav-left').addClass('moveLeft');
-    });
-  } else {
-    $('.joy').on('click', function () {
-      if ($('.dot').hasClass('visible')) {
-        $('.dot').addClass('hidden');
-        $('.dot').removeClass('visible');
-      } else {
-        $('.dot').addClass('visible');
-        $('.dot').removeClass('hidden');
-      }
+  //   });
+  //   $('.joy').on('mouseout', function () {
+  //     $('.dot').addClass('hidden');
+  //     $('.dot').removeClass('visible');
+  //     $('.topnav-left').removeClass('moveRight');
+  //     $('.topnav-left').addClass('moveLeft');
+  //   });
+  // } else {
+  //   $('.joy').on('click', function () {
+  //     if ($('.dot').hasClass('visible')) {
+  //       $('.dot').addClass('hidden');
+  //       $('.dot').removeClass('visible');
+  //     } else {
+  //       $('.dot').addClass('visible');
+  //       $('.dot').removeClass('hidden');
+  //     }
 
-      if ($('.logo-container').hasClass('moveLogoRight')) {
-        $('.logo-container').addClass('moveLogoLeft');
-        $('.logo-container').removeClass('moveLogoRight');
-      } else {
-        $('.logo-container').addClass('moveLogoRight');
-        $('.logo-container').removeClass('moveLogoLeft');
-      }
-    });
-  }
+  //     if ($('.logo-container').hasClass('moveLogoRight')) {
+  //       $('.logo-container').addClass('moveLogoLeft');
+  //       $('.logo-container').removeClass('moveLogoRight');
+  //     } else {
+  //       $('.logo-container').addClass('moveLogoRight');
+  //       $('.logo-container').removeClass('moveLogoLeft');
+  //     }
+  //   });
+  // }
 
   // mobile navigation functionality
   $('.menu').click (function(){
@@ -261,6 +255,13 @@ $(document).ready(function(){
       $('.zoomed img ').css('transform', 'translate3d(0px, 0px, 0px) scale(1)');
     }
   });
+
+    // init Masonry for services page
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      transitionDuration: 0
+    });
 });
 
 // joyful balls container resizing
