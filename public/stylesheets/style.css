@@ -274,8 +274,9 @@ word::after{
 }
 .painted {
   color: #F9F7EB !important;
-  font-family: adobe-ming-std, sans-serif;
+  font-family: 'neue-haas-grotesk-display';
   font-weight: 300;
+  letter-spacing: -0.01em;
   font-style: normal;
   line-height: 0.8em;
 }
@@ -605,10 +606,10 @@ a.fritz {
   width: 50%;
 }
 .leftImg {
-  padding-right: 15px;
+  padding-right: 5px;
 }
 .rightImg {
-  padding-left: 15px;
+  padding-left: 5px;
 }
 .project-row {
   margin-top: 3rem;
@@ -625,25 +626,26 @@ a.fritz {
 }
 .project-column:nth-child(1) {
   width: 60%;
-  padding-right: 2rem;
+  padding-right: 4rem;
 }
 .project-column:nth-child(2) {
   width: 40%;
 }
 .note {
-  margin-top: 10px;
-  font-family: adobe-ming-std, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-family: 22px;
+  margin-top: 25px;
+  font-family: 'neue-haas-grotesk-display';
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 #title {
   line-height: normal;
   text-align: left;
-  font-family: adobe-ming-std, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 35px;
+  letter-spacing: -0.01em;
 }
 
 .collab_title {
@@ -713,7 +715,9 @@ a.fritz {
 .archive-title {
   font-size: 70px;
   text-align: center;
-  letter-spacing: 5;
+  line-height: 70px;
+  letter-spacing: 0.01em;
+  text-transform: none;
   padding-bottom: 4rem;
 }
 .archive-desc {
