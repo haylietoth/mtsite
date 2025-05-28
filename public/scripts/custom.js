@@ -294,16 +294,30 @@ $.fn.isInViewport = function() {
 $(window).on("scroll", function() {
   /* sticky nav background color change */
   if ($( ".thumbnails" ).offset() != undefined) {
+
+    const wrapper = $("#left-wrapper");
+
+    function renderButton() {
+      wrapper.html(`<button class="dot" type="button"></button>`);
+    }
+
+    function renderAltLink() {
+      wrapper.html(`<a href="${altLink.href}" disabled aria-disabled="true">${altLink.label}</a>`);
+    }
+
     var thumbnailOffset = $( ".thumbnails" ).offset();
     var infoOffset = $( ".home-footer" ).offset();
     var thumbTop = thumbnailOffset.top;
     var infoTop = infoOffset.top;
     var whitebar = 55;
 
+
     if($(window).scrollTop() > (thumbTop - whitebar) && $(window).scrollTop() < (infoTop - whitebar)) {
         $(".homepage .whitebar").css("background-color", "#f8f8f4");
+        if (!wrapper.find("a").length) renderAltLink();
     } else {
         $(".homepage .whitebar").css("background-color", homeMenuColor);
+        if (!wrapper.find("button").length) renderButton();
     }
 
     var thumbBottom = $( ".thumbnails" ).outerHeight();

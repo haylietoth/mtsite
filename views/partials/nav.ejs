@@ -39,9 +39,8 @@ if (id == 'services') {
     </div>
     <nav>
       <!-- Left-aligned links (default)-->
-      <div class="box topnav-left">
-        <!-- <a class="underline scroll-work" href="#">CO-FOUNDER & CREATIVE DIRECTOR AT <strong>DRAPERIE</strong></a> -->
-        <a href="<%- ctx.prismicH.asLink(menuContent.data.left_link) %>" disabled aria-disabled="true"><%- ctx.prismicH.asText(menuContent.data.left_link_label) %></a>
+      <div class="box topnav-left" id="left-wrapper">
+        <button class="dot joyful"></button>
       </div>
       <!-- Right-aligned links-->
       <div class="topnav-right">
@@ -74,4 +73,11 @@ if (id == 'services') {
 <button class="scrollToTopBtn">
   <img src="<%= menuContent.data.scroll_icon.url %>" />
 </button>
+<script>
+  const altLink = {
+    href: "<%- ctx.prismicH.asLink(menuContent.data.left_link) %>",
+    label: `<%- ctx.prismicH.asText(menuContent.data.left_link_label) %>`
+  };
+</script>
+
 
