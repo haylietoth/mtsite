@@ -11,10 +11,35 @@
 
 * {
   -webkit-font-smoothing: antialiased;
-  font-family: "neue-haas-grotesk-display", sans-serif;
   box-sizing: border-box;
+  font-family: neue-haas-grotesk-display, sans-serif;
 }
 
+.body-font {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.body-font-italic {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.body-font-bold {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.body-font-bold-italic {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.body-font-light {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
 .serif-font {
   font-family: adobe-ming-std, sans-serif;
   font-weight: 300;
@@ -43,11 +68,9 @@ a {
   letter-spacing : 0.35;
   line-height: 2.5;
   text-decoration: none;
-  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 
 h1 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: lighter;
   text-transform: capitalize;
   line-height: 0.8em;
@@ -58,14 +81,12 @@ h2, h2 a {
   font-weight: lighter;
   letter-spacing : 0.85;
   text-align: center;
-  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 h3, h3 a {
   margin-bottom: 0.5rem;
   letter-spacing : 0.52;
   line-height: 28px;
   font-size: 20px;
-  font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: lighter;
 }
 h3 i.material-icons {

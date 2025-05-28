@@ -13,7 +13,7 @@
         <h1 class="to-letter" style="text-align:center;">
           <%- ctx.prismicH.asText(pageContent.data.title) %>
         </h1>
-        <div class="details">
+        <div class="details body-font">
           <%- ctx.prismicH.asText(pageContent.data.details) %>
         </div>
       </div>
@@ -22,7 +22,7 @@
     <div class="thumbnails" id="work">
       <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
     </div>
-    <footer class="home-footer" id="info">
+    <footer class="home-footer body-font-light" id="info">
       <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>
     </footer>
   </body>

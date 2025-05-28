@@ -77,8 +77,6 @@
   color: black;
   letter-spacing: 0.03em;
   font-size: 12px;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
 }
 
 /* testing navigation icons */
@@ -276,18 +274,12 @@ word::after{
 
 .painted {
   color: #F9F7EB !important;
-  font-family: adobe-ming-std, sans-serif;
-  font-weight: 300;
-  font-style: normal;
   line-height: 0.8em;
 }
 
 .footer-title {
    color: #F9F7EB !important;
-   font-family: 'neue-haas-grotesk-display';
-   font-weight: 300;
    letter-spacing: -0.01em;
-   font-style: normal;
    line-height: 0.8em;
    font-size: 3em;
 }
@@ -367,8 +359,6 @@ a.joyful:active::selection , a:focus::selection{/* focus + tabindex for ie where
 
 .details {
   padding: 0 3em;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
   position: absolute;
   bottom: 50;
   right: 0;
@@ -495,8 +485,6 @@ a.fritz {
   width: 175px;
   text-align: center;
   line-height: normal;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
   letter-spacing: 0.03em;
   font-size: 12px;
 }
@@ -535,8 +523,6 @@ a.fritz {
   font-size: 12em;
   letter-spacing: -0.035em;
   text-align: center;  
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 300;
   line-height: inherit;
   text-transform: capitalize;
   cursor: pointer;  
@@ -879,7 +865,7 @@ a.fritz {
 }
 
 .services {
-  font-family: "neue-haas-grotesk-display",sans-serif;
+  font-family: neue-haas-grotesk-display, sans-serif;
 }
 
 .services:nth-child(1) {

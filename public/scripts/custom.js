@@ -57,7 +57,7 @@ $(document).ready(function(){
   /*Keep hover letter style after hover*/
   $('letter').hover(
       function(){
-          $(this).addClass('painted');
+          $(this).addClass('painted serif-font');
       }
   );
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
           }
           else {
               if($(container).children().length == 1){
-                  title = $("<div class='img_title'>" + $(container).children()[0].title + "</div>");
+                  title = $("<div class='img_title body-font'>" + $(container).children()[0].title + "</div>");
                   $(container).children()[0].title = "";
                   $(container).append(title);
               }
