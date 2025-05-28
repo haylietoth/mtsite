@@ -220,7 +220,7 @@ $(document).ready(function(){
 
   // functions to render button or link
   function renderButton() {
-    wrapper.html(`<button class="dot" type="button"></button>`);
+    wrapper.html(`<button class="dot joyful" type="button"></button>`);
   }
   function renderLink() {
     wrapper.html(`<a href="${altLink.href}" disabled aria-disabled="true">${altLink.label}</a>`);
