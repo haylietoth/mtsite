@@ -61,15 +61,6 @@ $(document).ready(function(){
       }
   );
 
-  /*Joyful Balls*/
-  $( ".joyful" ).on( "mouseover", function() {
-    addBall();
-  });
-
-  $( ".joyful" ).on("click", function() {
-    addBall();
-  });
-
   /* cursor and blur for thumbnails */
   var title = "";
   $('.thumbnails').mousemove(function (e) {
@@ -279,6 +270,15 @@ $(document).ready(function(){
 
   });
 
+    /*Joyful Balls*/
+  $( ".joyful" ).on( "mouseover", function() {
+    addBall();
+  });
+
+  $( ".joyful" ).on("click", function() {
+    addBall();
+  });
+
   // init Masonry for archive page
   if (pageId === "archive") {
     var grid = document.querySelector('.grid');
@@ -290,6 +290,8 @@ $(document).ready(function(){
       });
     });
   }
+
+
 });
 
 // joyful balls container resizing
