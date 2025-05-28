@@ -54,6 +54,14 @@ $(document).ready(function(){
     }
   }
 
+  $('.full-width-image, .two-col-row').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).removeClass('below-viewport');
+    } else {
+      $(this).addClass('below-viewport');
+    }
+  });
+
   /*Keep hover letter style after hover*/
   $('letter').hover(
       function(){
@@ -96,15 +104,6 @@ $(document).ready(function(){
           test = "";
       });
   });
-
-  //Slow load for images
-  // $('.full-width-image').each(function() {
-  //   if ($(this).isInViewport()) {
-  //     $(this).removeClass('below-viewport');
-  //   } else {
-  //     $(this).addClass('below-viewport');
-  //   }
-  // });
 
   /* scroll to top */
   $('.scrollToTopBtn').on("click",function(){
@@ -258,6 +257,14 @@ $(document).ready(function(){
         }
       }
     }
+
+    $('.full-width-image, .two-col-row').each(function() {
+      if ($(this).isInViewport()) {
+        $(this).removeClass('below-viewport');
+      } else {
+        $(this).addClass('below-viewport');
+      }
+    });
 
     /*Delayed scroll on thumbnails*/
     // $('.thumbnail, .full-width-image, .block-img, .text-content, .animate, .to-letter, .child, .animated-arrow, .underline, .c-style').each(function() {
