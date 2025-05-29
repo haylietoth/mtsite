@@ -129,8 +129,8 @@ function addBall (e) {
 	// 	+ parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
   p[num].color = "#F9F7EB";
 	p[num].velocity = [
-		Math.random() * 20 - 10,
-		Math.random() * 5 - 2.5
+		Math.random() * 18 - 8, // horizontal 
+		Math.random() * 3 - 2.5 // vertical
 	];
 	p[num].bounciness = Math.random() * 0.1 + 0.9;
 	p[num].friction = Math.random() * 0.05 + 1;
