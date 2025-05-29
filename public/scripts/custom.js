@@ -289,19 +289,31 @@ $(document).ready(function(){
 
   // init Masonry for archive page
   if (pageId === "archive") {
-    var grid = document.querySelector('.grid');
-    imagesLoaded(grid, function () {
-      new Masonry(grid, {
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        transitionDuration: 0
+    const grid = document.querySelector('.grid');
+    const msnry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      transitionDuration: 0
+    });
+
+    // Watch each image load
+    imagesLoaded(grid)
+      .on('progress', function () {
+        msnry.layout(); // Re-layout after each image loads
+
+        // Reveal items that are in viewport
+        $('.grid-item').each(function () {
+          if ($(this).isInViewport()) {
+            $(this).removeClass('archive-below-viewport');
+          }
+        });
       });
-      
-      $('.grid-item').each(function() {
+
+    // Also check visibility on scroll/resize
+    $(window).on('scroll resize', function () {
+      $('.grid-item').each(function () {
         if ($(this).isInViewport()) {
           $(this).removeClass('archive-below-viewport');
-        } else {
-          $(this).addClass('archive-below-viewport');
         }
       });
     });
