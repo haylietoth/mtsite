@@ -24,7 +24,7 @@
     "cookies": "^0.7.0",
     "prismic-dom": "^2.0.0",
     "prismic-javascript": "^1.2.0",
-    "pug": "^2.0.0-alpha6"
+    "pug": "^3.0.3"
   },
   "repository": {
     "type": "git",
