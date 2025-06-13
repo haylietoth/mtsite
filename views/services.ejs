@@ -41,21 +41,18 @@
             <h2 style="font-size: 16px; font-weight: 500">CONTACT</h2>
             <br>
             <div class='box'>
-              <a class='underline' href='mailto:hello@madeleine.work' target='_blank' style="color: <%-pageContent.data.font_color %> !important">email:hello@madeleine.work</a>
+              <a class='underline' href='mailto:<%= ctx.prismicH.asText(pageContent.data.email) %>' target='_blank' style="color: <%-pageContent.data.font_color %> !important">email:<%- ctx.prismicH.asText(pageContent.data.email) %></a>
             </div>
             <br>
-            <div class='box'>
-              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Instagram</a>
-            </div>
-            <div class='box'>
-              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Behance</a>
-            </div>
-            <div class='box'>
-              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">LinkedIn</a>
-            </div>
-            <div class='box'>
-              <a class='underline' href='https://www.instagram.com/madeleineedwards__/' target='_blank' style="color: <%-pageContent.data.font_color %> !important">Pinterest</a>
-            </div>
+            <% if (pageContent.data.links && pageContent.data.links.length) { %>
+              <% pageContent.data.links.forEach(function(item) { %>
+                <% if (item.link && item.label) { %>
+                   <div class='box'>
+                    <a class='underline' href='<%- ctx.prismicH.asLink(item.link) %>' target='_blank' style="color: <%-pageContent.data.font_color %> !important"><%- ctx.prismicH.asText(item.label) %></a>
+                  </div>
+                <% } %>
+              <% }) %>
+            <% } %>
           </div>
         </div>
       </div>
