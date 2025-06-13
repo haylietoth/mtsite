@@ -92,6 +92,23 @@ Pelota.prototype.finish = function () {
 	this.stop = true;
 };
 
+ /* Custom addition to stick balls to canvas borders */
+Pelota.prototype.hasStopped = function () {
+	return (
+		Math.abs(this.velocity[0]) < 0.1 &&
+		Math.abs(this.velocity[1]) < 0.1 &&
+		this.stopTimes >= this.stopLimit
+	);
+};
+
+Pelota.prototype.clampToBounds = function () {
+	if (!this.hasStopped) return;
+
+	const maxY = this.can.height - this.size;
+
+	this.pos[1] = maxY; // Snap to the bottom
+};
+
 /****************************************************************
  * Dirty code for making it work *******************************/
 
