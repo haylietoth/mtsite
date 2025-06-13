@@ -323,8 +323,8 @@ $(document).ready(function(){
 
 // joyful balls container resizing
 $( window ).resize(function() {  
-  // $("#canvas").attr('width', window.innerWidth-21);
-  // $("#canvas").attr('height', $('#container').height());
+  $("#canvas").attr('width', window.innerWidth-21);
+  $("#canvas").attr('height', $('#container').height());
   // replaceAll();
 
   if ($(window).width() > 768) {
