@@ -1204,7 +1204,7 @@ a.fritz {
   }
   .rightImg {
     padding-left: 0;
-    margin-top: 10%;
+    margin-top: 3%;
   }
   /*Footer*/
   .info {
@@ -1422,7 +1422,9 @@ a.fritz {
     .grid-item:nth-child(even) img {
     padding: 0 0 .5em .25em;
   }
-
+  .project-column:nth-child(1) {
+    padding-right: 0;
+  }
 }
 
 
