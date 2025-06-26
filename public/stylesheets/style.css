@@ -1395,12 +1395,18 @@ a.fritz {
     cursor: pointer;
     width: 92%;
   }
+
+  .archive-title {
+    font-size: 35px;
+    line-height: 40px;
+  }
 }
 
 @media (max-width: 576px) {
   .grid-item {
     width: 50%;
     margin-bottom: -1.5px;
+    
   }
   .grid {
     margin: 0 1em 0 1.5em;
@@ -1408,8 +1414,15 @@ a.fritz {
   
   .grid-item img {
     cursor: pointer;
-    width: 98%;
+    width: 100%;
   }
+  .grid-item:nth-child(odd) img {
+    padding: 0 .25em .5em 0;
+  }
+    .grid-item:nth-child(even) img {
+    padding: 0 0 .5em .25em;
+  }
+
 }
 
 
