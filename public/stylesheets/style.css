@@ -83,6 +83,7 @@
   color: black;
   letter-spacing: 0.03em;
   font-size: 12px;
+  font-weight: 500 !important;
 }
 
 /* testing navigation icons */
@@ -1443,7 +1444,7 @@ a.fritz {
 .dot {
   height: 25px;
   width: 25px;
-  background-color: #F9F7EB;
+  background-color: #000;
   border: none;
   border-radius: 50%;
   position: absolute;
