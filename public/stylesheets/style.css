@@ -1044,9 +1044,13 @@ a.fritz {
   .project-column h3 {
     font-size: 18px !important;
   }
-.topnav-right {
+  .topnav-right {
     display: flex;
     padding-top: 76px;  
+  }
+
+  .displayBlock div > a {
+    font-weight: 300 !important;
   }
 
   .site-footer a {
@@ -1417,10 +1421,11 @@ a.fritz {
     cursor: pointer;
     width: 100%;
   }
-  .grid-item:nth-child(odd) img {
+  .grid-item.left-0 img {
     padding: 0 .25em .5em 0;
   }
-    .grid-item:nth-child(even) img {
+
+  .grid-item.left-50 img {
     padding: 0 0 .5em .25em;
   }
   .project-column:nth-child(1) {

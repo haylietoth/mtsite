@@ -307,6 +307,13 @@ $(document).ready(function(){
             $(this).removeClass('archive-below-viewport');
           }
         });
+
+        document.querySelectorAll('.grid-item').forEach(item => {
+          const left = item.style.left.trim();
+          item.classList.remove('left-0', 'left-50');
+          if (left === '0%') item.classList.add('left-0');
+          else if (left === '50%') item.classList.add('left-50');
+        });
       });
 
     // Also check visibility on scroll/resize
