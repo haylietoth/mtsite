@@ -19,7 +19,7 @@
     "morgan": "~1.8.2",
     "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15",
-    "npm": "^8.3.0",
+    "npm": "^11.7.0",
     "serve-favicon": "~2.4.3",
     "cookies": "^0.7.0",
     "prismic-dom": "^2.0.0",
