@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { id: 'index'}); %>
+  <body class="bg-white">
+      <!-- header / menu -->
+      <%- include('./partials/header'); %>
+
+      <!-- navigation -->
+      <%- include('./partials/nav')%>
+
+      <!-- wordmark (Animated) -->
+      <%- include('./partials/wordmark', { id: 'index'}); %>
+
+      <!-- section 1 - hero -->
+      <section id="hero">
+          <div id="hero-text">
+              <div class="max-w-md hero-copy">
+                <%- ctx.prismicH.asHTML(pageContent.data.hero_content) %>
+              </div>
+          </div>
+          <div id="hero-image-panel">
+              <div class="slideshow h-full w-full relative">
+                <% if (pageContent.data.hero_slideshow && pageContent.data.hero_slideshow.length) { %>
+                  <% pageContent.data.hero_slideshow.forEach(function(item, index) { 
+                    var activeClass = "";
+                    if (index === 0) {
+                      var activeClass = "active";
+                  } %>
+                    <img class="slideshow-image <%= activeClass %>" src="<%= item.image.url %>" alt="<%- item.image.alt %>"/>
+                  <% }) %>
+                <% } %>
+              </div>
+              <div id="wordmark-anchor" class="absolute bottom-0 left-0 w-full pointer-events-none opacity-0">.</div>
+          </div>
+      </section>
+
+      <!-- section 2 - services -->
+      <section id="services" class="w-full py-48 bg-white flex flex-col items-center justify-center text-center">
+          <div class="space-y-4 mb-16">
+            <% if (pageContent.data.services && pageContent.data.services.length) { %>
+              <% pageContent.data.services.forEach(function(item, index) { %>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight uppercase"><%- item.service%></h2>
+              <% }) %>
+            <% } %>
+          </div>
+          <a class="text-style border-b border-black pb-1 hover:opacity-50 transition-opacity" href="<%- pageContent.data.services_link.url %>" target="<%- pageContent.data.services_link.target %>"><%- pageContent.data.services_link_label %></a>
+      </section>
+
+      <!-- section 3 - slideshow -->
+      <section id="full-slideshow" class="w-full h-[800px] relative overflow-hidden">
+          <div class="slideshow h-full w-full relative">
+            <% if (pageContent.data.bottom_slideshow && pageContent.data.bottom_slideshow.length) { %>
+                <% pageContent.data.bottom_slideshow.forEach(function(item, index) { 
+                    var activeClass = "";
+
+                    if (index === 0) {
+                      var activeClass = "active";
+                    } 
+                  %>
+                    <img class="slideshow-image <%= activeClass %>" src="<%= item.image.url %>" alt="<%- item.image.alt %>"/>
+                <% }) %>
+              <% } %>
+          </div>
+      </section>
+
+      <!-- footer -->
+      <%- include('./partials/footer'); %>
+  </body>
+</html>

@@ -1,69 +1,26 @@
-<title>Madeleine Edwards</title>
-<meta name='viewport' http-equiv='viewport' content='width=device-width, initial-scale=1'>
-<meta property="og:url" content="https://madeleine.work"/>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Madeleine Edwards"/>
-<meta property="og:description" content="<%- ctx.prismicH.asText(menuContent.data.meta_desc) %>"/>
-<meta property="og:image" content="<%= menuContent.data.meta_img.url %>"/>
+<head>
+  <meta charset="UTF-8">
+  <meta name='viewport' http-equiv='viewport' content='width=device-width, initial-scale=1'>
+  <meta property="og:url" content="https://m-g-e.com"/>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Madeleine Grace Edwards"/>
+  <title>Madeleine Grace Edwards</title>
 
-<script>
-    (function(d) {
-      var config = {
-        kitId: 'fvl2xdt',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h = d.documentElement,
-      t = setTimeout(function() {
-        h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-      }, config.scriptTimeout),
-      tk = d.createElement("script"),
-      f = false,
-      s = d.getElementsByTagName("script")[0],
-      a;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/common.css">
+  <% if (id == 'about') { %>
+    <link rel="stylesheet" href="/stylesheets/about.css">
+  <% } %>
+  <% if (id == 'services') { %>
+    <link rel="stylesheet" href="/stylesheets/services.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+  <% } %>
+  <link rel="stylesheet" href="/stylesheets/footer.css">
 
-      h.className += " wf-loading";
-      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-      tk.async = true;
-      tk.onload = tk.onreadystatechange = function() {
-        a = this.readyState;
-        if (f || (a && a != "complete" && a != "loaded")) return;
-        f = true;
-        clearTimeout(t);
-        try { Typekit.load(config) } catch (e) {}
-      };
-
-      s.parentNode.insertBefore(tk, s);
-    })(document);
-</script>
-
-<link href="<%= menuContent.data.favicon.url %>", rel="shortcut icon"/>
-<link rel="stylesheet" href="/stylesheets/reset.css"/>
-<link rel='stylesheet' href='/stylesheets/common.css'/>
-<link rel="stylesheet" href="/stylesheets/style.css"/>
-<link rel="stylesheet" href="/stylesheets/pagefooter.css"/>
-<link rel="stylesheet" href="/stylesheets/footerlinks.css"/>
-<link rel="stylesheet" href="/stylesheets/thumbnails.css"/> 
-<link rel="stylesheet" href="https://use.typekit.net/sfb3xlp.css"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script>
-  var homeMenuColor = "<%- pageContent.data.background_color %>";
-</script>
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'fvl2xdt',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-
-<script src="//code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-<script src="/scripts/masonry.js"></script>
-<script src="/scripts/custom.js"></script>
-
+  <script src="//code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="/scripts/common.js"></script>
+</head>

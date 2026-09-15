@@ -1,25 +1,38 @@
-<footer class="page-footer" style="background-color:<%-footerContent.data.background_color %>">
-  <div class="footer-container">
-    <div class="footer-title body-font-light">
-      <%- ctx.prismicH.asText(footerContent.data.title) %>
+  <footer id="footer">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+
+      <!-- left: nav -->
+      <div class="accordion-container">
+        <button class="accordion" aria-controls="footer-accordion" id="more" aria-expanded="false">MORE<span><img src="/images/plus.svg"></img></span></button>
+        <div class="footer-nav" id="footer-accordion" role="region" aria-labelledby="more">
+          <% partials.data.footer_links.map(footerLink => { %>
+            <a class="text-style hover:opacity-50 transition-opacity" href="<%- footerLink.link.url %>" target="<%- footerLink.link.target %>">
+              <%- footerLink.label %>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- center: carousel -->
+      <div class="footer-carousel">
+        <div id="footer-center-wrap">
+          <span class="footer-paren">(</span>
+          <div id="footer-text-container">
+            <% partials.data.footer_loops.map((footerLoop, index) => { %>
+              <div id="footer-loop-<%= index + 1 %>"  class="footer-loop-text">
+                <%- ctx.prismicH.asHTML(footerLoop.loop) %>
+              </div>
+            <% }) %>
+          </div>
+          <span class="footer-paren">)</span>
+        </div>
+      </div>
+
+      <!-- right: time + location -->
+      <div class="footer-location">
+        <div id="clock">00:00:00 AM EST</div>
+        <div><%- ctx.prismicH.asHTML(partials.data.location) %></div>
+      </div>
+
     </div>
-    <div class="links">
-      <% footerContent.data.links.map(menuLink => { %>
-        <span class="box">
-          <a class="underline"  href="<%- ctx.prismicH.asLink(menuLink.link) %>" target="<%- menuLink.link.target %>" style="color: <%-footerContent.data.links_color %> !important">
-            <%- ctx.prismicH.asText(menuLink.text) %>
-          </a>
-        </span>
-      <% }) %>
-    </div>
-  </div>
-</footer>
-
-
-
-<!-- <div class="box contact">
-  <a class="underline" href="mailto:hello@madeleine.work">hello@madeleine.work</a>
-</div> 
-
-<%= JSON.stringify(footerContent.data.links, null, 2) %>-->
-
+  </footer>

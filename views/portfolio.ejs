@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', { id: 'portfolio'}); %>
+  <body class="bg-white">
+    <!-- header / menu -->
+    <%- include('./partials/header'); %>
+
+    <!-- navigation -->
+    <%- include('./partials/nav')%>
+
+    <!-- workmark — pinned top-right -->
+    <%- include('./partials/wordmark', { id: 'portfolio'}); %>
+
+    <!-- section 1 — paragraph -->
+    <main id="main-content" class="flex items-center justify-center" style="min-height: 100vh;">
+      <div class="text-style"><%- ctx.prismicH.asHTML(pageContent.data.copy) %></div>
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer'); %>
+  </body>
+
+</html>

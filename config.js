@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import favicon from 'serve-favicon';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
@@ -22,6 +23,19 @@ export const app = () => {
   app.use(methodOverride());
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(errorHandler());
+  app.use(
+    session({
+      secret: 'keyboard cat',   // required – keep it secret
+      resave: false,            // don’t force a save on every request
+      saveUninitialized: true, // create a session even if it’s empty
+      cookie: {
+        // For development you can keep secure: false.
+        // In production set secure: true and enable trust proxy.
+        secure: false,
+        maxAge: 30 * 60 * 1000 // 30 minutes
+      }
+    })
+  );
 
   return app;
 };

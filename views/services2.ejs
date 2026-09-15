@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', { id: 'services'}); %>
+  <body class="bg-white">
+    <!-- header / menu -->
+    <%- include('./partials/header'); %>
+
+    <!-- navigation -->
+    <%- include('./partials/nav')%>
+
+    <!-- workmark — pinned top-right -->
+    <%- include('./partials/wordmark', { id: 'services'}); %>
+
+    <!-- section 1 — hero -->
+    <section id="hero">
+      <!--left-->
+      <div id="hero-left">
+        <img class="w-full h-full object-cover" src="<%= pageContent.data.hero_image.url %>"
+          alt="<%- pageContent.data.hero_image.alt %>" />
+        <div id="hero-overlay-text">
+          <h1>Work With Me</h1>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div id="hero-right">
+        <div id="hero-right-inner" class=" hero-body-p">
+          <%- ctx.prismicH.asHTML(pageContent.data.hero_content) %>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- section 2 — services -->
+
+    <div id="services-section">
+      <% pageContent.data.body.forEach(function(slice) {
+        if (slice.slice_type === 'tab') {
+          var categoryId = "cat-" + slice.primary.group.toLowerCase().replace(/\s+/g, "-"); %>
+
+          <div class="svc-group">
+            <div class="svc-category" id="<%- categoryId %>" style="grid-row: span <%- slice.items.length %>;">
+              <%- slice.primary.group %>
+            </div>
+
+            <div class="svc-items">
+              <% slice.items.forEach(function(item, itemIndex) {
+                var panelId = categoryId + "-panel-" + itemIndex;
+                var isFirst =
+                  slice === pageContent.data.body.find(function(bodySlice) {
+                    return bodySlice.slice_type === 'tab';
+                  }) && itemIndex === 0;
+              %>
+
+              <div class="svc-item <%= isFirst ? 'active' : '' %>">
+                <button class="svc-label <%= isFirst ? 'active' : '' %>" data-panel="<%- panelId %>">
+                  <%- item.label %><span><img src="/images/plus.svg"></img></span>
+                </button>
+
+                <div class="svc-panel <%= isFirst ? 'active' : '' %>" id="<%- panelId %>">
+                  <%- ctx.prismicH.asHTML(item.content) %>
+                </div>
+              </div>
+            <% }); %>
+            </div>
+          </div>
+        <% }
+      }); %>
+    </div>
+
+    <!-- section 3 — image -->
+    <section id="closing-image">
+      <img class="w-full h-full object-cover" src="<%= pageContent.data.bottom_image.url %>" alt="<%- pageContent.data.bottom_image.alt %>" />
+    </section>
+
+    <!-- footer -->
+    <%- include('./partials/footer'); %>
+  </body>
+
+</html>

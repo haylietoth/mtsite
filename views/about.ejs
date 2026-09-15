@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { id: 'about'}); %>
+  <body class="bg-white">
+    <!-- header / menu -->
+    <%- include('./partials/header'); %>
+
+    <!-- navigation -->
+    <%- include('./partials/nav')%>
+
+    <!-- wordmark — pinned top-right -->
+    <%- include('./partials/wordmark', { id: 'about'}); %>
+
+    <!-- hero split screen -->
+    <section id="hero">
+      <!-- left -->
+      <div id="hero-left">
+        <img class="w-full h-full object-cover object-top" src="<%= pageContent.data.hero_image.url %>" alt="<%- pageContent.data.hero_image.alt %>" />
+      </div>
+
+      <!-- right -->
+      <div id="hero-right">
+        <div id="about-interactive">
+            <% var temp = 0;
+              pageContent.data.body.reduce((prevSlices, slice, index) => {
+              if (slice.slice_type === 'tab') { 
+                slice.items.forEach(function (item, index) { 
+                    var panel = "panel-" + temp;
+                    var activeClass = "";
+
+                    if (temp === 0) {
+                      var activeClass = "active";
+                    } 
+                    temp++ %>
+                    <div class="about-item <%- activeClass %>">
+                      <button class="about-label <%- activeClass %>" data-panel="<%- panel %>"><%- item.label %><span><img src="/images/plus.svg"></img></span></button>
+                      <div class="about-panel <%- activeClass %>" id="<%- panel %>">
+                        <%- ctx.prismicH.asHTML(item.content) %>
+                      </div>
+                    </div>
+                <% });
+              }
+            }, '') %>
+        </div>
+      </div>
+    </section>
+    
+    <%- include('./partials/footer'); %>
+  </body>
+</html>
