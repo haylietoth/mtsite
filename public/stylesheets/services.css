@@ -376,7 +376,7 @@ min-width: 0;
     left: auto;
     right: auto;
     top: auto;
-    padding: 0 0 1.5rem;
+    padding: 0 .2rem 1.5rem;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

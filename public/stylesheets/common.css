@@ -139,6 +139,7 @@ body {
 .accordion-container button {
   display: none;
   transition: display 300ms;
+  font-size: 0.85rem;
 }
 .accordion-container button span{
   margin: auto 0;
