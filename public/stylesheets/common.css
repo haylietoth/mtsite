@@ -58,7 +58,7 @@ body {
   margin-left: 2rem;
 }
 
-/* static wordmark */
+/* wordmark */
 .wm-letter {
   position: fixed;
   color: #000;
@@ -68,6 +68,10 @@ body {
   letter-spacing: 0;
   z-index: 70;
   right: 1.96rem;
+}
+
+.allow-pointer { 
+  pointer-events: all !important; 
 }
 
 /* index hero */
