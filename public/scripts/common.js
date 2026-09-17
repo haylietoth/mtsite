@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
   // mobile layout check
-  function isMobileLayout() {
+  function isTabletLayout() {
     return window.matchMedia('(max-width: 1023px)').matches;
   }
 
-  function isSmallestLayout() {
+  function isMobileLayout() {
     return window.matchMedia('(max-width: 767px)').matches;
   }
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
   function updateWordmark() {
 
     let padding = 0.03;
-     if (isSmallestLayout()) {
+     if (isMobileLayout()) {
       padding = 0.09;
      }
 
@@ -144,7 +144,7 @@ $(document).ready(function(){
       panel.classList.remove('active');
     });
 
-    if (isMobileLayout() && closeOnMobile && alreadyActive) {
+    if (isTabletLayout() && closeOnMobile && alreadyActive) {
       return;
     }
 
@@ -154,7 +154,7 @@ $(document).ready(function(){
 
   aboutLabels.forEach(label => {
     label.addEventListener('mouseenter', () => {
-      if (!isMobileLayout()) {
+      if (!isTabletLayout()) {
         activateAboutPanel(label);
       }
     });
@@ -183,7 +183,7 @@ $(document).ready(function(){
 
     const wasActive = label.classList.contains('active');
 
-    if (isMobileLayout() && allowClose && wasActive) {
+    if (isTabletLayout() && allowClose && wasActive) {
       label.classList.remove('active');
       targetPanel.classList.remove('active');
       const item = label.closest('.svc-item');
@@ -214,7 +214,7 @@ $(document).ready(function(){
 
   serviceLabels.forEach(label => {
     label.addEventListener('mouseenter', () => {
-      if (!isMobileLayout()) {
+      if (!isTabletLayout()) {
         activateServicePanel(label);
       }
     });
