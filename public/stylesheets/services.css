@@ -20,15 +20,14 @@
 }
 #hero-overlay-text {
   position: absolute;
-  bottom: 3rem;
-  left: 3rem;
-  right: 3rem;
+  bottom: .5rem;
+  left: clamp(2%, .5rem, 1rem);
   z-index: 2;
   line-height: 1;
 }
 #hero-overlay-text h1 {
   display: block;
-  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-size: clamp(2.8rem, 6.5vw, 11rem);
   font-weight: 300;
   letter-spacing: 0.06em;
   text-transform: none;
@@ -56,7 +55,7 @@
 }
 .hero-body-p,
 .hero-body-p p {
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 .hero-body-p p+p {
   margin-top: 2rem;
@@ -82,6 +81,9 @@
   display: flex;
   align-items: flex-start;
   width: 100%;
+}
+.svc-group:nth-of-type(2) {
+  padding-top: 2rem;
 }
 .svc-category {
   flex: 0 0 var(--category-width);
@@ -109,8 +111,7 @@ min-width: 0;
 }
 .svc-label {
   display: block;
-  width: 100%;
-  padding: 0.55rem 0;
+  padding: 0 0 1rem 0;
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
   font-weight: 300;
   letter-spacing: 0.01em;

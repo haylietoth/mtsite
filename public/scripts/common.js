@@ -40,7 +40,7 @@ $(document).ready(function(){
       let progress = Math.min(scrollY / 500, 1);
       const lerp = (start, end, t) => start + (end - start) * t;
       const displaySize = panelRect.width * 0.28;
-      const pinnedSize = 24;
+      const pinnedSize = 14;
       const currentSize = lerp(displaySize, pinnedSize, progress);
       const targetMargin = 40;
       const targetY = targetMargin;
@@ -75,7 +75,7 @@ $(document).ready(function(){
       const currE_X = lerp(startE_X, targetE_X, progress);
       const currE_Y = lerp(startY - scrollY, targetY + pinnedSize, progress);
       letterE.style.fontSize = `${currentSize}px`;
-      //letterE.style.width = `${colWidth}px`;
+      // letterE.style.width = `${colWidth}px`;
       letterE.style.height = `${currentSize}px`;
       // letterE.style.letterSpacing = `${currentLetterSpacing}em`;
       letterE.style.transform = `translate(${currE_X}px, ${(currE_Y  - currentSize) - 17}px)`;

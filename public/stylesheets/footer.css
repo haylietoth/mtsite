@@ -1,6 +1,6 @@
 #footer {
  width: 100%;
- padding: 6rem 3rem;
+ padding: 6rem 3rem 3rem;
 }
 .footer-nav, 
 .footer-location {
@@ -14,6 +14,8 @@
 .footer-location {
   display: flex;
   align-items: flex-end;
+  margin-top: auto;
+  font-size: 0.85rem;
 }
 #footer-center-wrap {
   display: flex;

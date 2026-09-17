@@ -35,11 +35,11 @@
       </section>
 
       <!-- section 2 - services -->
-      <section id="services" class="w-full py-48 bg-white flex flex-col items-center justify-center text-center">
+      <section id="services">
           <div class="space-y-4 mb-16">
             <% if (pageContent.data.services && pageContent.data.services.length) { %>
               <% pageContent.data.services.forEach(function(item, index) { %>
-                <h2 class="text-3xl md:text-5xl font-medium tracking-tight uppercase"><%- item.service%></h2>
+                <h2 class="text-3xl font-medium tracking-tight uppercase"><%- item.service%></h2>
               <% }) %>
             <% } %>
           </div>
