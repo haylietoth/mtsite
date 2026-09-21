@@ -8,9 +8,11 @@
 }
 body {
   font-family: "itc-avant-garde-gothic-pro", sans-serif;
-  font-weight: 300;
-  background-color: #fff;
+  font-weight: 500;
+  font-style: normal;
   color: #000;
+  
+  background-color: #fff;
   overflow-x: hidden;
 }
 .text-style {
