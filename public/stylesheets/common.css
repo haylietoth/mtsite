@@ -64,7 +64,7 @@ body {
 .wm-letter {
   position: fixed;
   color: #000;
-  font-size: 0.85rem;
+  font-size: 15px;
   line-height: 1;
   top: 31px;
   letter-spacing: 0;
@@ -76,6 +76,15 @@ body {
   pointer-events: all !important; 
 }
 
+#letters {
+  font-weight: 400;
+}
+
+.wm-letter span:first-of-type,
+.wm-letter span:nth-of-type(2) {
+  padding-right: 3px;
+}
+
 /* index hero */
 #hero {
   height: 100vh;
@@ -84,6 +93,11 @@ body {
   overflow: hidden;
   position: relative;
 }
+
+.hero-copy {
+  max-width: 24rem;
+}
+
 #hero p {
   margin-bottom: 1rem;
 }
@@ -154,7 +168,7 @@ body {
 
 @media (max-width: 768px) {
   #hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   #hero-text,
   #hero-image-panel {

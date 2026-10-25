@@ -34,66 +34,74 @@ $(document).ready(function(){
           images[currentIndex].classList.remove('active');
           currentIndex = (currentIndex + 1) % images.length;
           images[currentIndex].classList.add('active');
-      }, 5000);
+      }, 2500);
   }
   document.querySelectorAll('.slideshow').forEach(initSlideshow);
 
   // wordmark animation
-  const letter = document.getElementById('letters');
-
-  function updateWordmark() {
-
-    let padding = 0.03;
-     if (isMobileLayout()) {
-      padding = 0.09;
-     }
-
-    const scrollY = window.scrollY;
-    const panel = document.getElementById('hero-image-panel');
-    const panelRect = panel.getBoundingClientRect();
-    const progress = Math.min(scrollY / 500, 1);
-    const lerp = (start, end, t) => start + (end - start) * t;
-    const displaySize = panelRect.width * 0.32;
-    const pinnedSize = 21;
-    const currentSize = lerp(displaySize, pinnedSize, progress);
-    const currentFont = lerp(displaySize, 14, progress);
-    const targetMargin = 40;
-    const targetY = targetMargin;
-    const targetE_X = window.innerWidth - targetMargin - pinnedSize * 0.8;
-    const targetG_X = targetE_X - pinnedSize * 0.9;
-    const target_X = targetG_X - pinnedSize * 1.1;
-    const bottomMargin = panelRect.height * padding;
-    const startY = panelRect.bottom + scrollY - bottomMargin;
-    const colWidth = panelRect.width;
-    const start_X = panelRect.left;
-    const curr_X = lerp(start_X, target_X, progress);
-    const curr_Y = lerp(
-      startY - scrollY,
-      targetY + pinnedSize,
-      progress
-    );
-
-    letter.style.fontSize = `${currentFont}px`;
-    letter.style.width = `${colWidth}px`;
-    letter.style.transform = `
-      translate(
-        ${curr_X}px,
-        ${(curr_Y - currentSize) - 12}px
-      )
-    `;
-
-    const colorValue = Math.round(lerp(255, 0, progress));
-    const colorStr = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-
-    letter.style.color = colorStr;
-
-    if (scrollY === 500) {
-      console.log('allow pointer events!');
-      $('#wordmark-container').addClass('allow-pointer');
-    }
-  }
-
   if (location.pathname === "/") {
+    const letter = document.getElementById('letters');
+    let letterM = letter.children[0];
+    let letterG = letter.children[1];
+    let letterE = letter.children[2];
+
+    function updateWordmark() {
+
+      let padding = 0.03;
+      if (isMobileLayout()) {
+        padding = 0.09;
+      }
+
+      const scrollY = window.scrollY;
+      const panel = document.getElementById('hero-image-panel');
+      const panelRect = panel.getBoundingClientRect();
+      const progress = Math.min(scrollY / 500, 1);
+      const lerp = (start, end, t) => start + (end - start) * t;
+      const displaySize = panelRect.width * 0.25;
+      const paddingSize = panelRect.width * 0.12;
+      const pinnedSize = 21;
+      const currentSize = lerp(displaySize, pinnedSize, progress);
+      const currentFont = lerp(displaySize, 15, progress);
+      const currentPadding = lerp(paddingSize, 3, progress);
+      const targetMargin = 40;
+      const targetY = targetMargin;
+      const targetE_X = window.innerWidth - targetMargin - pinnedSize * 0.8;
+      const targetG_X = targetE_X - pinnedSize * 0.9;
+      const target_X = targetG_X - pinnedSize * 1.1;
+      const bottomMargin = panelRect.height * padding;
+      const startY = panelRect.bottom + scrollY - bottomMargin;
+      const colWidth = panelRect.width;
+      const start_X = panelRect.left;
+      const curr_X = lerp(start_X, target_X, progress);
+      const curr_Y = lerp(
+        startY - scrollY,
+        targetY + pinnedSize,
+        progress
+      );
+
+      letter.style.fontSize = `${currentFont}px`;
+      letter.style.width = `${colWidth}px`;
+      letterM.style.paddingRight = `${currentPadding}px`;
+      letterG.style.paddingRight = `${currentPadding}px`;
+      letterE.style.paddingRight = `${currentPadding}px`;
+      letter.style.transform = `
+        translate(
+          ${curr_X}px,
+          ${(curr_Y - currentSize) - 12}px
+        )
+      `;
+
+      const colorValue = Math.round(lerp(255, 0, progress));
+      const colorStr = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+
+      letter.style.color = colorStr;
+
+      if (scrollY === 500) {
+        console.log('allow pointer events!');
+        $('#wordmark-container').addClass('allow-pointer');
+      }
+    }
+
     updateWordmark();
     window.addEventListener('scroll', updateWordmark);
     window.addEventListener('resize', updateWordmark);

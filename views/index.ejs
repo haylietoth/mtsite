@@ -14,7 +14,7 @@
       <!-- section 1 - hero -->
       <section id="hero">
           <div id="hero-text">
-              <div class="max-w-md hero-copy">
+              <div class="hero-copy">
                 <%- ctx.prismicH.asHTML(pageContent.data.hero_content) %>
               </div>
           </div>
@@ -38,7 +38,7 @@
           <div class="space-y-4 mb-16">
             <% if (pageContent.data.services && pageContent.data.services.length) { %>
               <% pageContent.data.services.forEach(function(item, index) { %>
-                <h2 class="text-3xl font-medium tracking-tight uppercase"><%- item.service%></h2>
+                <h2 class="text-3xl font-medium tracking-tight"><%- item.service%></h2>
               <% }) %>
             <% } %>
           </div>

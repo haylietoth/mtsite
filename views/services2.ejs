@@ -24,7 +24,7 @@
 
       <!-- right -->
       <div id="hero-right">
-        <div id="hero-right-inner" class=" hero-body-p">
+        <div id="hero-right-inner" class="hero-body-p">
           <%- ctx.prismicH.asHTML(pageContent.data.hero_content) %>
         </div>
       </div>
@@ -32,7 +32,11 @@
     </section>
 
     <!-- section 2 — services -->
-
+    <style>
+      .svc-panel a {
+        color: <%- pageContent.data.link_color %>;
+      }
+    </style>
     <div id="services-section">
       <% pageContent.data.body.forEach(function(slice) {
         if (slice.slice_type === 'tab') {
@@ -56,7 +60,6 @@
                 <button class="svc-label <%= isFirst ? 'active' : '' %>" data-panel="<%- panelId %>">
                   <%- item.label %><span><img src="/images/plus.svg"></img></span>
                 </button>
-
                 <div class="svc-panel <%= isFirst ? 'active' : '' %>" id="<%- panelId %>">
                   <%- ctx.prismicH.asHTML(item.content) %>
                 </div>
