@@ -386,7 +386,6 @@ letter {
 .details strong a {
   font-size: 15px;
   font-size: 13px;
-  letter-spacing: 0.05em;
   color: black;
   font-weight: bold;
 }
@@ -657,7 +656,6 @@ a.fritz {
   font-weight: bold;
   font-size: 10px;
   padding-right: 10px;
-  letter-spacing: 0.05em;
 }
 
 .collab_name {

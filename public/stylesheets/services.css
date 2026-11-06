@@ -90,12 +90,10 @@
 .svc-category {
   flex: 0 0 var(--category-width);
   width: var(--category-width);
-  padding-top: 0.7rem;
+  padding-top: 0.45rem;
   margin-right: var(--column-gap);
   font-size: 0.58rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
-  line-height: 1;
   color: #000;
 }
 .svc-items {
@@ -111,7 +109,7 @@ min-width: 0;
 .svc-label {
   display: block;
   padding: 0 0 1rem 0;
-  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-size: 2.2rem;
   font-weight: 300;
   letter-spacing: 0.01em;
   line-height: 1.25;
@@ -131,6 +129,7 @@ min-width: 0;
 }
 .svc-label span {
   display: none;
+  transition: transform 300ms;
 }
 .svc-panel {
   position: absolute;
@@ -326,7 +325,7 @@ min-width: 0;
     left: auto;
     right: auto;
     top: auto;
-    padding: 0 .2rem 1.5rem;
+    padding: .5rem .2rem 1.5rem;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

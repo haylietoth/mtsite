@@ -58,7 +58,7 @@
 
               <div class="svc-item <%= isFirst ? 'active' : '' %>">
                 <button class="svc-label <%= isFirst ? 'active' : '' %>" data-panel="<%- panelId %>">
-                  <%- item.label %><span><img src="/images/plus.svg"></img></span>
+                  <%- item.label %><span style=" <%= isFirst ? 'transform: rotate(45deg);' : '' %>"><img src="/images/plus.svg"></img></span>
                 </button>
                 <div class="svc-panel <%= isFirst ? 'active' : '' %>" id="<%- panelId %>">
                   <%- ctx.prismicH.asHTML(item.content) %>

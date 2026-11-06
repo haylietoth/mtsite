@@ -96,10 +96,10 @@ $(document).ready(function(){
 
       letter.style.color = colorStr;
 
-      if (scrollY === 500) {
-        console.log('allow pointer events!');
-        $('#wordmark-container').addClass('allow-pointer');
-      }
+      // if (scrollY === 500) {
+      //   console.log('allow pointer events!');
+      //   $('#wordmark-container').addClass('allow-pointer');
+      // }
     }
 
     updateWordmark();
@@ -133,103 +133,109 @@ $(document).ready(function(){
   updateClock();
 
   // ── about interactive panel ──
-  const aboutLabels = document.querySelectorAll('.about-label');
-  const aboutPanels = document.querySelectorAll('.about-panel');
+  if (location.pathname === "/about") {
+    const aboutLabels = document.querySelectorAll('.about-label');
+    const aboutPanels = document.querySelectorAll('.about-panel');
 
-  function activateAboutPanel(label, closeOnMobile = false) {
-    const targetId = label.dataset.panel;
-    const target = document.getElementById(targetId);
+    function activateAboutPanel(label, closeOnMobile) {
+      const targetId = label.dataset.panel;
+      const target = document.getElementById(targetId);
 
-    if (!target) return;
+      if (!target) return;
 
-    const alreadyActive = label.classList.contains('active');
+      const alreadyActive = label.classList.contains('active');
 
-    aboutPanels.forEach(currentLabel => {
-      currentLabel.classList.remove('active');
-    });
+      aboutLabels.forEach(currentLabel => {
+        currentLabel.classList.remove('active');
+        $(currentLabel).find('span').css('transform', 'rotate(-90deg)');
+      });
 
-    aboutPanels.forEach(panel => {
-      panel.classList.remove('active');
-    });
+      aboutPanels.forEach(panel => {
+        panel.classList.remove('active');
+      });
 
-    if (isTabletLayout() && closeOnMobile && alreadyActive) {
-      return;
+      if (isTabletLayout() && closeOnMobile && alreadyActive) {
+        return;
+      }
+
+      label.classList.add('active');
+      target.classList.add('active');
+      $(label).find('span').css('transform', 'rotate(45deg)');
     }
 
-    label.classList.add('active');
-    target.classList.add('active');
+    aboutLabels.forEach(label => {
+      label.addEventListener('mouseenter', () => {
+        if (!isTabletLayout()) {
+          activateAboutPanel(label, false);
+        }
+      });
+
+      label.addEventListener('click', () => {
+        activateAboutPanel(label, true);
+      });
+    });
   }
-
-  aboutLabels.forEach(label => {
-    label.addEventListener('mouseenter', () => {
-      if (!isTabletLayout()) {
-        activateAboutPanel(label);
-      }
-    });
-
-    label.addEventListener('click', () => {
-      activateAboutPanel(label, true);
-    });
-  });
 
   // ── services interactive panels ──
 
-  // special HTML formatting needed in CMS
   if (location.pathname === "/services") {
-    var test = $('#cat-about-panel-0').text();
-    $('#cat-about-panel-0').html(test);
-  }
+    var formatPre = $('#cat-about-panel-0').text();
+    $('#cat-about-panel-0').html(formatPre);
 
-  const serviceLabels = document.querySelectorAll('.svc-label');
-  const servicePanels = document.querySelectorAll('.svc-panel');
+    const serviceLabels = document.querySelectorAll(".svc-label");
+    const servicePanels = document.querySelectorAll(".svc-panel");
 
-  function activateServicePanel(label, allowClose = false) {
-    const targetId = label.dataset.panel;
-    const targetPanel = document.getElementById(targetId);
+    function activateServicePanel(label, allowClose = false) {
+      const targetId = label.dataset.panel;
+      const targetPanel = document.getElementById(targetId);
 
-    if (!targetPanel) return;
+      if (!targetPanel) return;
 
-    const wasActive = label.classList.contains('active');
+      const wasActive = label.classList.contains("active");
 
-    if (isTabletLayout() && allowClose && wasActive) {
-      label.classList.remove('active');
-      targetPanel.classList.remove('active');
-      const item = label.closest('.svc-item');
+      if (isTabletLayout() && allowClose && wasActive) {
+        label.classList.remove("active");
+        targetPanel.classList.remove("active");
 
-      if (item) item.classList.remove('active');
-      
-      return;
+        const item = label.closest(".svc-item");
+        if (item) item.classList.remove("active");
+
+        return;
+      }
+
+      serviceLabels.forEach((currentLabel) => {
+        currentLabel.classList.remove("active");
+        $(currentLabel).find("span").css("transform", "rotate(-90deg)");
+      });
+
+      servicePanels.forEach((panel) => {
+        panel.classList.remove("active");
+      });
+
+      document.querySelectorAll(".svc-item").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      label.classList.add("active");
+      targetPanel.classList.add("active");
+      $(label).find('span').css('transform', 'rotate(45deg)');
+
+      const item = label.closest(".svc-item");
+      if (item) item.classList.add("active");
     }
 
-    serviceLabels.forEach(currentLabel => {
-      currentLabel.classList.remove('active');
+    serviceLabels.forEach((label) => {
+      label.addEventListener("mouseenter", () => {
+        if (!isTabletLayout()) {
+          activateServicePanel(label);
+        }
+      });
+
+      label.addEventListener("click", () => {
+        activateServicePanel(label, true);
+      });
     });
-
-    servicePanels.forEach(panel => {
-      panel.classList.remove('active');
-    });
-
-    document.querySelectorAll('.svc-item').forEach(item => {
-      item.classList.remove('active');
-    });
-
-    label.classList.add('active');
-    targetPanel.classList.add('active');
-
-    const item = label.closest('.svc-item');
-    if (item) item.classList.add('active');
   }
-
-  serviceLabels.forEach(label => {
-    label.addEventListener('mouseenter', () => {
-      if (!isTabletLayout()) {
-        activateServicePanel(label);
-      }
-    });
-    label.addEventListener('click', () => {
-      activateServicePanel(label, true);
-    });
-  });
 
   // accordion behavior
   var acc = document.getElementsByClassName("accordion");

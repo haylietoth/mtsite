@@ -25,9 +25,8 @@
 #hero-right {
   width: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 6rem 4rem 6rem 5rem;
+  padding: 17rem 4rem 6rem 5rem;
 }
 
 /* ── about accordions ── */
@@ -66,6 +65,7 @@
 }
 .about-label span {
   display: none;
+  transition: transform 300ms;
 }
 .about-panel {
   position: absolute;
@@ -126,7 +126,6 @@
 }
 .about-panel p {
   font-size: 0.75rem;
-  letter-spacing: 0.05em;
   color: #000;
   max-width: 520px;
 }
@@ -204,7 +203,7 @@
     top: auto;
     width: 100%;
     min-height: 0;
-    padding: 0 .2rem 1.5rem;
+    padding: .5rem .2rem 1.5rem;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

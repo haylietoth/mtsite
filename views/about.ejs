@@ -35,10 +35,16 @@
 
                     if (temp === 0) {
                       var activeClass = "active";
+                      var openIcon = "transform: rotate(45deg);";
                     } 
                     temp++ %>
                     <div class="about-item <%- activeClass %>">
-                      <button class="about-label <%- activeClass %>" data-panel="<%- panel %>"><%- item.label %><span><img src="/images/plus.svg"></img></span></button>
+                      <button class="about-label <%- activeClass %>" data-panel="<%- panel %>">
+                        <%- item.label %>
+                        <span style="<%- openIcon %>">
+                          <img src="/images/plus.svg"></img>
+                        </span>
+                      </button>
                       <div class="about-panel <%- activeClass %>" id="<%- panel %>">
                         <%- ctx.prismicH.asHTML(item.content) %>
                       </div>
