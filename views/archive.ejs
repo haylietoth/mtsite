@@ -1,7 +1,7 @@
 <!DOCTYPE html(lang='en')>
 <html>
   <head>
-    <%- include('./partials/head'); %>
+    <%- include('./portfolio/partials/head'); %>
   </head>
   <body id="archive">
     <div class="loading" style="background-color: <%-menuContent.data.homepage_color %>"></div>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="whitebar" style="background-color: #f8f8f4;">
-    <%- include('./partials/nav', { id: 'archive', font_color: '', bg_color: '' }); %>
+    <%- include('./portfolio/partials/nav', { id: 'archive', font_color: '', bg_color: '' }); %>
     <div class="archive" style="display:block;">
       <h1 class="archive-title body-font-light"><%- ctx.prismicH.asText(pageContent.data.page_title) %></h1>
       <div class="archive-container">
@@ -46,6 +46,6 @@
         </div>
       </div>
     </div>
-    <%- include('./partials/footer'); %>
+    <%- include('./portfolio/partials/footer'); %>
   </body>
 </html>

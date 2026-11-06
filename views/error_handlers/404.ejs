@@ -1,13 +1,18 @@
 <!DOCTYPE html(lang='en')>
 <html>
   <head>
-    <%- include('../partials/head'); %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name='viewport' http-equiv='viewport' content='width=device-width, initial-scale=1'>
+    <meta property="og:url" content="https://m-g-e.com"/>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Madeleine Grace Edwards"/>
+    <title>Madeleine Grace Edwards</title>
+
+    <link rel="stylesheet" href="/stylesheets/common.css">
   </head>
-  <body class="homepage" id="homepage">
-    <div class="whitebar" style="background-color: <%-menuContent.data.homepage_color %>">
-    <%- include('../partials/nav', { id: '404' }); %>
-    </div>
-    <div style="padding-top: 100px;width: fit-content;margin: auto;">
+  <body>
+    <div style="padding-top: 100px;width: fit-content;margin: auto; font-weight:normal;">
       <h3>Oh no!</h3>
       <h3>We can't seem to find the page you're looking for :(</h3>
       <br>

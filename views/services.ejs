@@ -1,7 +1,7 @@
 <!DOCTYPE html(lang='en')>
 <html>
   <head>
-    <%- include('./partials/head'); %>
+    <%- include('./portfolio/partials/head'); %>
 
     <style>
       .cls-1 {
@@ -13,7 +13,7 @@
   <body id="services" style="background-color: <%-pageContent.data.background_color %>; color:<%-pageContent.data.font_color %>">
     <div class="loading" style="background-color: <%-pageContent.data.background_color %>"></div>
     <div class="whitebar" style="background-color: <%-pageContent.data.background_color %>">
-    <%- include('./partials/nav', { id: 'services', font_color: `${pageContent.data.font_color}`, bg_color: 'test' }); %>
+    <%- include('./portfolio/partials/nav', { id: 'services', font_color: `${pageContent.data.font_color}`, bg_color: 'test' }); %>
     <div class="service-content">
       <div class='service-row'>
         <div class="services">

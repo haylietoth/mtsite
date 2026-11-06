@@ -1,12 +1,12 @@
 <!DOCTYPE html(lang='en')>
 <html>
   <head>
-    <%- include('./partials/head'); %>
+    <%- include('./portfolio/partials/head'); %>
   </head>
   <body class="homepage" id="homepage">
-    <div class="loading" style="background-color: <%-pageContent.data.background_color %>"></div>
+    <div class="loading" style="background-color: <%- pageContent.data.background_color %>"></div>
     <div class="whitebar" style="background-color: <%-pageContent.data.background_color %>">
-      <%- include('./partials/nav', { id: 'home', font_color: '', bg_color: ''}); %>
+      <%- include('./portfolio/partials/nav', { id: 'home', font_color: '', bg_color: ''}); %>
     </div>
     <div class="container" id="container" style="background-color: <%-pageContent.data.background_color %>">
       <div class="home-content">
@@ -20,13 +20,13 @@
       <canvas id="canvas" style="position: absolute;"></canvas>
     </div>
     <div class="thumbnails" id="work">
-      <%- include("SliceZone", {SliceZone: pageContent.data.page_content}); %>
+      <%- include("portfolio/SliceZone", {SliceZone: pageContent.data.page_content}); %>
     </div>
     <footer class="home-footer body-font-light" id="info">
       <a href="<%- ctx.prismicH.asLink(pageContent.data.archive_link) %>">ARCHIVE</a>
     </footer>
   </body>
-  <script src="/scripts/joyful.js"></script>
+  <script src="/scripts/portfolio/joyful.js"></script>
 </html>
 
 

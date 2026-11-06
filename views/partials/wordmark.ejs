@@ -1,0 +1,20 @@
+
+
+  <% if (id == 'index') { %>
+    <div id="wordmark-container" class="fixed inset-0 pointer-events-none z-[70]">
+      <a href="/" class="hover:opacity-50">
+        <span id="letters" class="absolute font-light text-white uppercase transition-colors duration-100 flex items-baseline justify-start">
+          <span>M.</span>
+          <span>G.</span>
+          <span>E.</span>
+        </span>
+      </a>
+    </div>
+  <% } else { %>
+    <div id="wordmark-container" class="fixed z-[70]">
+      <a href="/" class="hover:opacity-50">
+        <span class="wm-letter"><span>M.</span><span>G.</span><span>E.</span>
+        </span>
+      </a>
+    </div>
+  <% } %>
